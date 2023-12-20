@@ -4,13 +4,18 @@ import { AuthController } from './auth.controller';
 import { UserModule } from 'src/user/user.module';
 import { TokenService } from './token.service';
 import { JwtModule } from '@nestjs/jwt';
+import { PassportModule } from '@nestjs/passport';
+import { JwtAccessStrategy } from './strategies/jwt-access.strategy';
+import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy';
+import { PrismaService } from 'src/common/prisma.service';
 
 @Module({
   imports: [
     UserModule,
-    JwtModule.register({})
+    JwtModule.register({}),
+    PassportModule
   ],
   controllers: [AuthController],
-  providers: [AuthService, TokenService]
+  providers: [AuthService, TokenService, JwtAccessStrategy, JwtRefreshStrategy]
 })
 export class AuthModule {}
