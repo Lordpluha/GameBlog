@@ -11,6 +11,9 @@ class EnvironmentVariables {
 
 	@IsString()
 	SECRET_JWT_REFRESH: string
+
+	@IsString()
+	CLIENT_URL: string
 }
 
 export const EnvConfigOptions: ConfigModuleOptions = {

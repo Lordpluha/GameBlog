@@ -15,6 +15,11 @@ async function bootstrap() {
 
 	const configService = app.get(ConfigService)
 	const PORT = configService.get('PORT')
+	const CLIENT_URL = configService.get('CLIENT_URL')
+	app.enableCors({
+		credentials: true,
+		origin: CLIENT_URL
+	})
 	await app.listen(PORT)
 	console.log('Server start on port ' + PORT)
 }
