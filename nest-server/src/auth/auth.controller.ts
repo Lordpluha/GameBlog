@@ -7,7 +7,11 @@ import { MAX_AGE_COOKIE_REFRESH, REFRESH_TOKEN_COOKIE } from './constants/auth.c
 import { Cookie } from './decorators/cookie.decorator';
 import { RefreshJwtGuard } from './decorators/refresh-jwt.decorator';
 import { User } from 'src/user/decorators/user.decorator';
+import { ApiCookieAuth, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { SuccessDataDto, SuccessRefreshDataDto } from './dto/return-data.dto';
+import { AccessJwtGuard } from './decorators/access-jwt.decorator';
 
+@ApiTags('Auth')
 @UsePipes(new ValidationPipe())
 @Controller('auth')
 export class AuthController {
@@ -15,6 +19,9 @@ export class AuthController {
 
   private optionsCookie: CookieOptions = {maxAge: MAX_AGE_COOKIE_REFRESH, httpOnly: true, path: '/'}
 
+  @ApiOperation({ summary: "Login user" })
+  @ApiResponse({ status: HttpStatus.OK, description: "Success", type: SuccessDataDto})
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "Bad Request" })
   @HttpCode(HttpStatus.OK)
   @Post('login')
   async login(
@@ -26,6 +33,9 @@ export class AuthController {
     return {...user, accessToken: tokens.accessToken}
   }
 
+  @ApiOperation({ summary: "Registration user" })
+  @ApiResponse({ status: HttpStatus.OK, description: "Success", type: SuccessDataDto})
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "Bad Request" })
   @HttpCode(HttpStatus.OK)
   @Post('registration')
   async registration(
@@ -37,6 +47,11 @@ export class AuthController {
     return {...user, accessToken: tokens.accessToken}
   }
 
+  @ApiCookieAuth(REFRESH_TOKEN_COOKIE)
+  @ApiOperation({ summary: "Refresh token"})
+  @ApiResponse({ status: HttpStatus.OK, description: "Success", type: SuccessRefreshDataDto})
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "Bad Request" })
+  @ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: "Unauthorized" })
   @RefreshJwtGuard()
   @Get('refresh')
   async refresh(
@@ -49,6 +64,10 @@ export class AuthController {
     return {...user, tokens}
   }
 
+  @ApiCookieAuth(REFRESH_TOKEN_COOKIE)
+  @ApiOperation({ summary: "logout"})
+  @ApiResponse({ status: HttpStatus.NO_CONTENT, description: "Success. No Content"})
+  @ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: "Unauthorized" })
   @RefreshJwtGuard()
   @HttpCode(HttpStatus.NO_CONTENT)
   @Get('logout')
@@ -60,5 +79,4 @@ export class AuthController {
     res.clearCookie(REFRESH_TOKEN_COOKIE)
     return
   }
-
 }
