@@ -16,6 +16,6 @@ import { PrismaService } from 'src/common/prisma.service';
     PassportModule
   ],
   controllers: [AuthController],
-  providers: [AuthService, TokenService, JwtAccessStrategy, JwtRefreshStrategy]
+  providers: [AuthService, TokenService, JwtAccessStrategy, JwtRefreshStrategy, PrismaService]
 })
 export class AuthModule {}
