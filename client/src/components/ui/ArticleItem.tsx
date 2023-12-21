@@ -7,7 +7,7 @@ const ArticleItem:React.FC = () => {
         e.stopPropagation()
     }
   return (
-    <Link to="/newsdata/61051/bloober_team_sozdast_horror_po_odnoy_iz_franshiz_skybound" className="">
+    <Link to="/newsdata/61051/bloober_team_sozdast_horror_po_odnoy_iz_franshiz_skybound" className="transition duration-500 ease-in-out bg-white hover:bg-gray-300">
     <div className="md:flex md:flex-row sm:flex sm:flex-col pl-2 pr-2">
         <img className='md:w-[196px] md:h-[110px] sx:w-full w-full rounded-[8px]' src="https://images.stopgame.ru/news/2023/12/21/c196x110/0xZajkxWHLFpdR67NgC_BQ/lqCB6rL.jpg" />
         <div className="flex flex-col justify-between ml-5">
