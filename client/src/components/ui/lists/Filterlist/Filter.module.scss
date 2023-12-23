@@ -1,0 +1,44 @@
+@mixin box {
+	display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+	box-sizing: border-box;
+	height: auto;
+}
+.filters{
+    @include box;
+    background-color: #1E2224;
+    width: 768px;
+    display: flex;align-items: center;
+	height: 94px;
+	margin: 100px 0 0 100px;
+	.filter_list{
+		column-gap: 5px;
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+		padding: 0;
+		row-gap: 8px;
+		li{
+			height: 26px;
+			.filter{
+			   padding: 6px 16px;
+			   margin: 5px;
+			   background-color: #161B1D;
+			   border-radius: 13px;
+			   cursor: pointer;
+			   color: #fff;
+			   font-size: 14px;
+			   line-height: 14px;
+			   &:hover{
+				   background-color: #262A2C;
+			   }
+			   &:focus{
+				   background-color: #41474A;
+			   }
+		    }
+		}
+		
+	}
+}
