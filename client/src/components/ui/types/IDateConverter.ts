@@ -1,0 +1,1 @@
+export type TdateConverter = (time:number) => string
