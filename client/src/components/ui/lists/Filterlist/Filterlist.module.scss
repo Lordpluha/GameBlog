@@ -1,0 +1,13 @@
+.filters {
+	display: flex;
+	align-items: center;
+
+	.filter_list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+
+		row-gap: 8px;
+		column-gap: 5px;
+	}
+}
