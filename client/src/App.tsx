@@ -1,7 +1,11 @@
+import { BrowserRouter } from "react-router-dom"
+
 function App() {
 	return (
 		<>
-			<h1>GameBlog</h1>
+			<BrowserRouter>
+				<h1>GameBlog</h1>
+			</BrowserRouter>
 		</>
 	)
 }
