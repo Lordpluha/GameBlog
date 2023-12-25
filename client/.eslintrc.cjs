@@ -15,7 +15,7 @@ module.exports = {
 			{ allowConstantExport: true }
 		],
 		'react/display-name': 'off',
-		'no-unused-vars': 'off',
+		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unused-vars': 'warn'
 	}
 }
