@@ -1,26 +1,12 @@
-import Filterlist from "./components/ui/lists/Filterlist/Filterlist"
-
-const testData = [
-	{name: 'Все'},
-	{name: 'Xbox'},
-	{name: 'PS'},
-	{name: 'Windows'},
-	{name: 'Linux'},
-	{name: 'Mac'},
-	{name: 'Android'}
-]
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 	return (
 		<>
-			<Filterlist names={testData}/>
-			<Filterlist names={testData}/>
-			<Filterlist names={testData}/>
-			<Filterlist names={testData}/>
-			<Filterlist names={testData}/>
-			<Filterlist names={testData}/>
+			<BrowserRouter>
+				<h1>GameBlog</h1>
+			</BrowserRouter>
 		</>
-
 	)
 }
 

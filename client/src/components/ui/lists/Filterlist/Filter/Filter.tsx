@@ -26,7 +26,6 @@ type TFilterProps = {
 const Filter = ({ name, to, list = false }: TFilterProps): ReactNode => {
 	return (
 		<FilterWrapper wrapToLi={list}>
-			{/* BUG with Link component */}
 			<Link to={to}>
 				<span className={styles.filter}>{name}</span>
 			</Link>
