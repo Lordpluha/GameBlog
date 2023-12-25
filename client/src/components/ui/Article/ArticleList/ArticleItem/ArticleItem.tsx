@@ -21,7 +21,9 @@ const ArticleItem = ({ article }: { article: TArticleData }) => {
 			onClick={e => clickHandler(e)}
 			className={styles.articleItemBlock}
 		>
-			<img className={styles.articleItemImage} src={article.image} />
+			<div className={styles.articleItemImageBlock}>
+				<img className={styles.articleItemImage} src={article.image} />
+			</div>
 			<div className={styles.articleItemDescription}>
 				<div
 					onClick={e => clickHandler(e)}
@@ -30,7 +32,7 @@ const ArticleItem = ({ article }: { article: TArticleData }) => {
 					{article.title}
 				</div>
 
-				<div className='mt-9 pr-4'>
+				<div className='pr-4'>
 					<div className={styles.articleItemCategory}>
 						{article.category.map((item, idx) => (
 							<>

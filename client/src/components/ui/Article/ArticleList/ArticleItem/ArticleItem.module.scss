@@ -1,9 +1,13 @@
 .articleItemBlock {
-	@apply cursor-pointer rounded-[8px] transition duration-500 ease-in-out bg-transparent hover:bg-gray-700/[.09] md:flex md:flex-row sm:flex sm:flex-col px-2 py-2;
+	@apply rounded-[8px] transition duration-500 ease-in-out bg-transparent hover:bg-gray-700/[.09] md:flex md:flex-row sm:flex sm:flex-col px-2 py-2;
+}
+
+.articleItemImageBlock {
+	@apply relative h-full overflow-hidden bg-cover bg-no-repeat rounded-[8px]
 }
 
 .articleItemImage {
-	@apply rounded-[8px] md:w-[196px] md:h-[110px] sm:w-full ;
+	@apply md:w-[196px] md:h-[110px] sm:w-full transition duration-300 ease-in-out hover:scale-110;
 }
 
 .articleItemDescription {
@@ -11,11 +15,11 @@
 }
 
 .articleItemTitle {
-	@apply cursor-pointer text-[18px] font-bold sm:mt-2;
+	@apply cursor-pointer text-[18px] font-bold sm:mt-2 transition duration-500 ease-in-out hover:text-rose-600;
 }
 
 .articleItemComments {
-	@apply flex flex-row text-[17px] text-gray-500 items-center;
+	@apply cursor-pointer flex flex-row text-[17px] text-gray-500 items-center transition duration-500 ease-in-out hover:text-rose-600;
 }
 
 .articleItemCategory {
