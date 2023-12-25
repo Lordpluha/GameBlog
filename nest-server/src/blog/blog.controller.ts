@@ -73,7 +73,13 @@ export class BlogController {
 		@User('id') userId: number,
 		@Param('id', ParseIntPipe) id: number,
 		@Body() updateBlogDto: UpdateBlogDto,
-		@UploadedFile() file?: Express.Multer.File
+		@UploadedFile(
+			new ParseFilePipe({
+				fileIsRequired: false,
+				validators: [new FileTypeValidator({ fileType: /\/(jpg|jpeg|png)$/ })]
+			})
+		)
+		file?: Express.Multer.File
 	) {
 		return this.blogService.update(id, userId, updateBlogDto, file)
 	}
