@@ -4,11 +4,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { dateConverter } from '../../../../tools/ArticleDateConverter'
 import ArticleCategory from '../../../CategoryItem/CategoryItem'
-import { TArticleData } from '../../../types/ArticleData.type'
 
+import { IArticle } from '../../../interfaces/Article.interface'
 import styles from './ArticleItem.module.scss'
 
-const ArticleItem = ({ article }: { article: TArticleData }) => {
+const ArticleItem = ({ article }: { article: IArticle }) => {
 	const navigate = useNavigate()
 
 	const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
@@ -35,10 +35,10 @@ const ArticleItem = ({ article }: { article: TArticleData }) => {
 				<div className='pr-4'>
 					<div className={styles.articleItemCategory}>
 						{article.category.map((item, idx) => (
-							<>
-								{idx > 0 && <div className="mx-1">|</div>}
-								<ArticleCategory cat={item} key={idx} />
-							</>
+							<div key={idx}>
+								{idx > 0 && <div className='mx-1'>|</div>}
+								<ArticleCategory cat={item} />
+							</div>
 						))}
 					</div>
 					<div className='flex flex-row justify-between'>

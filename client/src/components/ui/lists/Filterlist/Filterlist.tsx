@@ -1,6 +1,6 @@
 import Filter from './Filter/Filter'
 
-import styles from './Filterlist.module.scss'
+import styles from './FilterList.module.scss'
 
 export interface IFilter {
 	name: string
@@ -11,7 +11,7 @@ type TFilterListProps = {
 	filters: Array<IFilter>
 }
 
-const Filterlist = ({ filters }: TFilterListProps) => {
+const FilterList = ({ filters }: TFilterListProps) => {
 	return (
 		<section className={styles.filters}>
 			<ul className={styles.filter_list}>
@@ -23,4 +23,4 @@ const Filterlist = ({ filters }: TFilterListProps) => {
 	)
 }
 
-export default Filterlist
+export default FilterList

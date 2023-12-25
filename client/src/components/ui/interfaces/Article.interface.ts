@@ -1,6 +1,6 @@
-import { ICategory } from '../interfaces/Category.interface'
+import { ICategory } from './Category.interface'
 
-export type TArticleData = {
+export interface IArticle {
 	id: number
 	seo: string
 	title: string

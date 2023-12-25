@@ -1,7 +1,7 @@
-import { TArticleData } from '../../types/ArticleData.type'
+import { IArticle } from '../../interfaces/Article.interface'
 import ArticleItem from './ArticleItem/ArticleItem'
 
-const ArticleList = ({ articleList }: { articleList: TArticleData[] }) => {
+const ArticleList = ({ articleList }: { articleList: IArticle[] }) => {
 	return (
 		<div className='md:container flex flex-col'>
 			{articleList.map((el, i) => (
