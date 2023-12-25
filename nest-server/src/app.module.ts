@@ -5,6 +5,8 @@ import { AuthModule } from './auth/auth.module'
 import { UserModule } from './user/user.module'
 import { FileModule } from './file/file.module'
 import { BlogModule } from './blog/blog.module'
+import { ServeStaticModule } from '@nestjs/serve-static'
+import { join } from 'path'
 
 @Module({
 	imports: [
@@ -12,7 +14,10 @@ import { BlogModule } from './blog/blog.module'
 		AuthModule,
 		UserModule,
 		FileModule,
-		BlogModule
+		BlogModule,
+		ServeStaticModule.forRoot({
+			rootPath: join(__dirname, '..', 'static')
+		})
 	]
 })
 export class AppModule {}
