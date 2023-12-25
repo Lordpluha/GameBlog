@@ -6,6 +6,7 @@ import { PrismaService } from 'src/common/prisma.service'
 import { PaginationBlogQueryDto } from './dto/pagination.blog.dto'
 import { BLOG_NOT_FOUND } from './constants/error.blogs.constants'
 import * as generateSlug from 'slug'
+import { returnUserBaseObject } from 'src/user/dto/return-user.dto'
 
 @Injectable()
 export class BlogService {
@@ -32,11 +33,7 @@ export class BlogService {
 			},
 			include: {
 				author: {
-					select: {
-						id: true,
-						email: true,
-						name: true
-					}
+					select: returnUserBaseObject
 				}
 			}
 		})
@@ -53,11 +50,7 @@ export class BlogService {
 				take: count,
 				include: {
 					author: {
-						select: {
-							id: true,
-							name: true,
-							email: true
-						}
+						select: returnUserBaseObject
 					}
 				}
 			}),
@@ -68,7 +61,12 @@ export class BlogService {
 
 	async findOne(id: number) {
 		const blog = await this.prisma.blog.findUnique({
-			where: { id }
+			where: { id },
+			include: {
+				author: {
+					select: returnUserBaseObject
+				}
+			}
 		})
 		if (!blog) throw new NotFoundException(BLOG_NOT_FOUND)
 		return blog
@@ -101,11 +99,7 @@ export class BlogService {
 			},
 			include: {
 				author: {
-					select: {
-						id: true,
-						name: true,
-						email: true
-					}
+					select: returnUserBaseObject
 				}
 			}
 		})
@@ -127,7 +121,11 @@ export class BlogService {
 	async bySlug(slug: string) {
 		const blog = await this.prisma.blog.findUnique({
 			where: { slug },
-			include: { author: { select: { id: true, name: true, email: true } } }
+			include: {
+				author: {
+					select: returnUserBaseObject
+				}
+			}
 		})
 
 		if (!blog) throw new NotFoundException(BLOG_NOT_FOUND)
