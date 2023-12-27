@@ -1,0 +1,31 @@
+.header {
+    @apply w-full bg-[#161b1d] items-center fixed flex h-[var(--header-height)] justify-center left-0 right-0 top-0
+}
+
+.headerLayout {
+    @apply flex justify-between items-center w-full py-[17px]
+}
+
+.headerLogo {
+    @apply px-8 py-2 font-extrabold text-[#ec2227] text-[21px]
+}
+
+.headerNav {
+    @apply md:static absolute md:min-h-fit min-h-[60vh] left-0 md:w-auto w-full flex items-center px-5
+}
+
+.toggleMenuOpen {
+    @apply top-[9%] bg-white text-stone-900
+}
+
+.toggleMenuClose {
+    @apply top-[-100%]
+}
+
+.headerNavUl {
+    @apply flex flex-col md:flex-row md:items-center md:text-white gap-6 text-[18px]
+}
+
+.headerRightButtonsBlock {
+    @apply flex justify-between items-center gap-6 px-6 text-white text-[10px]
+}

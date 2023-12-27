@@ -1,0 +1,19 @@
+.headerUserButton {
+    @apply bg-[#262a2c] rounded-full p-2
+}
+
+.userAuthBlock {
+    @apply h-screen w-screen fixed top-0 left-0 flex items-center justify-center opacity-0 p-9 bg-[#f3f4f5] rounded-3xl border-solid border-2 border-zinc-300 shadow-2xl
+}
+
+.useAuthContent {
+    @apply bg-zinc-400
+}
+
+.userAuthHeaderBtnClose {
+    @apply text-zinc-600 cursor-pointer absolute top-4 right-4 text-[18px] p-0
+}
+
+.userAuthTitle {
+    @apply items-center text-zinc-800 text-2xl font-semibold
+}

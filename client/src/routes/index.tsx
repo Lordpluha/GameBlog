@@ -7,8 +7,9 @@ import ReadPage from "../pages/ReadPage";
 import StreamsPage from "../pages/StreamsPage";
 import SupportPage from "../pages/SupportPage";
 import WatchPage from "../pages/WatchPage";
-import Layout from "../pages/Layout";
+import Layout from "../components/ui/Layout";
 import ErrorPage from "../pages/ErrorPage";
+import HomePage from "../pages/HomePage";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
+            {
+                path: '/',
+                element: <HomePage />
+            },
             {
                 path: '/blogs',
                 element: <BlogsPage />
