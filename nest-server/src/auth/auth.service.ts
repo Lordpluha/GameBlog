@@ -40,7 +40,7 @@ export class AuthService {
 		const token = await this.tokenService.byToken(refreshToken)
 		const user = await this.userService.byId(userId)
 		if (!token || !user) throw new UnauthorizedException()
-		const userDto = { id: user.id, email: user.email, name: user.name }
+		const userDto = { id: user.id, email: user.email, name: user.name, role: user.role }
 		const tokens = await this.tokenService.generate(userDto)
 		await this.tokenService.save(tokens.refreshToken, user.id)
 		return {
@@ -56,12 +56,8 @@ export class AuthService {
 	}
 
 	private async genAndSaveTokens(user: User) {
-		const userDto = { email: user.email, id: user.id, name: user.name }
-		const tokens = await this.tokenService.generate({
-			email: user.email,
-			id: user.id,
-			name: user.name
-		})
+		const userDto = { email: user.email, id: user.id, name: user.name, role: user.role }
+		const tokens = await this.tokenService.generate(userDto)
 		await this.tokenService.save(tokens.refreshToken, user.id)
 		return {
 			user: userDto,

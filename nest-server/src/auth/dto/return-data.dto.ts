@@ -7,6 +7,8 @@ export class SuccessUserDto {
 	id: number
 	@ApiProperty({ description: "User's name", nullable: false })
 	name: number
+	@ApiProperty({ description: "User's role", nullable: false, default: 'User' })
+	role: string
 }
 
 export class TokensDataDto {
