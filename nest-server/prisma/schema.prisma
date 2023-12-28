@@ -51,34 +51,24 @@ model Tags {
 }
 
 model Article {
-  id         Int                    @id @default(autoincrement())
+  id         Int        @id @default(autoincrement())
   title      String
   content    String
   preview    String
-  slug       String?                @unique
-  isVerif    Boolean                @default(false)
+  slug       String?    @unique
+  isVerif    Boolean    @default(false)
   authorId   Int
-  createdAt  DateTime               @default(now())
-  updatedAt  DateTime               @updatedAt
-  author     User                   @relation(fields: [authorId], references: [id])
-  categories CategoriesOnArticles[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  author     User       @relation(fields: [authorId], references: [id])
+  categories Category[] @relation("ArticleToCategory")
 }
 
 model Category {
-  id        Int                    @id @default(autoincrement())
-  name      String                 @unique
-  slug      String?                @unique
-  createdAt DateTime               @default(now())
-  updatedAt DateTime               @updatedAt
-  articles  CategoriesOnArticles[]
-}
-
-model CategoriesOnArticles {
-  articleId  Int
-  categoryId Int
-  assignedAt DateTime @default(now())
-  category   Category @relation(fields: [categoryId], references: [id])
-  article    Article  @relation(fields: [articleId], references: [id])
-
-  @@id([articleId, categoryId])
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String?   @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  articles  Article[] @relation("ArticleToCategory")
 }
