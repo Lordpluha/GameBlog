@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 /**
- * Custom react hook, which provides feature to
+ * Custom react hook, which provides feature to render data after load
  *
  * @author Lordpluha
  * @param callback void function, which fetch data
