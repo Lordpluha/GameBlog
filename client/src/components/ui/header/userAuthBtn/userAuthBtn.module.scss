@@ -2,18 +2,38 @@
     @apply bg-[#262a2c] rounded-full p-2
 }
 
-.userAuthBlock {
-    @apply h-screen w-screen fixed top-0 left-0 flex items-center justify-center opacity-0 p-9 bg-[#f3f4f5] rounded-3xl border-solid border-2 border-zinc-300 shadow-2xl
+.userAuthBlockOverflow {
+    @apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-0 justify-center items-center w-full md:inset-0 h-full max-h-full bg-zinc-800 bg-opacity-25
 }
 
-.useAuthContent {
-    @apply bg-zinc-400
+.userAuthBlockPosition {
+    @apply relative justify-center items-center p-4 w-full max-w-md max-h-full
+}
+
+.userAuthBlockWrapper {
+    @apply relative bg-white rounded-3xl shadow-2xl
 }
 
 .userAuthHeaderBtnClose {
-    @apply text-zinc-600 cursor-pointer absolute top-4 right-4 text-[18px] p-0
+    @apply absolute cursor-pointer top-3 end-2.5 text-gray-700 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white
+}
+
+.useAuthContent {
+    @apply p-4 md:p-5 text-center gap-3 text-zinc-900
 }
 
 .userAuthTitle {
-    @apply items-center text-zinc-800 text-2xl font-semibold
+    @apply items-center mt-20 text-2xl font-semibold
+}
+
+.userAuthBtnSocialIcon {
+    @apply flex justify-center items-center py-5 gap-1
+}
+
+.userAuthBtnRegistration {
+    @apply py-2 rounded-lg px-4 text-lg bg-gray-300
+}
+
+.userAuthBtnPrivacy {
+    @apply text-zinc-500 text-sm w-full mt-5
 }

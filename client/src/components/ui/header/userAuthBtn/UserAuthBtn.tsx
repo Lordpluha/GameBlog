@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './userAuthBtn.module.scss'
+import CloseXIcon from '../../icons/CloseXIcon'
 
 const UserAuthBtn = () => {
   const [userBtn, setUserBtn] = React.useState<boolean>(false)
@@ -11,16 +12,26 @@ const UserAuthBtn = () => {
                 <circle cx="12" cy="7" r="4"/>
             </svg>
         </button>
-        {userBtn&&<div className={`dark:bg-[#1e2224] dark:border-zinc-800 ${styles.userAuthBlock}`}>
-            <div className={styles.useAuthContent} onClick={e => e.stopPropagation()}>
-                <span className={styles.userAuthHeaderBtnClose} onClick={() => setUserBtn(!userBtn)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
-                        <path d="M18 6 6 18"/>
-                        <path d="m6 6 12 12"/>
-                    </svg>
-                </span>
-                <div className={`dark:text-zinc-200 ${styles.userAuthTitle}`}>Вход на GameBlog</div>
-                <div className={`dark:text-zinc-200`}>Вход на GameBlog</div>
+        {userBtn&&<div className={`dark:bg-[#2f3233] dark:bg-opacity-45 dark:border-zinc-800 ${styles.userAuthBlockOverflow}`}>
+            <div className={styles.userAuthBlockPosition}>
+                <div className={`dark:bg-zinc-800 ${styles.userAuthBlockWrapper}`}>
+                    <div className={styles.userAuthHeaderBtnClose} onClick={() => setUserBtn(!userBtn)}>
+                        <CloseXIcon />
+                    </div>
+                    <div className={styles.useAuthContent}>
+                        <div className={`dark:text-zinc-200 ${styles.userAuthTitle}`}>Вход на GameBlog</div>
+                        <div className={`dark:text-zinc-200 pt-3 text-lg`}>Войти через аккаунт</div>
+                        <ul className={styles.userAuthBtnSocialIcon}>
+                            <li>SlSocialVkontakte</li>
+                            <li>SlSocialGoogle</li>
+                            <li>SlSocialLinkedin</li>
+                        </ul>
+                        <button className={styles.userAuthBtnRegistration}>
+                            Зарегистрироваться
+                        </button>
+                        <div className={styles.userAuthBtnPrivacy}>Авторизуясь, ты соглашаешься с правилами сайта и пользовательским соглашением.</div>
+                    </div>
+                </div>
             </div>
         </div>}
     </>
