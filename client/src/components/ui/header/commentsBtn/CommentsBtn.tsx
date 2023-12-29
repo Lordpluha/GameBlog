@@ -3,7 +3,7 @@ import styles from './commentsBtn.module.scss'
 import MessageCircleIcon from '../../icons/MessageCircleIcon'
 import CloseXIcon from '../../icons/CloseXIcon'
 import { INewComments } from '../../interfaces/NewComments.interface'
-import CommentItem from './CommentsItem/CommentItem'
+import CommentItem from './commentsItem/CommentItem'
 
 /**
  * Modal component with a list of new comments
