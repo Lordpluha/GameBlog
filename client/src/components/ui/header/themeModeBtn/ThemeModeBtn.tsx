@@ -58,7 +58,10 @@ const ThemeModeBtn = () => {
         </button>
         {toggleTheme && <ul className={styles.headerToggleTheme}>
             <li className={styles.headerToggleThemeLi} onClick={() => switchTheme('light')}>
-                <span className={theme === 'light'?'text-[#e6d649]':'text-[#6d7479]'}>
+                <span className={theme === 'light' ?
+                      'text-[#e6d649]'
+                    :
+                      'text-[#6d7479]'}>
                   <SunIcon />
                 </span>    
                 <span className={theme === 'light'?'text-white':''}>
@@ -66,7 +69,10 @@ const ThemeModeBtn = () => {
                 </span>
             </li>
             <li className={styles.headerToggleThemeLi}  onClick={() => switchTheme('dark')}>
-                <span className={theme === 'dark'?'text-[#5d5fef]':'text-[#6d7479]'}>
+                <span className={theme === 'dark' ?
+                      'text-[#5d5fef]'
+                    :
+                      'text-[#6d7479]'}>
                   <MoonIcon />
                 </span>
                 <span className={theme === 'dark'?'text-white':''}>

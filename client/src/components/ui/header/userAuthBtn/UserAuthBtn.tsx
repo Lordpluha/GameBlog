@@ -1,6 +1,11 @@
 import React from 'react'
 import styles from './userAuthBtn.module.scss'
 import CloseXIcon from '../../icons/CloseXIcon'
+import clsx from 'clsx'
+import VKIcon from '../../icons/VKIcon'
+import GoogleIcon from '../../icons/GoogleIcon'
+import YandexIcon from '../../icons/YandexIcon'
+import OkIcon from '../../icons/OkIcon'
 
 const UserAuthBtn = () => {
   const [userBtn, setUserBtn] = React.useState<boolean>(false)
@@ -12,19 +17,28 @@ const UserAuthBtn = () => {
                 <circle cx="12" cy="7" r="4"/>
             </svg>
         </button>
-        {userBtn&&<div className={`dark:bg-[#2f3233] dark:bg-opacity-45 dark:border-zinc-800 ${styles.userAuthBlockOverflow}`}>
+        {userBtn&&<div className={
+                clsx('dark:bg-[#2f3233] dark:bg-opacity-45 dark:border-zinc-800', styles.userAuthBlockOverflow)
+            }>
             <div className={styles.userAuthBlockPosition}>
-                <div className={`dark:bg-zinc-800 ${styles.userAuthBlockWrapper}`}>
+                <div className={
+                        clsx('dark:bg-zinc-800', styles.userAuthBlockWrapper)
+                    }>
                     <div className={styles.userAuthHeaderBtnClose} onClick={() => setUserBtn(!userBtn)}>
                         <CloseXIcon />
                     </div>
                     <div className={styles.useAuthContent}>
-                        <div className={`dark:text-zinc-200 ${styles.userAuthTitle}`}>Вход на GameBlog</div>
-                        <div className={`dark:text-zinc-200 pt-3 text-lg`}>Войти через аккаунт</div>
+                        <div className={
+                            clsx('dark:text-zinc-200', styles.userAuthTitle)
+                        }>
+                            Вход на GameBlog
+                        </div>
+                        <div className='dark:text-zinc-200 pt-3 text-lg'>Войти через аккаунт</div>
                         <ul className={styles.userAuthBtnSocialIcon}>
-                            <li>SlSocialVkontakte</li>
-                            <li>SlSocialGoogle</li>
-                            <li>SlSocialLinkedin</li>
+                            <li><VKIcon /></li>
+                            <li><GoogleIcon /></li>
+                            <li><YandexIcon /></li>
+                            <li><OkIcon /></li>
                         </ul>
                         <button className={styles.userAuthBtnRegistration}>
                             Зарегистрироваться

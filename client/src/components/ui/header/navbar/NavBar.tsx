@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import styles from './navBar.module.scss'
+import clsx from 'clsx'
 
 /**
  * Navigation adaptive bar
@@ -9,7 +10,9 @@ import styles from './navBar.module.scss'
  */
 const NavBar = ({toggleMenu}:{toggleMenu:boolean}) => {  
   return (
-    <nav className={`${styles.headerNav} ${toggleMenu ? styles.toggleMenuOpen : styles.toggleMenuClose}`}>
+    <nav className={
+        clsx(styles.headerNav, toggleMenu ? styles.toggleMenuOpen : styles.toggleMenuClose)
+    }>
         <ul className={styles.headerNavUl}>
             <li><NavLink to="/news">Новости</NavLink></li>
             <li><NavLink to="/read">Читать</NavLink></li>

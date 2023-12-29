@@ -3,6 +3,7 @@ import styles from './searchFormBtn.module.scss'
 import SearchIcon from '../../icons/SearchIcon'
 import CloseXIcon from '../../icons/CloseXIcon'
 import SearchTags from './SearchTags'
+import clsx from 'clsx'
 
 /** Header search componen included input field and search tags */
 const SearchFormBtn = () => {
@@ -20,7 +21,9 @@ const SearchFormBtn = () => {
                         <div className='text-[#747c81] dark:text-[#71797e] absolute ml-3'>
                             <SearchIcon />
                         </div>
-                        <input type="text" className={`dark:bg-[#262a2c] dark:text-[#71797e] ${styles.searchInput}`} placeholder="ПОИСК" />
+                        <input type="text" className={
+                            clsx('dark:bg-[#262a2c] dark:text-[#71797e]', styles.searchInput)
+                        } placeholder="ПОИСК" />
                     </div>
                     <SearchTags />
                 </div>

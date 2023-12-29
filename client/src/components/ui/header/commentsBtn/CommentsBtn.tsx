@@ -4,6 +4,7 @@ import MessageCircleIcon from '../../icons/MessageCircleIcon'
 import CloseXIcon from '../../icons/CloseXIcon'
 import { INewComments } from '../../interfaces/NewComments.interface'
 import CommentItem from './commentsItem/CommentItem'
+import clsx from 'clsx'
 
 /**
  * Modal component with a list of new comments
@@ -20,8 +21,12 @@ const CommentsBtn = ({newComments}:{newComments:INewComments[]}) => {
         <button className={styles.headerCommentsButton} onClick={() => setOpenCom(!openCom)}>
             <MessageCircleIcon />
         </button>
-        {openCom&&<div className={`dark:bg-[#1e2224] ${styles.commentsBlock}`}>
-            <div className={`dark:text-zinc-200 ${styles.commentsBlockHeader}`}>
+        {openCom&&<div className={
+                clsx('dark:bg-[#1e2224]', styles.commentsBlock)
+            }>
+            <div className={
+                    clsx('dark:text-zinc-200', styles.commentsBlockHeader)
+                }>
                 <span className="text-3xl font-semibold">Новые комментарии</span>
                 <span className="cursor-pointer" onClick={() => setOpenCom(!openCom)}>
                     <CloseXIcon />
