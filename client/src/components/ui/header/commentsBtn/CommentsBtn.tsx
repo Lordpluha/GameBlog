@@ -33,9 +33,16 @@ const CommentsBtn = ({newComments}:{newComments:INewComments[]}) => {
                 </span>
             </div>
             <div className={styles.commentsBlockBody}>
-                {newComments.map((item, idx) => (
-                    <CommentItem key={idx} {...item} />
-                ))}
+                {
+                    newComments.length === 0 ?
+                        newComments.map((item, idx) => (
+                            <CommentItem key={idx} {...item} />
+                        ))
+                    :
+                        <p className='text-center text-gray-500 font-semibold text-2xl'>
+                            Комментариев еще нет!<br />Будь первым!
+                        </p>
+                }
             </div>
         </div>}
     </>
