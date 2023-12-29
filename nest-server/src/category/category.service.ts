@@ -44,6 +44,15 @@ export class CategoryService {
 		return category
 	}
 
+	async getByIds(ids: number[]) {
+		const category = await this.prisma.category.findMany({
+			where: {
+				OR: ids.map(id => ({ id }))
+			}
+		})
+		return category
+	}
+
 	async findAll({ count, page, orderByCount }: PaginationCategoryQueryDto) {
 		const [categories, categoriesCount] = await this.prisma.$transaction([
 			this.prisma.category.findMany({
