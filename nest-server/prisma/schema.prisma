@@ -42,7 +42,7 @@ model Blog {
   author    User     @relation(fields: [authorId], references: [id])
 }
 
-model Tags {
+model Tag {
   id        Int       @id @default(autoincrement())
   name      String    @unique
   slug      String?   @unique
@@ -64,7 +64,7 @@ model Article {
   anyTags    String?
   author     User       @relation(fields: [authorId], references: [id])
   categories Category[] @relation("ArticleToCategory")
-  tags       Tags[]     @relation("ArticleToTags")
+  tags       Tag[]      @relation("ArticleToTags")
 }
 
 model Category {
