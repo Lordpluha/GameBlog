@@ -15,6 +15,7 @@
 	"dependencies": {
 		"antd": "^5.12.4",
 		"autoprefixer": "^10.4.16",
+		"clsx": "^2.0.0",
 		"lucide": "^0.298.0",
 		"normalize.css": "^8.0.1",
 		"postcss": "^8.4.32",
