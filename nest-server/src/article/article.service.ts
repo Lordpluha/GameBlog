@@ -12,6 +12,7 @@ import { returnUserBaseObject } from 'src/user/dto/return-user.dto'
 import { PaginationArticleQueryDto } from './dto/pagination.article.dto'
 import { CategoryService } from 'src/category/category.service'
 import { returnTagBaseObject } from 'src/tag/dto/return-tag.dto'
+import { Prisma } from '@prisma/client'
 
 @Injectable()
 export class ArticleService {
@@ -68,11 +69,10 @@ export class ArticleService {
 		tagId
 	}: PaginationArticleQueryDto) {
 		const isVerifToBoolean = isVerif === 'true'
-		const where = { isVerif: isVerifToBoolean }
+		const where: Prisma.ArticleWhereInput = { isVerif: isVerifToBoolean }
 		authorId ? (where['author'] = { id: authorId }) : {}
-		categoryId ? (where['category'] = { id: categoryId }) : {}
-		tagId ? (where['tag'] = { id: categoryId }) : {}
-
+		categoryId ? (where['categories'] = { some: { id: categoryId } }) : {}
+		tagId ? (where['tags'] = { some: { id: tagId } }) : {}
 		console.log(where)
 		const [articles, articlesCount] = await this.prisma.$transaction([
 			this.prisma.article.findMany({
