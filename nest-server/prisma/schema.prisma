@@ -43,11 +43,12 @@ model Blog {
 }
 
 model Tags {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique
-  slug      String?  @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String?   @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  articles  Article[] @relation("ArticleToTags")
 }
 
 model Article {
@@ -60,8 +61,10 @@ model Article {
   authorId   Int
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
+  anyTags    String?
   author     User       @relation(fields: [authorId], references: [id])
   categories Category[] @relation("ArticleToCategory")
+  tags       Tags[]     @relation("ArticleToTags")
 }
 
 model Category {
