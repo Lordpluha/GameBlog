@@ -11,6 +11,7 @@ import { JwtGenerateDto } from 'src/auth/dto/jwt-generate.dto'
 import { returnUserBaseObject } from 'src/user/dto/return-user.dto'
 import { PaginationArticleQueryDto } from './dto/pagination.article.dto'
 import { CategoryService } from 'src/category/category.service'
+import { returnTagBaseObject } from 'src/tag/dto/return-tag.dto'
 
 @Injectable()
 export class ArticleService {
@@ -50,7 +51,9 @@ export class ArticleService {
 				author: {
 					select: returnUserBaseObject
 				},
-				tags: true
+				tags: {
+					select: returnTagBaseObject
+				}
 			}
 		})
 		return updatedArticle
@@ -84,7 +87,9 @@ export class ArticleService {
 					categories: {
 						select: returnCategoryBaseObject
 					},
-					tags: true
+					tags: {
+						select: returnTagBaseObject
+					}
 				}
 			}),
 			this.prisma.article.count({ where })
@@ -103,7 +108,9 @@ export class ArticleService {
 				author: {
 					select: returnUserBaseObject
 				},
-				tags: true
+				tags: {
+					select: returnTagBaseObject
+				}
 			}
 		})
 		if (!article) throw new NotFoundException(ARTICLE_NOT_FOUND)
@@ -134,18 +141,23 @@ export class ArticleService {
 			dataUp['preview'] = previewUrl
 			this.fileService.delete(article.preview)
 		}
-		const existsCategories = await this.categoryService.getByIds([...dto.categories])
+		let connectAndDisconnect = {}
+		if (dto.categories.length) {
+			const existsCategories = await this.categoryService.getByIds([...dto.categories])
+			connectAndDisconnect = {
+				disconnect: article.categories.map(c => ({ id: c.id })),
+				connect: existsCategories.map(c => ({ id: c.id }))
+			}
+		}
+
 		const updatedArticle = await this.prisma.article.update({
 			where: { id },
 			data: {
 				isVerif: false,
 				...dto,
 				...dataUp,
-				anyTags: dto.anyTags ? dto.anyTags.join() : article.anyTags,
-				categories: {
-					disconnect: article.categories.map(c => ({ id: c.id })),
-					connect: existsCategories.map(c => ({ id: c.id }))
-				}
+				anyTags: dto.anyTags.length ? dto.anyTags.join() : article.anyTags,
+				categories: connectAndDisconnect
 			},
 			include: {
 				categories: {
@@ -153,12 +165,6 @@ export class ArticleService {
 				},
 				author: {
 					select: returnUserBaseObject
-				},
-				tags: {
-					select: {
-						id: true,
-						name: true
-					}
 				}
 			}
 		})
@@ -175,7 +181,9 @@ export class ArticleService {
 				author: {
 					select: returnUserBaseObject
 				},
-				tags: true
+				tags: {
+					select: returnTagBaseObject
+				}
 			}
 		})
 		if (!article) throw new NotFoundException(ARTICLE_NOT_FOUND)
@@ -189,6 +197,7 @@ export class ArticleService {
 			data: {
 				isVerif: true,
 				tags: {
+					disconnect: article.tags.map(tag => ({ id: tag.id })),
 					connectOrCreate: article.anyTags.split(',').map((tag: string) => ({
 						create: { name: tag },
 						where: { name: tag }
@@ -202,7 +211,9 @@ export class ArticleService {
 				author: {
 					select: returnUserBaseObject
 				},
-				tags: true
+				tags: {
+					select: returnTagBaseObject
+				}
 			}
 		})
 	}
