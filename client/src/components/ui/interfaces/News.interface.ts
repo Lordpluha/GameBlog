@@ -1,10 +1,10 @@
-export interface INewsItem {
+export interface INews {
 	id: number
 	preview: string
 	content: string
 	slug: string
-	createdAt: string
-	updatedAt: string
+	createdAt: number
+	updatedAt: number
 	categorie: string
 	commentsCount: number
 	user: {

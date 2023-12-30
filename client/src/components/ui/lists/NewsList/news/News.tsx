@@ -1,25 +1,36 @@
 import { Bookmark, MessageCircleMore, Zap } from 'lucide-react'
-import { INewsItem } from '../interfaces/NewsItem.interface'
+import { INews } from '../../../interfaces/News.interface'
+import { Link } from 'react-router-dom'
 
-export function NewsItem(news: INewsItem) {
+/* 
+ 1. Доработать функцию addToBookmark
+ 2. Обработать createdAt с помощью dateConverter
+ 3. Изменить все ссылки на валидные из конфига маршрутов
+ 4. Изменить пути импортов с алиасами
+*/
+
+export function News(news: INews) {
 	const { categorie, content, createdAt, preview, commentsCount, user } = news
+
+	// Логика отправки запроса на добавление в закладки
+	function addToBookmark() {}
 
 	return (
 		<div className='flex flex-col gap-4 max-w-[350px] bg-neutral-800 rounded-2xl overflow-hidden'>
-			<a className='h-56 overflow-hidden' href='#'>
+			<Link to={'#'} className='h-56 overflow-hidden'>
 				<img
 					className='w-full h-full object-cover hover:scale-110 duration-500'
 					src={preview}
 					alt='image'
 				/>
-			</a>
+			</Link>
 			<div className='flex flex-col gap-4 p-3'>
 				<div className='flex justify-between items-center'>
 					<div className='flex gap-2 items-center'>
 						<Zap size={20}></Zap>
 						<p className='text-xl'>{categorie}</p>
 					</div>
-					<a href='#' className='flex gap-4 items-center'>
+					<Link to={'#'} className='flex gap-4 items-center'>
 						<img
 							className='w-8 h-8 rounded-full object-cover outline-red-800 outline-2 outline'
 							src={user.avatar}
@@ -28,29 +39,29 @@ export function NewsItem(news: INewsItem) {
 						<p className='hover:text-red-700 hover:underline text-xl'>
 							{user.name}
 						</p>
-					</a>
+					</Link>
 				</div>
-				<a
-					href='#'
+				<Link
+					to={'#'}
 					className='text-2xl font-medium hover:text-red-700 hover:underline'
 				>
 					{content}
-				</a>
+				</Link>
 				<div className='flex justify-between items-center'>
 					<p className='text-lg text-gray-400'>{createdAt}</p>
 					<div className='flex gap-5 items-center'>
-						<button>
+						<button onClick={addToBookmark}>
 							<Bookmark className='stroke-gray-400 stroke-1 hover:stroke-red-600'></Bookmark>
 						</button>
-						<a
-							href='#'
+						<Link
+							to={'#'}
 							className='flex gap-2 items-center text-gray-500 hover:text-red-500 hover:stroke-red-500 stroke-gray-400'
 						>
 							<MessageCircleMore className=' stroke-inherit stroke-1 ' />
 							<p className='text-xl text-inherit'>
 								{commentsCount}
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

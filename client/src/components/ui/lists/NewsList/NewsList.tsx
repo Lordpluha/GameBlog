@@ -1,11 +1,14 @@
-import { INewsList } from '../../interfaces/NewsList.interface'
-import { NewsItem } from '../../newsItem/NewsItem'
+import { INews } from '../../interfaces/News.interface'
+import { News } from './news/News'
 
-export function NewsList({ news }: INewsList) {
+interface Props {
+	news: INews[]
+}
+export function NewsList({ news }: Props) {
 	return (
 		<div className='flex flex-col gap-10'>
 			{news.map(news => (
-				<NewsItem {...news} key={news.id} />
+				<News {...news} key={news.id} />
 			))}
 		</div>
 	)
