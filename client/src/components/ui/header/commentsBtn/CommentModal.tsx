@@ -3,6 +3,8 @@ import clsx from 'clsx'
 import styles from './commentsBtn.module.scss'
 import { X } from 'lucide-react'
 import { INewComment } from '../../interfaces/NewComments.interface'
+import { useRef } from 'react'
+import { useOnClickOutsideRef } from '../../../hooks/useOnClickOut'
 
 type TProps = {
     newComments: INewComment[],
@@ -10,8 +12,11 @@ type TProps = {
 }
 
 const CommentModal = ({ newComments, setOpenCom }: TProps) => {
+  const refCommentModal = useRef(null)
+  useOnClickOutsideRef(refCommentModal, setOpenCom)
+
   return (
-    <div className={clsx('dark:bg-[#1e2224]', styles.commentsBlock)}>
+    <div className={clsx('dark:bg-[#1e2224]', styles.commentsBlock)} ref={refCommentModal}>
         <div
             className={clsx(
                 'dark:text-zinc-200',

@@ -1,13 +1,24 @@
 import { Sun, Moon, MonitorSmartphone } from 'lucide-react'
 import styles from './themeModeBtn.module.scss'
+import { useRef } from 'react'
+import { useOnClickOutsideRef } from '../../../hooks/useOnClickOut'
 
 type TProps = {
     theme: string,
     setToggleTheme: (val:boolean) => void,
     setTheme: (val:string) => void
 }
-
+/**
+ * 
+ * @param theme - string value dark or light
+ * @param setToggleTheme - state popup with theme switch button accepting true or false
+ * @param setTheme - state accepting theme mode
+ * @returns ReactNode
+ */
 const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
+    const refModal = useRef(null)
+    //hook for close popup whith click outside
+    useOnClickOutsideRef(refModal, setToggleTheme)
     const isLight = theme === 'light' ? true : false
 
     const switchTheme = (val: string) => {
@@ -17,16 +28,13 @@ const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
 
     const deviceTheme = () => {
 		setToggleTheme(false)
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			setTheme('dark')
-		} 
-        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-			setTheme('light')
-		}
+		setTheme(
+            window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        )
 	}
 
   return (
-    <ul className={styles.headerToggleTheme}>
+    <ul className={styles.headerToggleTheme} ref={refModal}>
         <li
             className={styles.headerToggleThemeLi}
             onClick={() => switchTheme('light')}

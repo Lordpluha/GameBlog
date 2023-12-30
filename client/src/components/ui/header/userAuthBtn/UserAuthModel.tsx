@@ -5,6 +5,8 @@ import OkIcon from '../../icons/OkIcon'
 import VKIcon from '../../icons/VKIcon'
 import YandexIcon from '../../icons/YandexIcon'
 import styles from './userAuthBtn.module.scss'
+import { useRef } from 'react'
+import { useOnClickOutsideRef } from '../../../hooks/useOnClickOut'
 
 type TBotton = {
     userBtn: boolean,
@@ -12,6 +14,9 @@ type TBotton = {
 }
 
 const UserAuthModel = ({userBtn, setUserBtn}:TBotton) => {
+  const refModal = useRef(null)
+  //hook for close popup whith click outside
+  useOnClickOutsideRef(refModal, setUserBtn)
   return (
     <div
         className={clsx(
@@ -19,7 +24,7 @@ const UserAuthModel = ({userBtn, setUserBtn}:TBotton) => {
             styles.userAuthBlockOverflow
         )}
     >
-        <div className={styles.userAuthBlockPosition}>
+        <div className={styles.userAuthBlockPosition} ref={refModal}>
             <div
                 className={clsx(
                     'dark:bg-zinc-800',
