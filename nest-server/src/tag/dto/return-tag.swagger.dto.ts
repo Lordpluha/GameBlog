@@ -12,7 +12,7 @@ export class SuccessTagDto {
 }
 
 class CountArticle {
-	@ApiProperty({ description: 'Count article with this tag'})
+	@ApiProperty({ description: 'Count article with this tag' })
 	articles: number
 }
 

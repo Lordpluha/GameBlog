@@ -28,7 +28,7 @@ export class FileService {
 			const [dir, file] = fileName.split('/')
 			const path = join(__dirname, '..', '../static', `/${dir}`, file)
 			await unlink(path)
-		}catch(e) {
+		} catch (e) {
 			console.error(e)
 		}
 	}

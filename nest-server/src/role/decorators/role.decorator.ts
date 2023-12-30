@@ -6,9 +6,5 @@ import { RolesGuard } from '../guards/role.guard'
 export const ROLES_KEY = 'roles'
 
 export const RolesAuth = (...roles: Role[]) => {
-	return applyDecorators(
-        AccessJwtGuard(),
-        SetMetadata(ROLES_KEY, roles),
-        UseGuards(RolesGuard)
-    )
+	return applyDecorators(AccessJwtGuard(), SetMetadata(ROLES_KEY, roles), UseGuards(RolesGuard))
 }
