@@ -17,8 +17,13 @@ import { MAX_AGE_COOKIE_REFRESH, REFRESH_TOKEN_COOKIE } from './constants/auth.c
 import { Cookie } from './decorators/cookie.decorator'
 import { RefreshJwtGuard } from './decorators/refresh-jwt.decorator'
 import { User } from 'src/user/decorators/user.decorator'
-import { ApiCookieAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
-import { SuccessDataDto, SuccessRefreshDataDto } from './dto/return-data.dto'
+import { ApiTags } from '@nestjs/swagger'
+import {
+	DocSwaggerLoginAuth,
+	DocSwaggerLogoutAuth,
+	DocSwaggerRefreshAuth,
+	DocSwaggerRegistrationAuth
+} from './decorators/swagger.auth.decorator'
 
 @ApiTags('Auth')
 @UsePipes(new ValidationPipe())
@@ -32,13 +37,7 @@ export class AuthController {
 		path: '/'
 	}
 
-	@ApiOperation({ summary: 'Login user' })
-	@ApiResponse({
-		status: HttpStatus.OK,
-		description: 'Success',
-		type: SuccessDataDto
-	})
-	@ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
+	@DocSwaggerLoginAuth()
 	@HttpCode(HttpStatus.OK)
 	@Post('login')
 	async login(@Body() dto: LoginDto, @Res({ passthrough: true }) res: Response) {
@@ -47,13 +46,7 @@ export class AuthController {
 		return { ...user, accessToken: tokens.accessToken }
 	}
 
-	@ApiOperation({ summary: 'Registration user' })
-	@ApiResponse({
-		status: HttpStatus.OK,
-		description: 'Success',
-		type: SuccessDataDto
-	})
-	@ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
+	@DocSwaggerRegistrationAuth()
 	@HttpCode(HttpStatus.OK)
 	@Post('registration')
 	async registration(@Body() dto: RegistrationDto, @Res({ passthrough: true }) res: Response) {
@@ -62,18 +55,7 @@ export class AuthController {
 		return { ...user, accessToken: tokens.accessToken }
 	}
 
-	@ApiCookieAuth(REFRESH_TOKEN_COOKIE)
-	@ApiOperation({ summary: 'Refresh token' })
-	@ApiResponse({
-		status: HttpStatus.OK,
-		description: 'Success',
-		type: SuccessRefreshDataDto
-	})
-	@ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
-	@ApiResponse({
-		status: HttpStatus.UNAUTHORIZED,
-		description: 'Unauthorized'
-	})
+	@DocSwaggerRefreshAuth()
 	@RefreshJwtGuard()
 	@Get('refresh')
 	async refresh(
@@ -83,19 +65,10 @@ export class AuthController {
 	) {
 		const { user, tokens } = await this.authService.refresh(refreshToken, userId)
 		res.cookie(REFRESH_TOKEN_COOKIE, tokens.refreshToken, this.optionsCookie)
-		return { ...user, tokens }
+		return { ...user, accessToken: tokens.accessToken }
 	}
 
-	@ApiCookieAuth(REFRESH_TOKEN_COOKIE)
-	@ApiOperation({ summary: 'logout' })
-	@ApiResponse({
-		status: HttpStatus.NO_CONTENT,
-		description: 'Success. No Content'
-	})
-	@ApiResponse({
-		status: HttpStatus.UNAUTHORIZED,
-		description: 'Unauthorized'
-	})
+	@DocSwaggerLogoutAuth()
 	@RefreshJwtGuard()
 	@HttpCode(HttpStatus.NO_CONTENT)
 	@Get('logout')
