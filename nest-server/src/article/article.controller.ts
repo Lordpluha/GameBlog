@@ -26,12 +26,22 @@ import { RolesAuth } from 'src/role/decorators/role.decorator'
 import { Role } from 'src/role/role.enum'
 import { JwtGenerateDto } from 'src/auth/dto/jwt-generate.dto'
 import { PaginationArticleQueryDto } from './dto/pagination.article.dto'
-
+import { ApiTags } from '@nestjs/swagger'
+import {
+	DocSwaggerCreateArticle,
+	DocSwaggerFindAllArticle,
+	DocSwaggerFindOneArticle,
+	DocSwaggerUpdateArticle,
+	DocSwaggerDeleteArticle,
+	DocSwaggerConfirmArticle
+} from './decorators/swagger.article.decorator'
+@ApiTags('Article')
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('article')
 export class ArticleController {
 	constructor(private readonly articleService: ArticleService) {}
 
+	@DocSwaggerCreateArticle()
 	@HttpCode(HttpStatus.CREATED)
 	@RolesAuth(Role.ADMIN, Role.EDITOR, Role.AUTHOR)
 	@UseInterceptors(FileInterceptor('preview'))
@@ -48,25 +58,28 @@ export class ArticleController {
 	) {
 		return this.articleService.create(createArticleDto, userId, preview)
 	}
-
+	@DocSwaggerFindAllArticle()
 	@HttpCode(HttpStatus.OK)
 	@Get()
 	findAll(@Query() query: PaginationArticleQueryDto) {
 		return this.articleService.findAll(query)
 	}
 
+	@DocSwaggerFindOneArticle()
 	@HttpCode(HttpStatus.OK)
 	@Get(':id')
 	findOne(@Param('id', ParseIntPipe) id: number) {
 		return this.articleService.findOne(id)
 	}
 
+	@DocSwaggerFindOneArticle()
 	@HttpCode(HttpStatus.OK)
 	@Get('slug/:slug')
 	findOneBySlug(@Param('slug') slug: string) {
 		return this.articleService.findOneBySlug(slug)
 	}
 
+	@DocSwaggerUpdateArticle()
 	@HttpCode(HttpStatus.OK)
 	@RolesAuth(Role.ADMIN, Role.EDITOR, Role.AUTHOR)
 	@UseInterceptors(FileInterceptor('preview'))
@@ -86,6 +99,7 @@ export class ArticleController {
 		return this.articleService.update(id, updateArticleDto, user, file)
 	}
 
+	@DocSwaggerConfirmArticle()
 	@HttpCode(HttpStatus.OK)
 	@RolesAuth(Role.ADMIN, Role.EDITOR)
 	@Get('confirm/:id')
@@ -93,7 +107,9 @@ export class ArticleController {
 		return this.articleService.confirmArticle(id)
 	}
 
+	@DocSwaggerDeleteArticle()
 	@HttpCode(HttpStatus.NO_CONTENT)
+	@RolesAuth(Role.ADMIN)
 	@Delete(':id')
 	remove(@Param('id', ParseIntPipe) id: number) {
 		return this.articleService.remove(id)
