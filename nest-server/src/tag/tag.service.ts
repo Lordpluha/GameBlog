@@ -46,7 +46,11 @@ export class TagService {
 			this.prisma.tag.count()
 		])
 		const pageCount = Math.ceil(tagsCount / count)
-		return [tags, tagsCount, pageCount]
+		return {
+			items: tags,
+			count: tagsCount,
+			pageCount
+		}
 	}
 
 	async findOne(id: number) {
