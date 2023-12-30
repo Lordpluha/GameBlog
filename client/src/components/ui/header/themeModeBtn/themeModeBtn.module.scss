@@ -1,11 +1,11 @@
 .headerThemeButton {
-    @apply bg-[#262a2c] rounded-[10px] p-2 text-[10px]
+	@apply bg-[#262a2c] rounded-[10px] p-2 text-[10px];
 }
 
 .headerToggleTheme {
-    @apply absolute flex-col bg-[#262a2c] rounded-2xl py-6 px-10 right-20 top-[79px]
+	@apply absolute flex-col bg-[#262a2c] rounded-2xl py-6 px-10 right-20 top-[79px];
 }
 
 .headerToggleThemeLi {
-    @apply flex flex-row gap-3 text-[#71797e] py-5 cursor-pointer text-[16px]
+	@apply flex flex-row gap-3 text-[#71797e] py-5 cursor-pointer text-[16px];
 }

@@ -1,23 +1,23 @@
 .headerCommentsButton {
-    @apply bg-[#262a2c] rounded-[10px] p-2
+	@apply bg-[#262a2c] rounded-[10px] p-2;
 }
 
 .commentsBlock {
-    @apply bg-[#f3f4f5] w-[400px] rounded-3xl fixed top-[79px] right-4 bottom-1 shadow-2xl flex flex-col
+	@apply bg-[#f3f4f5] w-[400px] rounded-3xl fixed top-[79px] right-4 bottom-1 shadow-2xl flex flex-col;
 }
 
 .commentsBlockHeader {
-    @apply flex justify-between items-center text-zinc-600 p-4 mb-5
+	@apply flex justify-between items-center text-zinc-600 p-4 mb-5;
 }
 
 .commentsBlockBody {
-    @apply touch-auto scroll-auto p-4 overflow-auto flex-grow
+	@apply touch-auto scroll-auto p-4 overflow-auto flex-grow;
 }
 
 .commentsTitle {
-    @apply bg-white rounded-3xl p-4 flex flex-col gap-y-7 mb-2
+	@apply bg-white rounded-3xl p-4 flex flex-col gap-y-7 mb-2;
 }
 
 .commentsText {
-    @apply text-black font-semibold text-[14px]
+	@apply text-black font-semibold text-[14px];
 }

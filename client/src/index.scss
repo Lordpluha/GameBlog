@@ -1,8 +1,10 @@
+@import '../node_modules/modern-normalize/modern-normalize.css';
+
+@config "../tailwind.light.config.js";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "normalize.css";
 
 :root {
 	-moz-osx-font-smoothing: grayscale;
@@ -28,5 +30,5 @@
 }
 
 .active {
-    color: #ec2227;
+	color: #ec2227;
 }

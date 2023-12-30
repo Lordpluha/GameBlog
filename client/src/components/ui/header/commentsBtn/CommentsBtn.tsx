@@ -3,7 +3,7 @@ import styles from './commentsBtn.module.scss'
 import MessageCircleIcon from '../../icons/MessageCircleIcon'
 import CloseXIcon from '../../icons/CloseXIcon'
 import { INewComments } from '../../interfaces/NewComments.interface'
-import CommentItem from './commentsItem/CommentItem'
+import CommentItem from './CommentsItem/CommentItem'
 import clsx from 'clsx'
 
 /**
@@ -11,42 +11,56 @@ import clsx from 'clsx'
  * @param newComments - is response data from server
  * @param openCom boolean value for open or close modal windows with new comments
  * @interface INewComments interface describing of the response data from the server
- * 
+ *
  */
-const CommentsBtn = ({newComments}:{newComments:INewComments[]}) => {
-  const [openCom, setOpenCom] = useState<boolean>(false)
+const CommentsBtn = ({ newComments }: { newComments: INewComments[] }) => {
+	const [openCom, setOpenCom] = useState<boolean>(false)
 
-  return (
-    <>
-        <button className={styles.headerCommentsButton} onClick={() => setOpenCom(!openCom)}>
-            <MessageCircleIcon />
-        </button>
-        {openCom&&<div className={
-                clsx('dark:bg-[#1e2224]', styles.commentsBlock)
-            }>
-            <div className={
-                    clsx('dark:text-zinc-200', styles.commentsBlockHeader)
-                }>
-                <span className="text-3xl font-semibold">Новые комментарии</span>
-                <span className="cursor-pointer" onClick={() => setOpenCom(!openCom)}>
-                    <CloseXIcon />
-                </span>
-            </div>
-            <div className={styles.commentsBlockBody}>
-                {
-                    newComments.length === 0 ?
-                        newComments.map((item, idx) => (
-                            <CommentItem key={idx} {...item} />
-                        ))
-                    :
-                        <p className='text-center text-gray-500 font-semibold text-2xl'>
-                            Комментариев еще нет!<br />Будь первым!
-                        </p>
-                }
-            </div>
-        </div>}
-    </>
-  )
+	return (
+		<>
+			<button
+				className={styles.headerCommentsButton}
+				onClick={() => setOpenCom(!openCom)}
+			>
+				<MessageCircleIcon />
+			</button>
+			{openCom && (
+				<div
+					className={clsx('dark:bg-[#1e2224]', styles.commentsBlock)}
+				>
+					<div
+						className={clsx(
+							'dark:text-zinc-200',
+							styles.commentsBlockHeader
+						)}
+					>
+						<span className='text-3xl font-semibold'>
+							Новые комментарии
+						</span>
+						<span
+							className='cursor-pointer'
+							onClick={() => setOpenCom(!openCom)}
+						>
+							<CloseXIcon />
+						</span>
+					</div>
+					<div className={styles.commentsBlockBody}>
+						{newComments.length !== 0 ? (
+							newComments.map((item, idx) => (
+								<CommentItem key={idx} {...item} />
+							))
+						) : (
+							<p className='text-center text-gray-500 font-semibold text-2xl'>
+								Комментариев еще нет!
+								<br />
+								Будь первым!
+							</p>
+						)}
+					</div>
+				</div>
+			)}
+		</>
+	)
 }
 
 export default CommentsBtn

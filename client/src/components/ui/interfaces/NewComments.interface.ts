@@ -1,7 +1,7 @@
-export interface INewComments {
-    link: string,
-    title: string,
-    avatar: string,
-    login: string,
-    text: string
+export interface INewComment {
+	link: string
+	title: string
+	avatar: string
+	login: string
+	text: string
 }
