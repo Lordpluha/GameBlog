@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import styles from '../commentsBtn.module.scss'
-import { INewComments } from '../../../interfaces/NewComments.interface'
+import { INewComment } from '../../../interfaces/NewComments.interface'
 import clsx from 'clsx'
 
-const CommentItem = ({ link, title, avatar, login, text }: INewComments) => {
+const CommentItem = ({ link, title, avatar, login, text }: INewComment) => {
 	return (
 		<Link to={link}>
 			<div className={clsx('dark:bg-[#2f3437]', styles.commentsTitle)}>

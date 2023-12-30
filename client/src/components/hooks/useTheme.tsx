@@ -5,12 +5,13 @@ type TUseThemeHook = (
 ) => [theme: string, setTheme: Dispatch<SetStateAction<string>>]
 
 const useTheme: TUseThemeHook = (defaultTheme = 'light') => {
-	const defaultState = localStorage.getItem('themeMode') || defaultTheme
-	const [theme, setTheme] = useState<string>(defaultState)
-
+	const [theme, setTheme] = useState<string>(
+		localStorage.getItem('themeMode') || defaultTheme
+	)
+	
 	/** If switch device theme */
 	useEffect(() => {
-		const handler = (e) => {
+		const handler = (e:MediaQueryListEventInit) => {
 			setTheme(e.matches ? 'dark' : 'light')
 		}
 		window

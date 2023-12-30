@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import styles from './searchFormBtn.module.scss'
-import SearchIcon from '../../icons/SearchIcon'
-import CloseXIcon from '../../icons/CloseXIcon'
 import SearchTags from './SearchTags'
 import clsx from 'clsx'
+import { Search, X } from 'lucide-react'
 
 /** Header search componen included input field and search tags */
 const SearchFormBtn = () => {
@@ -12,7 +11,7 @@ const SearchFormBtn = () => {
 	return (
 		<>
 			<button onClick={() => setOpen(!open)}>
-				{!open ? <SearchIcon /> : <CloseXIcon />}
+				{!open ? <Search /> : <X />}
 			</button>
 			{open && (
 				<div className='fixed top-[79px] left-0 right-0'>
@@ -20,7 +19,7 @@ const SearchFormBtn = () => {
 						<div className='flex flex-col max-w-3xl mx-auto'>
 							<div className={styles.searchInputBlock}>
 								<div className='text-[#747c81] dark:text-[#71797e] absolute ml-3'>
-									<SearchIcon />
+								<Search />
 								</div>
 								<input
 									type='text'

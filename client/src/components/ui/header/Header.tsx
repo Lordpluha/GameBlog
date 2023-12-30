@@ -5,10 +5,9 @@ import SearchFormBtn from './searchFormBtn/SearchFormBtn'
 import CommentsBtn from './commentsBtn/CommentsBtn'
 import UserAuthBtn from './userAuthBtn/UserAuthBtn'
 import Logo from '../logo/Logo'
-import CloseXIcon from '../icons/CloseXIcon'
-import MenuIcon from '../icons/MenuIcon'
+import { Menu, X } from 'lucide-react'
 import NavBar from './navbar/NavBar'
-import { INewComments } from '../interfaces/NewComments.interface'
+import { INewComment } from '../interfaces/NewComments.interface'
 
 /**
  * Header component
@@ -17,7 +16,7 @@ import { INewComments } from '../interfaces/NewComments.interface'
  */
 const Header = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-	const [newCommentsData, setNewCommentsData] = useState<INewComments[]>([])
+	const [newCommentsData, setNewCommentsData] = useState<INewComment[]>([])
 
 	return (
 		<header className={styles.header}>
@@ -35,7 +34,7 @@ const Header = () => {
 						className='md:hidden'
 						onClick={() => setToggleMenu(!toggleMenu)}
 					>
-						{toggleMenu ? <CloseXIcon /> : <MenuIcon />}
+						{toggleMenu ? <X /> : <Menu />}
 					</button>
 				</div>
 			</div>
