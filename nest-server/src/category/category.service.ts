@@ -69,7 +69,12 @@ export class CategoryService {
 			}),
 			this.prisma.category.count()
 		])
-		return [categories, categoriesCount]
+		const pageCount = Math.ceil(categoriesCount / count)
+		return {
+			items: categories,
+			count: categoriesCount,
+			pageCount
+		}
 	}
 
 	async findOne(id: number) {
