@@ -95,7 +95,11 @@ export class ArticleService {
 			this.prisma.article.count({ where })
 		])
 		const pageCount = Math.ceil(articlesCount / count)
-		return [articles, articlesCount, pageCount]
+		return {
+			items: articles,
+			count: articlesCount,
+			pageCount
+		}
 	}
 
 	async findOne(id: number) {
