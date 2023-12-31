@@ -8,12 +8,15 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
   name      String
   password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  role      String    @default("User")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  isEditor  Boolean   @default(false)
+  articles  Article[]
   blogs     Blog[]
   token     Token?
 }
@@ -37,4 +40,38 @@ model Blog {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   author    User     @relation(fields: [authorId], references: [id])
+}
+
+model Tag {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String?   @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  articles  Article[] @relation("ArticleToTags")
+}
+
+model Article {
+  id         Int        @id @default(autoincrement())
+  title      String
+  content    String
+  preview    String
+  slug       String?    @unique
+  isVerif    Boolean    @default(false)
+  authorId   Int
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  anyTags    String?
+  author     User       @relation(fields: [authorId], references: [id])
+  categories Category[] @relation("ArticleToCategory")
+  tags       Tag[]      @relation("ArticleToTags")
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String?   @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  articles  Article[] @relation("ArticleToCategory")
 }
