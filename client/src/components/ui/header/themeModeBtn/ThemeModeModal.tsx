@@ -1,5 +1,5 @@
 import { Sun, Moon, MonitorSmartphone } from 'lucide-react'
-import styles from './themeModeBtn.module.scss'
+import './themeModeBtn.scss'
 import { useRef } from 'react'
 import { useOnClickOutsideRef } from '../../../hooks/useOnClickOut'
 
@@ -34,9 +34,9 @@ const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
 	}
 
   return (
-    <ul className={styles.headerToggleTheme} ref={refModal}>
+    <ul className='headerToggleTheme' ref={refModal}>
         <li
-            className={styles.headerToggleThemeLi}
+            className='headerToggleThemeLi'
             onClick={() => switchTheme('light')}
         >
             <Sun className={
@@ -47,7 +47,7 @@ const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
             </span>
         </li>
         <li
-            className={styles.headerToggleThemeLi}
+            className='headerToggleThemeLi'
             onClick={() => switchTheme('dark')}
         >
             <Moon className={
@@ -58,7 +58,7 @@ const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
             </span>
         </li>
         <li
-            className={styles.headerToggleThemeLi}
+            className='headerToggleThemeLi'
             onClick={deviceTheme}
         >
             <MonitorSmartphone className='text-white' />

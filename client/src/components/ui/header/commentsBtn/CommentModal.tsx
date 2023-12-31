@@ -1,6 +1,5 @@
 import CommentItem from './commentsItem/CommentItem'
-import clsx from 'clsx'
-import styles from './commentsBtn.module.scss'
+import './commentsBtn.scss'
 import { X } from 'lucide-react'
 import { INewComment } from '../../interfaces/NewComments.interface'
 import { useRef } from 'react'
@@ -16,13 +15,8 @@ const CommentModal = ({ newComments, setOpenCom }: TProps) => {
   useOnClickOutsideRef(refCommentModal, setOpenCom)
 
   return (
-    <div className={clsx('dark:bg-[#1e2224]', styles.commentsBlock)} ref={refCommentModal}>
-        <div
-            className={clsx(
-                'dark:text-zinc-200',
-                styles.commentsBlockHeader
-            )}
-        >
+    <div className='commentsBlock' ref={refCommentModal}>
+        <div className='commentsBlockHeader'>
             <span className='text-3xl font-semibold'>
                 Новые комментарии
             </span>
@@ -33,13 +27,13 @@ const CommentModal = ({ newComments, setOpenCom }: TProps) => {
                 <X />
             </span>
         </div>
-        <div className={styles.commentsBlockBody}>
-            {newComments ? (
+        <div className='commentsBlockBody'>
+            {newComments.length ? (
                 newComments.map((item, idx) => (
                     <CommentItem key={idx} {...item} />
                 ))
             ) : (
-                <p className='text-center text-gray-500 font-semibold text-2xl'>
+                <p className='blockWithoutComment'>
                     Комментариев еще нет!
                     <br />
                     Будь первым!

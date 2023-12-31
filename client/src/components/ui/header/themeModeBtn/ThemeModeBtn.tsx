@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './themeModeBtn.module.scss'
+import './themeModeBtn.scss'
 import { Sun, Moon } from 'lucide-react'
 import ThemeModeModal from './ThemeModeModal'
 import useTheme from '../../../hooks/useTheme'
@@ -14,7 +14,7 @@ const ThemeModeBtn = () => {
 	return (
 		<>
 			<button
-				className={styles.headerThemeButton}
+				className='headerThemeButton'
 				onClick={() => setToggleTheme(!toggleTheme)}
 			>
 				{theme === 'light' ? (

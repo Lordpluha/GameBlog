@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './userAuthBtn.module.scss'
+import './userAuthBtn.scss'
 import { UserRound } from 'lucide-react'
 import UserAuthModel from './UserAuthModel'
 
@@ -8,7 +8,7 @@ const UserAuthBtn = () => {
 	return (
 		<>
 			<button
-				className={styles.headerUserButton}
+				className='headerUserButton'
 				onClick={() => setUserBtn(!userBtn)}
 			>
 				<UserRound />
