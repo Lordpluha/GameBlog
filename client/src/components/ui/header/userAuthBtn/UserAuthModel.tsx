@@ -3,35 +3,38 @@ import GoogleIcon from '../../icons/GoogleIcon'
 import OkIcon from '../../icons/OkIcon'
 import VKIcon from '../../icons/VKIcon'
 import YandexIcon from '../../icons/YandexIcon'
-import './userAuthBtn.scss'
+import styles from './userAuthBtn.module.scss'
 import { useRef } from 'react'
-import { useOnClickOutsideRef } from '../../../hooks/useOnClickOut'
+import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
 
 type TBotton = {
     userBtn: boolean,
-    setUserBtn:(val:boolean) => void
+    openHandler:(val:boolean) => void
 }
-
-const UserAuthModel = ({userBtn, setUserBtn}:TBotton) => {
+/**
+ * Popup window for authorization user.
+ * Accepting props openHandler for close popup on click outside
+ */
+const UserAuthModel = ({userBtn, openHandler}:TBotton) => {
   const refModal = useRef(null)
   //hook for close popup whith click outside
-  useOnClickOutsideRef(refModal, setUserBtn)
+  useOnClickOutsideRef(refModal, openHandler)
   return (
-    <div className='userAuthBlockOverflow'>
-        <div className='userAuthBlockPosition' ref={refModal}>
-            <div className='userAuthBlockWrapper'>
+    <div className={styles.userAuthBlockOverflow}>
+        <div className={styles.userAuthBlockPosition} ref={refModal}>
+            <div className={styles.userAuthBlockWrapper}>
                 <div
-                    className='userAuthHeaderBtnClose'
-                    onClick={() => setUserBtn(!userBtn)}
+                    className={styles.userAuthHeaderBtnClose}
+                    onClick={() => openHandler(!userBtn)}
                 >
                     <X />
                 </div>
-                <div className='userAuthContent'>
-                    <div className='userAuthTitle'>Вход на GameBlog</div>
-                    <div className='dark:text-zinc-200 text-zinc-700 pt-3 text-lg'>
+                <div className={styles.userAuthContent}>
+                    <div className={styles.userAuthTitle}>Вход на GameBlog</div>
+                    <div className='text-[var(--text-color)] pt-3 text-lg'>
                         Войти через аккаунт
                     </div>
-                    <ul className='userAuthBtnSocialIcon'>
+                    <ul className={styles.userAuthBtnSocialIcon}>
                         <li>
                             <VKIcon />
                         </li>
@@ -45,10 +48,10 @@ const UserAuthModel = ({userBtn, setUserBtn}:TBotton) => {
                             <OkIcon />
                         </li>
                     </ul>
-                    <button className='userAuthBtnRegistration'>
+                    <button className={styles.userAuthBtnRegistration}>
                         Зарегистрироваться
                     </button>
-                    <div className='userAuthBtnPrivacy'>
+                    <div className={styles.userAuthBtnPrivacy}>
                         Авторизуясь, ты соглашаешься с правилами
                         сайта и пользовательским соглашением.
                     </div>

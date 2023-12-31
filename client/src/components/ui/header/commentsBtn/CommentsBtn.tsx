@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './commentsBtn.scss'
+import styles from './commentsBtn.module.scss'
 import { INewComment } from '../../interfaces/NewComments.interface'
 import { MessageCircleMore } from 'lucide-react'
 import CommentModal from './CommentModal'
@@ -13,12 +13,12 @@ const CommentsBtn = ({ newComments }: { newComments: INewComment[] }) => {
 	return (
 		<>
 			<button
-				className='headerCommentsButton'
+				className={styles.headerCommentsButton}
 				onClick={() => setOpenCom(!openCom)}
 			>
 				<MessageCircleMore />
 			</button>
-			{openCom && <CommentModal newComments={newComments} setOpenCom={setOpenCom} />}
+			{openCom && <CommentModal commentsList={newComments} openHandler={setOpenCom} />}
 		</>
 	)
 }

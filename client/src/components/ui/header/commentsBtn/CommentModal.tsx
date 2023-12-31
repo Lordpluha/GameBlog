@@ -1,39 +1,43 @@
 import CommentItem from './commentsItem/CommentItem'
-import './commentsBtn.scss'
+import styles from './commentsBtn.module.scss'
 import { X } from 'lucide-react'
 import { INewComment } from '../../interfaces/NewComments.interface'
-import { useRef } from 'react'
-import { useOnClickOutsideRef } from '../../../hooks/useOnClickOut'
+import React, { useRef } from 'react'
+import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
 
 type TProps = {
-    newComments: INewComment[],
-    setOpenCom: (openCom:boolean) => void
+    commentsList: INewComment[],
+    openHandler: (openCom:boolean) => void
 }
-
-const CommentModal = ({ newComments, setOpenCom }: TProps) => {
-  const refCommentModal = useRef(null)
-  useOnClickOutsideRef(refCommentModal, setOpenCom)
+/**
+ * Component popum modal with comments list.
+ * Accepting props commentsList and boolean state openHandler for close outside.
+ * useOnClickOutsideRef - custom hook for close popup on click outside
+ */
+const CommentModal = ({ commentsList, openHandler }: TProps) => {
+  const refCommentModal = useRef<HTMLDivElement>(null)
+  useOnClickOutsideRef(refCommentModal, openHandler)
 
   return (
-    <div className='commentsBlock' ref={refCommentModal}>
-        <div className='commentsBlockHeader'>
+    <div className={styles.commentsBlock} ref={refCommentModal}>
+        <div className={styles.commentsBlockHeader}>
             <span className='text-3xl font-semibold'>
                 Новые комментарии
             </span>
             <span
                 className='cursor-pointer'
-                onClick={() => setOpenCom(false)}
+                onClick={() => openHandler(false)}
             >
                 <X />
             </span>
         </div>
-        <div className='commentsBlockBody'>
-            {newComments.length ? (
-                newComments.map((item, idx) => (
+        <div className={styles.commentsBlockBody}>
+            {commentsList.length ? (
+                commentsList.map((item, idx) => (
                     <CommentItem key={idx} {...item} />
                 ))
             ) : (
-                <p className='blockWithoutComment'>
+                <p className={styles.blockWithoutComment}>
                     Комментариев еще нет!
                     <br />
                     Будь первым!

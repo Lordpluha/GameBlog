@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import '../commentsBtn.scss'
+import styles from '../commentsBtn.module.scss'
 import { INewComment } from '../../../interfaces/NewComments.interface'
 
 const CommentItem = ({ link, title, avatar, login, text }: INewComment) => {
 	return (
 		<Link to={link}>
-			<div className='commentsTitle'>
-				<h6 className='commentTitleH6'>
+			<div className={styles.commentItem}>
+				<h6 className={styles.commentTitle}>
 					{title}
 				</h6>
 				<div className='flex items-center text-[14px]'>
@@ -16,11 +16,11 @@ const CommentItem = ({ link, title, avatar, login, text }: INewComment) => {
 						src={avatar}
 						role='presentation'
 					/>
-					<p className='commentsUserLogin'>
+					<p className={styles.commentUserLogin}>
 						{login}
 					</p>
 				</div>
-				<div className='commentsText'>
+				<div className={styles.commentText}>
 					<p>{text}</p>
 				</div>
 			</div>

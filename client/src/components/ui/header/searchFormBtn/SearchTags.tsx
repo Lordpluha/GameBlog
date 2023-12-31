@@ -1,4 +1,4 @@
-import './searchFormBtn.scss'
+import styles from './searchFormBtn.module.scss'
 
 const tags = [
 	{name:'Игры'},
@@ -16,11 +16,10 @@ const SearchTags = () => {
 	return (
 		<ul className='flex gap-3 text-[16px] flex-wrap'>
 			{tags.map((tag, idx) => (
-				<li key={idx} className='searchFormTags'>
+				<li key={idx} className={styles.searchFormTags}>
 					<span>{tag.name}</span>
 				</li>
 			))}
-			
 		</ul>
 	)
 }

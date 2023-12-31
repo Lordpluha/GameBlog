@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './navBar.scss'
+import styles from './navBar.module.scss'
 import clsx from 'clsx'
 
 /**
@@ -10,11 +10,11 @@ const NavBar = ({ toggleMenu }: { toggleMenu: boolean }) => {
 	return (
 		<nav
 			className={clsx(
-				'headerNav',
-				toggleMenu ? 'toggleMenuOpen' : 'toggleMenuClose'
+				styles.headerNav,
+				toggleMenu ? styles.toggleMenuOpen : styles.toggleMenuClose
 			)}
 		>
-			<ul className='headerNavUl'>
+			<ul className={styles.headerNavUl}>
 				<li>
 					<NavLink to='/news'>Новости</NavLink>
 				</li>

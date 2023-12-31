@@ -1,10 +1,8 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-
-type TUseThemeHook = (
-	defaultTheme?: 'light' | 'dark'
-) => [theme: string, setTheme: Dispatch<SetStateAction<string>>]
-
-const useTheme: TUseThemeHook = (defaultTheme = 'light') => {
+import { useEffect, useState } from 'react'
+/**
+ * Castom hook for switch theme mode. Accepting default theme = 'light' and return {theme, setTheme}
+ */
+const useTheme = (defaultTheme = 'light') => {
 	const [theme, setTheme] = useState<string>(
 		localStorage.getItem('themeMode') || defaultTheme
 	)
@@ -23,15 +21,11 @@ const useTheme: TUseThemeHook = (defaultTheme = 'light') => {
 	}, [])
 
 	useEffect(() => {
+		document.documentElement.setAttribute('data-theme', theme)
 		localStorage.setItem('themeMode', theme)
-		if (theme === 'dark') {
-			document.body.classList.add('dark')
-		} else {
-			document.body.classList.remove('dark')
-		}
 	}, [theme])
 
-	return [theme, setTheme]
+	return {theme, setTheme}
 }
 
 export default useTheme

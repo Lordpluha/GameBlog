@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[data-theme='dark'] {
+	--text-color: #ffffff;
+  
+	--body-bg-color: #1b2124;
+	--modal-bg-color: #191d1f;
+	--itemBlock-bg-color: #282c2e;
+	--li-bg-color: #28292c;
+}
+  
+html[data-theme='light'] {
+	--text-color: #252525;
+
+	--body-bg-color: #fff;
+	--modal-bg-color: #e5e6e7;
+	--itemBlock-bg-color: #d1d5dc;
+	--li-bg-color: #b2b6c1;
+}
+
+:root {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	color-scheme: light dark;
+	
+	
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	// color: var(--text);
+	background-color: var(--body-bg-color);
+
+	--default-dark-btn-color: #262a2c;
+	--default-dark-text-color: #4d5153;
+	--default-dark-color: #19191b;
+	--default-light-color: white;
+}
+
+.active {
+	color: #ec2227;
+}
+
+.layoutComponent {
+	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col
+}

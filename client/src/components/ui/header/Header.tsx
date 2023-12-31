@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './header.scss'
+import styles from './header.module.scss'
 import ThemeModeBtn from './themeModeBtn/ThemeModeBtn'
 import SearchFormBtn from './searchFormBtn/SearchFormBtn'
 import CommentsBtn from './commentsBtn/CommentsBtn'
@@ -19,11 +19,11 @@ const Header = () => {
 	const [newCommentsData, setNewCommentsData] = useState<INewComment[]>([])
 
 	return (
-		<header className='header'>
-			<div className='headerLayout'>
+		<header className={styles.header}>
+			<div className={styles.headerLayout}>
 				<Logo />
 				<NavBar toggleMenu={toggleMenu} />
-				<div className='headerRightButtonsBlock'>
+				<div className={styles.headerRightButtonsBlock}>
 					<SearchFormBtn />
 					<div className='hidden md:block'>
 						<ThemeModeBtn />
