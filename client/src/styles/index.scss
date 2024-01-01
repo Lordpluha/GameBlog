@@ -39,10 +39,11 @@ html[data-theme='light'] {
 	--default-dark-text-color: #4d5153;
 	--default-dark-color: #19191b;
 	--default-light-color: white;
+	--hover-active-colore: #ec2227;
 }
 
 .active {
-	color: #ec2227;
+	color: var(--hover-active-colore);
 }
 
 .layoutComponent {

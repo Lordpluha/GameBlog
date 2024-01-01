@@ -1,11 +1,8 @@
 import { X } from 'lucide-react'
-import GoogleIcon from '../../icons/GoogleIcon'
-import OkIcon from '../../icons/OkIcon'
-import VKIcon from '../../icons/VKIcon'
-import YandexIcon from '../../icons/YandexIcon'
 import styles from './userAuthBtn.module.scss'
 import { useRef } from 'react'
 import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
+import SocialLinksComponent from '../../socialLinks/SocialLinksComponent'
 
 type TBotton = {
     userBtn: boolean,
@@ -34,20 +31,9 @@ const UserAuthModel = ({userBtn, openHandler}:TBotton) => {
                     <div className='text-[var(--text-color)] pt-3 text-lg'>
                         Войти через аккаунт
                     </div>
-                    <ul className={styles.userAuthBtnSocialIcon}>
-                        <li>
-                            <VKIcon />
-                        </li>
-                        <li>
-                            <GoogleIcon />
-                        </li>
-                        <li>
-                            <YandexIcon />
-                        </li>
-                        <li>
-                            <OkIcon />
-                        </li>
-                    </ul>
+                    <div className={styles.userAuthBtnSocialIcon}>
+                        <SocialLinksComponent />
+                    </div>
                     <button className={styles.userAuthBtnRegistration}>
                         Зарегистрироваться
                     </button>
