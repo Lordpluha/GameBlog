@@ -2,9 +2,8 @@ import CommentItem from './commentsItem/CommentItem'
 import styles from './commentsBtn.module.scss'
 import { X } from 'lucide-react'
 import { INewComment } from '../../interfaces/NewComments.interface'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
-
 type TProps = {
     commentsList: INewComment[],
     openHandler: (openCom:boolean) => void
