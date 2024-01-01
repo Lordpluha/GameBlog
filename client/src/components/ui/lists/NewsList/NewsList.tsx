@@ -1,10 +1,16 @@
 import { INews } from '../../interfaces/News.interface'
-import { News } from './news/News'
+import News from './news/News'
 
-interface Props {
+interface INewsListProps {
 	news: INews[]
 }
-export function NewsList({ news }: Props) {
+/**
+ * Renders a list of news items.
+ *
+ * @param {Array<object>} news - An array of news objects.
+ * @return {JSX.Element} The rendered news list.
+ */
+export default function NewsList({ news }: INewsListProps) {
 	return (
 		<div className='flex flex-col gap-10'>
 			{news.map(news => (

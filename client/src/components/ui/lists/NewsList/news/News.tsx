@@ -2,14 +2,13 @@ import { Bookmark, MessageCircleMore, Zap } from 'lucide-react'
 import { INews } from '../../../interfaces/News.interface'
 import { Link } from 'react-router-dom'
 
-/* 
- 1. Доработать функцию addToBookmark
- 2. Обработать createdAt с помощью dateConverter
- 3. Изменить все ссылки на валидные из конфига маршрутов
- 4. Изменить пути импортов с алиасами
-*/
-
-export function News(news: INews) {
+/**
+ * Renders a News component with the provided news data.
+ *
+ * @param {INews} news - The news data to be rendered.
+ * @return {JSX.Element} - The rendered News component.
+ */
+export default function News(news: INews) {
 	const { categorie, content, createdAt, preview, commentsCount, user } = news
 
 	// Логика отправки запроса на добавление в закладки
@@ -21,7 +20,7 @@ export function News(news: INews) {
 				<img
 					className='w-full h-full object-cover hover:scale-110 duration-500'
 					src={preview}
-					alt='image'
+					alt='preview'
 				/>
 			</Link>
 			<div className='flex flex-col gap-4 p-3'>
