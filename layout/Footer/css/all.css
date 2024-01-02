@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* SCSS Compiled */
 /*usage  @include font-size(13);*/
 #wrapper,
@@ -10,7 +11,8 @@ section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
 }
 
@@ -19,17 +21,253 @@ section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
   margin: 0 auto;
+  width: 1216px;
 }
 
-.filters {
+body {
+  background-color: #161B1D;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer {
   display: block;
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
-  background-color: #1E2224;
+  height: 745.5px;
+  padding: 32px 32px 58px;
+}
+.footer .top {
+  display: block;
+  margin: 0 0 64px 0;
+  height: 82px;
+}
+.footer .top .logo {
+  width: 641px;
+  float: left;
+}
+.footer .top .logo a {
+  height: 40px;
+  width: 224px;
+}
+.footer .top .logo a img {
+  height: 40px;
+  width: 224px;
+}
+.footer .top .logo p {
+  margin: 16px 0 0 0;
+  font-size: 16px;
+  color: #8B8D8E;
+}
+.footer .top ul.soc {
+  width: 481px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  float: right;
+}
+.footer .top ul.soc li {
+  width: 25px;
+  height: 25px;
+}
+.footer .top ul.soc li a {
+  width: 25px;
+  height: 25px;
+}
+.footer .top ul.soc li a img {
+  width: 25px;
+  height: 25px;
+}
+.footer .middle {
+  display: block;
+  height: 366px;
+  margin: 0 0 64px 0;
+}
+.footer .middle .first {
+  float: left;
+}
+.footer .middle .first .part {
+  width: 641px;
+  height: 90px;
+}
+.footer .middle .first .part .name {
+  margin: 0 0 16px;
+}
+.footer .middle .first .part .name li a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.footer .middle .first .part .name li a:hover {
+  color: #8B8D8E;
+}
+.footer .middle .first .part .fill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  padding: 0;
+  row-gap: 8px;
+  margin: 0 0 32px 0;
+}
+.footer .middle .first .part .fill li {
+  float: left;
+  content: "⋅";
+}
+.footer .middle .first .part .fill li a {
+  margin: 0 8px 0 8px;
+  cursor: pointer;
+  color: #747C81;
+  font-size: 14px;
+  line-height: 20px;
+  content: "⋅";
+}
+.footer .middle .first .part .fill li a:nth-child(1) {
+  margin-left: 0px;
+}
+.footer .middle .first .part .fill li a:hover {
+  color: #fff;
+}
+.footer .middle .first .part:nth-child(1) {
+  height: 114px;
+}
+.footer .middle .second {
+  float: right;
+}
+.footer .middle .second .part {
+  width: 481px;
+  height: 90px;
+}
+.footer .middle .second .part .name {
+  margin: 0 0 16px;
+}
+.footer .middle .second .part .name li a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.footer .middle .second .part .name li a:hover {
+  color: #8B8D8E;
+}
+.footer .middle .second .part .fill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  padding: 0;
+  row-gap: 8px;
+  margin: 0 0 32px 0;
+}
+.footer .middle .second .part .fill li {
+  float: left;
+  content: "⋅";
+}
+.footer .middle .second .part .fill li a {
+  margin: 0 8px 0 8px;
+  cursor: pointer;
+  color: #747C81;
+  font-size: 14px;
+  line-height: 20px;
+  content: "⋅";
+}
+.footer .middle .second .part .fill li a:nth-child(1) {
+  margin-left: 0px;
+}
+.footer .middle .second .part .fill li a:hover {
+  color: #fff;
+}
+.footer .middle .second .part:nth-child(1) {
+  height: 114px;
+}
+.footer .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer .bottom .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 600px;
+  float: left;
+}
+.footer .bottom .left li {
+  float: left;
+}
+.footer .bottom .left li a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer .bottom .left li a:hover {
+  color: #8B8D8E;
+}
+.footer .bottom .right {
+  float: right;
+}
+.footer .bottom .right .holder {
+  float: left;
+  height: 48px;
+  width: 48px;
+  margin: 0 15px 0 0;
+}
+.footer .bottom .right .holder img {
+  width: 100%;
+  height: 100%;
+}
+.footer .bottom .right .text {
+  float: left;
+}
+.footer .bottom .right .text p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.footer .bottom .right .text p:nth-child(2) {
+  color: #71747B;
 }
