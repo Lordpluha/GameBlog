@@ -2,21 +2,19 @@ import CommentItem from './commentsItem/CommentItem'
 import styles from './commentsBtn.module.scss'
 import { X } from 'lucide-react'
 import { INewComment } from '../../interfaces/NewComments.interface'
-import { useRef } from 'react'
-import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
-type TProps = {
+import { ForwardedRef, MutableRefObject, forwardRef } from 'react'
+
+type TCommentModalProps = {
     commentsList: INewComment[],
-    openHandler: (openCom:boolean) => void
+    refCommentModal: MutableRefObject<HTMLDivElement>,
+    setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
+
 /**
  * Component popum modal with comments list.
- * Accepting props commentsList and boolean state openHandler for close outside.
- * useOnClickOutsideRef - custom hook for close popup on click outside
+ * Accepting props commentsList and boolean state setModal for close outside
  */
-const CommentModal = ({ commentsList, openHandler }: TProps) => {
-  const refCommentModal = useRef<HTMLDivElement>(null)
-  useOnClickOutsideRef(refCommentModal, openHandler)
-
+const CommentModal = forwardRef(({ commentsList, setModal }: TCommentModalProps, refCommentModal:ForwardedRef<HTMLDivElement>) => {
   return (
     <div className={styles.commentsBlock} ref={refCommentModal}>
         <div className={styles.commentsBlockHeader}>
@@ -25,7 +23,7 @@ const CommentModal = ({ commentsList, openHandler }: TProps) => {
             </span>
             <span
                 className='cursor-pointer'
-                onClick={() => openHandler(false)}
+                onClick={() => setModal(false)}
             >
                 <X />
             </span>
@@ -45,6 +43,6 @@ const CommentModal = ({ commentsList, openHandler }: TProps) => {
         </div>
     </div>
   )
-}
+})
 
 export default CommentModal

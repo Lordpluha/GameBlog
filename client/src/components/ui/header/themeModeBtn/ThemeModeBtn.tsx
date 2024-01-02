@@ -1,25 +1,27 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import styles from './themeModeBtn.module.scss'
 import ThemeModeModal from './ThemeModeModal'
 import useTheme from '../../../hooks/useTheme'
-import ThemeBtnIcon from './ThemeBtnIcon'
+import ThemeBtnIcon from './btnIcon/ThemeBtnIcon'
+import useModal from '../../../hooks/useModal'
 
 /**
- * Toggle-button component for switch to app theme dark or lihgt
+ * Rendering component button for switch to app theme dark or lihgt
  */
 const ThemeModeBtn = () => {
-	const [toggleTheme, setToggleTheme] = useState<boolean>(false)
 	const {theme, setTheme} = useTheme()
+	const refModal = useRef<HTMLUListElement>(null!)
+  	const {modal, setModal} = useModal(refModal)
 
 	return (
 		<>
 			<button
 				className={styles.headerThemeButton}
-				onClick={() => setToggleTheme(!toggleTheme)}
+				onClick={() => setModal(!modal)}
 			>
 				<ThemeBtnIcon theme={theme} /> 
 			</button>
-			{toggleTheme && <ThemeModeModal theme={theme} setToggleTheme={setToggleTheme} setTheme={setTheme} />}
+			{modal && <ThemeModeModal setModal={setModal} theme={theme} setTheme={setTheme} refModal={refModal} />}
 		</>
 	)
 }

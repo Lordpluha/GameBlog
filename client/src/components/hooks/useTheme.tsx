@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { TTheme } from '../ui/TTheme.type'
+
 /**
  * Castom hook for switch theme mode. Accepting default theme = 'light' and return {theme, setTheme}
  */
-const useTheme = (defaultTheme = 'light') => {
-	const [theme, setTheme] = useState<string>(
-		localStorage.getItem('themeMode') || defaultTheme
+const useTheme = (defaultTheme: TTheme = 'light') => {
+	const [theme, setTheme] = useState<TTheme>(
+		(localStorage.getItem('themeMode') as TTheme) || defaultTheme
 	)
 	
 	/** If switch device theme */

@@ -1,33 +1,33 @@
-import { Sun, Moon, MonitorSmartphone } from 'lucide-react'
+import { MonitorSmartphone } from 'lucide-react'
 import styles from './themeModeBtn.module.scss'
-import { useRef } from 'react'
-import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
+import { ForwardedRef, MutableRefObject, forwardRef } from 'react'
+import { TTheme } from '../../TTheme.type'
+import SunIcon from './btnIcon/SunIcon'
+import MoonIcon from './btnIcon/MoonIcon'
 
-type TProps = {
-    theme: string,
-    setToggleTheme: (val:boolean) => void,
-    setTheme: (val:string) => void
+type TModalThemeProps = {
+    refModal: MutableRefObject<HTMLUListElement>,
+    theme: TTheme,
+    setModal: React.Dispatch<React.SetStateAction<boolean>>,
+    setTheme: React.Dispatch<React.SetStateAction<TTheme>>
 }
-/**
- * 
- * @param theme - string value dark or light
- * @param setToggleTheme - state popup with theme switch button accepting true or false
- * @param setTheme - state accepting theme mode
- * @returns ReactNode
- */
-const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
-    const refModal = useRef(null)
-    //hook for close popup whith click outside
-    useOnClickOutsideRef(refModal, setToggleTheme)
-    const isLight = theme === 'light' ? true : false
 
-    const switchTheme = (val: string) => {
+type TRefModal = ForwardedRef<HTMLUListElement>
+
+/**
+ * Component modal window for change theme
+ * @param theme - string value dark or light
+ * @param setModal - state popup with theme switch button accepting true or false
+ * @param setTheme - state accepting theme mode
+ */
+const ThemeModeModal = forwardRef(({theme, setTheme, setModal}:TModalThemeProps, refModal:TRefModal) => {
+    const switchTheme = (val:TTheme) => {
 		setTheme(val)
-		setToggleTheme(false)
+		setModal(false)
 	}
 
     const deviceTheme = () => {
-		setToggleTheme(false)
+		setModal(false)
 		setTheme(
             window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         )
@@ -35,37 +35,18 @@ const ThemeModeModal = ({theme, setToggleTheme, setTheme}:TProps) => {
 
   return (
     <ul className={styles.headerToggleTheme} ref={refModal}>
-        <li
-            className={styles.headerToggleThemeLi}
-            onClick={() => switchTheme('light')}
-        >
-            <Sun className={
-                isLight ? 'text-[#e6d649]' : 'text-[#6d7479]'
-            } />
-            <span className={isLight ? 'text-white' : ''}>
-                Светлая тема
-            </span>
+        <li onClick={() => switchTheme('light')}>
+            <SunIcon theme={theme} />
         </li>
-        <li
-            className={styles.headerToggleThemeLi}
-            onClick={() => switchTheme('dark')}
-        >
-            <Moon className={
-                !isLight ? 'text-[#5d5fef]' : 'text-[#6d7479]'
-            } />
-            <span className={!isLight ? 'text-white' : ''}>
-                Тёмная тема
-            </span>
+        <li onClick={() => switchTheme('dark')}>
+            <MoonIcon theme={theme} />
         </li>
-        <li
-            className={styles.headerToggleThemeLi}
-            onClick={deviceTheme}
-        >
+        <li  onClick={deviceTheme}>
             <MonitorSmartphone className='text-white' />
-            <span className='text-white'>Системная</span>
+            <p className='text-white'>Системная</p>
         </li>
     </ul>
   )
-}
+})
 
 export default ThemeModeModal

@@ -1,6 +1,13 @@
 import { Sun, Moon } from 'lucide-react'
 
-const ThemeBtnIcon = ({theme}:{theme:string}) => {
+export type TBtnIconProps = {
+  theme:string
+}
+
+/**
+ * Component return selected icon for button which switch theme
+ */
+const ThemeBtnIcon = ({theme}:TBtnIconProps) => {
   return (
     <>
         {

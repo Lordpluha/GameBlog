@@ -1,12 +1,18 @@
 import styles from './searchFormBtn.module.scss'
 import SearchTags from './SearchTags'
 import { Search } from 'lucide-react'
-import { useRef } from 'react'
-import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
+import { ForwardedRef, forwardRef, MutableRefObject } from 'react'
 
-const SearchModal = ({setOpen}:{setOpen:(val:boolean) => void}) => {
-  const refModal = useRef(null)
-  useOnClickOutsideRef(refModal, setOpen)
+type TModalProps = {
+    modal: boolean
+    refModal: MutableRefObject<HTMLDivElement>
+}
+
+/**
+ * Component search form modal with tags
+ */
+
+const SearchModal = forwardRef(({modal}:TModalProps, refModal:ForwardedRef<HTMLDivElement>) => {
   return (
     <div className='fixed top-[79px] left-0 right-0' ref={refModal}>
         <div className='bg-[var(--modal-bg-color)] py-10'>
@@ -19,6 +25,7 @@ const SearchModal = ({setOpen}:{setOpen:(val:boolean) => void}) => {
                         type='text'
                         className={styles.searchInput}
                         placeholder='ПОИСК'
+                        autoFocus={modal}
                     />
                 </div>
                 <SearchTags />
@@ -26,6 +33,6 @@ const SearchModal = ({setOpen}:{setOpen:(val:boolean) => void}) => {
         </div>
     </div>
   )
-}
+})
 
 export default SearchModal

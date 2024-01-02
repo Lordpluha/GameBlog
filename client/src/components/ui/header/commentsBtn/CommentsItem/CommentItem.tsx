@@ -2,6 +2,14 @@ import { Link } from 'react-router-dom'
 import styles from '../commentsBtn.module.scss'
 import { INewComment } from '../../../interfaces/NewComments.interface'
 
+/**
+ * Component for rendering one comment block
+ * @param link - link to the news for which the comment was created
+ * @param title - news title
+ * @param user - link to user avatar
+ * @param login - user login
+ * @param text - comment text
+ */
 const CommentItem = ({ link, title, avatar, login, text }: INewComment) => {
 	return (
 		<Link to={link}>

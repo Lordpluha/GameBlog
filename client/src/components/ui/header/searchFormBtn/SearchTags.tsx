@@ -12,6 +12,10 @@ const tags = [
 	{name:'Помощь'}
 ]
 
+/**
+ * Component with tags for search form popup
+ */
+
 const SearchTags = () => {
 	return (
 		<ul className='flex gap-3 text-[16px] flex-wrap'>

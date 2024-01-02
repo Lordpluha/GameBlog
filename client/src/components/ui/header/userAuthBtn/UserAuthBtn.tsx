@@ -1,19 +1,26 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import styles from './userAuthBtn.module.scss'
 import { UserRound } from 'lucide-react'
-import UserAuthModel from './UserAuthModel'
+import UserAuthModal from './UserAuthModal'
+import useModal from '../../../hooks/useModal'
+
+/**
+ * Rendering component user button for athorization
+ */
 
 const UserAuthBtn = () => {
-	const [userBtn, setUserBtn] = useState<boolean>(false)
+	const refModal = useRef<HTMLDivElement>(null!)
+  	const {modal, setModal} = useModal(refModal)
+	
 	return (
 		<>
 			<button
 				className={styles.headerUserButton}
-				onClick={() => setUserBtn(!userBtn)}
+				onClick={() => setModal(!modal)}
 			>
 				<UserRound />
 			</button>
-			{userBtn && <UserAuthModel userBtn openHandler={setUserBtn} />}
+			{modal && <UserAuthModal refModal={refModal} modal={modal} setModal={setModal} />}
 		</>
 	)
 }

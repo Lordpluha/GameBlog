@@ -1,28 +1,27 @@
 import { X } from 'lucide-react'
 import styles from './userAuthBtn.module.scss'
-import { useRef } from 'react'
-import { useOnClickOutsideRef } from '../../../hooks/useOnClickOutsideRef'
+import { ForwardedRef, MutableRefObject, forwardRef } from 'react'
 import SocialLinksComponent from '../../socialLinks/SocialLinksComponent'
 
-type TBotton = {
-    userBtn: boolean,
-    openHandler:(val:boolean) => void
+type TUserAuthModal = {
+    modal: boolean,
+    refModal: MutableRefObject<HTMLDivElement>,
+    setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 /**
- * Popup window for authorization user.
- * Accepting props openHandler for close popup on click outside
+ * Component modal window for authorization user. 
+ * Accepting props setModal for close popup on click outside
+ * @param modal boolean value for change setModal value
+ * @param setModal function for setup state of modal window open or close
  */
-const UserAuthModel = ({userBtn, openHandler}:TBotton) => {
-  const refModal = useRef(null)
-  //hook for close popup whith click outside
-  useOnClickOutsideRef(refModal, openHandler)
+const UserAuthModel = forwardRef(({modal, setModal}:TUserAuthModal, refModal:ForwardedRef<HTMLDivElement>) => {
   return (
     <div className={styles.userAuthBlockOverflow}>
         <div className={styles.userAuthBlockPosition} ref={refModal}>
             <div className={styles.userAuthBlockWrapper}>
                 <div
                     className={styles.userAuthHeaderBtnClose}
-                    onClick={() => openHandler(!userBtn)}
+                    onClick={() => setModal(!modal)}
                 >
                     <X />
                 </div>
@@ -46,6 +45,6 @@ const UserAuthModel = ({userBtn, openHandler}:TBotton) => {
         </div>
     </div>
   )
-}
+})
 
 export default UserAuthModel

@@ -1,17 +1,19 @@
-import { useState } from 'react'
 import { Search, X } from 'lucide-react'
 import SearchModal from './SearchModal'
+import { useRef } from 'react'
+import useModal from '../../../hooks/useModal'
 
 /** Header search componen included input field and search tags */
 const SearchFormBtn = () => {
-	// open - is const of state accepting boolean value for change icons search or close
-	const [open, setOpen] = useState<boolean>(false)
+	const refModal = useRef<HTMLDivElement>(null!)
+  	const {modal, setModal} = useModal(refModal)
+
 	return (
 		<>
-			<button onClick={() => setOpen(!open)}>
-				{!open ? <Search /> : <X />}
+			<button onClick={() => setModal(!modal)}>
+				{!modal ? <Search /> : <X />}
 			</button>
-			{open && <SearchModal setOpen={setOpen} />}
+			{modal && <SearchModal modal={modal} refModal={refModal} />}
 		</>
 	)
 }
