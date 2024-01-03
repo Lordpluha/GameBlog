@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { ICategory } from '../interfaces/Category.interface'
+import { ICategory } from '../../../interfaces/Category.interface'
 
 const CategoryItem = ({ cat }: { cat: ICategory }) => {
 	const navigate = useNavigate()

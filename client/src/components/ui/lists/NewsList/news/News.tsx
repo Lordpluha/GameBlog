@@ -20,7 +20,7 @@ export default function News(news: INews) {
 				<img
 					className='w-full h-full object-cover hover:scale-110 duration-500'
 					src={preview}
-					alt='preview'
+					alt='preview image'
 				/>
 			</Link>
 			<div className='flex flex-col gap-4 p-3'>
@@ -33,7 +33,7 @@ export default function News(news: INews) {
 						<img
 							className='w-8 h-8 rounded-full object-cover outline-red-800 outline-2 outline'
 							src={user.avatar}
-							alt='avatar'
+							alt={`${user.name} avatar image`}
 						/>
 						<p className='hover:text-red-700 hover:underline text-xl'>
 							{user.name}
