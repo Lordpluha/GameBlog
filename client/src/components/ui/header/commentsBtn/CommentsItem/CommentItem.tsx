@@ -22,7 +22,6 @@ const CommentItem = ({ link, title, avatar, login, text }: INewComment) => {
 						alt={login}
 						className='rounded-full'
 						src={avatar}
-						role='presentation'
 					/>
 					<p className={styles.commentUserLogin}>
 						{login}

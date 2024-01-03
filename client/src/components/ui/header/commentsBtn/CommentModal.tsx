@@ -21,9 +21,9 @@ const CommentModal = forwardRef(({ commentsList, setModal }: TCommentModalProps,
             <p className='text-3xl font-semibold'>
                 Новые комментарии
             </p>
-            <p className='cursor-pointer' onClick={() => setModal(false)}>
+            <div className='cursor-pointer' onClick={() => setModal(false)}>
                 <X />
-            </p>
+            </div>
         </div>
         <div className={styles.commentsBlockBody}>
             {commentsList.length ? (
