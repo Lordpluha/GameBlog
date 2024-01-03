@@ -21,7 +21,7 @@ const ThemeModeBtn = () => {
 			>
 				<ThemeBtnIcon theme={theme} /> 
 			</button>
-			{modal && <ThemeModeModal setModal={setModal} theme={theme} setTheme={setTheme} refModal={refModal} />}
+			{modal && <ThemeModeModal setModal={setModal} theme={theme} setTheme={setTheme} ref={refModal} />}
 		</>
 	)
 }

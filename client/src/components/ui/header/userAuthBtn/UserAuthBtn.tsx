@@ -20,7 +20,7 @@ const UserAuthBtn = () => {
 			>
 				<UserRound />
 			</button>
-			{modal && <UserAuthModal refModal={refModal} modal={modal} setModal={setModal} />}
+			{modal && <UserAuthModal modal={modal} setModal={setModal} ref={refModal} />}
 		</>
 	)
 }

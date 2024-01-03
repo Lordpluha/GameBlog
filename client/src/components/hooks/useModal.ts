@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useState } from 'react'
+import React, { MutableRefObject, useEffect, useState } from 'react'
 
 /**
  * hook for close the window when clicked outside the component
@@ -8,19 +8,20 @@ import { MutableRefObject, useEffect, useState } from 'react'
 
 const useModal = (refModal:MutableRefObject<HTMLElement>) => {
     const [modal, setModal] = useState<boolean>(false)
+    
     useEffect(() => {
-        const handleClick = (e: globalThis.MouseEvent) => {
+        const handleClick = (e:globalThis.MouseEvent) => {
             if (refModal.current && !refModal.current.contains(e.target as Node)) {
               setModal(false)
             }
           };
       
-          document.addEventListener("click", handleClick);
+          document.addEventListener("click", handleClick, true);
       
           return () => {
-            document.removeEventListener("click", handleClick);
+            document.removeEventListener("click", handleClick, true);
           };
-    }, [refModal])
+    }, [modal])
 
     return {modal, setModal}
 }

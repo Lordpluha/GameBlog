@@ -2,21 +2,22 @@ import CommentItem from './commentsItem/CommentItem'
 import styles from './commentsBtn.module.scss'
 import { X } from 'lucide-react'
 import { INewComment } from '../../interfaces/NewComments.interface'
-import { ForwardedRef, MutableRefObject, forwardRef } from 'react'
+import { ForwardedRef, forwardRef } from 'react'
 
 type TCommentModalProps = {
     commentsList: INewComment[],
-    refCommentModal: MutableRefObject<HTMLDivElement>,
     setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+type TRefModal = ForwardedRef<HTMLDivElement>
 
 /**
  * Component popum modal with comments list.
  * Accepting props commentsList and boolean state setModal for close outside
  */
-const CommentModal = forwardRef(({ commentsList, setModal }: TCommentModalProps, refCommentModal:ForwardedRef<HTMLDivElement>) => {
+const CommentModal = forwardRef(({ commentsList, setModal }: TCommentModalProps, ref:TRefModal) => {
   return (
-    <div className={styles.commentsBlock} ref={refCommentModal}>
+    <div className={styles.commentsBlock} ref={ref}>
         <div className={styles.commentsBlockHeader}>
             <p className='text-3xl font-semibold'>
                 Новые комментарии

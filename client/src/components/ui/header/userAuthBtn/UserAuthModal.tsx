@@ -1,23 +1,25 @@
 import { X } from 'lucide-react'
 import styles from './userAuthBtn.module.scss'
-import { ForwardedRef, MutableRefObject, forwardRef } from 'react'
+import { ForwardedRef, forwardRef } from 'react'
 import SocialLinksComponent from '../../socialLinks/SocialLinksComponent'
 
 type TUserAuthModal = {
     modal: boolean,
-    refModal: MutableRefObject<HTMLDivElement>,
     setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+type TRefModal = ForwardedRef<HTMLDivElement>
+
 /**
  * Component modal window for authorization user. 
  * Accepting props setModal for close popup on click outside
  * @param modal boolean value for change setModal value
  * @param setModal function for setup state of modal window open or close
  */
-const UserAuthModel = forwardRef(({modal, setModal}:TUserAuthModal, refModal:ForwardedRef<HTMLDivElement>) => {
+const UserAuthModel = forwardRef(({modal, setModal}:TUserAuthModal, ref:TRefModal) => {
   return (
     <div className={styles.userAuthBlockOverflow}>
-        <div className={styles.userAuthBlockPosition} ref={refModal}>
+        <div className={styles.userAuthBlockPosition} ref={ref}>
             <div className={styles.userAuthBlockWrapper}>
                 <div
                     className={styles.userAuthHeaderBtnClose}

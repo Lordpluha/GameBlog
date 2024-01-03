@@ -13,7 +13,7 @@ const SearchFormBtn = () => {
 			<button onClick={() => setModal(!modal)}>
 				{!modal ? <Search /> : <X />}
 			</button>
-			{modal && <SearchModal modal={modal} refModal={refModal} />}
+			{modal && <SearchModal ref={refModal} />}
 		</>
 	)
 }

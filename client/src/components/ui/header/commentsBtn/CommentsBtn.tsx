@@ -21,7 +21,7 @@ const CommentsBtn = ({ newComments }: { newComments: INewComment[] }) => {
 			>
 				<MessageCircleMore />
 			</button>
-			{modal && <CommentModal commentsList={newComments} refCommentModal={refCommentModal} setModal={setModal} />}
+			{modal && <CommentModal commentsList={newComments} ref={refCommentModal} setModal={setModal} />}
 		</>
 	)
 }
