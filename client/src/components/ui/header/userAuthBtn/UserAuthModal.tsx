@@ -26,20 +26,20 @@ const UserAuthModel = forwardRef(({modal, setModal}:TUserAuthModal, refModal:For
                     <X />
                 </div>
                 <div className={styles.userAuthContent}>
-                    <div className={styles.userAuthTitle}>Вход на GameBlog</div>
-                    <div className='text-[var(--text-color)] pt-3 text-lg'>
+                    <h1 className={styles.userAuthTitle}>Вход на GameBlog</h1>
+                    <h4 className='text-[var(--text-color)] pt-3 text-lg'>
                         Войти через аккаунт
-                    </div>
+                    </h4>
                     <div className={styles.userAuthBtnSocialIcon}>
                         <SocialLinksComponent />
                     </div>
                     <button className={styles.userAuthBtnRegistration}>
                         Зарегистрироваться
                     </button>
-                    <div className={styles.userAuthBtnPrivacy}>
+                    <p className={styles.userAuthBtnPrivacy}>
                         Авторизуясь, ты соглашаешься с правилами
                         сайта и пользовательским соглашением.
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>

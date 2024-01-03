@@ -1,7 +1,7 @@
 import { Sun, Moon } from 'lucide-react'
 
 export type TBtnIconProps = {
-  theme:string
+  theme:'light'|'dark'
 }
 
 /**
