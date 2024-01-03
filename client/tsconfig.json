@@ -23,13 +23,9 @@
 		"noFallthroughCasesInSwitch": true,
 		"paths": {
 			"@/*": ["./src/*"],
-			"@/components": ["./src/components/"],
 			"@/ui": ["./src/components/ui"],
 			"@/tools": ["./src/components/tools"],
 			"@/hooks": ["./src/components/hooks"],
-			"@/pages": ["./src/pages"],
-			"@/routes": ["./src/routes"],
-			"@/api": ["./src/api"],
 			"@/context": ["./src/components/context"]
 		}
 	},
