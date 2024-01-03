@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import { dateConverter } from '../../../../tools/ArticleDateConverter'
-import ArticleCategory from '../../../CategoryItem/CategoryItem'
+import ArticleCategory from '../../CategoryLists/CategoryItem/CategoryItem'
 
 import { IArticle } from '../../../interfaces/Article.interface'
 import styles from './ArticleItem.module.scss'
