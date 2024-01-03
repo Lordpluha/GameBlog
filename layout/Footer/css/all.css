@@ -138,7 +138,11 @@ a {
 }
 .footer .middle .first .part .fill li {
   float: left;
-  content: "⋅";
+  list-style-type: disc;
+  color: #747C81;
+}
+.footer .middle .first .part .fill li::marker {
+  font-size: 8px;
 }
 .footer .middle .first .part .fill li a {
   margin: 0 8px 0 8px;
@@ -194,7 +198,11 @@ a {
 }
 .footer .middle .second .part .fill li {
   float: left;
-  content: "⋅";
+  list-style-type: disc;
+  color: #747C81;
+}
+.footer .middle .second .part .fill li::marker {
+  font-size: 8px;
 }
 .footer .middle .second .part .fill li a {
   margin: 0 8px 0 8px;

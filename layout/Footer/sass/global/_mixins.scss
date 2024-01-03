@@ -6,6 +6,7 @@
   box-sizing: border-box;
   height: auto;
 }
+
 @mixin middle {
   .name {
     margin: 0 0 16px;
@@ -35,7 +36,11 @@
 
     li {
       float: left;
-      content: "\22c5";
+      list-style-type: disc;
+      color: #747C81;
+      &::marker {
+        font-size: 8px;
+      }
 
       a {
         margin: 0 8px 0 8px;
