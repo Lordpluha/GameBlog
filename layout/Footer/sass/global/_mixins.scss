@@ -1,7 +1,6 @@
 @mixin box {
   display: block;
   position: relative;
-  overflow: hidden;
   width: 100%;
   box-sizing: border-box;
   height: auto;
