@@ -1,7 +1,7 @@
 import { INews } from '../../interfaces/News.interface'
 import News from './news/News'
 
-interface INewsListProps {
+type INewsListProps = {
 	news: INews[]
 }
 /**

@@ -1,13 +1,19 @@
 import { CommentOutlined } from '@ant-design/icons'
 import React from 'react'
-
 import { useNavigate } from 'react-router-dom'
-import { dateConverter } from '../../../../tools/ArticleDateConverter'
-import ArticleCategory from '../../CategoryLists/CategoryItem/CategoryItem'
 
-import { IArticle } from '../../../interfaces/Article.interface'
+import { IArticle } from '@interfaces/Article.interface'
+
+import { dateConverter } from '@tools/ArticleDateConverter'
+
+import CategoryList from '@ui/lists/CategoryLists/CategoryList'
+
 import styles from './ArticleItem.module.scss'
 
+/**
+ * Item of ArticleList component represent article element
+ * @param article typeof IArticle
+ */
 const ArticleItem = ({ article }: { article: IArticle }) => {
 	const navigate = useNavigate()
 
@@ -22,35 +28,35 @@ const ArticleItem = ({ article }: { article: IArticle }) => {
 			className={styles.articleItemBlock}
 		>
 			<div className={styles.articleItemImageBlock}>
-				<img className={styles.articleItemImage} src={article.image} />
+				<img
+					className={styles.articleItemImage}
+					src={article.image}
+					alt={`${article.title} article cover`}
+				/>
 			</div>
 			<div className={styles.articleItemDescription}>
-				<div
+				<h1
 					onClick={e => clickHandler(e)}
 					className={styles.articleItemTitle}
 				>
 					{article.title}
-				</div>
+				</h1>
 
 				<div className='pr-4'>
-					<div className={styles.articleItemCategory}>
-						{article.category.map((item, idx) => (
-							<div key={idx}>
-								{idx > 0 && <div className='mx-1'>|</div>}
-								<ArticleCategory cat={item} />
-							</div>
-						))}
-					</div>
+					<CategoryList
+						categories={article.categories}
+						className={styles.articleItemCategory}
+					/>
 					<div className='flex flex-row justify-between'>
-						<span className='text-gray-500 text-[17px]'>
+						<p className='text-gray-500 text-[17px]'>
 							{dateConverter(article.releaseDate)}
-						</span>
+						</p>
 						<div
 							className={styles.articleItemComments}
 							onClick={e => clickHandler(e)}
 						>
 							<CommentOutlined />
-							<span className='pl-1'>{article.commentsNum}</span>
+							<p className='pl-1'>{article.commentsNum}</p>
 						</div>
 					</div>
 				</div>

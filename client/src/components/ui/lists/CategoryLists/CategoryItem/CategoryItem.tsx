@@ -1,20 +1,23 @@
 import { useNavigate } from 'react-router-dom'
-import { ICategory } from '../../../interfaces/Category.interface'
 
-const CategoryItem = ({ cat }: { cat: ICategory }) => {
+import { TCategory } from '@type/Category.type'
+
+const CategoryItem = ({ category }: { category: TCategory }) => {
 	const navigate = useNavigate()
 
 	const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
+		e.preventDefault()
 		e.stopPropagation()
-		navigate(`/news/${cat.seo}`)
+		navigate(`/news/${category.seo}`)
 	}
 	return (
-		<span
+		<a
+			href='#'
 			onClick={e => clickHandler(e)}
 			className='cursor-pointer text-[14px] transition duration-500 ease-in-out hover:text-rose-600'
 		>
-			{cat.title}
-		</span>
+			{category.title}
+		</a>
 	)
 }
 

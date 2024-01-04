@@ -1,6 +1,7 @@
-import { NavLink } from 'react-router-dom'
-import styles from './navBar.module.scss'
 import clsx from 'clsx'
+import { NavLink } from 'react-router-dom'
+
+import styles from './navBar.module.scss'
 
 /**
  * Navigation adaptive bar
