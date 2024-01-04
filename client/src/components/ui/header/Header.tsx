@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import styles from './header.module.scss'
-import ThemeModeBtn from './themeModeBtn/ThemeModeBtn'
-import SearchFormBtn from './searchFormBtn/SearchFormBtn'
-import CommentsBtn from './commentsBtn/CommentsBtn'
-import UserAuthBtn from './userAuthBtn/UserAuthBtn'
-import Logo from '../logo/Logo'
 import { Menu, X } from 'lucide-react'
-import NavBar from './navbar/NavBar'
-import { INewComment } from '../interfaces/NewComments.interface'
+import { useState } from 'react'
+
+import { INewComment } from '@interfaces/extras/NewComments.interface'
+
+import Logo from '@ui/Logo/Logo'
+
+import NavBar from './Navbar/Navbar'
+import CommentsBtn from './buttons/Comments/CommentsBtn'
+import SearchFormBtn from './buttons/Search/SearchBtn'
+import ThemeModeBtn from './buttons/Theme/ThemeBtn'
+import UserAuthBtn from './buttons/UserAuth/UserAuthBtn'
+import styles from './header.module.scss'
 
 /**
  * Header component
  * @author @kiberchainik
- * @return ReactNode
  */
 const Header = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(false)

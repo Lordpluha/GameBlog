@@ -23,10 +23,19 @@
 		"noFallthroughCasesInSwitch": true,
 		"paths": {
 			"@/*": ["./src/*"],
-			"@/ui": ["./src/components/ui"],
-			"@/tools": ["./src/components/tools"],
-			"@/hooks": ["./src/components/hooks"],
-			"@/context": ["./src/components/context"]
+			"@interfaces/*": ["./src/components/interfaces/*"],
+			"@type/*": ["./src/components/types/*"],
+			"@routes/*": ["./src/routes/*"],
+			"@store/*": ["./src/store/*"],
+			"@services/*": ["./src/services/*"],
+			"@components/*": ["./src/components/*"],
+			"@context/*": ["./src/components/context/*"],
+			"@hooks/*": ["./src/components/hooks/*"],
+			"@tools/*": ["./src/components/tools/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@ui/*": ["./src/components/ui/*"],
+			"@icons/*": ["./src/components/ui/icons/*"],
+			"@stories/*": ["./src/stories/*"]
 		}
 	},
 	"include": ["src"],

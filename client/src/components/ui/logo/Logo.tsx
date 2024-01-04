@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import styles from './logo.module.scss'
+
+import styles from './Logo.module.scss'
 
 /**
  * Logo component
