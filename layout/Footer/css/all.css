@@ -127,6 +127,8 @@ footer .top .logo a img {
 footer .top .logo p {
   margin: 16px 0 0 0;
   font-size: 16px;
+  line-height: 20px;
+  font-family: "Rubik", sans-serif;
   color: #8B8D8E;
 }
 footer .top ul.soc {
@@ -179,10 +181,6 @@ footer .top ul.soc li .dropdown .dropdown-content {
   z-index: 2;
   left: 50%;
   top: 32px;
-  -webkit-transition: -webkit-transform 0.3s linear;
-  transition: -webkit-transform 0.3s linear;
-  transition: transform 0.3s linear;
-  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
 footer .top ul.soc li .dropdown .dropdown-content li {
   width: 200px;
@@ -192,6 +190,7 @@ footer .top ul.soc li .dropdown .dropdown-content li a {
   color: #fff;
   display: block;
   padding: 16px;
+  font-family: "Rubik", sans-serif;
 }
 footer .top ul.soc li .dropdown .dropdown-content li a:hover {
   color: #747C81;
@@ -199,6 +198,7 @@ footer .top ul.soc li .dropdown .dropdown-content li a:hover {
 footer .top ul.soc li .dropdown .dropdown-content li a p {
   font-size: 14px;
   float: left;
+  font-family: "Rubik", sans-serif;
 }
 footer .top ul.soc li .dropdown .dropdown-content li a svg {
   width: 16px;
@@ -213,6 +213,7 @@ footer .tooltip {
   bottom: 10px;
   left: 50%;
   font-size: 14px;
+  font-family: "Rubik", sans-serif;
   opacity: 0;
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
@@ -255,6 +256,7 @@ footer .middle .first .part .name {
 footer .middle .first .part .name li a {
   color: #fff;
   font-size: 16px;
+  font-family: "Rubik", sans-serif;
   line-height: 20px;
   font-weight: bold;
 }
@@ -290,7 +292,8 @@ footer .middle .first .part .fill li a {
   cursor: pointer;
   color: #747C81;
   font-size: 14px;
-  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
   line-height: 20px;
   content: "⋅";
 }
@@ -316,6 +319,7 @@ footer .middle .second .part .name {
 footer .middle .second .part .name li a {
   color: #fff;
   font-size: 16px;
+  font-family: "Rubik", sans-serif;
   line-height: 20px;
   font-weight: bold;
 }
@@ -351,7 +355,8 @@ footer .middle .second .part .fill li a {
   cursor: pointer;
   color: #747C81;
   font-size: 14px;
-  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
   line-height: 20px;
   content: "⋅";
 }
@@ -418,6 +423,7 @@ footer .bottom .right .text p {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
+  margin-bottom: 8px;
 }
 footer .bottom .right .text p:nth-child(2) {
   color: #71747B;

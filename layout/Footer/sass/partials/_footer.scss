@@ -26,6 +26,8 @@ footer {
             p {
                 margin: 16px 0 0 0;
                 font-size: 16px;
+                line-height: 20px;
+                font-family: 'Rubik', sans-serif;
                 color: #8B8D8E;
             }
         }
@@ -87,6 +89,7 @@ footer {
                                 color: #fff;
                                 display: block;
                                 padding: 16px;
+                                font-family: 'Rubik', sans-serif;
 
                                 &:hover {
                                     color: #747C81;
@@ -95,6 +98,7 @@ footer {
                                 p {
                                     font-size: 14px;
                                     float: left;
+                                    font-family: 'Rubik', sans-serif;
                                 }
 
                                 svg {
@@ -120,6 +124,7 @@ footer {
         bottom: 10px;
         left: 50%;
         font-size: 14px;
+        font-family: 'Rubik', sans-serif;
         opacity: 0;
         transform: translate(-50%, -100%);
         transition: all 0.3s ease;
@@ -225,6 +230,7 @@ footer {
                     font-size: 16px;
                     font-weight: 500;
                     color: #fff;
+                    margin-bottom: 8px;
 
                     &:nth-child(2) {
                         color: #71747B;
