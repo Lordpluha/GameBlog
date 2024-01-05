@@ -61,42 +61,85 @@ footer {
                     }
                 }
 
-                img {
-                    width: 25px;
-                    height: 25px;
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+
+                    &:hover .dropdown-content {
+                        display: block;
+                    }
+
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: #383838;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        border-radius: 12px;
+                        z-index: 2;
+                        left: 50%;
+                        top: 32px;
+
+                        li {
+                            width: 200px;
+                            height: 52px;
+
+                            a {
+                                color: #fff;
+                                display: block;
+                                padding: 16px;
+
+                                &:hover {
+                                    color: #747C81;
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    float: left;
+                                }
+
+                                svg {
+                                    width: 16px;
+                                    height: 16px;
+                                    float: right;
+                                }
+
+                            }
+                        }
+
+                    }
                 }
-            }
-
-            .tooltip {
-                background-color: #fff;
-                color: #000;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 50%;
-                font-size: 14px;
-                opacity: 0;
-                transform: translate(-50%, -100%);
-                transition: all 0.3s ease;
-                z-index: 2;
-                width: max-content;
-                height: 16px;
-                padding: 3px;
-                border-radius: 2px;
-
-                &:after {
-                    content: " ";
-                    position: absolute;
-                    right: 46%;
-                    bottom: -7px;
-                    border-top: 8px solid white;
-                    border-right: 8px solid transparent;
-                    border-left: 8px solid transparent;
-                    border-bottom: none
-                  }
             }
         }
     }
+
+    .tooltip {
+        background-color: #fff;
+        color: #000;
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        font-size: 14px;
+        opacity: 0;
+        transform: translate(-50%, -100%);
+        transition: all 0.3s ease;
+        z-index: 2;
+        width: max-content;
+        height: max-content;
+        padding: 3px;
+
+        &:after {
+            content: " ";
+            position: absolute;
+            right: 46%;
+            bottom: -7px;
+            border-top: 8px solid white;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-bottom: none
+        }
+    }
+
 
     .middle {
         display: block;
