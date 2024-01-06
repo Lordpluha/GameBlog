@@ -3,7 +3,8 @@ import { useRef } from 'react'
 
 import useModal from '@hooks/useModal'
 
-import UserAuthModal from '@ui/Header/modals/UserAuth/UserAuthModal'
+import ModalComponent from '@/components/ui/modal/ModalComponent'
+import UserAuthModal from '@ui/header/modals/UserAuth/UserAuthModal'
 
 /**
  * User button for authorization
@@ -21,11 +22,13 @@ const UserAuthBtn = () => {
 				<UserRound />
 			</button>
 			{modal && (
-				<UserAuthModal
+				<ModalComponent
 					modal={modal}
 					setModal={setModal}
 					ref={refModal}
-				/>
+				>
+					<UserAuthModal />
+				</ModalComponent>
 			)}
 		</>
 	)
