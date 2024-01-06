@@ -27,13 +27,13 @@ const Header = () => {
 				<NavBar toggleMenu={toggleMenu} />
 				<div className={styles.headerRightButtonsBlock}>
 					<SearchFormBtn />
-					<div className='hidden md:block'>
+					<div className='hidden lg2:block'>
 						<ThemeModeBtn />
 					</div>
 					<CommentsBtn newComments={newCommentsData} />
 					<UserAuthBtn />
 					<button
-						className='md:hidden'
+						className='lg2:hidden'
 						onClick={() => setToggleMenu(!toggleMenu)}
 					>
 						{toggleMenu ? <X /> : <Menu />}

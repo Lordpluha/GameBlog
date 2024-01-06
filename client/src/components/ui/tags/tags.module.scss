@@ -1,0 +1,15 @@
+.tags {
+    @apply flex mt-8
+}
+
+.tags span {
+    @apply pt-[6px] pr-4 pb-[6px] pl-0 text-[var(--default-dark-text500-color)]
+}
+
+.tagsWrapper {
+    @apply flex flex-wrap gap-x-2
+}
+
+.tag {
+    @apply bg-[var(--default-dark-color)] rounded-lg text-white flex no-underline py-[6px] px-4
+}

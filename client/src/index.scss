@@ -19,7 +19,10 @@
 	background-color: var(--body-bg-color);
 
 	--default-dark-btn-color: #262a2c;
+
 	--default-dark-text-color: #4d5153;
+	--default-dark-text500-color: #747c81;
+
 	--default-dark-color: #19191b;
 	--default-light-color: white;
 	--hover-active-colore: #ec2227;
@@ -30,7 +33,7 @@ html[data-theme='dark'] {
 
 	--body-bg-color: #1b2124;
 	--modal-bg-color: #191d1f;
-	--itemBlock-bg-color: #282c2e;
+	--itemBlock-bg-color: #363b3d;
 	--li-bg-color: #28292c;
 }
 
@@ -48,5 +51,5 @@ html[data-theme='light'] {
 }
 
 .layoutComponent {
-	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
+	@apply container mx-auto px-5 h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
 }

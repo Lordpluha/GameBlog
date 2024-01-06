@@ -6,6 +6,7 @@ import ErrorPage from '@pages/ErrorPage'
 import GamesPage from '@pages/GamesPage'
 import HomePage from '@pages/HomePage'
 import NewsPage from '@pages/NewsPage'
+import FullNewsPage from '@pages/FullNewsPage'
 import ReadPage from '@pages/ReadPage'
 import StreamsPage from '@pages/StreamsPage'
 import SupportPage from '@pages/SupportPage'
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
 			{
 				path: '/news',
 				element: <NewsPage />
+			},
+			{
+				path: '/newsdata/:seo',
+				element: <FullNewsPage />
 			},
 			{
 				path: '/read',
