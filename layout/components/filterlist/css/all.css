@@ -1,32 +1,4 @@
 /* SCSS Compiled */
-/*usage  @include font-size(13);*/
-#wrapper,
-main,
-#content,
-#sidebar,
-aside,
-section {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: auto;
-}
-
-.layout {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: auto;
-  width: 900px;
-  margin: 0 auto;
-}
-
 * {
   position: relative;
   -webkit-box-sizing: border-box;
@@ -87,25 +59,19 @@ img {
 }
 
 .filters {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: auto;
   background-color: #1E2224;
-  width: 768px;
+}
+.filters .filters_tabs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 94px;
-  margin: 100px 0 0 100px;
 }
-.filters .filter_list {
+.filters .filters_tabs .filter_list {
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
@@ -118,23 +84,24 @@ img {
   padding: 0;
   row-gap: 8px;
 }
-.filters .filter_list li {
+.filters .filters_tabs .filter_list li {
   height: 26px;
 }
-.filters .filter_list li .filter {
-  padding: 6px 16px;
-  margin: 5px;
-  background-color: #161B1D;
+.filters .filters_tabs .filter_list li a.filter {
+  display: block;
   border-radius: 13px;
+  padding: 6px 16px;
+  background-color: #161B1D;
   cursor: pointer;
   color: #fff;
   font-size: 14px;
-  font-family: "Rubik", sans-serif;
+  font-weight: 500;
   line-height: 14px;
+  font-family: "Rubik", sans-serif;
 }
-.filters .filter_list li .filter:hover {
+.filters .filters_tabs .filter_list li a.filter:hover {
   background-color: #262A2C;
 }
-.filters .filter_list li .filter:focus {
+.filters .filters_tabs .filter_list li a.filter:focus {
   background-color: #41474A;
 }
