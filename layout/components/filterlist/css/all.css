@@ -1,118 +1,5 @@
-/* SCSS Compiled */ /***************************************************              GENERAL RESET STYLES             ***************************************************/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-*:focus {
-  outline: none;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-nav ul {
-  list-style: none;
-}
-
-ol, ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-img {
-  border-style: none;
-  max-width: 100%;
-}
-
-form fieldset {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-input, textarea, select {
-  vertical-align: middle;
-  color: #000;
-  padding: 0;
-}
-
-input, select {
-  vertical-align: middle;
-}
-
-input::-webkit-input-placeholder {
-  color: #000;
-}
-
-input:focus::-webkit-input-placeholder {
-  color: #000;
-}
-
-/*
-@media (min-width: 1921px){}
-@media (width: 1920px){}
-@media (min-width: 1440px) and (max-width: 1919px) {}
-@media (min-width: 1360px) and (max-width: 1439px) {}
-@media (min-width: 1280px) and (max-width: 1359px) {}
-@media (min-width: 1024px) and (max-width: 1279px) {}
-@media (min-width: 768px) and (max-width: 1023px) {}
-@media (min-width: 375px) and (max-width: 767px) {}
-@media (min-width: 320px) and (max-width: 374px) {}
-*/
-/*
-@media (max-width: 1919px) {}
-@media (max-width: 1439px) {}
-@media (max-width: 1279px) {}
-@media (max-width: 767px) {}
-*/
+/* SCSS Compiled */
 /*usage  @include font-size(13);*/
-/* Brand Colors ------------------------------------------------*/
 #wrapper,
 main,
 #content,
@@ -123,7 +10,8 @@ section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
 }
 
@@ -132,10 +20,70 @@ section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
   width: 900px;
   margin: 0 auto;
+}
+
+* {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-image: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  overflow: visible;
+  overflow-wrap: normal;
+  word-break: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  list-style-type: none;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a, button, input, textarea, form {
+  color: #000;
+  text-decoration: none;
+  border: none;
+}
+a:hover, button:hover, input:hover, textarea:hover, form:hover {
+  cursor: pointer;
+}
+
+span {
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: clip;
+}
+
+[aria-hidden=true] {
+  visibility: hidden;
 }
 
 .filters {
@@ -143,19 +91,29 @@ section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
   background-color: #1E2224;
   width: 768px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 94px;
   margin: 100px 0 0 100px;
 }
 .filters .filter_list {
-  column-gap: 5px;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
   row-gap: 8px;
@@ -171,6 +129,7 @@ section {
   cursor: pointer;
   color: #fff;
   font-size: 14px;
+  font-family: "Rubik", sans-serif;
   line-height: 14px;
 }
 .filters .filter_list li .filter:hover {
