@@ -1,5 +1,6 @@
-import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+
+import { Menu, X } from 'lucide-react'
 
 import { INewComment } from '@interfaces/extras/NewComments.interface'
 

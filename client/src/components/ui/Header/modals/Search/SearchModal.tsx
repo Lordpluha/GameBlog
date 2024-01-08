@@ -1,5 +1,6 @@
-import { Search } from 'lucide-react'
 import { ForwardedRef, forwardRef } from 'react'
+
+import { Search } from 'lucide-react'
 
 import styles from './SearchModal.module.scss'
 import SearchTags from './SearchTags/SearchTags'

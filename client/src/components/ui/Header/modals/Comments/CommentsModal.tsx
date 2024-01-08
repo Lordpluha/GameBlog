@@ -1,5 +1,6 @@
-import { X } from 'lucide-react'
 import { ForwardedRef, forwardRef } from 'react'
+
+import { X } from 'lucide-react'
 
 import { INewComment } from '@interfaces/extras/NewComments.interface'
 

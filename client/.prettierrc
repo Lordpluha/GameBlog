@@ -8,25 +8,28 @@
 	"arrowParens": "avoid",
 	"plugins": ["@trivago/prettier-plugin-sort-imports"],
 	"importOrder": [
-		"^@core/(.*)$",
-		"^@server/(.*)$",
+		"^[\"'](react)['\"]$",
+		"^(react)(.*)$",
 
-		"^@interfaces/(.*)$",
-		"^@type/(.*)$",
-		"^@routes/(.*)$",
-		"^@store/(.*)$",
-		"^@services/(.*)$",
-		"^@components/(.*)$",
-		"^@context/(.*)$",
-		"^@hooks/(.*)$",
-		"^@tools/(.*)$",
-		"^@pages/(.*)$",
-		"^@ui/(.*)$",
-		"^@icons/(.*)$",
-		"^@stories/(.*)$",
+		"<THIRD_PARTY_MODULES>",
 
-		"^[./]",
-		"^[./](.module.{scss, css})$"
+		"^(@?)interfaces/(.*)$",
+		"^(@?)type(s?)/(.*)$",
+		"^(@?)routes/(.*)$",
+		"^(@?)store/(.*)$",
+		"^(@?)services/(.*)$",
+		"^(@?)components/(.*)$",
+		"^(@?)context/(.*)$",
+		"^(@?)hooks/(.*)$",
+		"^(@?)tools/(.*)$",
+		"^(@?)pages/(.*)$",
+		"^(@?)ui/(.*)$",
+		"^(@?)icons/(.*)$",
+		"^(@?)stories/(.*)$",
+
+		"^[.\/](.*)$",
+
+		"^((@?).*)(.module).(s?)css$"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true

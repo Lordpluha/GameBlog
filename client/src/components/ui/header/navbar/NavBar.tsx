@@ -1,5 +1,6 @@
-import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
+
+import clsx from 'clsx'
 
 import styles from './navBar.module.scss'
 

@@ -1,6 +1,7 @@
-import { CommentOutlined } from '@ant-design/icons'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import { CommentOutlined } from '@ant-design/icons'
 
 import { IArticle } from '@interfaces/Article.interface'
 
@@ -8,6 +9,7 @@ import { dateConverter } from '@tools/ArticleDateConverter'
 
 import CategoryList from '@ui/lists/CategoryLists/CategoryList'
 
+import ArticleList from '../ArticleList'
 import styles from './ArticleItem.module.scss'
 
 /**

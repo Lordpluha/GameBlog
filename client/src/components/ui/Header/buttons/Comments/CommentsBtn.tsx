@@ -1,5 +1,6 @@
-import { MessageCircleMore } from 'lucide-react'
 import { useRef } from 'react'
+
+import { MessageCircleMore } from 'lucide-react'
 
 import { INewComment } from '@interfaces/extras/NewComments.interface'
 

@@ -1,5 +1,6 @@
-import { MonitorSmartphone } from 'lucide-react'
 import { ForwardedRef, forwardRef } from 'react'
+
+import { MonitorSmartphone } from 'lucide-react'
 
 import { TTheme } from '@type/Theme.type'
 
