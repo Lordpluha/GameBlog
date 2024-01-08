@@ -1,0 +1,22 @@
+#wrapper,
+main,
+#content,
+#sidebar,
+aside,
+section{
+	@include box;
+}
+.layout{
+	@include box;
+	margin: 0 auto;
+	width: 1216px;
+}
+body{
+	background-color: #161B1D;
+}
+li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
