@@ -41,7 +41,8 @@ export const DocSwaggerFindAllCategory = () => {
 export const DocSwaggerFindOneCategory = () => {
 	return applyDecorators(
 		ApiOperation({
-			summary: 'find One'
+			summary: 'find One',
+			description: 'if isParent is true then return category with tree of parents'
 		}),
 		ApiResponse({
 			status: HttpStatus.OK,
