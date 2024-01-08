@@ -61,7 +61,7 @@ img {
 .filters {
   background-color: #1E2224;
 }
-.filters .filters_tabs {
+.filters .filters__tabs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,7 +71,7 @@ img {
       -ms-flex-align: center;
           align-items: center;
 }
-.filters .filters_tabs .filter_list {
+.filters .filters__tabs .filter__list {
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
@@ -84,10 +84,10 @@ img {
   padding: 0;
   row-gap: 8px;
 }
-.filters .filters_tabs .filter_list li {
+.filters .filters__tabs .filter__list li {
   height: 26px;
 }
-.filters .filters_tabs .filter_list li a.filter {
+.filters .filters__tabs .filter__list li a.filter {
   display: block;
   border-radius: 13px;
   padding: 6px 16px;
@@ -99,9 +99,9 @@ img {
   line-height: 14px;
   font-family: "Rubik", sans-serif;
 }
-.filters .filters_tabs .filter_list li a.filter:hover {
+.filters .filters__tabs .filter__list li a.filter:hover {
   background-color: #262A2C;
 }
-.filters .filters_tabs .filter_list li a.filter:focus {
+.filters .filters__tabs .filter__list li a.filter:focus {
   background-color: #41474A;
 }
