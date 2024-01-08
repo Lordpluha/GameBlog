@@ -1,43 +1,5 @@
 @charset "UTF-8";
 /* SCSS Compiled */
-/*usage  @include font-size(13);*/
-#wrapper,
-main,
-#content,
-#sidebar,
-aside,
-section {
-  display: block;
-  position: relative;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: auto;
-}
-
-.layout {
-  display: block;
-  position: relative;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: auto;
-  margin: 0 auto;
-  width: 1216px;
-}
-
-body {
-  background-color: #161B1D;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 * {
   position: relative;
   -webkit-box-sizing: border-box;
@@ -97,6 +59,44 @@ img {
   visibility: hidden;
 }
 
+/*usage  @include font-size(13);*/
+#wrapper,
+main,
+#content,
+#sidebar,
+aside,
+section {
+  display: block;
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+}
+
+.layout {
+  display: block;
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+  margin: 0 auto;
+  width: 1216px;
+}
+
+body {
+  background-color: #161B1D;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 footer {
   display: block;
   position: relative;
@@ -150,6 +150,13 @@ footer .top ul.soc li {
 footer .top ul.soc li a.social-icon {
   width: 25px;
   height: 25px;
+  display: block;
+}
+footer .top ul.soc li a.social-icon svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+  color: #fff;
 }
 footer .top ul.soc li a.social-icon:hover {
   color: #fff;

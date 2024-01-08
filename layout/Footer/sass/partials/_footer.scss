@@ -47,7 +47,13 @@ footer {
                 a.social-icon {
                     width: 25px;
                     height: 25px;
-
+                    display: block;
+                    svg{
+                        display: block;
+                        width: 25px;
+                        height: 25px;
+                        color: #fff;
+                    }
                     &:hover {
                         color: #fff;
 
