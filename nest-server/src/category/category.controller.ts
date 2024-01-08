@@ -59,8 +59,8 @@ export class CategoryController {
 	@DocSwaggerFindOneCategory()
 	@HttpCode(HttpStatus.OK)
 	@Get(':id')
-	findOne(@Param('id', ParseIntPipe) id: number) {
-		return this.categoryService.findOne(id)
+	findOne(@Param('id', ParseIntPipe) id: number, @Query('isParent') isParent: boolean) {
+		return this.categoryService.findOne(id, isParent)
 	}
 
 	@DocSwaggerUpdateCategory()
