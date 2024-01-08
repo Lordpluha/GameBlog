@@ -7,8 +7,12 @@ import { join } from 'path'
 const prisma = new PrismaClient()
 
 const findByExtension = async () => {
-	const files = await readdir(join(__dirname, '../static/image'))
-	return files[0]
+	try {
+		const files = await readdir(join(__dirname, '../static/image'))
+		return files[0]
+	} catch (e) {
+		return null
+	}
 }
 
 const createBlogs = async (quantity: number) => {
