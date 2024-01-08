@@ -68,10 +68,14 @@ model Article {
 }
 
 model Category {
-  id        Int       @id @default(autoincrement())
-  name      String    @unique
-  slug      String?   @unique
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  articles  Article[] @relation("ArticleToCategory")
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  slug      String?    @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  parentId  Int?
+  level     Int?
+  parent    Category?  @relation("SubCategory", fields: [parentId], references: [id])
+  children  Category[] @relation("SubCategory")
+  articles  Article[]  @relation("ArticleToCategory")
 }
