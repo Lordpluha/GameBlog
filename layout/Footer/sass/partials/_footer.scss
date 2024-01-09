@@ -3,22 +3,24 @@ footer {
     height: 745.5px;
     padding: 0 32px 58px;
 
-    .top {
+    .footer__socials {
         display: block;
         margin: 32px 0 64px 0;
         height: 82px;
 
-        .logo {
+        .footer__logo {
             width: 641px;
             float: left;
 
             a {
                 height: 40px;
                 width: 224px;
+                display: block;
 
                 img {
                     height: 40px;
                     width: 224px;
+                    display: block;
                 }
             }
 
@@ -32,7 +34,7 @@ footer {
             }
         }
 
-        ul.soc {
+        ul.footer__icons {
             width: 481px;
             height: 25px;
             display: flex;
@@ -48,12 +50,18 @@ footer {
                     width: 25px;
                     height: 25px;
                     display: block;
-                    svg{
+
+                    svg {
                         display: block;
                         width: 25px;
                         height: 25px;
-                        color: #fff;
+                        color: white;
+
+                        &:hover {
+                            color: #6A7276;
+                        }
                     }
+
                     &:hover {
                         color: #fff;
 
@@ -73,10 +81,21 @@ footer {
                     position: relative;
                     display: inline-block;
 
+                    svg {
+                        display: block;
+                        width: 25px;
+                        height: 25px;
+                        color: white;
+
+                        &:hover {
+                            color: #6A7276;
+                        }
+                    }
+
                     &:hover .dropdown-content {
                         display: block;
                         opacity: 1;
-                        transition: all 0.3s ease;
+                        transition: visibility 0s, opacity .3s;
                     }
 
                     .dropdown-content {
@@ -153,19 +172,19 @@ footer {
         }
     }
 
-
-    .middle {
+    .footer__list {
         display: block;
         height: 366px;
         margin: 0 0 64px 0;
 
-        .first {
+        .footer__list__left {
             float: left;
 
-            .part {
+            .list__part {
                 @include middle;
                 width: 641px;
-                height: 90px;
+                height: max-content;
+                margin: 0 0 32px 0;
 
                 &:nth-child(1) {
                     height: 114px;
@@ -173,13 +192,14 @@ footer {
             }
         }
 
-        .second {
+        .footer__list__right {
             float: right;
+            margin: 0 0 32px 0;
 
-            .part {
+            .list__part {
                 @include middle;
                 width: 481px;
-                height: 90px;
+                height: max-content;
 
                 &:nth-child(1) {
                     height: 114px;
@@ -188,27 +208,31 @@ footer {
         }
     }
 
-    .bottom {
+    .footer__help {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
 
-        .left {
+        .footer__help__left {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 17px;
             justify-content: space-between;
             width: 600px;
             float: left;
 
             li {
                 float: left;
+                display: block;
+                height: max-content;
 
                 a {
                     color: #fff;
                     font-size: 16px;
                     font-weight: bold;
                     font-family: 'Rubik', sans-serif;
+                    display: block;
+                    height: max-content;
 
                     &:hover {
                         color: #8B8D8E;
@@ -217,33 +241,37 @@ footer {
             }
         }
 
-        .right {
-            float: right;
+        .footer__help__right {
+            --restriction-width: 48px;
+            grid-column-gap: 15px;
+            grid-row-gap: 8px;
+            display: grid;
+            grid-template-columns: var(--restriction-width) 1fr;
 
-            .holder {
-                float: left;
-                height: 48px;
-                width: 48px;
-                margin: 0 15px 0 0;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
+            img {
+                grid-row-end: span 2;
+                height: var(--restriction-width);
+                width: var(--restriction-width);
             }
 
-            .text {
-                float: left;
+            span {
+                display: block;
 
                 p {
                     font-size: 16px;
-                    font-weight: 500;
+                    font-weight: 600;
+                    font-family: Rubik,sans-serif;
                     color: #fff;
-                    margin-bottom: 8px;
+                }
 
-                    &:nth-child(2) {
+                &:nth-child(3) {
+                    p {
                         color: #71747B;
+                        font-weight: normal;
+                        line-height: 1.625;
+                        font-size: 14px;
                     }
+
                 }
             }
         }

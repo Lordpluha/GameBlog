@@ -7,16 +7,18 @@
 }
 
 @mixin middle {
-  .name {
+  .list__name {
     margin: 0 0 16px;
 
     li {
+      display: block;
       a {
         color: #fff;
         font-size: 16px;
         font-family: 'Rubik', sans-serif;
         line-height: 20px;
         font-weight: bold;
+        display: block;
 
         &:hover {
           color: #8B8D8E;
@@ -25,7 +27,7 @@
     }
   }
 
-  .fill {
+  .list__fill {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -38,13 +40,16 @@
       float: left;
       list-style-type: disc;
       color: #747C81;
+      &:nth-child(1){
+        list-style-type: none;
+      }
+
       &::marker {
         font-size: 8px;
       }
 
       a {
         margin: 0 8px 0 8px;
-
         &:nth-child(1) {
           margin-left: 0px;
         }
@@ -52,7 +57,8 @@
         cursor: pointer;
         color: #747C81;
         font-size: 14px;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik',
+        sans-serif;
         font-weight: 600;
         line-height: 20px;
         content: "\22c5";
