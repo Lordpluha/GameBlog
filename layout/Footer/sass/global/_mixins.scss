@@ -12,6 +12,7 @@
 
     li {
       display: block;
+
       a {
         color: #fff;
         font-size: 16px;
@@ -38,14 +39,10 @@
 
     li {
       float: left;
-      list-style-type: disc;
       color: #747C81;
-      &:nth-child(1){
-        list-style-type: none;
-      }
 
-      &::marker {
-        font-size: 8px;
+      &:first-child{
+        list-style-type: none;
       }
 
       a {
@@ -53,7 +50,6 @@
         &:nth-child(1) {
           margin-left: 0px;
         }
-
         cursor: pointer;
         color: #747C81;
         font-size: 14px;
@@ -65,6 +61,12 @@
 
         &:hover {
           color: #fff;
+        }
+        &::before {
+          content: "\2022";
+          margin-left: 3px;
+          margin-right: 3px;
+          color: #747C81;
         }
       }
     }
