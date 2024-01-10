@@ -6,11 +6,6 @@ aside,
 section{
 	@include box;
 }
-.footer__information{
-	@include box;
-	margin: 0 auto;
-	width: 1216px;
-}
 body{
 	background-color: #161B1D;
 }
