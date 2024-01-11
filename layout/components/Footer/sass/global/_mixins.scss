@@ -7,67 +7,52 @@
 }
 
 @mixin middle {
-  .list__name {
+  a.name {
     margin: 0 0 16px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    line-height: 20px;
+    font-weight: bold;
+    display: block;
 
-    li {
-      display: block;
-
-      a {
-        color: #fff;
-        font-size: 16px;
-        font-family: 'Rubik', sans-serif;
-        line-height: 20px;
-        font-weight: bold;
-        display: block;
-
-        &:hover {
-          color: #8B8D8E;
-        }
-      }
+    &:hover {
+      color: #8B8D8E;
     }
   }
 
-  .list__fill {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 5px;
-    padding: 0;
-    row-gap: 8px;
-    margin: 0 0 32px 0;
 
-    li {
-      float: left;
+.list__fill {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  row-gap: 8px;
+  margin: 0 0 32px -10px;
+
+    a {
+      margin: 0 8px 0 0;
+
+      &:nth-child(1) {
+        margin-left: 0px;
+      }
+      cursor: pointer;
       color: #747C81;
+      font-size: 14px;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 600;
+      line-height: 20px;
+      content: "\22c5";
 
-      &:first-child{
-        list-style-type: none;
+      &:hover {
+        color: #fff;
       }
 
-      a {
-        margin: 0 8px 0 8px;
-        &:nth-child(1) {
-          margin-left: 0px;
-        }
-        cursor: pointer;
+      &::before {
+        content: "\2022";
+        margin-left: 3px;
+        margin-right: 3px;
         color: #747C81;
-        font-size: 14px;
-        font-family: 'Rubik',
-        sans-serif;
-        font-weight: 600;
-        line-height: 20px;
-        content: "\22c5";
-
-        &:hover {
-          color: #fff;
-        }
-        &::before {
-          content: "\2022";
-          margin-left: 3px;
-          margin-right: 3px;
-          color: #747C81;
-        }
       }
     }
   }

@@ -87,11 +87,8 @@ a {
 }
 
 footer {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
+  cursor: pointer;
 }
 footer .footer__information {
   max-width: 1280px;
@@ -104,96 +101,95 @@ footer .footer__information .footer__box {
   grid-row-gap: 64px;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 7.73% -webkit-min-content;
+  -ms-grid-columns: 1fr 7.73% min-content;
+  grid-template-columns: 1fr -webkit-min-content;
+  grid-template-columns: 1fr min-content;
 }
-footer .footer__information .footer__box .footer__socials {
+footer .footer__information .footer__box .footer__logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 32px 0 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-footer .footer__information .footer__box .footer__socials .footer__logo a {
+footer .footer__information .footer__box .footer__logo a {
   height: 40px;
   width: 224px;
   display: block;
 }
-footer .footer__information .footer__box .footer__socials .footer__logo a img {
+footer .footer__information .footer__box .footer__logo a img {
   height: 40px;
   width: 224px;
   display: block;
 }
-footer .footer__information .footer__box .footer__socials .footer__logo p {
+footer .footer__information .footer__box .footer__logo p {
   margin: 16px 0 0 0;
   font-size: 16px;
   line-height: 1.625;
   font-family: "Rubik", sans-serif;
   color: #8B8D8E;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons {
-  width: 481px;
-  height: 25px;
+footer .footer__information .footer__box ul.footer__icons {
+  -webkit-column-gap: 32px;
+     -moz-column-gap: 32px;
+          column-gap: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  float: right;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li {
+footer .footer__information .footer__box ul.footer__icons li {
   width: 25px;
   height: 25px;
   position: relative;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li a.social-icon {
+footer .footer__information .footer__box ul.footer__icons li a.social-icon {
   width: 25px;
   height: 25px;
   display: block;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li a.social-icon svg {
+footer .footer__information .footer__box ul.footer__icons li a.social-icon svg {
   display: block;
   width: 25px;
   height: 25px;
   color: white;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li a.social-icon svg:hover {
+footer .footer__information .footer__box ul.footer__icons li a.social-icon svg:hover {
   color: #6A7276;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li a.social-icon:hover {
+footer .footer__information .footer__box ul.footer__icons li a.social-icon:hover {
   color: #fff;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li a.social-icon:hover .tooltip {
+footer .footer__information .footer__box ul.footer__icons li a.social-icon:hover .tooltip {
   visibility: visible;
   opacity: 1;
   -webkit-transform: translate(-50%, -150%);
           transform: translate(-50%, -150%);
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li a.social-icon:active {
+footer .footer__information .footer__box ul.footer__icons li a.social-icon:active {
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown {
+footer .footer__information .footer__box ul.footer__icons li .dropdown {
   position: relative;
   display: inline-block;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown svg.in {
+footer .footer__information .footer__box ul.footer__icons li .dropdown svg.in {
   display: block;
   width: 25px;
   height: 25px;
   color: white;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown svg.in:hover {
+footer .footer__information .footer__box ul.footer__icons li .dropdown svg.in:hover {
   color: #6A7276;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown:hover .dropdown-content {
+footer .footer__information .footer__box ul.footer__icons li .dropdown:hover .dropdown-content {
   display: block;
   opacity: 1;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content {
   opacity: 0;
   position: absolute;
   background-color: #383838;
@@ -206,29 +202,29 @@ footer .footer__information .footer__box .footer__socials ul.footer__icons li .d
   -webkit-transition: max-height 0.3s ease, opacity 0.3s ease;
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content li {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li {
   width: 200px;
   height: 52px;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content li:hover {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li:hover {
   color: #747C81;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content li a {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a {
   color: #fff;
   display: block;
   height: 52px;
   padding: 16px;
   font-family: "Rubik", sans-serif;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content li a:hover {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a:hover {
   color: #747C81;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content li a p {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a p {
   font-size: 14px;
   float: left;
   font-family: "Rubik", sans-serif;
 }
-footer .footer__information .footer__box .footer__socials ul.footer__icons li .dropdown .dropdown-content li a svg {
+footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a svg {
   width: 16px;
   height: 16px;
   float: right;
@@ -266,34 +262,15 @@ footer .footer__information .footer__box .tooltip:after {
   border-left: 8px solid transparent;
   border-bottom: none;
 }
-footer .footer__information .footer__box .footer__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 0 64px 0;
+footer .footer__information .footer__box .footer__list__left {
+  overflow: hidden;
+  margin-bottom: 64px;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part {
-  width: 641px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+footer .footer__information .footer__box .footer__list__left .list__part {
   margin: 0 0 32px 0;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__name {
+footer .footer__information .footer__box .footer__list__left .list__part a.name {
   margin: 0 0 16px;
-}
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__name li {
-  display: block;
-}
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__name li a {
   color: #fff;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
@@ -301,10 +278,10 @@ footer .footer__information .footer__box .footer__list .footer__list__left .list
   font-weight: bold;
   display: block;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__name li a:hover {
+footer .footer__information .footer__box .footer__list__left .list__part a.name:hover {
   color: #8B8D8E;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill {
+footer .footer__information .footer__box .footer__list__left .list__part .list__fill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -313,22 +290,12 @@ footer .footer__information .footer__box .footer__list .footer__list__left .list
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
   padding: 0;
   row-gap: 8px;
-  margin: 0 0 32px 0;
+  margin: 0 0 32px -10px;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill li {
-  float: left;
-  color: #747C81;
-}
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill li:first-child {
-  list-style-type: none;
-}
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill li a {
-  margin: 0 8px 0 8px;
+footer .footer__information .footer__box .footer__list__left .list__part .list__fill a {
+  margin: 0 8px 0 0;
   cursor: pointer;
   color: #747C81;
   font-size: 14px;
@@ -337,37 +304,27 @@ footer .footer__information .footer__box .footer__list .footer__list__left .list
   line-height: 20px;
   content: "⋅";
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill li a:nth-child(1) {
+footer .footer__information .footer__box .footer__list__left .list__part .list__fill a:nth-child(1) {
   margin-left: 0px;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill li a:hover {
+footer .footer__information .footer__box .footer__list__left .list__part .list__fill a:hover {
   color: #fff;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part .list__fill li a::before {
+footer .footer__information .footer__box .footer__list__left .list__part .list__fill a::before {
   content: "•";
   margin-left: 3px;
   margin-right: 3px;
   color: #747C81;
 }
-footer .footer__information .footer__box .footer__list .footer__list__left .list__part:nth-child(1) {
+footer .footer__information .footer__box .footer__list__left .list__part:nth-child(1) {
   height: 114px;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right {
-  margin: 0 0 32px 0;
+footer .footer__information .footer__box .footer__list__right {
+  margin: 0 0 64px 0;
+  overflow: hidden;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part {
-  width: 481px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__name {
+footer .footer__information .footer__box .footer__list__right .list__part a.name {
   margin: 0 0 16px;
-}
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__name li {
-  display: block;
-}
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__name li a {
   color: #fff;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
@@ -375,10 +332,10 @@ footer .footer__information .footer__box .footer__list .footer__list__right .lis
   font-weight: bold;
   display: block;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__name li a:hover {
+footer .footer__information .footer__box .footer__list__right .list__part a.name:hover {
   color: #8B8D8E;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill {
+footer .footer__information .footer__box .footer__list__right .list__part .list__fill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,22 +344,12 @@ footer .footer__information .footer__box .footer__list .footer__list__right .lis
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
   padding: 0;
   row-gap: 8px;
-  margin: 0 0 32px 0;
+  margin: 0 0 32px -10px;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill li {
-  float: left;
-  color: #747C81;
-}
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill li:first-child {
-  list-style-type: none;
-}
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill li a {
-  margin: 0 8px 0 8px;
+footer .footer__information .footer__box .footer__list__right .list__part .list__fill a {
+  margin: 0 8px 0 0;
   cursor: pointer;
   color: #747C81;
   font-size: 14px;
@@ -411,19 +358,19 @@ footer .footer__information .footer__box .footer__list .footer__list__right .lis
   line-height: 20px;
   content: "⋅";
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill li a:nth-child(1) {
+footer .footer__information .footer__box .footer__list__right .list__part .list__fill a:nth-child(1) {
   margin-left: 0px;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill li a:hover {
+footer .footer__information .footer__box .footer__list__right .list__part .list__fill a:hover {
   color: #fff;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part .list__fill li a::before {
+footer .footer__information .footer__box .footer__list__right .list__part .list__fill a::before {
   content: "•";
   margin-left: 3px;
   margin-right: 3px;
   color: #747C81;
 }
-footer .footer__information .footer__box .footer__list .footer__list__right .list__part:nth-child(1) {
+footer .footer__information .footer__box .footer__list__right .list__part:nth-child(1) {
   height: 114px;
 }
 footer .footer__information .footer__help {
