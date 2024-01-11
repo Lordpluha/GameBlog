@@ -15,7 +15,7 @@ export class AuthService {
 	) {}
 
 	async login({ email, password }: LoginDto) {
-		const user = await this.userService.byEmail(email)
+		const user = await this.userService.byEmail(email, true)
 		if (!user) throw new BadRequestException(USER_EMAIL_NOT_FOUND)
 		const isMatch = await compare(password, user.password)
 		if (!isMatch) throw new BadRequestException(INCORRECT_PASSWORD)
@@ -24,7 +24,7 @@ export class AuthService {
 	}
 
 	async registration(dto: RegistrationDto) {
-		const oldUser = await this.userService.byEmail(dto.email)
+		const oldUser = await this.userService.byEmail(dto.email, true)
 		if (oldUser) throw new BadRequestException(USER_WITH_EMAIL_ALREADY_EXISTS)
 		const salt = await genSalt(7)
 		const hashPassword = await hash(dto.password, salt)
@@ -38,7 +38,7 @@ export class AuthService {
 
 	async refresh(refreshToken: string, userId: number) {
 		const token = await this.tokenService.byToken(refreshToken)
-		const user = await this.userService.byId(userId)
+		const user = await this.userService.byId(userId, true)
 		if (!token || !user) throw new UnauthorizedException()
 		const userDto = { id: user.id, email: user.email, name: user.name, role: user.role }
 		const tokens = await this.tokenService.generate(userDto)
