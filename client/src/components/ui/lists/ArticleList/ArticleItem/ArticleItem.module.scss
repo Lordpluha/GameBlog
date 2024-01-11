@@ -7,7 +7,7 @@
 }
 
 .articleItemImage {
-	@apply md:w-[196px] md:h-[110px] sm:w-full cursor-pointer transition duration-300 ease-in-out hover:scale-110;
+	@apply md:w-[196px] md:h-[110px] z-0 sm:w-full cursor-pointer transition duration-300 ease-in-out hover:scale-110;
 }
 
 .articleItemDescription {
@@ -24,4 +24,8 @@
 
 .articleItemCategory {
 	@apply flex md:flex-row sm:flex-col pb-2 items-center;
+}
+
+.articleItemCategory div {
+	@apply flex
 }

@@ -1,4 +1,4 @@
 export type TCategory = {
-	seo: string
+	tagUrl: string
 	title: string
 }

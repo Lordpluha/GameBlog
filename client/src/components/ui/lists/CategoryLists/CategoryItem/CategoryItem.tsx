@@ -8,7 +8,7 @@ const CategoryItem = ({ category }: { category: TCategory }) => {
 	const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault()
 		e.stopPropagation()
-		navigate(`/news/${category.seo}`)
+		navigate(category.tagUrl)
 	}
 	return (
 		<a

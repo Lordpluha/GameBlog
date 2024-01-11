@@ -1,66 +1,45 @@
 .pagination {
-    $this: &;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    outline: transparent;
-  
-    & > li {
-      margin: 2px;
-      width: 30px;
-      height: 30px;
-    }
-  
-    & > li > a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      color: $color-text;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      outline: transparent;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: var(--body-bg-color);
-        color: white;
-      }
-    }
-  
-    & > #{$this}__active > a {
-      background-color: var(--body-bg-color);
-      border-color: var(--body-bg-color);
-      color: white;
-    }
-  
-    & > #{$this}__active > a,
-    & > #{$this}__active > a:hover,
-    & > #{$this}__active > a:focus {
-      background-color: var(--body-bg-color);
-      border-color: var(--body-bg-color);
-      outline: transparent;
-      cursor: default;
-    }
-  
-    & > .disabled > a {
-      cursor: default;
-  
-      svg {
-        fill: $color-suit-gray;
-      }
-  
-      &:hover {
-        background-color: transparent;
-      }
-    }
-  
-    &__dark {
-      & > li > a {
-        color: white;
-      }
-    }
-  }
+  @apply flex flex-row items-center justify-center list-none outline-none mt-5
+}
+
+.pagination li {
+    @apply m-1 w-8 h-8
+}
+
+.pagination li a {
+  @apply rounded cursor-pointer outline-none flex items-center justify-center w-8 h-8 text-[--text-color] bg-transparent border border-solid border-transparent
+}
+
+.pagination li a:hover {
+  @apply bg-[--body-bg-color]
+}
+
+.pagination__active li {
+  @apply bg-[--hover-active-colore] rounded
+}
+
+.pagination__active a {
+  @apply border-solid border-[--body-bg-color] text-white
+}
+
+.pagination__active a,
+.pagination__active a:hover,
+.pagination__active a:focus {
+  @apply  border-solid border-[--body-bg-color] outline-none cursor-default
+}
+
+.pagination li.disabled {
+  @apply hidden
+}
+
+.pagination .disabled a svg {
+  @apply fill-[--body-bg-color]
+}
+
+.pagination .disabled a:hover {
+  @apply bg-transparent
+}
+
+.pagination__dark li a {
+    @apply text-white;
+}

@@ -1,0 +1,583 @@
+{
+    "newsData":[
+        {
+            "articleId":"61156",
+            "seo":"rabochie_kadry_iz_ekranizacii_gravity_rush_i_novoy_patapon",
+            "title": "Рабочие кадры из экранизации Gravity Rush и новой Patapon",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/kHRsn7PnhuEj2DvHBfRlKw/avatar_226591.jpeg",
+                    "name": "Геннадий",
+                    "surname": "Воробьев",
+                    "login": "Dante1806"
+                }
+            ],
+            "fullText": "На выставке CES 2024 компания Sony презентовала студию Torchlight, которая помогает другим командам с производством видеоконтента (в основном на базе компьютерной графики). В ролике о Torchlight внезапно появились две игровые франшизы Sony — Gravity Rush и Patapon. Экранизация Gravity Rush. Дилогии Gravity Rush не удалось стать коммерческим хитом, но потенциал для экранизации в ней всё-таки разглядели. Ленту официально анонсировали полтора года назад, но с тех пор новостей о ней толком не появлялось. Несколько секунд из экранизации Gravity Rush показывают в презентации Torchlight. Похоже, нас ждёт анимационный фильм, где актёры снимаются через захват движений. По всей видимости, в презентации показаны чисто рабочие материалы, так что жаловаться на скудную графику и непохожую главную героиню пока рано.",
+            "views": "241",
+            "comments": "2",
+            "publishedDate": "1704798461",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },
+        {
+            "articleId":"61155",
+            "seo":"steam_deck_i_baldur_s_gate_iii_vse_esche_uderzhivayut_liderstvo_v_charte_steam",
+            "title": "Steam Deck и Baldur’s Gate III всё ещё удерживают лидерство в чарте Steam",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2023/06/28/c152x152/BZcoxkiQ4pdd-zuGTfuJBQ/WpWBC9h.jpg",
+                    "name": "Лина",
+                    "surname": "Скорич",
+                    "login": "Vivalonter"
+                }
+            ],
+            "fullText": "Так как начало января не балует громкими релизами, в чарте Steam всё ещё присутствуют отголоски большой зимней распродажи. Более того, за две недели ценопада верхушка списка претерпела минимальные изменения. Единственным новичком за долгое время стала Monster Hunter: World. На её возвращение повлияла не только приятная скидка, но и ряд других факторов. К примеру, анонс Monster Hunter Wilds. Пиковый онлайн на неделе со 2-го по 9 января обновили или установили следующие проекты: Winter Memories — 12 403 человека. Portal:Revolution — 7 483 человека. Summoners War — 5 041 человек.",
+            "views": "217",
+            "comments": "0",
+            "publishedDate": "1704794861",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                }
+            ]
+        },{
+            "articleId":"61154",
+            "seo":"podrobnee_ob_rtx_remix_moschnom_instrumente_dlya_remasterov_staryh_igr",
+            "title": "Подробнее об RTX Remix — мощном инструменте для ремастеров старых игр",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/kHRsn7PnhuEj2DvHBfRlKw/avatar_226591.jpeg",
+                    "name": "Геннадий",
+                    "surname": "Воробьев",
+                    "login": "Dante1806"
+                }
+            ],
+            "fullText": "RTX Remix — набор инструментов от NVIDIA, который позволит сообществу легко добавлять современные технологии в старые игры и преображать их до неузнаваемости. Накануне в рамках в своей презентации компания объявила дату публичного запуска RTX Remix, а также опубликовала блог с подробностями о том, на что способна эта штуковина. Пересказываем самое главное: RTX Remix строится на основе NVIDIA Omniverse — вычислительной платформы для совместной работы над графикой в реальном времени. RTX Remix работает с играми на DirectX 8 и DirectX 9, которые используют графический пайплайн с фиксированными функциями. Например, под эти параметры подходят Call of Duty 2, Hitman 2: Silent Assassin, Garry’s Mod, Freedom Fighters, Need for Speed Underground 2 и Vampire: The Masquerade — Bloodlines.",
+            "views": "818",
+            "comments": "5",
+            "publishedDate": "1704791261",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },{
+            "articleId":"61153",
+            "seo":"msi_claw_pervyy_konkurent_steam_deck_s_chipom_intel_core_ultra_vnutri",
+            "title": "MSI Claw — первый конкурент Steam Deck с чипом Intel Core Ultra внутри",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2023/06/28/c152x152/BZcoxkiQ4pdd-zuGTfuJBQ/WpWBC9h.jpg",
+                    "name": "Лина",
+                    "surname": "Скорич",
+                    "login": "Vivalonter"
+                }
+            ],
+            "fullText": "MSI не намерена отставать от трендов, поэтому на выставке CES 2024 представила свой ответ Steam Deck. У портативного ПК с названием Claw нет каких-то впечатляющих особенностей конструкции, как, например, у Lenovo Legion Go с его снимающимися контроллерами. Вместо этого устройство может похвастаться ёмким аккумулятором и процессором Intel Core Ultra. Напомним, основные конкуренты оснащены чипами от AMD. Благодаря процессору от Intel девайс поддерживает технологию апскейла XeSS. По словам производителя, «железо» MSI Claw позволяет «легко наслаждаться ААА-тайтлами». На руку этому утверждению играет и объёмная батарея, которая, если верить MSI, является крупнейшей в своём классе. Заявлено 2 часа непрерывной работы при полной нагрузке. Также «Коготь» оснастили системой охлаждения с вентиляционными отверстиями на 50 % больше, чем у конкурентов. В компании отметили, что конструкция портативного ПК оптимизирована для длительных игровых сессий. По словам журналиста The Verge, хват у устройства действительно удобный. Тактильные кнопки и стики выполнены на базе датчиков Холла, чтобы избежать проблемы «дрейфа» и других поломок. MSI Claw поддерживает технологию переменной частоты обновления (VRR). Кроме того, на корпусе расположили несколько дополнительных кнопок, действия для которых может определить сам пользователь.",
+            "views": "1086",
+            "comments": "4",
+            "publishedDate": "1704791741",
+            "tags": [
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"61152",
+            "seo":"unity_uvolnyaet_chetvert_svoego_shtata_okolo_1_800_sotrudnikov",
+            "title": "Unity увольняет четверть своего штата — около 1 800 сотрудников",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/kHRsn7PnhuEj2DvHBfRlKw/avatar_226591.jpeg",
+                    "name": "Геннадий",
+                    "surname": "Воробьев",
+                    "login": "Dante1806"
+                }
+            ],
+            "fullText": "Начинаем новый год с новых увольнений: как пишет Reuters, в Unity пройдёт ещё одна волна сокращений — самая крупная в истории компании. По словам руководства, это необходимый шаг в рамках перезагрузки бизнеса. Основные моменты: Под сокращение попадёт около 25 % от всего штата Unity (примерно 1 800 человек). Увольнения затронут все команды, регионы и области бизнеса Unity. Увольнения планируют завершить к концу марта 2024-го. Unity также планирует провести и некие другие изменения, но подробности о них раскроют позже. Это уже четвёртая волна сокращений с июля 2022-го.",
+            "views": "1303",
+            "comments": "5",
+            "publishedDate": "1704792641",
+            "tags": [
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"61151",
+            "seo":"ochki_apple_vision_pro_nachnut_prodavat_v_fevrale",
+            "title": "Очки Apple Vision Pro начнут продавать в феврале",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Apple объявила дату начала продаж своей гарнитуры дополненной реальности Vision Pro, которая также может выполнять функции VR-шлема. В Соединённых Штатах Америки купить устройство можно будет с 2 февраля. Также компания начнёт принимать предзаказы с 19 января. Цена у нового гаджета кусается — $3499. Для сравнения, полный комплект Valve Index, включающий контроллеры, шлем и две базовые станции, стоит лишь $999. На старте Vision Pro будет поддерживать более 250 игр из библиотеки Apple Arcade. Хотя в рекламных материалах гаджет больше представляют как устройство для общения, просмотра видео и работы с приложениями, а не для гейминга. ",
+            "views": "1487",
+            "comments": "4",
+            "publishedDate": "1704796241",
+            "tags": [
+                {
+                    "title": "VR",
+                    "tagUrl": "https://stopgame.ru/news/vr"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"161150",
+            "seo":"tirazh_hogwarts_legacy_perevalil_za_22_milliona_kopiy",
+            "title": "Тираж Hogwarts Legacy перевалил за 22 миллиона копий",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Изданию Variety удалось записать интервью с президентом Warner Bros. Interactive Entertainment Дэвидом Хаддадом (David Haddad) об итогах 2023 года. Главный хит компании Hogwarts Legacy купили свыше 22 миллионов раз. Таких результатов проект смог добиться всего за 11 месяцев. При этом в период декабрьских праздников было продано около 2 миллионов копий.",
+            "views": "1551",
+            "comments": "7",
+            "publishedDate": "1704797441",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        },{
+            "articleId":"61149",
+            "seo":"studiya_blumhouse_uzhe_rabotaet_nad_sikvelom_filma_po_five_nights_at_freddy_s",
+            "title": "Студия Blumhouse уже работает над сиквелом фильма по Five Nights at Freddy’s",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Актёр Джош Хатчерсон (Josh Hutcherson) подтвердил, что работа над сиквелом экранизации Five Nights at Freddy’s уже началась. Он также поделился своими впечатлениями от съёмок в фильме. Сейчас Джош, который сыграл в экранизации главную роль, колесит с интервью по случаю релиза другой киноленты со своим участием — боевика «Пчеловод». Но это не мешает ему говорить и о других фильмах. В интервью для Variety актёр подтвердил, что Blumhouse Productions уже разрабатывает сиквел.",
+            "views": "2235",
+            "comments": "7",
+            "publishedDate": "1704801041",
+            "tags": [
+                {
+                    "title": "Кино",
+                    "tagUrl": "https://stopgame.ru/news/movies"
+                }
+            ]
+        },{
+            "articleId":"61148",
+            "seo":"trailer_half_life_2_rtx_novaya_lineyka_videokart_i_drugie_roliki_s_prezentacii_nvidia",
+            "title": "Трейлер Half-Life 2 RTX, новая линейка видеокарт и другие ролики с презентации NVIDIA",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Команда мододелов Orbifold Studios работает над современной версией легендарной Half-Life 2 с помощью платформы RTX Remix. Valve не принимает никакого участия в разработке, но уже дала своё публичное благословение. В Half-Life 2 RTX: An RTX Remix Project игрок ждут обновлённые ассеты, поддержка DLSS 3.5 с ray reconstruction, рейтрейсинг освещения, теней и отражений. В этой новости можно узнать больше подробностей от самих разработчиков. Даты выхода у преокта пока нет.",
+            "views": "4521",
+            "comments": "24",
+            "publishedDate": "1704714641",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"61147",
+            "seo":"apdeyt_sins_of_the_flesh_dlya_cult_of_the_lamb_poyavitsya_16_yanvarya",
+            "title": "Апдейт Sins of the Flesh для Cult of the Lamb появится 16 января",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/jFfQHoqK7MxK3bIjaIIdbQ/avatar_161162.jpg",
+                    "name": "Андрей",
+                    "surname": "Маковеев",
+                    "login": "DarkH"
+                }
+            ],
+            "fullText": "Издательство Devolver Digital и студия Massive Monster сообщили, что обновление Sins of the Flesh для Cult of the Lamb стартует 16 января. Авторы также похвастали продажами рогалика — они превысили 3,5 миллиона копий. В список нововведений Sins of the Flesh входят: Обновлённая система прогресса. Самых преданных последователей можно будет сделать адептами с переработанной прокачкой. Новые улучшения для культа. В их числе — сияющие какашки, обеспечивающие богатый урожай, и особая метла, с которой работы будут выполняться быстрее. Новое оружие — мушкетон. Обычный выстрел наносит много урона вблизи, а заряженный — на дальней дистанции. Новое здание — мастерская портного. В ней можно нарядить любого сектанта в один из 23 вариантов одежды на выбор. Механика выведения потомства. Если два культиста любят друг друга, они могут найти яйцо, из которого вылупится детёныш.",
+            "views": "2823",
+            "comments": "9",
+            "publishedDate": "1704703601",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 4",
+                    "tagUrl": "https://stopgame.ru/news/ps4"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Xbox One",
+                    "tagUrl": "https://stopgame.ru/news/xone"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        },{
+            "articleId":"61146",
+            "seo":"rabochie_kadry_iz_ekranizacii_gravity_rush_i_novoy_patapon",
+            "title": "Рабочие кадры из экранизации Gravity Rush и новой Patapon",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/kHRsn7PnhuEj2DvHBfRlKw/avatar_226591.jpeg",
+                    "name": "Геннадий",
+                    "surname": "Воробьев",
+                    "login": "Dante1806"
+                }
+            ],
+            "fullText": "На выставке CES 2024 компания Sony презентовала студию Torchlight, которая помогает другим командам с производством видеоконтента (в основном на базе компьютерной графики). В ролике о Torchlight внезапно появились две игровые франшизы Sony — Gravity Rush и Patapon. Экранизация Gravity Rush. Дилогии Gravity Rush не удалось стать коммерческим хитом, но потенциал для экранизации в ней всё-таки разглядели. Ленту официально анонсировали полтора года назад, но с тех пор новостей о ней толком не появлялось. Несколько секунд из экранизации Gravity Rush показывают в презентации Torchlight. Похоже, нас ждёт анимационный фильм, где актёры снимаются через захват движений. По всей видимости, в презентации показаны чисто рабочие материалы, так что жаловаться на скудную графику и непохожую главную героиню пока рано.",
+            "views": "241",
+            "comments": "2",
+            "publishedDate": "1704798461",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },
+        {
+            "articleId":"61145",
+            "seo":"steam_deck_i_baldur_s_gate_iii_vse_esche_uderzhivayut_liderstvo_v_charte_steam",
+            "title": "Steam Deck и Baldur’s Gate III всё ещё удерживают лидерство в чарте Steam",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2023/06/28/c152x152/BZcoxkiQ4pdd-zuGTfuJBQ/WpWBC9h.jpg",
+                    "name": "Лина",
+                    "surname": "Скорич",
+                    "login": "Vivalonter"
+                }
+            ],
+            "fullText": "Так как начало января не балует громкими релизами, в чарте Steam всё ещё присутствуют отголоски большой зимней распродажи. Более того, за две недели ценопада верхушка списка претерпела минимальные изменения. Единственным новичком за долгое время стала Monster Hunter: World. На её возвращение повлияла не только приятная скидка, но и ряд других факторов. К примеру, анонс Monster Hunter Wilds. Пиковый онлайн на неделе со 2-го по 9 января обновили или установили следующие проекты: Winter Memories — 12 403 человека. Portal:Revolution — 7 483 человека. Summoners War — 5 041 человек.",
+            "views": "217",
+            "comments": "0",
+            "publishedDate": "1704794861",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                }
+            ]
+        },{
+            "articleId":"61144",
+            "seo":"podrobnee_ob_rtx_remix_moschnom_instrumente_dlya_remasterov_staryh_igr",
+            "title": "Подробнее об RTX Remix — мощном инструменте для ремастеров старых игр",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/kHRsn7PnhuEj2DvHBfRlKw/avatar_226591.jpeg",
+                    "name": "Геннадий",
+                    "surname": "Воробьев",
+                    "login": "Dante1806"
+                }
+            ],
+            "fullText": "RTX Remix — набор инструментов от NVIDIA, который позволит сообществу легко добавлять современные технологии в старые игры и преображать их до неузнаваемости. Накануне в рамках в своей презентации компания объявила дату публичного запуска RTX Remix, а также опубликовала блог с подробностями о том, на что способна эта штуковина. Пересказываем самое главное: RTX Remix строится на основе NVIDIA Omniverse — вычислительной платформы для совместной работы над графикой в реальном времени. RTX Remix работает с играми на DirectX 8 и DirectX 9, которые используют графический пайплайн с фиксированными функциями. Например, под эти параметры подходят Call of Duty 2, Hitman 2: Silent Assassin, Garry’s Mod, Freedom Fighters, Need for Speed Underground 2 и Vampire: The Masquerade — Bloodlines.",
+            "views": "818",
+            "comments": "5",
+            "publishedDate": "1704791261",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },{
+            "articleId":"61143",
+            "seo":"msi_claw_pervyy_konkurent_steam_deck_s_chipom_intel_core_ultra_vnutri",
+            "title": "MSI Claw — первый конкурент Steam Deck с чипом Intel Core Ultra внутри",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2023/06/28/c152x152/BZcoxkiQ4pdd-zuGTfuJBQ/WpWBC9h.jpg",
+                    "name": "Лина",
+                    "surname": "Скорич",
+                    "login": "Vivalonter"
+                }
+            ],
+            "fullText": "MSI не намерена отставать от трендов, поэтому на выставке CES 2024 представила свой ответ Steam Deck. У портативного ПК с названием Claw нет каких-то впечатляющих особенностей конструкции, как, например, у Lenovo Legion Go с его снимающимися контроллерами. Вместо этого устройство может похвастаться ёмким аккумулятором и процессором Intel Core Ultra. Напомним, основные конкуренты оснащены чипами от AMD. Благодаря процессору от Intel девайс поддерживает технологию апскейла XeSS. По словам производителя, «железо» MSI Claw позволяет «легко наслаждаться ААА-тайтлами». На руку этому утверждению играет и объёмная батарея, которая, если верить MSI, является крупнейшей в своём классе. Заявлено 2 часа непрерывной работы при полной нагрузке. Также «Коготь» оснастили системой охлаждения с вентиляционными отверстиями на 50 % больше, чем у конкурентов. В компании отметили, что конструкция портативного ПК оптимизирована для длительных игровых сессий. По словам журналиста The Verge, хват у устройства действительно удобный. Тактильные кнопки и стики выполнены на базе датчиков Холла, чтобы избежать проблемы «дрейфа» и других поломок. MSI Claw поддерживает технологию переменной частоты обновления (VRR). Кроме того, на корпусе расположили несколько дополнительных кнопок, действия для которых может определить сам пользователь.",
+            "views": "1086",
+            "comments": "4",
+            "publishedDate": "1704791741",
+            "tags": [
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"61142",
+            "seo":"unity_uvolnyaet_chetvert_svoego_shtata_okolo_1_800_sotrudnikov",
+            "title": "Unity увольняет четверть своего штата — около 1 800 сотрудников",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/kHRsn7PnhuEj2DvHBfRlKw/avatar_226591.jpeg",
+                    "name": "Геннадий",
+                    "surname": "Воробьев",
+                    "login": "Dante1806"
+                }
+            ],
+            "fullText": "Начинаем новый год с новых увольнений: как пишет Reuters, в Unity пройдёт ещё одна волна сокращений — самая крупная в истории компании. По словам руководства, это необходимый шаг в рамках перезагрузки бизнеса. Основные моменты: Под сокращение попадёт около 25 % от всего штата Unity (примерно 1 800 человек). Увольнения затронут все команды, регионы и области бизнеса Unity. Увольнения планируют завершить к концу марта 2024-го. Unity также планирует провести и некие другие изменения, но подробности о них раскроют позже. Это уже четвёртая волна сокращений с июля 2022-го.",
+            "views": "1303",
+            "comments": "5",
+            "publishedDate": "1704792641",
+            "tags": [
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"61141",
+            "seo":"ochki_apple_vision_pro_nachnut_prodavat_v_fevrale",
+            "title": "Очки Apple Vision Pro начнут продавать в феврале",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Apple объявила дату начала продаж своей гарнитуры дополненной реальности Vision Pro, которая также может выполнять функции VR-шлема. В Соединённых Штатах Америки купить устройство можно будет с 2 февраля. Также компания начнёт принимать предзаказы с 19 января. Цена у нового гаджета кусается — $3499. Для сравнения, полный комплект Valve Index, включающий контроллеры, шлем и две базовые станции, стоит лишь $999. На старте Vision Pro будет поддерживать более 250 игр из библиотеки Apple Arcade. Хотя в рекламных материалах гаджет больше представляют как устройство для общения, просмотра видео и работы с приложениями, а не для гейминга. ",
+            "views": "1487",
+            "comments": "4",
+            "publishedDate": "1704796241",
+            "tags": [
+                {
+                    "title": "VR",
+                    "tagUrl": "https://stopgame.ru/news/vr"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"161140",
+            "seo":"tirazh_hogwarts_legacy_perevalil_za_22_milliona_kopiy",
+            "title": "Тираж Hogwarts Legacy перевалил за 22 миллиона копий",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Изданию Variety удалось записать интервью с президентом Warner Bros. Interactive Entertainment Дэвидом Хаддадом (David Haddad) об итогах 2023 года. Главный хит компании Hogwarts Legacy купили свыше 22 миллионов раз. Таких результатов проект смог добиться всего за 11 месяцев. При этом в период декабрьских праздников было продано около 2 миллионов копий.",
+            "views": "1551",
+            "comments": "7",
+            "publishedDate": "1704797441",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        },{
+            "articleId":"61139",
+            "seo":"studiya_blumhouse_uzhe_rabotaet_nad_sikvelom_filma_po_five_nights_at_freddy_s",
+            "title": "Студия Blumhouse уже работает над сиквелом фильма по Five Nights at Freddy’s",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Актёр Джош Хатчерсон (Josh Hutcherson) подтвердил, что работа над сиквелом экранизации Five Nights at Freddy’s уже началась. Он также поделился своими впечатлениями от съёмок в фильме. Сейчас Джош, который сыграл в экранизации главную роль, колесит с интервью по случаю релиза другой киноленты со своим участием — боевика «Пчеловод». Но это не мешает ему говорить и о других фильмах. В интервью для Variety актёр подтвердил, что Blumhouse Productions уже разрабатывает сиквел.",
+            "views": "2235",
+            "comments": "7",
+            "publishedDate": "1704801041",
+            "tags": [
+                {
+                    "title": "Кино",
+                    "tagUrl": "https://stopgame.ru/news/movies"
+                }
+            ]
+        },{
+            "articleId":"61138",
+            "seo":"trailer_half_life_2_rtx_novaya_lineyka_videokart_i_drugie_roliki_s_prezentacii_nvidia",
+            "title": "Трейлер Half-Life 2 RTX, новая линейка видеокарт и другие ролики с презентации NVIDIA",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/avatars/2022/12/29/c152x152/ddxKoFY2U056BnKZHgWMsA/Ynmrbcz.jpg",
+                    "name": "Александр",
+                    "surname": "Кудрявцев",
+                    "login": "kud_sanya"
+                }
+            ],
+            "fullText": "Команда мододелов Orbifold Studios работает над современной версией легендарной Half-Life 2 с помощью платформы RTX Remix. Valve не принимает никакого участия в разработке, но уже дала своё публичное благословение. В Half-Life 2 RTX: An RTX Remix Project игрок ждут обновлённые ассеты, поддержка DLSS 3.5 с ray reconstruction, рейтрейсинг освещения, теней и отражений. В этой новости можно узнать больше подробностей от самих разработчиков. Даты выхода у преокта пока нет.",
+            "views": "4521",
+            "comments": "24",
+            "publishedDate": "1704714641",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "articleId":"61137",
+            "seo":"apdeyt_sins_of_the_flesh_dlya_cult_of_the_lamb_poyavitsya_16_yanvarya",
+            "title": "Апдейт Sins of the Flesh для Cult of the Lamb появится 16 января",
+            "category": "Новости",
+            "imageNews": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "authorData": [
+                {
+                    "avatar": "https://images.stopgame.ru/uploads/avatars/c152x152/jFfQHoqK7MxK3bIjaIIdbQ/avatar_161162.jpg",
+                    "name": "Андрей",
+                    "surname": "Маковеев",
+                    "login": "DarkH"
+                }
+            ],
+            "fullText": "Издательство Devolver Digital и студия Massive Monster сообщили, что обновление Sins of the Flesh для Cult of the Lamb стартует 16 января. Авторы также похвастали продажами рогалика — они превысили 3,5 миллиона копий. В список нововведений Sins of the Flesh входят: Обновлённая система прогресса. Самых преданных последователей можно будет сделать адептами с переработанной прокачкой. Новые улучшения для культа. В их числе — сияющие какашки, обеспечивающие богатый урожай, и особая метла, с которой работы будут выполняться быстрее. Новое оружие — мушкетон. Обычный выстрел наносит много урона вблизи, а заряженный — на дальней дистанции. Новое здание — мастерская портного. В ней можно нарядить любого сектанта в один из 23 вариантов одежды на выбор. Механика выведения потомства. Если два культиста любят друг друга, они могут найти яйцо, из которого вылупится детёныш.",
+            "views": "2823",
+            "comments": "9",
+            "publishedDate": "1704703601",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 4",
+                    "tagUrl": "https://stopgame.ru/news/ps4"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Xbox One",
+                    "tagUrl": "https://stopgame.ru/news/xone"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        }
+    ]
+}

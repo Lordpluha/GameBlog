@@ -44,7 +44,7 @@ const ArticleItem = ({ article }: { article: IArticle }) => {
 
 				<div className='pr-4'>
 					<CategoryList
-						categories={article.categories}
+						categories={article.tags}
 						className={styles.articleItemCategory}
 					/>
 					<div className='flex flex-row justify-between'>

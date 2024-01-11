@@ -1,0 +1,363 @@
+{
+    "newsData":[
+        {
+            "id":"61156",
+            "seo":"rabochie_kadry_iz_ekranizacii_gravity_rush_i_novoy_patapon",
+            "title": "Рабочие кадры из экранизации Gravity Rush и новой Patapon",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "2",
+            "releaseDate": "1704798461",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },
+        {
+            "id":"61155",
+            "seo":"steam_deck_i_baldur_s_gate_iii_vse_esche_uderzhivayut_liderstvo_v_charte_steam",
+            "title": "Steam Deck и Baldur’s Gate III всё ещё удерживают лидерство в чарте Steam",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "0",
+            "releaseDate": "1704794861",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                }
+            ]
+        },{
+            "id":"61154",
+            "seo":"podrobnee_ob_rtx_remix_moschnom_instrumente_dlya_remasterov_staryh_igr",
+            "title": "Подробнее об RTX Remix — мощном инструменте для ремастеров старых игр",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "5",
+            "releaseDate": "1704791261",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },{
+            "id":"61153",
+            "seo":"msi_claw_pervyy_konkurent_steam_deck_s_chipom_intel_core_ultra_vnutri",
+            "title": "MSI Claw — первый конкурент Steam Deck с чипом Intel Core Ultra внутри",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "4",
+            "releaseDate": "1704791741",
+            "tags": [
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"61152",
+            "seo":"unity_uvolnyaet_chetvert_svoego_shtata_okolo_1_800_sotrudnikov",
+            "title": "Unity увольняет четверть своего штата — около 1 800 сотрудников",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "5",
+            "releaseDate": "1704792641",
+            "tags": [
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"61151",
+            "seo":"ochki_apple_vision_pro_nachnut_prodavat_v_fevrale",
+            "title": "Очки Apple Vision Pro начнут продавать в феврале",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "4",
+            "releaseDate": "1704796241",
+            "tags": [
+                {
+                    "title": "VR",
+                    "tagUrl": "https://stopgame.ru/news/vr"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"161150",
+            "seo":"tirazh_hogwarts_legacy_perevalil_za_22_milliona_kopiy",
+            "title": "Тираж Hogwarts Legacy перевалил за 22 миллиона копий",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "7",
+            "releaseDate": "1704797441",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        },{
+            "id":"61149",
+            "seo":"studiya_blumhouse_uzhe_rabotaet_nad_sikvelom_filma_po_five_nights_at_freddy_s",
+            "title": "Студия Blumhouse уже работает над сиквелом фильма по Five Nights at Freddy’s",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "7",
+            "releaseDate": "1704801041",
+            "tags": [
+                {
+                    "title": "Кино",
+                    "tagUrl": "https://stopgame.ru/news/movies"
+                }
+            ]
+        },{
+            "id":"61148",
+            "seo":"trailer_half_life_2_rtx_novaya_lineyka_videokart_i_drugie_roliki_s_prezentacii_nvidia",
+            "title": "Трейлер Half-Life 2 RTX, новая линейка видеокарт и другие ролики с презентации NVIDIA",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "24",
+            "releaseDate": "1704714641",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"61147",
+            "seo":"apdeyt_sins_of_the_flesh_dlya_cult_of_the_lamb_poyavitsya_16_yanvarya",
+            "title": "Апдейт Sins of the Flesh для Cult of the Lamb появится 16 января",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "9",
+            "releaseDate": "1704703601",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 4",
+                    "tagUrl": "https://stopgame.ru/news/ps4"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Xbox One",
+                    "tagUrl": "https://stopgame.ru/news/xone"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        },{
+            "id":"61146",
+            "seo":"rabochie_kadry_iz_ekranizacii_gravity_rush_i_novoy_patapon",
+            "title": "Рабочие кадры из экранизации Gravity Rush и новой Patapon",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "2",
+            "releaseDate": "1704798461",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },
+        {
+            "id":"61145",
+            "seo":"steam_deck_i_baldur_s_gate_iii_vse_esche_uderzhivayut_liderstvo_v_charte_steam",
+            "title": "Steam Deck и Baldur’s Gate III всё ещё удерживают лидерство в чарте Steam",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "0",
+            "releaseDate": "1704794861",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                }
+            ]
+        },{
+            "id":"61144",
+            "seo":"podrobnee_ob_rtx_remix_moschnom_instrumente_dlya_remasterov_staryh_igr",
+            "title": "Подробнее об RTX Remix — мощном инструменте для ремастеров старых игр",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "5",
+            "releaseDate": "1704791261",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                }
+            ]
+        },{
+            "id":"61143",
+            "seo":"msi_claw_pervyy_konkurent_steam_deck_s_chipom_intel_core_ultra_vnutri",
+            "title": "MSI Claw — первый конкурент Steam Deck с чипом Intel Core Ultra внутри",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "4",
+            "releaseDate": "1704791741",
+            "tags": [
+                {
+                    "title": "Steam Deck",
+                    "tagUrl": "https://stopgame.ru/news/steam_deck"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"61142",
+            "seo":"unity_uvolnyaet_chetvert_svoego_shtata_okolo_1_800_sotrudnikov",
+            "title": "Unity увольняет четверть своего штата — около 1 800 сотрудников",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "5",
+            "releaseDate": "1704792641",
+            "tags": [
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"61141",
+            "seo":"ochki_apple_vision_pro_nachnut_prodavat_v_fevrale",
+            "title": "Очки Apple Vision Pro начнут продавать в феврале",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "4",
+            "releaseDate": "1704796241",
+            "tags": [
+                {
+                    "title": "VR",
+                    "tagUrl": "https://stopgame.ru/news/vr"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"161140",
+            "seo":"tirazh_hogwarts_legacy_perevalil_za_22_milliona_kopiy",
+            "title": "Тираж Hogwarts Legacy перевалил за 22 миллиона копий",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "7",
+            "releaseDate": "1704797441",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        },{
+            "id":"61139",
+            "seo":"studiya_blumhouse_uzhe_rabotaet_nad_sikvelom_filma_po_five_nights_at_freddy_s",
+            "title": "Студия Blumhouse уже работает над сиквелом фильма по Five Nights at Freddy’s",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "7",
+            "releaseDate": "1704801041",
+            "tags": [
+                {
+                    "title": "Кино",
+                    "tagUrl": "https://stopgame.ru/news/movies"
+                }
+            ]
+        },{
+            "id":"61138",
+            "seo":"trailer_half_life_2_rtx_novaya_lineyka_videokart_i_drugie_roliki_s_prezentacii_nvidia",
+            "title": "Трейлер Half-Life 2 RTX, новая линейка видеокарт и другие ролики с презентации NVIDIA",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "24",
+            "releaseDate": "1704714641",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Индустрия",
+                    "tagUrl": "https://stopgame.ru/news/industry"
+                }
+            ]
+        },{
+            "id":"61137",
+            "seo":"apdeyt_sins_of_the_flesh_dlya_cult_of_the_lamb_poyavitsya_16_yanvarya",
+            "title": "Апдейт Sins of the Flesh для Cult of the Lamb появится 16 января",
+            "image": "https://images.stopgame.ru/news/2024/01/08/c784x440/vYyNBRb5CpcaE72-WhkDMg/Pcndh0U6d.jpg",
+            "commentsNum": "9",
+            "releaseDate": "1704703601",
+            "tags": [
+                {
+                    "title": "PC",
+                    "tagUrl": "https://stopgame.ru/news/pc"
+                },
+                {
+                    "title": "Play Station 4",
+                    "tagUrl": "https://stopgame.ru/news/ps4"
+                },
+                {
+                    "title": "Play Station 5",
+                    "tagUrl": "https://stopgame.ru/news/ps5"
+                },
+                {
+                    "title": "Xbox Series X | S",
+                    "tagUrl": "https://stopgame.ru/news/xboxsx"
+                },
+                {
+                    "title": "Xbox One",
+                    "tagUrl": "https://stopgame.ru/news/xone"
+                },
+                {
+                    "title": "Nintendo Switsh",
+                    "tagUrl": "https://stopgame.ru/news/nintendo_switch"
+                }
+            ]
+        }
+    ]
+}

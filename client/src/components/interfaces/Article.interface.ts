@@ -5,7 +5,7 @@ export interface IArticle {
 	seo: string
 	title: string
 	image: string
-	categories: TCategory[]
+	tags: TCategory[]
 	releaseDate: number
 	commentsNum: number
 }

@@ -6,7 +6,7 @@ const CategoryList = ({
 	categories,
 	className = ''
 }: {
-	categories: IArticle['categories']
+	categories: IArticle['tags']
 	className: string
 }) => {
 	return (

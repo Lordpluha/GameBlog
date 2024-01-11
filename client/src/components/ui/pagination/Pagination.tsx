@@ -13,7 +13,7 @@ export interface IPagination {
 const Pagination = ({initPage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange}:IPagination) => {
   return (
     <div>
-        <ReactPaginate 
+        <ReactPaginate
             initialPage={initPage} 
             marginPagesDisplayed={marginPagesDisplayed} 
             pageCount={pageCount} 
