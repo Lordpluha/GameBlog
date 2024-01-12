@@ -1,5 +1,5 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common'
-import { CreateUserDto } from './dto/create-user.dto'
+import { CreateUserDto } from './dto'
 import { PrismaService } from 'src/common/prisma.service'
 import { USER_WITH_EMAIL_ALREADY_EXISTS } from './constants/error.constants.user'
 import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
