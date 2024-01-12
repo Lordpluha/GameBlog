@@ -18,12 +18,10 @@ import {
 	ParseIntPipe
 } from '@nestjs/common'
 import { BlogService } from './blog.service'
-import { CreateBlogDto } from './dto/create-blog.dto'
-import { UpdateBlogDto } from './dto/update-blog.dto'
+import { CreateBlogDto, UpdateBlogDto, PaginationBlogQueryDto } from './dto'
 import { FileInterceptor } from '@nestjs/platform-express'
-import { AccessJwtGuard } from 'src/auth/decorators/access-jwt.decorator'
-import { User } from 'src/user/decorators/user.decorator'
-import { PaginationBlogQueryDto } from './dto/pagination.blog.dto'
+import { AccessJwtGuard } from 'src/auth/decorators'
+import { User } from 'src/user/decorators'
 
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('blog')
