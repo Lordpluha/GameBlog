@@ -1,6 +1,5 @@
 import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common'
-import { CreateCategoryDto } from './dto/create-category.dto'
-import { UpdateCategoryDto } from './dto/update-category.dto'
+import { CreateCategoryDto, UpdateCategoryDto, PaginationCategoryQueryDto } from './dto'
 import { PrismaService } from 'src/common/prisma.service'
 import * as generateSlug from 'slug'
 import {
@@ -8,7 +7,6 @@ import {
 	CATEGORY_WITH_ID_PARENT_NOT_FOUND,
 	CATEGORY_WITH_NAME_ALREADY_EXISTS
 } from './constants/error.category.constants'
-import { PaginationCategoryQueryDto } from './dto/pagination.category.dto'
 import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
 import { Category } from '@prisma/client'
 

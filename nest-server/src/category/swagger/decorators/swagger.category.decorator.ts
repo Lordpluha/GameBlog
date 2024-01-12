@@ -4,7 +4,7 @@ import {
 	PaginationCategoryDto,
 	SuccessCategoryDto,
 	SuccessCategoryWithArticle
-} from '../dto/return-category.swagger.dto'
+} from '../return-category.swagger.dto'
 
 export const DocSwaggerCreateCategory = () => {
 	return applyDecorators(

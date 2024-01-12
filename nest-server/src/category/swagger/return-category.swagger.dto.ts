@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { SuccessArticleBaseDto } from 'src/article/dto/return-article.swagger.dto'
+import { SuccessArticleBaseDto } from 'src/article/swagger/return-article.swagger.dto'
 
 export class SuccessCategoryDto {
 	@ApiProperty({ nullable: false })

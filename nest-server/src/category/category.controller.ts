@@ -15,10 +15,8 @@ import {
 	UseInterceptors
 } from '@nestjs/common'
 import { CategoryService } from './category.service'
-import { CreateCategoryDto } from './dto/create-category.dto'
-import { UpdateCategoryDto } from './dto/update-category.dto'
-import { PaginationCategoryQueryDto } from './dto/pagination.category.dto'
-import { RolesAuth } from 'src/role/decorators/role.decorator'
+import { CreateCategoryDto, UpdateCategoryDto, PaginationCategoryQueryDto } from './dto'
+import { RolesAuth } from 'src/role/decorators'
 import { Role } from 'src/role/role.enum'
 import { ApiTags } from '@nestjs/swagger'
 import {
@@ -27,7 +25,7 @@ import {
 	DocSwaggerFindOneCategory,
 	DocSwaggerUpdateCategory,
 	DocSwaggerDeleteCategory
-} from './decorators/swagger.category.decorator'
+} from './swagger/decorators'
 import { CacheInterceptor, CacheTTL } from '@nestjs/cache-manager'
 
 const CACHE_TIME = 30 * 1000
