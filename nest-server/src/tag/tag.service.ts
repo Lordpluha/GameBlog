@@ -1,14 +1,19 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateTagDto } from './dto/create-tag.dto'
 import { UpdateTagDto } from './dto/update-tag.dto'
 import { PrismaService } from 'src/common/prisma.service'
 import { TAG_NOT_FOUND, TAG_WITH_NAME_ALREADY_EXISTS } from './constants/error.tag.tag'
 import * as generateSlug from 'slug'
 import { PaginationQueryDto } from 'src/common/pagination.query.dto'
+import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
 
 @Injectable()
 export class TagService {
-	constructor(private prisma: PrismaService) {}
+	private CACHE_TIME = 30 * 1000
+	constructor(
+		private prisma: PrismaService,
+		@Inject(CACHE_MANAGER) private cacheManager: Cache
+	) {}
 
 	async create({ name }: CreateTagDto) {
 		const oldTag = await this.byName(name)
@@ -16,10 +21,12 @@ export class TagService {
 		const tag = await this.prisma.tag.create({
 			data: { name }
 		})
-		return await this.prisma.tag.update({
+		const updatedTag = await this.prisma.tag.update({
 			where: { id: tag.id },
 			data: { slug: generateSlug(tag.name + ' ' + tag.id) }
 		})
+		await this.cacheManager.set(`tag-${tag.id}`, updatedTag, this.CACHE_TIME)
+		return updatedTag
 	}
 
 	async byName(name: string) {
@@ -53,16 +60,21 @@ export class TagService {
 		}
 	}
 
-	async findOne(id: number) {
+	async findOne(id: number, isReset = false) {
+		const key = `tag-${id}`
+		if (isReset) await this.cacheManager.del(key)
+		const cacheTag = this.cacheManager.del(key)
+		if (cacheTag) return cacheTag
 		const tag = await this.prisma.tag.findUnique({
 			where: { id }
 		})
 		if (!tag) throw new NotFoundException(TAG_NOT_FOUND)
+		await this.cacheManager.set(key, tag, this.CACHE_TIME)
 		return tag
 	}
 
 	async update(id: number, { name }: UpdateTagDto) {
-		await this.findOne(id)
+		await this.findOne(id, true)
 		if (name) {
 			const oldTag = await this.byName(name)
 			if (oldTag) throw new BadRequestException(TAG_WITH_NAME_ALREADY_EXISTS)
@@ -72,11 +84,13 @@ export class TagService {
 			where: { id },
 			data: { ...dataUp }
 		})
+		await this.cacheManager.set(`tag-${id}`, tag, this.CACHE_TIME)
 		return tag
 	}
 
 	async remove(id: number) {
 		await this.findOne(id)
+		await this.cacheManager.del(`tag-${id}`)
 		await this.prisma.tag.delete({
 			where: { id }
 		})

@@ -11,7 +11,8 @@ import {
 	HttpCode,
 	HttpStatus,
 	ParseIntPipe,
-	Query
+	Query,
+	UseInterceptors
 } from '@nestjs/common'
 import { TagService } from './tag.service'
 import { CreateTagDto } from './dto/create-tag.dto'
@@ -26,7 +27,9 @@ import {
 	DocSwaggerFindOneTag,
 	DocSwaggerUpdateArticle
 } from './decorators/swagger.tag.decorator'
+import { CacheInterceptor, CacheTTL } from '@nestjs/cache-manager'
 
+const CACHE_TIME = 30 * 1000
 @ApiTags('Tag')
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('tag')
@@ -42,6 +45,8 @@ export class TagController {
 	}
 
 	@DocSwaggerFindAllTag()
+	@CacheTTL(CACHE_TIME)
+	@UseInterceptors(CacheInterceptor)
 	@HttpCode(HttpStatus.OK)
 	@Get()
 	findAll(@Query() query: PaginationQueryDto) {
