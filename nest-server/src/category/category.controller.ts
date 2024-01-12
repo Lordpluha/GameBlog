@@ -11,7 +11,8 @@ import {
 	HttpCode,
 	HttpStatus,
 	ParseIntPipe,
-	Query
+	Query,
+	UseInterceptors
 } from '@nestjs/common'
 import { CategoryService } from './category.service'
 import { CreateCategoryDto } from './dto/create-category.dto'
@@ -27,7 +28,9 @@ import {
 	DocSwaggerUpdateCategory,
 	DocSwaggerDeleteCategory
 } from './decorators/swagger.category.decorator'
+import { CacheInterceptor, CacheTTL } from '@nestjs/cache-manager'
 
+const CACHE_TIME = 30 * 1000
 @ApiTags('Category')
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('category')
@@ -43,12 +46,16 @@ export class CategoryController {
 	}
 
 	@DocSwaggerFindAllCategory()
+	@CacheTTL(CACHE_TIME)
+	@UseInterceptors(CacheInterceptor)
 	@HttpCode(HttpStatus.OK)
 	@Get()
 	findAll(@Query() query: PaginationCategoryQueryDto) {
 		return this.categoryService.findAll(query)
 	}
 
+	@CacheTTL(CACHE_TIME)
+	@UseInterceptors(CacheInterceptor)
 	@DocSwaggerFindOneCategory()
 	@HttpCode(HttpStatus.OK)
 	@Get('slug/:slug')

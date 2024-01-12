@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateCategoryDto } from './dto/create-category.dto'
 import { UpdateCategoryDto } from './dto/update-category.dto'
 import { PrismaService } from 'src/common/prisma.service'
@@ -9,11 +9,16 @@ import {
 	CATEGORY_WITH_NAME_ALREADY_EXISTS
 } from './constants/error.category.constants'
 import { PaginationCategoryQueryDto } from './dto/pagination.category.dto'
+import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
+import { Category } from '@prisma/client'
 
 @Injectable()
 export class CategoryService {
-	constructor(private prisma: PrismaService) {}
-
+	private CACHE_TIME = 30 * 1000
+	constructor(
+		private prisma: PrismaService,
+		@Inject(CACHE_MANAGER) private cacheManager: Cache
+	) {}
 	async create(dto: CreateCategoryDto) {
 		const oldCategory = await this.byName(dto.name)
 		if (oldCategory) throw new BadRequestException(CATEGORY_WITH_NAME_ALREADY_EXISTS)
@@ -37,6 +42,7 @@ export class CategoryService {
 				slug: generateSlug(dto.name + ' ' + id)
 			}
 		})
+		await this.cacheManager.set(`category-${category.id}-no-parent`, category, this.CACHE_TIME)
 		return category
 	}
 
@@ -89,7 +95,11 @@ export class CategoryService {
 		}
 	}
 
-	async findOne(id: number, isParent: boolean = false) {
+	async findOne(id: number, isParent: boolean = false, isReset = false) {
+		const key = isParent ? `category-${id}-parent` : `category-${id}-no-parent`
+		if (isReset) await this.cacheManager.del(key)
+		const cacheCategory: Category = await this.cacheManager.get(key)
+		if (cacheCategory) return cacheCategory
 		const category = await this.prisma.category.findUnique({
 			where: { id },
 			include: {
@@ -97,15 +107,18 @@ export class CategoryService {
 			}
 		})
 		if (!category) throw new NotFoundException(CATEGORY_NOT_FOUND)
+		await this.cacheManager.set(`category-${id}-no-parent`, category, this.CACHE_TIME)
 		if (!isParent) return category
 		const include = this.getTreeIncludesParent(category.level)
-		return await this.prisma.category.findUnique({
+		const treeCategory = await this.prisma.category.findUnique({
 			where: { id },
 			include: {
 				articles: true,
 				...include
 			}
 		})
+		await this.cacheManager.set(`category-${id}-parent`, treeCategory, this.CACHE_TIME)
+		return treeCategory
 	}
 
 	async update(id: number, dto: UpdateCategoryDto) {
@@ -114,7 +127,7 @@ export class CategoryService {
 			const oldCategory = await this.byName(dto.name)
 			if (oldCategory) throw new BadRequestException(CATEGORY_WITH_NAME_ALREADY_EXISTS)
 		}
-		const dataUp = dto.name ? { slug: generateSlug(dto.name + id) } : {}
+		const dataUp = dto.name ? { slug: generateSlug(dto.name + id), name: dto.name } : {}
 		const parent = {}
 		if (dto.parentId) {
 			parent['connect'] = { id: dto.parentId }
@@ -126,13 +139,15 @@ export class CategoryService {
 			dataUp['level'] = levelCategory
 			parent['connect'] = { id: dto.parentId }
 		}
-		return await this.prisma.category.update({
+		const updatedCategory = await this.prisma.category.update({
 			where: { id },
 			data: {
 				...dataUp,
 				parent
 			}
 		})
+		await this.cacheManager.set(`category-${id}-no-parent`, updatedCategory, this.CACHE_TIME)
+		return updatedCategory
 	}
 
 	async remove(id: number) {
@@ -140,6 +155,8 @@ export class CategoryService {
 		await this.prisma.category.delete({
 			where: { id }
 		})
+		await this.cacheManager.del(`category-${id}-parent`)
+		await this.cacheManager.del(`category-${id}-no-parent`)
 	}
 
 	private getTreeIncludesParent(level: number | null) {
