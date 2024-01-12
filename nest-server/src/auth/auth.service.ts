@@ -1,6 +1,5 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common'
-import { LoginDto } from './dto/login.dto'
-import { RegistrationDto } from './dto/registration.dto'
+import { LoginDto, RegistrationDto } from './dto'
 import { UserService } from 'src/user/user.service'
 import { USER_WITH_EMAIL_ALREADY_EXISTS } from 'src/user/constants/error.constants.user'
 import { hash, genSalt, compare } from 'bcrypt'
