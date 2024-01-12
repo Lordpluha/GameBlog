@@ -1,6 +1,6 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common'
 import { ApiBearerAuth, ApiResponse, ApiOperation } from '@nestjs/swagger'
-import { PaginationTagDto, SuccessTagDto } from '../dto/return-tag.swagger.dto'
+import { PaginationTagDto, SuccessTagDto } from '../return-tag.swagger.dto'
 
 export const DocSwaggerFindAllTag = () => {
 	return applyDecorators(
