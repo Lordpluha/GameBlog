@@ -221,7 +221,7 @@ footer {
                 }
             }
 
-            .footer__list__left {
+            .footer__list-left {
                 overflow: hidden;
                 margin-bottom: 64px;
 
@@ -262,7 +262,7 @@ footer {
                 }
             }
 
-            .footer__list__right {
+            .footer__list-right {
                 margin: 0 0 64px 0;
                 overflow: hidden;
 
@@ -310,7 +310,7 @@ footer {
             justify-content: space-between;
             gap: 20px;
 
-            .footer__help__left {
+            .footer__help-left {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 17px;
@@ -335,7 +335,7 @@ footer {
                 }
             }
 
-            .footer__help__right {
+            .footer__help-right {
                 --restriction-width: 48px;
                 grid-column-gap: 15px;
                 grid-row-gap: 17px;
