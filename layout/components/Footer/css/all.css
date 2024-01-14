@@ -561,8 +561,6 @@ footer .footer__information .footer__help {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -579,18 +577,8 @@ footer .footer__information .footer__help .footer__help__left {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 600px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
 }
-footer .footer__information .footer__help .footer__help__left li {
-  float: left;
-  display: block;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-footer .footer__information .footer__help .footer__help__left li a {
+footer .footer__information .footer__help .footer__help__left a {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -600,7 +588,7 @@ footer .footer__information .footer__help .footer__help__left li a {
   height: -moz-max-content;
   height: max-content;
 }
-footer .footer__information .footer__help .footer__help__left li a:hover {
+footer .footer__information .footer__help .footer__help__left a:hover {
   color: #8B8D8E;
 }
 @media (max-width: 870px) {
@@ -638,36 +626,34 @@ footer .footer__information .footer__help .footer__help__right img {
 }
 footer .footer__information .footer__help .footer__help__right span {
   display: block;
-}
-footer .footer__information .footer__help .footer__help__right span p {
   font-size: 16px;
   font-weight: 600;
   font-family: Rubik, sans-serif;
   color: #fff;
 }
 @media (max-width: 870px) {
-  footer .footer__information .footer__help .footer__help__right span p {
+  footer .footer__information .footer__help .footer__help__right span {
     font-size: 14px;
   }
 }
-footer .footer__information .footer__help .footer__help__right span:nth-child(3) p {
+footer .footer__information .footer__help .footer__help__right span:nth-child(3) {
   color: #71747B;
   font-weight: normal;
   line-height: 1.625;
   font-size: 14px;
 }
 @media (max-width: 870px) {
-  footer .footer__information .footer__help .footer__help__right span:nth-child(3) p {
+  footer .footer__information .footer__help .footer__help__right span:nth-child(3) {
     font-size: 12px;
   }
 }
 @media (max-width: 870px) {
-  footer .footer__information .footer__help .footer__help__right span br {
+  footer .footer__information .footer__help .footer__help__right span:nth-child(3) br {
     display: none;
   }
 }
 @media (max-width: 600px) {
-  footer .footer__information .footer__help .footer__help__right span br {
+  footer .footer__information .footer__help .footer__help__right span:nth-child(3) br {
     display: block;
   }
 }

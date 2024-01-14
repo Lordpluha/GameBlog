@@ -34,6 +34,7 @@ footer {
                     height: 40px;
                     width: 224px;
                     display: block;
+
                     @media (max-width: 600px) {
                         height: 22px;
                         width: 122px;
@@ -62,6 +63,7 @@ footer {
                     @media (max-width: 1145px) {
                         font-size: 12px;
                     }
+
                     @media (max-width: 870px) {
                         margin: 12px 0 0 0;
                     }
@@ -305,7 +307,6 @@ footer {
 
         .footer__help {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
 
@@ -315,24 +316,17 @@ footer {
                 gap: 17px;
                 justify-content: space-between;
                 width: 600px;
-                height: max-content;
 
-                li {
-                    float: left;
+                a {
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: bold;
+                    font-family: 'Rubik', sans-serif;
                     display: block;
                     height: max-content;
 
-                    a {
-                        color: #fff;
-                        font-size: 16px;
-                        font-weight: bold;
-                        font-family: 'Rubik', sans-serif;
-                        display: block;
-                        height: max-content;
-
-                        &:hover {
-                            color: #8B8D8E;
-                        }
+                    &:hover {
+                        color: #8B8D8E;
                     }
                 }
 
@@ -367,39 +361,33 @@ footer {
 
                 span {
                     display: block;
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: Rubik, sans-serif;
+                    color: #fff;
 
-                    p {
-                        font-size: 16px;
-                        font-weight: 600;
-                        font-family: Rubik, sans-serif;
-                        color: #fff;
-
-                        @media (max-width: 870px) {
-                            font-size: 14px;
-                        }
+                    @media (max-width: 870px) {
+                        font-size: 14px;
                     }
 
                     &:nth-child(3) {
-                        p {
-                            color: #71747B;
-                            font-weight: normal;
-                            line-height: 1.625;
-                            font-size: 14px;
+                        color: #71747B;
+                        font-weight: normal;
+                        line-height: 1.625;
+                        font-size: 14px;
 
-                            @media (max-width: 870px) {
-                                font-size: 12px;
-                            }
-                        }
-
-                    }
-
-                    br {
                         @media (max-width: 870px) {
-                            display: none;
+                            font-size: 12px;
                         }
 
-                        @media (max-width: 600px) {
-                            display: block;
+                        br {
+                            @media (max-width: 870px) {
+                                display: none;
+                            }
+
+                            @media (max-width: 600px) {
+                                display: block;
+                            }
                         }
                     }
                 }
