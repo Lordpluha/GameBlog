@@ -54,5 +54,7 @@ img {
 	object-position: center;
 	overflow: clip;
 }
-
+li{
+	list-style-type: none;
+}
 [aria-hidden="true"] { visibility: hidden; }
