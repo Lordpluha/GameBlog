@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { Bookmark, MessageCircleMore, Zap } from 'lucide-react'
 
-import { INews } from '../../../interfaces/News.interface'
+import { INews } from '../../../../../interfaces/News.interface'
 
 /**
  * Renders a News component with the provided news data.

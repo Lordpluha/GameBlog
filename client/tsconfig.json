@@ -24,7 +24,7 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@interfaces/*": ["./src/components/interfaces/*"],
-			"@type/*": ["./src/components/types/*"],
+			"@type/*": ["src/types/*"],
 			"@routes/*": ["./src/routes/*"],
 			"@store/*": ["./src/store/*"],
 			"@services/*": ["./src/services/*"],

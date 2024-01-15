@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import { TCategory } from '@type/Category.type'
+import { TCategory } from '@/interfaces/Category.interface'
 
 const CategoryItem = ({ category }: { category: TCategory }) => {
 	const navigate = useNavigate()

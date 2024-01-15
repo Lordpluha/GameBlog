@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { INewComment } from '@interfaces/extras/NewComments.interface'
+import { INewComment } from '@/interfaces/extras/NewComments.interface'
 
 import styles from '../CommentsModal.module.scss'
 

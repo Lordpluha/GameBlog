@@ -1,4 +1,4 @@
-import { INews } from '../../interfaces/News.interface'
+import { INews } from '../../../../interfaces/News.interface'
 import News from './news/News'
 
 type INewsListProps = {

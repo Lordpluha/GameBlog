@@ -1,4 +1,4 @@
-import { TTag } from '@type/Tag.type'
+import { TTag } from '@/interfaces/Tag.interface'
 
 import styles from '../SearchModal.module.scss'
 

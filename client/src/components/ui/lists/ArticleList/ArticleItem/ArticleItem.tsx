@@ -1,9 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { IArticle } from '@/interfaces/Article.interface'
 import { CommentOutlined } from '@ant-design/icons'
-
-import { IArticle } from '@interfaces/Article.interface'
 
 import { dateConverter } from '@tools/ArticleDateConverter'
 

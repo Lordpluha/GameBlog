@@ -1,11 +1,11 @@
-import { TCategory } from '@type/Category.type'
+import { ICategory } from '@/interfaces/Category.interface'
 
 export interface IArticle {
 	id: number
 	seo: string
 	title: string
 	image: string
-	categories: TCategory[]
+	categories: ICategory[]
 	releaseDate: number
 	commentsNum: number
 }

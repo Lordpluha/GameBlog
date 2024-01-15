@@ -1,4 +1,4 @@
-import { IArticle } from '@interfaces/Article.interface'
+import { IArticle } from '@/interfaces/Article.interface'
 
 import CategoryItem from './CategoryItem/CategoryItem'
 
