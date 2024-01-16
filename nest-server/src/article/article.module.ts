@@ -9,6 +9,7 @@ import { TagModule } from 'src/tag/tag.module'
 @Module({
 	imports: [FileModule, CategoryModule, TagModule],
 	controllers: [ArticleController],
-	providers: [ArticleService, PrismaService]
+	providers: [ArticleService, PrismaService],
+	exports: [ArticleService]
 })
 export class ArticleModule {}

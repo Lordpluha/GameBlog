@@ -7,6 +7,7 @@ import { FileModule } from 'src/file/file.module'
 @Module({
 	imports: [FileModule],
 	controllers: [BlogController],
-	providers: [BlogService, PrismaService]
+	providers: [BlogService, PrismaService],
+	exports: [BlogService]
 })
 export class BlogModule {}
