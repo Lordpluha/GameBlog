@@ -12,6 +12,7 @@ import { ArticleModule } from './article/article.module'
 import { TagModule } from './tag/tag.module'
 import { CacheModule } from '@nestjs/cache-manager'
 import { CacheManagerOptions } from './configs/cache-manager.env'
+import { CommentModule } from './comment/comment.module'
 
 @Module({
 	imports: [
@@ -26,7 +27,8 @@ import { CacheManagerOptions } from './configs/cache-manager.env'
 		}),
 		CategoryModule,
 		ArticleModule,
-		TagModule
+		TagModule,
+		CommentModule
 	]
 })
 export class AppModule {}
