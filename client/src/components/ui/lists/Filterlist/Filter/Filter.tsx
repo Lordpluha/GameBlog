@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
-import { To, Link } from 'react-router-dom'
+import { Link, To } from 'react-router-dom'
+
 import styles from './Filter.module.scss'
 
 /** Wrapper for Filter component */
@@ -19,13 +20,13 @@ export interface IFilter {
 
 /** Describes all props for Filter component */
 type TFilterProps = {
-	/** use <li></li> wrapper? */
-	list: boolean
+	/** use li wrapper? */
+	isList: boolean
 } & IFilter
 
-const Filter = ({ name, to, list = false }: TFilterProps): ReactNode => {
+const Filter = ({ name, to, isList = false }: TFilterProps): ReactNode => {
 	return (
-		<FilterWrapper wrapToLi={list}>
+		<FilterWrapper wrapToLi={isList}>
 			<Link to={to}>
 				<span className={styles.filter}>{name}</span>
 			</Link>

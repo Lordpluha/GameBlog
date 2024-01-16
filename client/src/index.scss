@@ -2,27 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'normalize.css';
+@import 'modern-normalize/modern-normalize.css';
 
 :root {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	color-scheme: light dark;
 	font-synthesis: none;
-
 	text-rendering: optimizeLegibility;
-	color: rgba(255, 255, 255, 0.87);
-	font-weight: 400;
+	color-scheme: light dark;
 
+	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.5;
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	background-color: #242424;
+	// color: var(--text);
+	background-color: var(--body-bg-color);
+
+	--default-dark-btn-color: #262a2c;
+	--default-dark-text-color: #4d5153;
+	--default-dark-color: #19191b;
+	--default-light-color: white;
+	--hover-active-colore: #ec2227;
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
+html[data-theme='dark'] {
+	--text-color: #ffffff;
+
+	--body-bg-color: #1b2124;
+	--modal-bg-color: #191d1f;
+	--itemBlock-bg-color: #282c2e;
+	--li-bg-color: #28292c;
+}
+
+html[data-theme='light'] {
+	--text-color: #252525;
+
+	--body-bg-color: #fff;
+	--modal-bg-color: #e5e6e7;
+	--itemBlock-bg-color: #d1d5dc;
+	--li-bg-color: #b2b6c1;
+}
+
+.active {
+	color: var(--hover-active-colore);
+}
+
+.layoutComponent {
+	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
 }

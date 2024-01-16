@@ -1,11 +1,11 @@
-import { ICategory } from './Category.interface'
+import { ICategory } from '@/interfaces/Category.interface'
 
 export interface IArticle {
 	id: number
 	seo: string
 	title: string
 	image: string
-	category: ICategory[]
+	categories: ICategory[]
 	releaseDate: number
 	commentsNum: number
 }
