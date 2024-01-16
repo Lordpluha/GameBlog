@@ -49,6 +49,11 @@ export class BlogService {
 				include: {
 					author: {
 						select: returnUserBaseObject
+					},
+					_count: {
+						select: {
+							comments: true
+						}
 					}
 				}
 			}),

@@ -87,6 +87,11 @@ export class ArticleService {
 					},
 					tags: {
 						select: returnTagBaseObject
+					},
+					_count: {
+						select: {
+							comments: true
+						}
 					}
 				}
 			}),
