@@ -16,6 +16,7 @@ import {
 } from './constants/error.constants.comment'
 import { Role } from 'src/role/role.enum'
 import { Prisma } from '@prisma/client'
+import { returnUserBaseObject } from 'src/user/dto'
 
 @Injectable()
 export class CommentService {
@@ -82,6 +83,9 @@ export class CommentService {
 				},
 				where,
 				include: {
+					author: {
+						select: returnUserBaseObject
+					},
 					children: {
 						include: { _count: { select: { children: true } } }
 					},
@@ -103,6 +107,9 @@ export class CommentService {
 		const comment = await this.prisma.comment.findUnique({
 			where: { id },
 			include: {
+				author: {
+					select: returnUserBaseObject
+				},
 				...include
 			}
 		})
