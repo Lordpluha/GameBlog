@@ -18,6 +18,7 @@ model User {
   isEditor  Boolean   @default(false)
   articles  Article[]
   blogs     Blog[]
+  comments  Comment[]
   token     Token?
 }
 
@@ -31,15 +32,16 @@ model Token {
 }
 
 model Blog {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   title     String
   preview   String
   content   String
-  slug      String?  @unique
+  slug      String?   @unique
   authorId  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  author    User     @relation(fields: [authorId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  author    User      @relation(fields: [authorId], references: [id])
+  comments  Comment[]
 }
 
 model Tag {
@@ -63,6 +65,7 @@ model Article {
   updatedAt  DateTime   @updatedAt
   anyTags    String?
   author     User       @relation(fields: [authorId], references: [id])
+  comments   Comment[]
   categories Category[] @relation("ArticleToCategory")
   tags       Tag[]      @relation("ArticleToTags")
 }
@@ -78,4 +81,22 @@ model Category {
   parent    Category?  @relation("SubCategory", fields: [parentId], references: [id])
   children  Category[] @relation("SubCategory")
   articles  Article[]  @relation("ArticleToCategory")
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  text      String
+  type      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  articleId Int?
+  blogId    Int?
+  authorId  Int
+  parentId  Int?
+  level     Int?
+  article   Article?  @relation(fields: [articleId], references: [id])
+  blog      Blog?     @relation(fields: [blogId], references: [id])
+  author    User      @relation(fields: [authorId], references: [id])
+  parent    Comment?  @relation("SubComment", fields: [parentId], references: [id])
+  children  Comment[] @relation("SubComment")
 }

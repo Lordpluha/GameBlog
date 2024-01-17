@@ -18,14 +18,12 @@ import {
 	Query
 } from '@nestjs/common'
 import { ArticleService } from './article.service'
-import { CreateArticleDto } from './dto/create-article.dto'
-import { UpdateArticleDto } from './dto/update-article.dto'
+import { CreateArticleDto, UpdateArticleDto, PaginationArticleQueryDto } from './dto'
 import { FileInterceptor } from '@nestjs/platform-express'
 import { User } from 'src/user/decorators/user.decorator'
 import { RolesAuth } from 'src/role/decorators/role.decorator'
 import { Role } from 'src/role/role.enum'
-import { JwtGenerateDto } from 'src/auth/dto/jwt-generate.dto'
-import { PaginationArticleQueryDto } from './dto/pagination.article.dto'
+import { JwtGenerateDto } from 'src/auth/dto'
 import { ApiTags } from '@nestjs/swagger'
 import {
 	DocSwaggerCreateArticle,
@@ -34,7 +32,7 @@ import {
 	DocSwaggerUpdateArticle,
 	DocSwaggerDeleteArticle,
 	DocSwaggerConfirmArticle
-} from './decorators/swagger.article.decorator'
+} from './swagger/decorators'
 @ApiTags('Article')
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('article')

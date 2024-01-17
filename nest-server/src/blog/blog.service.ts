@@ -1,12 +1,10 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common'
-import { CreateBlogDto } from './dto/create-blog.dto'
-import { UpdateBlogDto } from './dto/update-blog.dto'
 import { FileService } from 'src/file/file.service'
 import { PrismaService } from 'src/common/prisma.service'
-import { PaginationBlogQueryDto } from './dto/pagination.blog.dto'
+import { CreateBlogDto, UpdateBlogDto, PaginationBlogQueryDto } from './dto'
 import { BLOG_NOT_FOUND } from './constants/error.blogs.constants'
 import * as generateSlug from 'slug'
-import { returnUserBaseObject } from 'src/user/dto/return-user.dto'
+import { returnUserBaseObject } from 'src/user/dto'
 
 @Injectable()
 export class BlogService {
@@ -51,6 +49,11 @@ export class BlogService {
 				include: {
 					author: {
 						select: returnUserBaseObject
+					},
+					_count: {
+						select: {
+							comments: true
+						}
 					}
 				}
 			}),

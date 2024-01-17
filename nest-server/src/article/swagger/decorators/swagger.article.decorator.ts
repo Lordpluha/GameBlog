@@ -4,7 +4,7 @@ import {
 	PaginationArticleDto,
 	SuccessArticleDto,
 	SuccessUpdateArticleDto
-} from '../dto/return-article.swagger.dto'
+} from '../return-article.swagger.dto'
 
 export const DocSwaggerCreateArticle = () => {
 	return applyDecorators(

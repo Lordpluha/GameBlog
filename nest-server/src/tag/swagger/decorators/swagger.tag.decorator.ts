@@ -1,12 +1,23 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common'
 import { ApiBearerAuth, ApiResponse, ApiOperation } from '@nestjs/swagger'
-import {
-	PaginationCategoryDto,
-	SuccessCategoryDto,
-	SuccessCategoryWithArticle
-} from '../dto/return-category.swagger.dto'
+import { PaginationTagDto, SuccessTagDto } from '../return-tag.swagger.dto'
 
-export const DocSwaggerCreateCategory = () => {
+export const DocSwaggerFindAllTag = () => {
+	return applyDecorators(
+		ApiOperation({
+			summary: 'find all with pagination'
+		}),
+		ApiResponse({
+			status: HttpStatus.OK,
+			description: 'Success',
+			type: PaginationTagDto
+		}),
+		ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Not Found' }),
+		ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
+	)
+}
+
+export const DocSwaggerCreateTag = () => {
 	return applyDecorators(
 		ApiBearerAuth('We need have role Admin'),
 		ApiOperation({
@@ -16,44 +27,28 @@ export const DocSwaggerCreateCategory = () => {
 		ApiResponse({
 			status: HttpStatus.CREATED,
 			description: 'Success',
-			type: SuccessCategoryDto
+			type: SuccessTagDto
 		}),
 		ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' }),
 		ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: 'Unauthorized' })
 	)
 }
 
-export const DocSwaggerFindAllCategory = () => {
+export const DocSwaggerFindOneTag = () => {
 	return applyDecorators(
 		ApiOperation({
-			summary: 'find all with pagination'
+			summary: 'find by id'
 		}),
 		ApiResponse({
 			status: HttpStatus.OK,
 			description: 'Success',
-			type: PaginationCategoryDto
-		}),
-		ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Not Found' }),
-		ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
-	)
-}
-
-export const DocSwaggerFindOneCategory = () => {
-	return applyDecorators(
-		ApiOperation({
-			summary: 'find One',
-			description: 'if isParent is true then return category with tree of parents'
-		}),
-		ApiResponse({
-			status: HttpStatus.OK,
-			description: 'Success',
-			type: SuccessCategoryWithArticle
+			type: SuccessTagDto
 		}),
 		ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Not Found' })
 	)
 }
 
-export const DocSwaggerUpdateCategory = () => {
+export const DocSwaggerUpdateArticle = () => {
 	return applyDecorators(
 		ApiBearerAuth('We need have role Admin'),
 		ApiOperation({
@@ -63,7 +58,7 @@ export const DocSwaggerUpdateCategory = () => {
 		ApiResponse({
 			status: HttpStatus.OK,
 			description: 'Success',
-			type: SuccessCategoryDto
+			type: SuccessTagDto
 		}),
 		ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' }),
 		ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Not Found' }),
@@ -71,7 +66,7 @@ export const DocSwaggerUpdateCategory = () => {
 	)
 }
 
-export const DocSwaggerDeleteCategory = () => {
+export const DocSwaggerDeleteTag = () => {
 	return applyDecorators(
 		ApiBearerAuth('We need have role Admin'),
 		ApiOperation({

@@ -2,7 +2,7 @@ import { PassportStrategy } from '@nestjs/passport'
 import { ExtractJwt, Strategy } from 'passport-jwt'
 import { JWT_ACCESS_STRATEGY, SECRET_JWT_ACCESS } from '../constants/auth.constants'
 import { ConfigService } from '@nestjs/config'
-import { JwtGenerateDto } from '../dto/jwt-generate.dto'
+import { JwtGenerateDto } from '../dto'
 import { Injectable } from '@nestjs/common'
 
 @Injectable()

@@ -1,11 +1,16 @@
-import { BadRequestException, Injectable } from '@nestjs/common'
-import { CreateUserDto } from './dto/create-user.dto'
+import { BadRequestException, Inject, Injectable } from '@nestjs/common'
+import { CreateUserDto } from './dto'
 import { PrismaService } from 'src/common/prisma.service'
 import { USER_WITH_EMAIL_ALREADY_EXISTS } from './constants/error.constants.user'
+import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
+import { User } from '@prisma/client'
 
 @Injectable()
 export class UserService {
-	constructor(private prisma: PrismaService) {}
+	constructor(
+		private prisma: PrismaService,
+		@Inject(CACHE_MANAGER) private cacheManager: Cache
+	) {}
 
 	public async create(createUserDto: CreateUserDto) {
 		const isUser = await this.byEmail(createUserDto.email)
@@ -15,20 +20,30 @@ export class UserService {
 				...createUserDto
 			}
 		})
+		await this.cacheManager.set(`user-${user.id}`, user)
+		await this.cacheManager.set(`user-email-${user.email}`, user)
 		return user
 	}
 
-	public async byEmail(email: string) {
+	public async byEmail(email: string, isReset = false) {
+		if (isReset) await this.cacheManager.get(`user-email-${email}`)
+		const cacheUser: User = await this.cacheManager.get(`user-email-${email}`)
+		if (cacheUser) return cacheUser
 		const user = await this.prisma.user.findUnique({
 			where: { email }
 		})
+		if (user) await this.cacheManager.set(`user-email-${user.email}`, user)
 		return user
 	}
 
-	public async byId(id: number) {
+	public async byId(id: number, isReset = false) {
+		if (isReset) await this.cacheManager.get(`user-${id}`)
+		const cacheUser: User = await this.cacheManager.get(`user-${id}`)
+		if (cacheUser) return cacheUser
 		const user = await this.prisma.user.findUnique({
 			where: { id }
 		})
+		if (user) await this.cacheManager.set(`user-${user.id}`, user)
 		return user
 	}
 }

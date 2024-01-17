@@ -10,20 +10,18 @@ import {
 	Res
 } from '@nestjs/common'
 import { AuthService } from './auth.service'
-import { RegistrationDto } from './dto/registration.dto'
-import { LoginDto } from './dto/login.dto'
+import { LoginDto, RegistrationDto } from './dto'
 import { CookieOptions, Response } from 'express'
 import { MAX_AGE_COOKIE_REFRESH, REFRESH_TOKEN_COOKIE } from './constants/auth.constants'
-import { Cookie } from './decorators/cookie.decorator'
-import { RefreshJwtGuard } from './decorators/refresh-jwt.decorator'
-import { User } from 'src/user/decorators/user.decorator'
+import { Cookie, RefreshJwtGuard } from './decorators'
+import { User } from 'src/user/decorators'
 import { ApiTags } from '@nestjs/swagger'
 import {
 	DocSwaggerLoginAuth,
 	DocSwaggerLogoutAuth,
 	DocSwaggerRefreshAuth,
 	DocSwaggerRegistrationAuth
-} from './decorators/swagger.auth.decorator'
+} from './swagger/decorators'
 
 @ApiTags('Auth')
 @UsePipes(new ValidationPipe())

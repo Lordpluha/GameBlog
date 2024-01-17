@@ -11,12 +11,12 @@ import {
 	HttpCode,
 	HttpStatus,
 	ParseIntPipe,
-	Query
+	Query,
+	UseInterceptors
 } from '@nestjs/common'
 import { TagService } from './tag.service'
-import { CreateTagDto } from './dto/create-tag.dto'
-import { UpdateTagDto } from './dto/update-tag.dto'
-import { RolesAuth } from 'src/role/decorators/role.decorator'
+import { CreateTagDto, UpdateTagDto } from './dto'
+import { RolesAuth } from 'src/role/decorators'
 import { Role } from 'src/role/role.enum'
 import { PaginationQueryDto } from 'src/common/pagination.query.dto'
 import { ApiTags } from '@nestjs/swagger'
@@ -25,8 +25,10 @@ import {
 	DocSwaggerFindAllTag,
 	DocSwaggerFindOneTag,
 	DocSwaggerUpdateArticle
-} from './decorators/swagger.tag.decorator'
+} from './swagger/decorators'
+import { CacheInterceptor, CacheTTL } from '@nestjs/cache-manager'
 
+const CACHE_TIME = 30 * 1000
 @ApiTags('Tag')
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('tag')
@@ -42,6 +44,8 @@ export class TagController {
 	}
 
 	@DocSwaggerFindAllTag()
+	@CacheTTL(CACHE_TIME)
+	@UseInterceptors(CacheInterceptor)
 	@HttpCode(HttpStatus.OK)
 	@Get()
 	findAll(@Query() query: PaginationQueryDto) {

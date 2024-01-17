@@ -1,7 +1,7 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common'
 import { ApiCookieAuth, ApiOperation, ApiResponse } from '@nestjs/swagger'
-import { SuccessDataDto } from '../dto/return-auth.swagger.dto'
-import { REFRESH_TOKEN_COOKIE } from '../constants/auth.constants'
+import { SuccessDataDto } from '../return-auth.swagger.dto'
+import { REFRESH_TOKEN_COOKIE } from '../../constants/auth.constants'
 
 export const DocSwaggerLoginAuth = () => {
 	return applyDecorators(

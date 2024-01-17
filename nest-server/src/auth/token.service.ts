@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
 import { PrismaService } from 'src/common/prisma.service'
-import { JwtGenerateDto } from './dto/jwt-generate.dto'
+import { JwtGenerateDto } from './dto'
 import { SECRET_JWT_REFRESH, SECRET_JWT_ACCESS } from './constants/auth.constants'
 
 @Injectable()
