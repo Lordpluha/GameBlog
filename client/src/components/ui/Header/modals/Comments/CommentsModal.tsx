@@ -1,8 +1,7 @@
 import { ForwardedRef, forwardRef } from 'react'
 
+import { INewComment } from '@/interfaces/extras/NewComments.interface'
 import { X } from 'lucide-react'
-
-import { INewComment } from '@interfaces/extras/NewComments.interface'
 
 import CommentItem from './CommentItem/CommentItem'
 import styles from './CommentsModal.module.scss'
