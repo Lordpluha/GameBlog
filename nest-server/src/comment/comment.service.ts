@@ -4,7 +4,7 @@ import {
 	Injectable,
 	NotFoundException
 } from '@nestjs/common'
-import { CreateCommentDto, UpdateCommentDto } from './dto'
+import { CreateCommentDto, PaginationArticleQueryDto, UpdateCommentDto } from './dto'
 import { PrismaService } from 'src/common/prisma.service'
 import { JwtGenerateDto } from 'src/auth/dto'
 import { BlogService } from 'src/blog/blog.service'
@@ -15,6 +15,7 @@ import {
 	COMMENT_WITH_ID_PARENT_NOT_FOUND
 } from './constants/error.constants.comment'
 import { Role } from 'src/role/role.enum'
+import { Prisma } from '@prisma/client'
 
 @Injectable()
 export class CommentService {
@@ -68,14 +69,57 @@ export class CommentService {
 		return comment
 	}
 
-	findAll() {}
+	async findAll({ count, page, articleId, blogId }: PaginationArticleQueryDto) {
+		const where: Prisma.CommentWhereInput = { level: null }
+		articleId ? (where['article'] = { id: articleId }) : {}
+		blogId ? (where['blog'] = { id: blogId }) : {}
+		const [comments, commentsCount] = await this.prisma.$transaction([
+			this.prisma.comment.findMany({
+				skip: page * count - count,
+				take: count,
+				orderBy: {
+					createdAt: 'desc'
+				},
+				where,
+				include: {
+					children: {
+						include: { _count: { select: { children: true } } }
+					},
+					_count: { select: { children: true } }
+				}
+			}),
+			this.prisma.comment.count({ where })
+		])
+		const pageCount = Math.ceil(commentsCount / count)
+		return {
+			items: comments,
+			count: commentsCount,
+			pageCount
+		}
+	}
 
-	async findOne(id: number) {
+	async findOne(id: number, level = 2) {
+		const include = this.getTreeIncludesChildren(level)
 		const comment = await this.prisma.comment.findUnique({
-			where: { id }
+			where: { id },
+			include: {
+				...include
+			}
 		})
 		if (!comment) throw new NotFoundException(COMMENT_NOT_FOUND)
 		return comment
+	}
+
+	private getTreeIncludesChildren(level: number | null) {
+		let include = undefined
+		for (let i = 0; i < level; i++) {
+			if (i === 0) {
+				include = { children: true }
+			} else {
+				include = { children: { include: include } }
+			}
+		}
+		return include
 	}
 
 	async update(id: number, dto: UpdateCommentDto, userId: number) {

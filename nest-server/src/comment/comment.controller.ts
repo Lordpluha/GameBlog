@@ -10,7 +10,8 @@ import {
 	UsePipes,
 	ParseIntPipe,
 	HttpCode,
-	HttpStatus
+	HttpStatus,
+	Query
 } from '@nestjs/common'
 import { CommentService } from './comment.service'
 import { CreateCommentDto } from './dto/create-comment.dto'
@@ -18,6 +19,7 @@ import { UpdateCommentDto } from './dto/update-comment.dto'
 import { AccessJwtGuard } from 'src/auth/decorators'
 import { User } from 'src/user/decorators'
 import { JwtGenerateDto } from 'src/auth/dto'
+import { PaginationArticleQueryDto } from './dto'
 
 @UsePipes(new ValidationPipe({ whitelist: true }))
 @Controller('comment')
@@ -33,8 +35,8 @@ export class CommentController {
 
 	@HttpCode(HttpStatus.OK)
 	@Get()
-	findAll() {
-		return this.commentService.findAll()
+	findAll(@Query() query: PaginationArticleQueryDto) {
+		return this.commentService.findAll(query)
 	}
 
 	@HttpCode(HttpStatus.OK)
