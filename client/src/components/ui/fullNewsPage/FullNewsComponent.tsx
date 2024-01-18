@@ -4,11 +4,15 @@ import styles from './fullnews.module.scss'
 import TopInfo from '../contentTopInfo/TopInfo'
 import NewsNavigation from './newsNavigation/NewsNavigation'
 import { IFullNewsInterface } from '@/components/interfaces/FullNews.interface'
+import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 
 /**
  * Reused component for rendering full article, news or blog page
  */
-const FullNewsComponent = ({articleId, category, title, fullText, publishedDate, views, comments, authorData, otherNews, tags}:IFullNewsInterface) => {
+const FullNewsComponent = (props:IFullNewsInterface/*, otherNews:IOtherNewsNavigation[]*/) => {
+  console.log(props);
+  
+  const {articleId, category, title, fullText, publishedDate, views, comments, authorData, tags} = props
   return (
     <section className={styles.contentBody}>
       <div className={styles.contentWrapper}>
@@ -28,7 +32,7 @@ const FullNewsComponent = ({articleId, category, title, fullText, publishedDate,
           <Tags {...tags} />
         </div>
       </div>
-      {otherNews && <NewsNavigation {...otherNews} />}
+      {/* {otherNews && <NewsNavigation {...otherNews} />} */}
     </section>
   )
 }

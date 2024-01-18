@@ -2,7 +2,7 @@ import ArticleList from "@/components/ui/lists/ArticleList/ArticleList"
 import { useEffect, useState } from "react"
 import { IArticle } from "@/components/interfaces/Article.interface"
 
-import dal from '../demoArticleList.json'
+import dal from '../demoData/demoArticleList.json'
 import Pagination from "@/components/ui/pagination/Pagination"
 import { useNavigate, useLocation } from "react-router-dom"
 

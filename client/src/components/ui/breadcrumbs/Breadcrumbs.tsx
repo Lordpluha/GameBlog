@@ -1,13 +1,17 @@
-import { useLocation } from 'react-router-dom'
+import { useMatches } from 'react-router-dom'
 import styles from './breadcrumbs.module.scss'
+
 /**
  * Reused component of breadcrambs
  */
 const Breadcrumbs = () => {
-  const history = useLocation()
-  
+  const matches = useMatches()
   return (
-    <div className={styles.breadcrumbs}>Главная / Новости</div>
+    <div className={styles.breadcrumbs}>
+      <ol>
+        Главная / Новости
+      </ol>
+    </div>
   )
 }
 

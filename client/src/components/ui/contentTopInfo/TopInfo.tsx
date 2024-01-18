@@ -2,7 +2,7 @@ import { Bookmark, Eye, MessageCircleMore } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import styles from './topinfo.module.scss'
 import { ITopInfoInterface } from '@/components/interfaces/TopInfo.interface'
-import { dateConverter } from '@/components/tools/ArticleDateConverter'
+import { dateConverter } from '@/components/tools/DateConverter'
 import ShareBtn from '../shareBtn/ShareBtn'
 
 /**

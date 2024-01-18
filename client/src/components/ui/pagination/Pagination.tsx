@@ -10,7 +10,8 @@ export interface IPagination {
     onChange: ({selected}:{selected:number}) => void
 }
 
-const Pagination = ({initPage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange}:IPagination) => {
+const Pagination = (props:IPagination) => {
+  const {initPage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange} = props
   return (
     <div>
         <ReactPaginate

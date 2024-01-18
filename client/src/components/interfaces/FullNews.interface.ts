@@ -1,4 +1,3 @@
-import { IOtherNewsNavigation } from "./OtherNewsNavigation.interface"
 import { ITagsInterface } from "./Tags.interface"
 import { IUserShortData } from "./extras/UserShortData.interface"
 

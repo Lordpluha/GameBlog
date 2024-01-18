@@ -3,7 +3,7 @@ import styles from './newsnavigation.module.scss'
 import { clsx } from 'clsx'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
-import { dateConverter } from '@/components/tools/ArticleDateConverter'
+import { dateConverter } from '@/components/tools/DateConverter'
 
 /**
  * Reused component thet is rendered if the user has other atricles in this category.

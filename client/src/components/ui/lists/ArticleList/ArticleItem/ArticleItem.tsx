@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { IArticle } from '@interfaces/Article.interface'
 
-import { dateConverter } from '@tools/ArticleDateConverter'
+import { dateConverter } from '@/components/tools/DateConverter'
 
 import CategoryList from '@ui/lists/CategoryLists/CategoryList'
 
@@ -19,7 +19,7 @@ const ArticleItem = ({ article }: { article: IArticle }) => {
 
 	const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
 		e.stopPropagation()
-		navigate(`/newsdata/${article.id}/${article.seo}`)
+		navigate(`/newsdata/${article.seo}`)
 	}
 
 	return (

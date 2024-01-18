@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { Link, createBrowserRouter } from 'react-router-dom'
 
 import BlogsPage from '@pages/BlogsPage'
 import CheatsPage from '@pages/CheatsPage'
@@ -22,7 +22,10 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <HomePage />
+				element: <HomePage />,
+				handle: {
+					crumb: () => <Link to='/'>Home</Link>
+				}
 			},
 			{
 				path: '/blogs',
