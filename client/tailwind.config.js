@@ -7,7 +7,8 @@ export default {
 			colors: {
 				'light-gray': {
 					DEFAULT: 'rgba(116,124,129,1)',
-					80: 'rgba(116,124,129,0.8)'
+					80: 'rgba(116,124,129,0.8)',
+					primary: 'rgba(87,93,97,1)'
 				},
 				'dark-gray': {
 					primary: 'rgb(65,71,74)',

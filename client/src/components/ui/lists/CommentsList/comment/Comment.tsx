@@ -1,7 +1,9 @@
 import { useState } from 'react'
+
 import CommentForm from '@/components/shared/commentForm/CommentForm'
 import { ModifiedCommentType } from '@/components/ui/interfaces/Comment.interface'
 import { AlertCircle, Bookmark, CornerUpRight, Link } from 'lucide-react'
+
 import Rating from './rating/Rating'
 
 interface Props {

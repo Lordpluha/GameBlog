@@ -1,6 +1,6 @@
-import Checkbox from '../../checkbox/Checkbox'
 import { ModifiedCommentType } from '../../interfaces/Comment.interface'
 import Comment from './comment/Comment'
+import Header from './header/Header'
 import InputForm from './inputForm/InputForm'
 
 interface Props {
@@ -10,19 +10,7 @@ interface Props {
 export default function CommentsList({ comments }: Props) {
 	return (
 		<div className='flex flex-col gap-4'>
-			<div className='flex justify-between items-center'>
-				<h2 className='text-2xl font-medium'>
-					{comments.length}{' '}
-					{comments.length === 1 ? 'Комментарий' : 'Комментариев'}
-				</h2>
-
-				<label className='flex items-center gap-4 cursor-pointer'>
-					<Checkbox></Checkbox>
-					<span className='text-lg font-medium'>
-						Сворачивать ветки
-					</span>
-				</label>
-			</div>
+			<Header commentsLength={comments.length}></Header>
 
 			<InputForm></InputForm>
 

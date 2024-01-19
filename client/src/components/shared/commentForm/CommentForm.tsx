@@ -2,13 +2,17 @@ import { EyeOff, Image, Quote } from 'lucide-react'
 
 interface Props {
 	handleClose: () => void
+	onSubmit?: (event: React.FormEvent) => void
 }
 
 export default function CommentForm(props: Props) {
-	const { handleClose } = props
+	const { handleClose, onSubmit } = props
 
 	return (
-		<form className='has-[:focus]:shadow-commentForm duration-200 relative p-4 rounded-lg bg-dark-gray'>
+		<form
+			onSubmit={onSubmit}
+			className='has-[:focus]:shadow-commentForm duration-200 relative p-4 rounded-lg bg-dark-gray'
+		>
 			<div className='flex flex-col gap-5'>
 				<input
 					className=' bg-transparent outline-none text-lg'

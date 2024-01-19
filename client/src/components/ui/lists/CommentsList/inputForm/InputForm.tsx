@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import CommentForm from '@/components/shared/commentForm/CommentForm'
 import { EyeOff, Image, Quote } from 'lucide-react'
 
@@ -10,7 +11,7 @@ export default function InputForm() {
 	}
 
 	return (
-		<div className='relative'>
+		<>
 			{isFocused ? (
 				<CommentForm handleClose={handleFocus}></CommentForm>
 			) : (
@@ -29,6 +30,6 @@ export default function InputForm() {
 					</div>
 				</button>
 			)}
-		</div>
+		</>
 	)
 }
