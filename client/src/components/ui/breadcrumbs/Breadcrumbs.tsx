@@ -1,6 +1,5 @@
 import { useMatches } from 'react-router-dom'
 import styles from './breadcrumbs.module.scss'
-
 /**
  * Reused component of breadcrambs
  */

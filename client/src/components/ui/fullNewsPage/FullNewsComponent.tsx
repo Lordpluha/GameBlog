@@ -10,9 +10,9 @@ import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigatio
  * Reused component for rendering full article, news or blog page
  */
 const FullNewsComponent = (props:IFullNewsInterface/*, otherNews:IOtherNewsNavigation[]*/) => {
-  console.log(props);
-  
   const {articleId, category, title, fullText, publishedDate, views, comments, authorData, tags} = props
+  //console.log(otherNews);
+  
   return (
     <section className={styles.contentBody}>
       <div className={styles.contentWrapper}>

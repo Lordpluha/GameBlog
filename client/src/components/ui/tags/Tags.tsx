@@ -6,11 +6,12 @@ import { ITagsInterface } from '@/components/interfaces/Tags.interface'
  * Reused component for rendering tags list of article or news or blog
  */
 const Tags = (tags:ITagsInterface[]) => {
+  const arr = Object.values(tags);
   return (
     <div className={styles.tags}>
         <span>Теги</span>
         <div className={styles.tagsWrapper}>
-            {tags.map(tag => <Link to={tag.tagUrl} className={styles.tag}>{tag.title}</Link>)}
+            {arr.map((tag) => <Link to={tag.tagUrl} key={tag.title} className={styles.tag}>{tag.title}</Link>)}
         </div>
     </div>
   )

@@ -11,6 +11,8 @@ import { dateConverter } from '@/components/tools/DateConverter'
  * The component accepts only 2 values, these are the previous and next article from the current one
  */
 const NewsNavigation = (otherNews:IOtherNewsNavigation[]) => {
+  //console.log(otherNews);
+  
   return (
     <div className={styles.newsNavigation}>
       <Link to={`/newsdata/${otherNews[0].seo}`} className={clsx(styles.newsNavigationLink, styles.newsNavigationLinkPrev)}>
