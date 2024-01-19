@@ -1,3 +1,5 @@
+import { UserType } from './User.interface'
+
 export interface INews {
 	id: number
 	preview: string
@@ -7,8 +9,5 @@ export interface INews {
 	updatedAt: number
 	categorie: string
 	commentsCount: number
-	user: {
-		name: string
-		avatar: string
-	}
+	user: UserType
 }

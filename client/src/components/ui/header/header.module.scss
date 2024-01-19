@@ -1,5 +1,5 @@
 .header {
-	@apply w-full bg-[var(--default-dark-color)] items-center fixed flex h-[var(--header-height)] justify-center left-0 right-0 top-0;
+	@apply w-full bg-[var(--default-dark-color)] items-center fixed flex h-[var(--header-height)] justify-center left-0 right-0 top-0 z-30;
 }
 
 .headerLayout {
