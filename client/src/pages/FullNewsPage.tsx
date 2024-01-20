@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import FullNewsComponent from "@/components/ui/fullNewsPage/FullNewsComponent"
-//import SliderReadAlso from "@/components/ui/sliders/SliderReadAlso"
+import SliderReadAlso from "@/components/ui/sliders/SliderReadAlso"
 import dfn from '../demoData/demoFullNews.json'
 import { IFullNewsInterface } from "@/components/interfaces/FullNews.interface"
 import { IOtherNewsNavigation } from "@/components/interfaces/OtherNewsNavigation.interface"
@@ -9,7 +9,6 @@ import { IOtherNewsNavigation } from "@/components/interfaces/OtherNewsNavigatio
 const FullNewsPage = () => {
   const [fullNewsData, setFullNewsData] = useState<IFullNewsInterface>()
   const [otherNews, setOtherNews] = useState<IOtherNewsNavigation[]>([])
-  
   const {seo} = useParams()
   
   useEffect(() => {
@@ -29,13 +28,13 @@ const FullNewsPage = () => {
         }
       ] as IOtherNewsNavigation[])
     })
-  }, [])
-  //console.log(otherNews);
+  }, [seo])
+  if(!fullNewsData || !otherNews) return <p>Loading...</p>
   
   return (
     <>
-        {fullNewsData && otherNews && <FullNewsComponent {...fullNewsData} /*{...otherNews}*/ />}
-        {/* <SliderReadAlso /> */}
+        <FullNewsComponent fullNewsData={fullNewsData} otherNews={otherNews} />
+        <SliderReadAlso />
     </>
   )
 }

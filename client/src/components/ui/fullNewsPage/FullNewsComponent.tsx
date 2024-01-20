@@ -6,12 +6,19 @@ import NewsNavigation from './newsNavigation/NewsNavigation'
 import { IFullNewsInterface } from '@/components/interfaces/FullNews.interface'
 import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 
+type TFullNewsProps = {
+  fullNewsData: IFullNewsInterface,
+  otherNews: IOtherNewsNavigation[]
+}
+
 /**
  * Reused component for rendering full article, news or blog page
+ * fullNewsData - full data when opening an article
+ * otherNews - data for news navigation blocks (previous, next)
  */
-const FullNewsComponent = (props:IFullNewsInterface/*, otherNews:IOtherNewsNavigation[]*/) => {
-  const {articleId, category, title, fullText, publishedDate, views, comments, authorData, tags} = props
-  //console.log(otherNews);
+const FullNewsComponent = (props:TFullNewsProps) => {
+  const {title, fullText, publishedDate, views, comments, authorData, tags} = props.fullNewsData
+  //console.log(props.otherNews);
   
   return (
     <section className={styles.contentBody}>
@@ -32,7 +39,7 @@ const FullNewsComponent = (props:IFullNewsInterface/*, otherNews:IOtherNewsNavig
           <Tags {...tags} />
         </div>
       </div>
-      {/* {otherNews && <NewsNavigation {...otherNews} />} */}
+      {<NewsNavigation {...props.otherNews} />}
     </section>
   )
 }
