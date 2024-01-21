@@ -161,6 +161,9 @@ body {
   margin-left: 2px;
   color: #41474A;
 }
+.article .article__box .article__box-part .part__bottom .part__bottom-filter a.bottom__filter-item:last-child::after {
+  content: " ";
+}
 @media (max-width: 600px) {
   .article .article__box .article__box-part .part__bottom .part__bottom-filter {
     display: none;

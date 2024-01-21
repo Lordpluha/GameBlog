@@ -78,6 +78,9 @@
                             margin-left: 2px;
                             color: #41474A;
                         }
+                        &:last-child::after{ 
+                            content:" ";
+                        }
                     }
 
                     @media(max-width: 600px) {
