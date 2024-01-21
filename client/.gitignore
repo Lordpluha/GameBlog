@@ -23,5 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 .vite
-demoFullNews.json
-demoArticleList.json
