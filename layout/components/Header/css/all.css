@@ -84,8 +84,9 @@ a {
   text-decoration: none;
 }
 
-#wrapper {
-  padding: 0 30px;
+button {
+  background: none;
+  color: #fff;
 }
 
 header {
@@ -104,34 +105,34 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 100vw;
   position: fixed;
   z-index: 99999;
+  height: 72px;
+  padding: 0 20px;
 }
 header .header__content {
-  max-width: 1280px;
+  max-width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 30px;
 }
-header .header__content .header__content-logo a {
+header .header__content .header__content-logo a.logo {
   display: block;
 }
-header .header__content .header__content-logo a img {
+header .header__content .header__content-logo a.logo img {
   width: 201px;
   height: 36px;
 }
-header .header__content .header__content-logo a:hover {
+header .header__content .header__content-logo a.logo:hover {
   color: #fff;
 }
-header .header__content .header__content-logo a:hover .tooltip {
+header .header__content .header__content-logo a.logo:hover .tooltip {
   visibility: visible;
   opacity: 1;
   -webkit-transform: translate(-50%, 170%);
@@ -169,4 +170,71 @@ header .header__content .header__content-logo .tooltip:after {
   border-bottom: 8px solid white;
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
+}
+header .header__content nav.header__content-pages ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+header .header__content nav.header__content-pages ul li {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+header .header__content nav.header__content-pages ul li a.nav {
+  color: #fff;
+}
+header .header__content nav.header__content-pages ul li a.nav:hover {
+  color: #EC2227;
+}
+header .header__content .header__content-icons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 12px;
+     -moz-column-gap: 12px;
+          column-gap: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header .header__content .header__content-icons button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #262a2c;
+  border-radius: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 36px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-box-shadow 0.15s ease-in-out;
+  transition: -webkit-box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  width: 36px;
+}
+header .header__content .header__content-icons button:first-child {
+  background: none;
+}
+header .header__content .header__content-icons button:last-child {
+  border-radius: 50%;
+}
+header .header__content .header__content-icons button:hover {
+  background-color: #2f3437;
+}
+header .header__content .header__content-icons button.header__search:hover {
+  color: #ef5962;
+  background: none;
+}
+header .header__content .header__content-icons button.header__theme svg {
+  width: 20px;
+  height: 20px;
 }
