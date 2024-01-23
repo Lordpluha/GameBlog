@@ -1,4 +1,4 @@
-export interface ITopInfoInterface {
+export interface ITopInfo {
     date: number,
     totComments: number,
     totViews: number,

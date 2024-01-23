@@ -1,12 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './userShortData.module.scss'
-import { IUserShortData } from '@/components/interfaces/extras/UserShortData.interface'
+import { IUserData } from '@/components/interfaces/extras/UserShortData.interface'
+import { FC } from 'react'
 
 /**
  * Reused component for rendering short data of user
- * avatar, name, surname and login
+ * @param avatar - image of user, 
+ * @param name - name of user, 
+ * @param surname - surname of user,
+ * @param login - login of user in the site
  */
-const UserShortData = ({avatar, name, surname, login}:IUserShortData) => {
+const UserShortData:FC<IUserData> = ({avatar, name, surname, login}) => {
   const navigate = useNavigate()
   const handleUserProfile = (e: React.MouseEvent<HTMLElement>) => {
     navigate(`https://stopgame.ru/user/${login}`)
@@ -17,7 +21,7 @@ const UserShortData = ({avatar, name, surname, login}:IUserShortData) => {
         <picture>
             <img src={avatar} alt={login} />
         </picture> 
-        <span className={styles.userinfoname}>{name} {surname}</span>
+        <p className={styles.userinfoname}>{name} {surname}</p>
     </div>
   )
 }

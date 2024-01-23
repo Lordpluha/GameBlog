@@ -1,15 +1,15 @@
-import { ITagsInterface } from "./Tags.interface"
-import { IUserShortData } from "./extras/UserShortData.interface"
+import { ITags } from "./Tags.interface"
+import { IUserData } from "./extras/UserShortData.interface"
 
-export interface IFullNewsInterface {
+export interface IFullNews {
     articleId: number
     category: string
     title: string
     seo: string
-    authorData: IUserShortData
+    authorData: IUserData
     fullText: string
     views: number
     comments: number
     publishedDate: number
-    tags: ITagsInterface[]
+    tags: ITags[]
 }

@@ -1,4 +1,4 @@
-export interface ITagsInterface {
+export interface ITags {
     title: string
     tagUrl: string
 }

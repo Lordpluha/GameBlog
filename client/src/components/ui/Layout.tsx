@@ -8,7 +8,7 @@ const Layout = () => {
 		<div className='layoutComponent'>
 			<Header />
 			<Breadcrumbs />
-			<div className='container mt-[20px]'>
+			<div className='container mt-5'>
 				<Outlet />
 			</div>
 		</div>

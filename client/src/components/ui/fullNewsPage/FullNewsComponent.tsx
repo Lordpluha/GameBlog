@@ -3,22 +3,29 @@ import Tags from '../tags/Tags'
 import styles from './fullnews.module.scss'
 import TopInfo from '../contentTopInfo/TopInfo'
 import NewsNavigation from './newsNavigation/NewsNavigation'
-import { IFullNewsInterface } from '@/components/interfaces/FullNews.interface'
+import { IFullNews } from '@/components/interfaces/FullNews.interface'
 import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
+import { FC } from 'react'
 
 type TFullNewsProps = {
-  fullNewsData: IFullNewsInterface,
+  fullNewsData: IFullNews,
   otherNews: IOtherNewsNavigation[]
 }
 
 /**
  * Reused component for rendering full article, news or blog page
  * fullNewsData - full data when opening an article
+ * @param title - title of news, then transmitted in component TopInfo
+ * @param fullText - full text on article,
+ * @param publishedDate - date of publication of the article on the website, 
+ * @param views - visits of article then transmitted in component TopInfo, 
+ * @param comments - tottal count of comments then transmitted in component TopInfo, 
+ * @param authorData - short data of author article then transmitted in coponent UserShortData, 
+ * @param tags - tags data of article then transmitted in coponent Tags
  * otherNews - data for news navigation blocks (previous, next)
  */
-const FullNewsComponent = (props:TFullNewsProps) => {
+const FullNewsComponent:FC<TFullNewsProps> = (props) => {
   const {title, fullText, publishedDate, views, comments, authorData, tags} = props.fullNewsData
-  //console.log(props.otherNews);
   
   return (
     <section className={styles.contentBody}>
@@ -39,7 +46,7 @@ const FullNewsComponent = (props:TFullNewsProps) => {
           <Tags {...tags} />
         </div>
       </div>
-      {<NewsNavigation {...props.otherNews} />}
+      <NewsNavigation {...props.otherNews} />
     </section>
   )
 }

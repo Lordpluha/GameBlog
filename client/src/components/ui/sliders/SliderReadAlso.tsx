@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { A11y, Navigation } from "swiper/modules";
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import ReadAldoItem from './readAlso/ReadAldoItem'
-import { ISliderInterface } from '@/components/interfaces/Slider.interface';
+import { ISlider } from '@/components/interfaces/Slider.interface';
 import sd from '../../../demoData/demoFullNews.json'
 
 import styles from './slider.module.scss'
@@ -14,7 +14,7 @@ import 'swiper/scss';
  * This component can be used on the blog, news and other sections
  */
 const SliderReadAlso = () => {
-  const [sliderData, setSliderData] = useState<ISliderInterface[]>([])
+  const [sliderData, setSliderData] = useState<ISlider[]>([])
   const swiperContainer = useRef<SwiperRef>()
 
   useEffect(() => {
@@ -27,14 +27,14 @@ const SliderReadAlso = () => {
           seo: item.seo,
           date: item.publishedDate
         }
-      ] as ISliderInterface[])
+      ] as ISlider[])
     })
   }, [])
 
   return (
     <section className={clsx(styles.pageSection, styles.additionalReads)}>
         <div className={styles.additionalReadsHeader}>
-            <span>Читай также</span>
+            <p>Читай также</p>
             <div className={styles.additionalReadsControls}>
                 <div 
                     className={styles.additionalReadsControlsPrev} 

@@ -2,7 +2,7 @@
     @apply text-[--text-color] flex flex-col relative no-underline
 }
 
-.card picture {
+.cardImage {
     @apply bg-[var(--backdrop-image)] bg-[length:431px_270px] rounded-lg block overflow-hidden relative
 }
 

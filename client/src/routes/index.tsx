@@ -22,10 +22,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <HomePage />,
-				handle: {
-					crumb: () => <Link to='/'>Home</Link>
-				}
+				element: <HomePage />
 			},
 			{
 				path: '/blogs',

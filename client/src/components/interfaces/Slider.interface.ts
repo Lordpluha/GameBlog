@@ -1,6 +1,6 @@
 import { IUserShortData } from "./extras/UserShortData.interface"
 
-export interface ISliderInterface {
+export interface ISlider {
     seo: string
     image: string
     category: string

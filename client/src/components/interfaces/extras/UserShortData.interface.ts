@@ -1,4 +1,4 @@
-export interface IUserShortData {
+export interface IUserData {
     avatar: string,
     name: string,
     surname: string,

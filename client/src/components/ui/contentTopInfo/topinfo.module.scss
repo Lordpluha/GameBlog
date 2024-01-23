@@ -2,9 +2,9 @@
     @apply text-lg flex gap-x-6 gap-y-2 flex-wrap text-[var(--default-dark-text500-color)] uppercase
 }
 
-.topinfo a,
-.topinfo span,
-.topinfo button {
+.topinfo_a,
+.topinfo_span,
+.topinfo_button {
     @apply flex flex-wrap gap-x-1
 }
 
