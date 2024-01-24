@@ -86,9 +86,6 @@ export class CommentService {
 					author: {
 						select: returnUserBaseObject
 					},
-					children: {
-						include: { _count: { select: { children: true } } }
-					},
 					_count: { select: { children: true } }
 				}
 			}),
@@ -102,11 +99,12 @@ export class CommentService {
 		}
 	}
 
-	async findOne(id: number, level = 2) {
+	async findOne(id: number, level = 1) {
 		const include = this.getTreeIncludesChildren(level)
 		const comment = await this.prisma.comment.findUnique({
 			where: { id },
 			include: {
+				_count: { select: { children: true } },
 				author: {
 					select: returnUserBaseObject
 				},
@@ -121,9 +119,9 @@ export class CommentService {
 		let include = undefined
 		for (let i = 0; i < level; i++) {
 			if (i === 0) {
-				include = { children: true }
+				include = { children: true, _count: { select: { children: true } } }
 			} else {
-				include = { children: { include: include } }
+				include = { children: { include: include }, _count: { select: { children: true } } }
 			}
 		}
 		return include
