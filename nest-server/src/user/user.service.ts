@@ -51,9 +51,10 @@ export class UserService {
 	public async setRole({ role, userId }: SetRoleDto) {
 		const user = await this.byId(userId, true)
 		if (user.role === Role.ADMIN) throw new ForbiddenException()
-		await this.prisma.user.update({
+		const updatedUser = await this.prisma.user.update({
 			where: { id: userId },
 			data: { role }
 		})
+		await this.cacheManager.set(`user-${userId}`, updatedUser)
 	}
 }
