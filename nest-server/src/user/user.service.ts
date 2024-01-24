@@ -1,9 +1,10 @@
-import { BadRequestException, Inject, Injectable } from '@nestjs/common'
-import { CreateUserDto } from './dto'
+import { BadRequestException, ForbiddenException, Inject, Injectable } from '@nestjs/common'
+import { CreateUserDto, SetRoleDto } from './dto'
 import { PrismaService } from 'src/common/prisma.service'
 import { USER_WITH_EMAIL_ALREADY_EXISTS } from './constants/error.constants.user'
 import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
 import { User } from '@prisma/client'
+import { Role } from 'src/role/role.enum'
 
 @Injectable()
 export class UserService {
@@ -45,5 +46,14 @@ export class UserService {
 		})
 		if (user) await this.cacheManager.set(`user-${user.id}`, user)
 		return user
+	}
+
+	public async setRole({ role, userId }: SetRoleDto) {
+		const user = await this.byId(userId, true)
+		if (user.role === Role.ADMIN) throw new ForbiddenException()
+		await this.prisma.user.update({
+			where: { id: userId },
+			data: { role }
+		})
 	}
 }
