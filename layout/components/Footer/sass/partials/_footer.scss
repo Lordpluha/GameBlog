@@ -124,11 +124,9 @@ footer {
                             display: block;
                             width: 25px;
                             height: 25px;
-                            color: white;
+                            color: #6A7276;
 
-                            &:hover {
-                                color: #6A7276;
-                            }
+                            &:hover {}
 
                         }
 
@@ -157,14 +155,14 @@ footer {
                                 }
 
                                 a {
-                                    color: #fff;
+                                    color: #6A7276;
                                     display: block;
                                     height: 52px;
                                     padding: 16px;
                                     font-family: 'Rubik', sans-serif;
 
                                     &:hover {
-                                        color: #747C81;
+                                        color: #fff;
                                     }
 
                                     p {
