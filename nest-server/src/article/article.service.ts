@@ -1,6 +1,6 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateArticleDto, UpdateArticleDto, PaginationArticleQueryDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import { FileService } from 'src/file/file.service'
 import * as generateSlug from 'slug'
 import { ARTICLE_NOT_FOUND } from './constants/error.article.constants'

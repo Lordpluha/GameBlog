@@ -1,6 +1,6 @@
 import { BadRequestException, ForbiddenException, Inject, Injectable } from '@nestjs/common'
 import { CreateUserDto, SetRoleDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import { USER_WITH_EMAIL_ALREADY_EXISTS } from './constants/error.constants.user'
 import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager'
 import { User } from '@prisma/client'

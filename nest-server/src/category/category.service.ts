@@ -1,6 +1,6 @@
 import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateCategoryDto, UpdateCategoryDto, PaginationCategoryQueryDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import * as generateSlug from 'slug'
 import {
 	CATEGORY_NOT_FOUND,

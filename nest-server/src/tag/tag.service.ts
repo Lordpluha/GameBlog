@@ -1,6 +1,6 @@
 import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateTagDto, UpdateTagDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import { TAG_NOT_FOUND, TAG_WITH_NAME_ALREADY_EXISTS } from './constants/error.constants.tag'
 import * as generateSlug from 'slug'
 import { PaginationQueryDto } from 'src/common/pagination.query.dto'

@@ -5,7 +5,7 @@ import {
 	NotFoundException
 } from '@nestjs/common'
 import { CreateCommentDto, PaginationArticleQueryDto, UpdateCommentDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import { JwtGenerateDto } from 'src/auth/dto'
 import { BlogService } from 'src/blog/blog.service'
 import { ArticleService } from 'src/article/article.service'

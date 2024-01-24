@@ -13,6 +13,7 @@ import { TagModule } from './tag/tag.module'
 import { CacheModule } from '@nestjs/cache-manager'
 import { CacheManagerOptions } from './configs/cache-manager.env'
 import { CommentModule } from './comment/comment.module'
+import { PrismaModule } from './database/prisma.module'
 
 @Module({
 	imports: [
@@ -28,7 +29,8 @@ import { CommentModule } from './comment/comment.module'
 		CategoryModule,
 		ArticleModule,
 		TagModule,
-		CommentModule
+		CommentModule,
+		PrismaModule
 	]
 })
 export class AppModule {}
