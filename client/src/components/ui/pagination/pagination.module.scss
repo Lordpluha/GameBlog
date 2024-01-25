@@ -1,45 +1,21 @@
 .pagination {
-  @apply flex flex-row items-center justify-center list-none outline-none mt-5
+  @apply items-center flex flex-col justify-center max-w-full gap-y-1 my-5
 }
 
-.pagination li {
-    @apply m-1 w-8 h-8
+.buttons {
+  @apply items-center flex flex-row gap-x-2 justify-center max-w-full cursor-pointer
 }
 
-.pagination li a {
-  @apply rounded cursor-pointer outline-none flex items-center justify-center w-8 h-8 text-[--text-color] bg-transparent border border-solid border-transparent
+.leftArrow,
+.rightArrow,
+.page {
+  @apply items-center hover:bg-[--hover-active-colore] bg-[--li-bg-color] rounded-lg text-[--text-color] flex text-base h-8 justify-center min-w-8 py-1 px-2 no-underline
 }
 
-.pagination li a:hover {
-  @apply bg-[--body-bg-color]
+.activePage {
+  @apply bg-[--hover-active-colore] font-semibold
 }
 
-.pagination__active li {
-  @apply bg-[--hover-active-colore] rounded
-}
-
-.pagination__active a {
-  @apply border-solid border-[--body-bg-color] text-white
-}
-
-.pagination__active a,
-.pagination__active a:hover,
-.pagination__active a:focus {
-  @apply  border-solid border-[--body-bg-color] outline-none cursor-default
-}
-
-.pagination li.disabled {
+.btnHiden {
   @apply hidden
-}
-
-.pagination .disabled a svg {
-  @apply fill-[--body-bg-color]
-}
-
-.pagination .disabled a:hover {
-  @apply bg-transparent
-}
-
-.pagination__dark li a {
-    @apply text-white;
 }

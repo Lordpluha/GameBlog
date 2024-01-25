@@ -1,40 +1,56 @@
-import ReactPaginate from 'react-paginate'
+import { memo } from 'react'
 import styles from './pagination.module.scss'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { TPagination } from '@/components/types/Pagination.type'
+import clsx from 'clsx'
 
-export interface IPagination {
-    initPage: number
-    marginPagesDisplayed:number
-    pageCount: number
-    pageRangeDisplayed: number
-    onChange: ({selected}:{selected:number}) => void
-}
+/**
+ * @param TPagination - the type of ppagination props
+ * @param currentPage - current page
+ * @param pageNum - an array of pagination pages formed from the first to the total number of all pages
+ * @param btnDisabled - active or passive state of the next and previous buttons
+ * @param handleNextPageClick - action handler when the button is clicked next
+ * @param handlePrevPageClick - action handler when the button is clicked previus
+ * @param onChangePage - action handler when a page button is clicked
+ */
+const Pagination = (props:TPagination) => {
+  const { pageNum, currentPage, disable, onNextPageClick, onPrevPageClick, onChangePage } = props
+  
+  const handleNextPageClick = () => {
+    onNextPageClick();
+  };
+  const handlePrevPageClick = () => {
+    onPrevPageClick();
+  };
 
-const Pagination = (props:IPagination) => {
-  const {initPage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange} = props
+  const handleChangePage = (page:number) => {
+    onChangePage(page)
+  }
+
   return (
-    <div>
-        <ReactPaginate
-            initialPage={initPage} 
-            marginPagesDisplayed={marginPagesDisplayed} 
-            pageCount={pageCount} 
-            pageRangeDisplayed={pageRangeDisplayed}
-            onPageChange={onChange}
-            containerClassName={styles.pagination}
-            activeClassName={styles.pagination__active}
-            pageLinkClassName={styles.pagination__pageLink}
-            breakLinkClassName={styles.pagination__breakLink}
-            nextLinkClassName={styles.pagination__nextLink}
-            previousLinkClassName={styles.pagination__previousLink}
-            pageClassName={styles.pagination__pageItem}
-            breakClassName={styles.pagination__breakItem}
-            nextClassName={styles.pagination__nextItem}
-            previousClassName={styles.pagination__previousItem}
-            previousLabel={<ChevronLeft />}
-            nextLabel={<ChevronRight />}
-        />
+    <div className={styles.pagination}>
+      <div className={styles.buttons}>
+        <button className={disable.left ? styles.btnHiden : ''} 
+            type="button"
+            onClick={handlePrevPageClick}>
+          <ChevronLeft className={styles.leftArrow} />
+        </button>
+        {
+          pageNum?.map((page, idx) => 
+            <div className={
+              clsx(styles.page, currentPage === page ? styles.activePage : '')
+            } 
+              onClick={() => handleChangePage(page)} key={idx}>{page}
+            </div>)
+        }
+        <button className={disable.right ? styles.btnHiden : ''}
+        type="button"
+        onClick={handleNextPageClick}>
+          <ChevronRight className={styles.rightArrow} />
+        </button>
+      </div>
     </div>
   )
 }
 
-export default Pagination
+export default memo(Pagination)
