@@ -24,9 +24,9 @@ const TopInfo:FC<ITopInfo> = ({date, totComments, totViews, title}) => {
       <div className={styles.topinfo}>
           <p className={styles.topinfo_span}>{publicDate}</p>
           <Link to="#comments" className={styles.topinfo_a}><MessageCircleMore /> {totComments}</Link>
-          <p><Eye /> {totViews}</p>
+          <p className={styles.totalVews}><Eye /> {totViews}</p>
           <BookmarkBtn style={styles.topinfo_button} />
-          <ShareBtn />
+          <ShareBtn style={styles.topinfo_button} />
       </div>
       <h1>{title}</h1>
     </>

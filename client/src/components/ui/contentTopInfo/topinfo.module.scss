@@ -1,14 +1,14 @@
 .topinfo {
-    @apply text-lg flex gap-x-6 gap-y-2 flex-wrap text-[var(--default-dark-text500-color)] uppercase
+    @apply text-lg flex gap-x-6 gap-y-2 flex-wrap text-[--default-dark-text500-color] uppercase
 }
 
 .topinfo_a,
-.topinfo_span,
+.totalVews,
 .topinfo_button {
     @apply flex flex-wrap gap-x-1
 }
 
 .topinfo a,
-.topinfo button {
-    @apply hover:text-[var(--hover-active-colore)]
+.topinfo_button {
+    @apply hover:text-[--hover-active-colore]
 }
