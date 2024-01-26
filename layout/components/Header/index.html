@@ -60,10 +60,9 @@
                                 <path d="m21 21-4.3-4.3" />
                             </svg>
                         </button>
-
-                        <button class="header__theme">
-                            <div class="dropdown">
-                                <svg class="in" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="header__dropdown">
+                            <button class="header__theme" onclick="show_hide()" >
+                                <svg class="theme" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                     <g id="SVGRepo_iconCarrier">
@@ -72,59 +71,51 @@
                                             fill="#5D5FEF"></path>
                                     </g>
                                 </svg>
-                                <ul class="dropdown-content">
-                                    <li>
-                                        <a class="light-theme" href="#" target="_blank">
-                                            <p>Светлая тема</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-sun">
-                                                <circle cx="12" cy="12" r="4" />
-                                                <path d="M12 2v2" />
-                                                <path d="M12 20v2" />
-                                                <path d="m4.93 4.93 1.41 1.41" />
-                                                <path d="m17.66 17.66 1.41 1.41" />
-                                                <path d="M2 12h2" />
-                                                <path d="M20 12h2" />
-                                                <path d="m6.34 17.66-1.41 1.41" />
-                                                <path d="m19.07 4.93-1.41 1.41" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dark-theme" href="#" target="blank">
-                                            <p>Темная тема</p>
-                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path
-                                                        d="M12.0557 3.59974C12.2752 3.2813 12.2913 2.86484 12.0972 2.53033C11.9031 2.19582 11.5335 2.00324 11.1481 2.03579C6.02351 2.46868 2 6.76392 2 12C2 17.5228 6.47715 22 12 22C17.236 22 21.5313 17.9764 21.9642 12.8518C21.9967 12.4664 21.8041 12.0968 21.4696 11.9027C21.1351 11.7086 20.7187 11.7248 20.4002 11.9443C19.4341 12.6102 18.2641 13 17 13C13.6863 13 11 10.3137 11 6.99996C11 5.73589 11.3898 4.56587 12.0557 3.59974Z"
-                                                        fill="currentColor"></path>
-                                                </g>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="system-theme" href="#" target="_blank">
-                                            <p>Системная</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-monitor-speaker">
-                                                <path d="M5.5 20H8" />
-                                                <path d="M17 9h.01" />
-                                                <rect width="10" height="16" x="12" y="4" rx="2" />
-                                                <path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4" />
-                                                <circle cx="17" cy="15" r="1" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                </ul>
+                            </button>
+                            <div class="dropdown-content" id="choose-theme">
+                                <a class="light-theme" href="#" target="_blank">
+                                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-sun">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path d="M12 2v2" />
+                                        <path d="M12 20v2" />
+                                        <path d="m4.93 4.93 1.41 1.41" />
+                                        <path d="m17.66 17.66 1.41 1.41" />
+                                        <path d="M2 12h2" />
+                                        <path d="M20 12h2" />
+                                        <path d="m6.34 17.66-1.41 1.41" />
+                                        <path d="m19.07 4.93-1.41 1.41" />
+                                    </svg>
+                                    <p>Светлая тема</p>
+                                </a>
+                                <a class="dark-theme" href="#" target="blank">
+                                    <svg class="dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M12.0557 3.59974C12.2752 3.2813 12.2913 2.86484 12.0972 2.53033C11.9031 2.19582 11.5335 2.00324 11.1481 2.03579C6.02351 2.46868 2 6.76392 2 12C2 17.5228 6.47715 22 12 22C17.236 22 21.5313 17.9764 21.9642 12.8518C21.9967 12.4664 21.8041 12.0968 21.4696 11.9027C21.1351 11.7086 20.7187 11.7248 20.4002 11.9443C19.4341 12.6102 18.2641 13 17 13C13.6863 13 11 10.3137 11 6.99996C11 5.73589 11.3898 4.56587 12.0557 3.59974Z"
+                                                fill="currentColor"></path>
+                                        </g>
+                                    </svg>
+                                    <p>Темная тема</p>
+                                </a>
+                                <a class="system-theme" href="#" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-monitor-speaker">
+                                        <path d="M5.5 20H8" />
+                                        <path d="M17 9h.01" />
+                                        <rect width="10" height="16" x="12" y="4" rx="2" />
+                                        <path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4" />
+                                        <circle cx="17" cy="15" r="1" />
+                                    </svg>
+                                    <p>Системная</p>
+                                </a>
                             </div>
-                        </button>
+                        </div>
                         <button class="header__comments">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -143,11 +134,23 @@
                                 <path d="M20 21a8 8 0 0 0-16 0" />
                             </svg>
                         </button>
+                        <button class="header__burger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-menu">
+                                <line x1="4" x2="20" y1="12" y2="12" />
+                                <line x1="4" x2="20" y1="6" y2="6" />
+                                <line x1="4" x2="20" y1="18" y2="18" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </header>
+        <section class="parts">
+        </section>
     </div>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

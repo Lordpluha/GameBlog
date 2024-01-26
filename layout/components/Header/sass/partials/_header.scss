@@ -3,17 +3,16 @@ header {
     align-items: center;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: sticky;
     z-index: 99999;
     height: 72px;
-    padding: 0 20px;
+    padding: 0 16px;
 
     .header__content {
         max-width: 100%;
         align-items: center;
         display: flex;
-        justify-content: space-around;
-        padding: 0 30px;
+        justify-content: space-between;
 
         .header__content-logo {
             a.logo {
@@ -86,6 +85,7 @@ header {
                     }
                 }
             }
+
             @media (max-width: 1145px) {
                 display: none;
             }
@@ -125,84 +125,89 @@ header {
                     color: #ef5962;
                     background: none;
                 }
+
                 @media (max-width: 420px) {
                     display: none;
                 }
             }
 
-            button.header__theme {
+            .header__dropdown {
                 @media (max-width: 1145px) {
                     display: none;
                 }
-                .dropdown {
-                    position: relative;
-                    display: inline-block;
 
-                    svg.in {
+                button.header__theme {
+                    background-color: #262a2c;
+                    border-radius: 10px;
+                    display: flex;
+
+                    svg.theme {
                         display: block;
                         width: 20px;
                         height: 20px;
-                    }
 
-                    &:hover ul.dropdown-content {
-                        display: block;
-                        opacity: 1;
-                        transform: translateY(0);
                     }
+                }
 
-                    ul.dropdown-content {
-                        opacity: 0;
-                        position: fixed;
-                        background-color: #383838;
-                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                        border-radius: 12px;
-                        padding: 16px;
+                #choose-theme {
+                    opacity: 0;
+                    position: fixed;
+                    background-color: #383838;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    border-radius: 12px;
+                    padding: 16px;
+                    top: 72px;
+                    right: 124.2px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    margin: 4px 0 0;
+                    z-index: 99;
+
+                    a {
+                        color: #747c81;
                         display: flex;
-                        flex-direction: column;
-                        gap: 8px;
-                        margin: 4px 0 0;
-                        top: 72px;
-                        right: 124.2px;
-                        transform: translateY(-100%);
-                        transition: opacity .3s, transform .3s;
-                        z-index: 99;
+                        padding: 12px 12px 12px 8px;
 
-                        li {
-                            cursor: pointer;
-                            display: flex;
-                            &:hover {
-                                color: #747C81;
+                        p {
+                            font-size: 16px;
+                            font-family: 'Rubik', sans-serif;
+                        }
+
+                        svg {
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 12px;
+                        }
+
+                        &:hover {
+                            color: #fff;
+                            svg.light{
+                                color: #f2e14c;
                             }
-
-                            a {
-                                color: #747c81;
-                                display: block;
-                                font-family: 'Rubik', sans-serif;
-                                padding: 12px 12px 12px 8px;
-
-                                &:hover {
-                                    color: #fff;
-                                }
-
-                                p {
-                                    font-size: 16px;
-                                    float: right;
-                                    font-family: 'Rubik', sans-serif;
-                                }
-
-                                svg {
-                                    width: 16px;
-                                    height: 16px;
-                                    float: left;
-                                    margin-right: 12px;
-                                }
-
+                            svg.dark{
+                                color: #5d5fef;
                             }
                         }
                     }
+
                 }
             }
 
+            button.header__comments {
+                @media (max-width: 375px) {
+                    display: none;
+                }
+            }
+
+            button.header__burger {
+                background: none;
+
+                svg {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
         }
     }
 }
