@@ -12,10 +12,10 @@ type INewsListProps = {
  */
 export default function NewsList({ news }: INewsListProps) {
 	return (
-		<div className='flex flex-col gap-10'>
+		<section className='flex flex-col gap-10'>
 			{news.map(news => (
 				<News {...news} key={news.id} />
 			))}
-		</div>
+		</section>
 	)
 }

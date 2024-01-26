@@ -10,14 +10,14 @@ const CategoryList = ({
 	className: string
 }) => {
 	return (
-		<div className={className}>
+		<section className={className}>
 			{categories.map((item, idx) => (
 				<div key={idx}>
 					{idx > 0 && <div className='mx-1'>|</div>}
 					<CategoryItem category={item} />
 				</div>
 			))}
-		</div>
+		</section>
 	)
 }
 
