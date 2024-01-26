@@ -10,7 +10,7 @@ const Tags:FC<ITags[]> = (tags) => {
   const arr = Object.values(tags);
   return (
     <div className={styles.tags}>
-        <p>Теги</p>
+        <p className={styles.tags__p}>Теги</p>
         <div className={styles.tagsWrapper}>
             {arr.map((tag) => <Link to={tag.tagUrl} key={tag.title} className={styles.tag}>{tag.title}</Link>)}
         </div>
