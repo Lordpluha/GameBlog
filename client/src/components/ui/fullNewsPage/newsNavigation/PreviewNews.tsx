@@ -8,7 +8,7 @@ import styles from './newsnavigation.module.scss'
 
 const PreviewNews:FC<IOtherNewsNavigation> = (previewNews) => {
   return (
-    <div>
+    <div className={styles.otherNewsBlock}>
         <Link to={`/newsdata/${previewNews.seo}`} className={clsx(styles.newsNavigationLink, styles.newsNavigationLinkPrev)}>
             <p className={styles.newsNavigationText}>
                 <ChevronLeft /> Предыдущая

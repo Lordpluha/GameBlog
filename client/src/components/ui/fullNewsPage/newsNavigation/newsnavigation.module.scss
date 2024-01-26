@@ -1,5 +1,5 @@
 .newsNavigation {
-    @apply w-full grid gap-x-6 grid-cols-[1fr_1fr] p-0 mt-10
+    @apply w-full flex gap-x-6 flex-col p-0 mt-10 md:flex-row
 }
 
 .newsNavigationLink {
@@ -19,7 +19,7 @@
 }
 
 .newsNavigationBlock {
-    @apply bg-[--itemBlock-bg-color] rounded-lg grid gap-x-4 grid-cols-[160px_auto] grid-rows-[20px_auto] p-4 w-full gap-y-2
+    @apply bg-[--itemBlock-bg-color] rounded-lg md:grid gap-x-4 md:grid-cols-[160px_auto] md:grid-rows-[20px_auto] p-4 w-full gap-y-2 block
 }
 
 .newsNavigationImage {
@@ -37,4 +37,3 @@
 .newsNavigationTitle {
     @apply line-clamp-3 text-lg max-h-20 text-[--text-color]
 }
-

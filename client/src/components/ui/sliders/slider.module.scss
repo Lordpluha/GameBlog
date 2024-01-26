@@ -22,3 +22,7 @@
 .additionalReadsControlsNext {
     @apply items-center rounded-[50%] cursor-pointer flex w-8 h-8 justify-center
 }
+
+.swiper-container {
+    @apply md:max-w-screen-md
+}

@@ -56,6 +56,31 @@ const SliderReadAlso = () => {
             modules={[Navigation, A11y]}
             className="swiper-container swiper-pointer-events"
             ref={swiperContainer}
+            breakpoints={{
+              // when window width is >= 320px
+              250: {
+                slidesPerView: 1,
+                spaceBetween: 20
+              },
+              // when window width is >= 480px
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 30
+              },
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+              },
+              1140: {
+                slidesPerView: 4,
+                spaceBetween: 40
+              }}
+            }
         >
             {sliderData?.map(post => <SwiperSlide key={post.seo}><ReadAldoItem {...post} /></SwiperSlide>)}
         </Swiper>            
