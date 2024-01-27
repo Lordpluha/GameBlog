@@ -1,15 +1,17 @@
 import { useState } from 'react'
 
-import { INewComment } from '@/interfaces/extras/NewComments.interface'
 import { Menu, X } from 'lucide-react'
 
-import Logo from '@ui/Logo/Logo'
+import CommentsBtn from '@features/ui/buttons/CommentsBtn/CommentsBtn'
+import SearchFormBtn from '@features/ui/buttons/SearchBtn/SearchBtn'
+import ThemeModeBtn from '@features/ui/buttons/ThemeBtn/ThemeBtn'
+import UserAuthBtn from '@features/ui/buttons/UserAuthBtn/UserAuthBtn'
 
-import NavBar from './Navbar/Navbar'
-import CommentsBtn from './buttons/Comments/CommentsBtn'
-import SearchFormBtn from './buttons/Search/SearchBtn'
-import ThemeModeBtn from './buttons/Theme/ThemeBtn'
-import UserAuthBtn from './buttons/UserAuth/UserAuthBtn'
+import IComment from '@entities/model/interfaces/Comment.interface'
+import NavBar from '@entities/ui/Navbar/Navbar'
+
+import Logo from '@shared/ui/Logo/Logo'
+
 import styles from './header.module.scss'
 
 /**
@@ -18,7 +20,7 @@ import styles from './header.module.scss'
  */
 const Header = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-	const [newCommentsData, setNewCommentsData] = useState<INewComment[]>([])
+	const [newCommentsData, setNewCommentsData] = useState<IComment[]>([])
 
 	return (
 		<header className={styles.header}>

@@ -1,17 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import BlogsPage from '@pages/BlogsPage'
-import CheatsPage from '@pages/CheatsPage'
-import ErrorPage from '@pages/ErrorPage'
-import GamesPage from '@pages/GamesPage'
-import HomePage from '@pages/HomePage'
-import NewsPage from '@pages/NewsPage'
-import ReadPage from '@pages/ReadPage'
-import StreamsPage from '@pages/StreamsPage'
-import SupportPage from '@pages/SupportPage'
-import WatchPage from '@pages/WatchPage'
+import Layout from '@pages/ui/Layout'
 
-import Layout from '@ui/Layout'
+import BlogsPage from '@pages/ui/BlogsPage'
+import CheatsPage from '@pages/ui/CheatsPage'
+import ErrorPage from '@pages/ui/ErrorPage'
+import GamesPage from '@pages/ui/GamesPage'
+import HomePage from '@pages/ui/HomePage'
+import NewsPage from '@pages/ui/NewsPage'
+import ReadPage from '@pages/ui/ReadPage'
+import StreamsPage from '@pages/ui/StreamsPage'
+import SupportPage from '@pages/ui/SupportPage'
+import WatchPage from '@pages/ui/WatchPage'
 
 export const router = createBrowserRouter([
 	{

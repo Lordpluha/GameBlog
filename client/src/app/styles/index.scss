@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @import 'modern-normalize/modern-normalize.css';
-@import "vars.scss";
-
+@import 'vars.scss';
 
 :root {
 	@include vars;

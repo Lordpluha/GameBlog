@@ -1,4 +1,4 @@
-import { ICategory } from '@/interfaces/Category.interface'
+import { ICategory } from './Category.interface'
 
 export interface IArticle {
 	id: number
