@@ -3,13 +3,14 @@ import { useRef } from 'react'
 import useModal from '@features/lib/hooks/useModal'
 import CommentModal from '@entities/ui/modals/Comments/CommentsModal'
 import { MessageCircleMore } from 'lucide-react'
+import IComment from '@/entities/model/interfaces/Comment.interface'
 
 /**
  * Modal component with a list of new comments
  * useModal is a custom hook for closing a modal window by clicking an outside
  * @param newComments - array
  */
-const CommentsBtn = ({ newComments }: { newComments: INewComment[] }) => {
+const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 	const refCommentModal = useRef<HTMLDivElement>(null!)
 	const { modal, setModal } = useModal(refCommentModal)
 
