@@ -1,10 +1,9 @@
 import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
 
-import { setupStore } from './store'
-
 import { router } from '@pages/lib/routes'
 
+import { setupStore } from './store'
 import './styles/index.scss'
 
 const store = setupStore()

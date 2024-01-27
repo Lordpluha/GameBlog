@@ -11,7 +11,11 @@ type NewsFooterProps = {
 	commentsCount: number
 }
 
-const NewsFooter: FC<NewsFooterProps> = ({ createdAt, addToBookmark, commentsCount }) => {
+const NewsFooter: FC<NewsFooterProps> = ({
+	createdAt,
+	addToBookmark,
+	commentsCount
+}) => {
 	return (
 		<div className='flex justify-between items-center'>
 			<p className='text-lg text-gray-400'>{createdAt}</p>

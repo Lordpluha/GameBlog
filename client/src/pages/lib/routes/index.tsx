@@ -1,12 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import Layout from '@pages/ui/Layout'
-
 import BlogsPage from '@pages/ui/BlogsPage'
 import CheatsPage from '@pages/ui/CheatsPage'
 import ErrorPage from '@pages/ui/ErrorPage'
 import GamesPage from '@pages/ui/GamesPage'
 import HomePage from '@pages/ui/HomePage'
+import Layout from '@pages/ui/Layout'
 import NewsPage from '@pages/ui/NewsPage'
 import ReadPage from '@pages/ui/ReadPage'
 import StreamsPage from '@pages/ui/StreamsPage'

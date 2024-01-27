@@ -1,5 +1,5 @@
-import UserAPI from '@widgets/api/UserAPI'
 import { configureStore } from '@reduxjs/toolkit'
+import UserAPI from '@widgets/api/UserAPI'
 import { combineReducers } from 'redux'
 
 import UserReducer from '../../features/lib/store/slices/UserSlice'

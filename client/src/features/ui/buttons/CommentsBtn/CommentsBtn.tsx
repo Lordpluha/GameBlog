@@ -1,9 +1,11 @@
 import { useRef } from 'react'
 
-import useModal from '@features/lib/hooks/useModal'
-import CommentModal from '@entities/ui/modals/Comments/CommentsModal'
-import { MessageCircleMore } from 'lucide-react'
 import IComment from '@/entities/model/interfaces/Comment.interface'
+import { MessageCircleMore } from 'lucide-react'
+
+import useModal from '@features/lib/hooks/useModal'
+
+import CommentModal from '@entities/ui/modals/Comments/CommentsModal'
 
 /**
  * Modal component with a list of new comments

@@ -1,8 +1,10 @@
 import { useRef } from 'react'
 
-import useModal from '@features/lib/hooks/useModal'
-import UserAuthModal from '@entities/ui/modals/UserAuth/UserAuthModal'
 import { UserRound } from 'lucide-react'
+
+import useModal from '@features/lib/hooks/useModal'
+
+import UserAuthModal from '@entities/ui/modals/UserAuth/UserAuthModal'
 
 /**
  * User button for authorization

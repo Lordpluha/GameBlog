@@ -1,7 +1,8 @@
 import { ForwardedRef, forwardRef } from 'react'
 
-import SocialLinksComponent from '@shared/ui/Socials/Socials'
 import { X } from 'lucide-react'
+
+import SocialLinksComponent from '@shared/ui/Socials/Socials'
 
 import styles from './UserAuthModal.module.scss'
 

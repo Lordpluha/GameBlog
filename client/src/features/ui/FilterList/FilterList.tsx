@@ -12,7 +12,9 @@ const FilterList = ({ filters }: { filters: Array<TFilter> }) => {
 		<section className={styles.filters}>
 			<ul className={styles.filter_list}>
 				{filters.map((el, i) => (
-					<Filter key={i} to={el.to} name={el.name} isList={true} />
+					<li>
+						<Filter key={i} to={el.to} name={el.name} />
+					</li>
 				))}
 			</ul>
 		</section>

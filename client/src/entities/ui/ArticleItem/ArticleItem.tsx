@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import CategoryList from '@entities/ui/CategoryLists/CategoryList'
 import { CommentOutlined } from '@ant-design/icons'
 
 import { dateConverter } from '@entities/lib/ArticleDateConverter'
 import { IArticle } from '@entities/model/interfaces/Article.interface'
+import CategoryList from '@entities/ui/CategoryLists/CategoryList'
 
 import styles from './ArticleItem.module.scss'
 

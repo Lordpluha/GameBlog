@@ -1,9 +1,10 @@
 import { ForwardedRef, forwardRef } from 'react'
 
+import { MonitorSmartphone } from 'lucide-react'
+
 import { TTheme } from '@entities/model/types/Theme.type'
 import MoonIcon from '@entities/ui/icons/MoonIcon'
 import SunIcon from '@entities/ui/icons/SunIcon'
-import { MonitorSmartphone } from 'lucide-react'
 
 import styles from './ThemeModal.module.scss'
 

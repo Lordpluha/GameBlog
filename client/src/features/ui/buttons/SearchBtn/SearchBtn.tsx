@@ -1,8 +1,10 @@
 import { useRef } from 'react'
 
-import useModal from '@features/lib/hooks/useModal'
-import SearchModal from '@entities/ui/modals/Search/SearchModal'
 import { Search, X } from 'lucide-react'
+
+import useModal from '@features/lib/hooks/useModal'
+
+import SearchModal from '@entities/ui/modals/Search/SearchModal'
 
 /** Header search component included input field and search tags */
 const SearchBtn = () => {

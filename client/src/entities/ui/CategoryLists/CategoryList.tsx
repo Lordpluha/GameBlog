@@ -1,6 +1,6 @@
 import { IArticle } from '@/entities/model/interfaces/Article.interface'
 
-import CategoryItem from '../../../shared/ui/CategoryItem/CategoryItem'
+import CategoryItem from './CategoryItem/CategoryItem'
 
 const CategoryList = ({
 	categories,

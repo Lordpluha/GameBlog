@@ -1,9 +1,9 @@
 import { useRef } from 'react'
 
-import useTheme from '@features/lib/hooks/useTheme'
 import { Moon, Sun } from 'lucide-react'
 
 import useModal from '@features/lib/hooks/useModal'
+import useTheme from '@features/lib/hooks/useTheme'
 
 import ThemeModeModal from '@entities/ui/modals/Theme/ThemeModal'
 

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
-const NewsTitle = ({content}: {content: string}) => {
+const NewsTitle = ({ content }: { content: string }) => {
 	return (
 		<Link
 			to={'#'}
