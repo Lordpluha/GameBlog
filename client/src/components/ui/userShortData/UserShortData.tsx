@@ -12,16 +12,18 @@ import { FC } from 'react'
  */
 const UserShortData:FC<IUserData> = ({avatar, name, surname, login}) => {
   const navigate = useNavigate()
-  const handleUserProfile = (e: React.MouseEvent<HTMLElement>) => {
+  const handleUserProfile = () => {
     navigate(`https://stopgame.ru/user/${login}`)
   }
 
   return (
-    <div className={styles.userShortData} onClick={handleUserProfile}>
-        <picture>
-            <img src={avatar} alt={login} />
-        </picture> 
-        <p className={styles.userinfoname}>{name} {surname}</p>
+    <div className={styles.authorinfo}>
+      <div className={styles.userShortData} onClick={handleUserProfile}>
+          <picture>
+              <img src={avatar} alt={login} />
+          </picture> 
+          <p className={styles.userinfoname}>{name} {surname}</p>
+      </div>
     </div>
   )
 }

@@ -1,3 +1,7 @@
+.authorinfo {
+    @apply flex items-center flex-wrap justify-between gap-y-6
+}
+
 .userShortData {
     @apply gap-x-4 items-center flex hover:text-[var(--hover-active-colore)] hover:underline text-lg font-semibold
 }

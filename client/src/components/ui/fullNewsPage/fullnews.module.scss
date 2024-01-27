@@ -14,10 +14,6 @@
     @apply text-5xl text-left font-semibold
 }
 
-.authorinfo {
-    @apply flex items-center flex-wrap justify-between gap-y-6
-}
-
 .newsfulltext {
     @apply mt-10 text-2xl leading-10 text-left
 }

@@ -1,11 +1,11 @@
-import UserShortData from '../userShortData/UserShortData'
-import Tags from '../tags/Tags'
-import styles from './fullnews.module.scss'
-import TopInfo from '../contentTopInfo/TopInfo'
 import NewsNavigation from './newsNavigation/NewsNavigation'
 import { IFullNews } from '@/components/interfaces/FullNews.interface'
 import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 import { FC } from 'react'
+import FullNews from './FullNews'
+import ContentTop from './ContentTop'
+import styles from './fullnews.module.scss'
+import ContentWrapperBottom from './ContentWrapperBottom'
 
 type TFullNewsProps = {
   fullNewsData: IFullNews,
@@ -30,21 +30,18 @@ const FullNewsComponent:FC<TFullNewsProps> = (props) => {
   return (
     <section className={styles.contentBody}>
       <div className={styles.contentWrapper}>
-        <div className={styles.contentBodyTop}>
-          <TopInfo date={publishedDate} totComments={comments} totViews={views} title={title} />
-          <div className={styles.authorinfo}>
-            <UserShortData {...authorData} />
-          </div>
-        </div>
-        <div className={styles.newsfulltext}>
-          <p>{fullText}</p>
-        </div>
-        <div className={styles.contentWrapperBottom}>
-          <div className={styles.authorinfo}>
-            <UserShortData {...authorData} />
-          </div>
-          <Tags {...tags} />
-        </div>
+        <ContentTop 
+          title={title} 
+          publishedDate={publishedDate} 
+          views={views} 
+          comments={comments} 
+          authorData={authorData} 
+        />
+        <FullNews fullText={fullText} />
+        <ContentWrapperBottom 
+          authorData={authorData} 
+          tags={tags} 
+        />
       </div>
       <NewsNavigation {...props.otherNews} />
     </section>
