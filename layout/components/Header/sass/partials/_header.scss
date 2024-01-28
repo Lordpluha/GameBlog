@@ -35,20 +35,9 @@ header {
             }
 
             .tooltip {
-                background-color: #fff;
-                color: #000;
-                display: block;
-                position: absolute;
-                bottom: 10px;
-                left: 50%;
-                font-size: 14px;
-                font-family: 'Rubik', sans-serif;
-                opacity: 0;
+                @include tooltip;
                 transform: translate(-50%, 170%);
                 transition: opacity 0.1s;
-                z-index: 2;
-                width: max-content;
-                height: max-content;
                 padding: 8px;
                 border-radius: 3px;
 
@@ -72,7 +61,7 @@ header {
                 padding-right: 20px;
 
                 li {
-                    font-family: Roboto, sans-serif;
+                    font-family: 'Roboto', sans-serif;
                     font-size: 18px;
                     font-weight: 400;
 
@@ -141,56 +130,16 @@ header {
                     border-radius: 10px;
                     display: flex;
 
+                    &:hover {
+                        background-color: #2f3437;
+                    }
+
                     svg.theme {
                         display: block;
                         width: 20px;
                         height: 20px;
 
                     }
-                }
-
-                #choose-theme {
-                    opacity: 0;
-                    position: fixed;
-                    background-color: #383838;
-                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                    border-radius: 12px;
-                    padding: 16px;
-                    top: 72px;
-                    right: 124.2px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    margin: 4px 0 0;
-                    z-index: 99;
-
-                    a {
-                        color: #747c81;
-                        display: flex;
-                        padding: 12px 12px 12px 8px;
-
-                        p {
-                            font-size: 16px;
-                            font-family: 'Rubik', sans-serif;
-                        }
-
-                        svg {
-                            width: 16px;
-                            height: 16px;
-                            margin-right: 12px;
-                        }
-
-                        &:hover {
-                            color: #fff;
-                            svg.light{
-                                color: #f2e14c;
-                            }
-                            svg.dark{
-                                color: #5d5fef;
-                            }
-                        }
-                    }
-
                 }
             }
 
@@ -210,4 +159,5 @@ header {
             }
         }
     }
+
 }
