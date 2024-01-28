@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react'
 
 import CommentsBtn from '@features/ui/buttons/CommentsBtn/CommentsBtn'
 import SearchFormBtn from '@features/ui/buttons/SearchBtn/SearchBtn'
-import ThemeModeBtn from '@features/ui/buttons/ThemeBtn/ThemeBtn'
+import ThemeModeBtn from '@/entities/ui/ThemeBtn/ThemeBtn'
 import UserAuthBtn from '@features/ui/buttons/UserAuthBtn/UserAuthBtn'
 
 import IComment from '@entities/model/interfaces/Comment.interface'

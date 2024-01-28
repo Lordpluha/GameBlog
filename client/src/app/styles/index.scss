@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'modern-normalize/modern-normalize.css';
-@import 'vars.scss';
+@import "normalize.scss";
+@import "vars.scss";
 
 :root {
 	@include vars;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
 	@include varsDark;
 }
 
-html[data-theme='light'] {
+html[data-theme="light"] {
 	@include varsLight;
 }
 
 .active {
-	color: var(--hover-active-colore);
+	color: var(--hover-active-color);
 }
 
 .layoutComponent {

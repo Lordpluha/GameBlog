@@ -1,6 +1,6 @@
-import { ICategory } from './Category.interface'
+import ICategory from './Category.interface'
 
-export interface IArticle {
+interface IArticle {
 	id: number
 	seo: string
 	title: string
@@ -9,3 +9,5 @@ export interface IArticle {
 	releaseDate: number
 	commentsNum: number
 }
+
+export default IArticle
