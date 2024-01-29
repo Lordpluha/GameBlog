@@ -17,6 +17,7 @@ import {
 import { Role } from 'src/role/role.enum'
 import { Prisma } from '@prisma/client'
 import { returnUserBaseObject } from 'src/user/dto'
+import { returnArticleBaseObject } from 'src/article/dto'
 
 @Injectable()
 export class CommentService {
@@ -72,8 +73,18 @@ export class CommentService {
 
 	async findAll({ count, page, articleId, blogId }: PaginationArticleQueryDto) {
 		const where: Prisma.CommentWhereInput = { level: null }
+		let includeContent: Prisma.CommentInclude
 		articleId ? (where['article'] = { id: articleId }) : {}
 		blogId ? (where['blog'] = { id: blogId }) : {}
+		if (!blogId && !articleId) {
+			delete where.level
+			includeContent = {
+				article: {
+					select: returnArticleBaseObject
+				},
+				blog: true
+			}
+		}
 		const [comments, commentsCount] = await this.prisma.$transaction([
 			this.prisma.comment.findMany({
 				skip: page * count - count,
@@ -86,6 +97,7 @@ export class CommentService {
 					author: {
 						select: returnUserBaseObject
 					},
+					...includeContent,
 					_count: { select: { children: true } }
 				}
 			}),
