@@ -13,6 +13,8 @@ export class SuccessArticleBaseDto {
 	@ApiProperty({ nullable: false })
 	preview: string
 	@ApiProperty({ nullable: false })
+	views: number
+	@ApiProperty({ nullable: false })
 	slug: string
 	@ApiProperty({ nullable: false, description: 'default false, after confirm is true' })
 	isVerif: boolean

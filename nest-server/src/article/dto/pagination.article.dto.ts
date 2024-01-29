@@ -18,6 +18,12 @@ export class PaginationArticleQueryDto extends PaginationQueryDto {
 
 	@ApiPropertyOptional()
 	@IsOptional()
+	@IsBoolean()
+	@Type(() => Boolean)
+	byPopularityComment: boolean = false
+
+	@ApiPropertyOptional()
+	@IsOptional()
 	@IsNumber()
 	@Type(() => Number)
 	categoryId?: number
