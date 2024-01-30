@@ -1,2 +1,2 @@
 yarn pretty
-yarn lint
+yarn lint --fix
