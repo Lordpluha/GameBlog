@@ -1,11 +1,11 @@
 import { useRef } from 'react'
 
+import useModal from '@/entities/lib/hooks/useModal'
 import { Moon, Sun } from 'lucide-react'
 
-import useModal from '@features/lib/hooks/useModal'
 import useTheme from '@features/lib/hooks/useTheme'
 
-import ThemeModeModal from '@entities/ui/modals/Theme/ThemeModal'
+import ThemeModeModal from './ThemeModal/ThemeModal'
 
 /**
  * Rendering component button for switch to app theme dark or light

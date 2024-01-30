@@ -10,8 +10,6 @@
 	@apply touch-auto scroll-auto p-4 overflow-auto flex-grow;
 }
 
-
-
 .blockWithoutComment {
 	@apply text-[var(--default-dark-text-color)] font-semibold text-2xl text-center;
 }

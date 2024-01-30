@@ -1,4 +1,7 @@
-import { forwardRef } from 'react'
+import {
+	PropsWithRef,
+	forwardRef
+} from 'react'
 
 import { Search } from 'lucide-react'
 
@@ -17,12 +20,8 @@ const tags = [
 	{ name: 'Помощь' }
 ]
 
-/**
- * Component search form modal with tags
- * @param refModal reference to div container of SearchModal component
- */
-const SearchModal = forwardRef<HTMLDivElement, null>((_, refModal) => {
-	return (
+const SearchModal = forwardRef<HTMLDivElement, PropsWithRef<object>>(
+	(_, refModal) => (
 		<div className='fixed top-[79px] left-0 right-0' ref={refModal}>
 			<div className='bg-[var(--modal-bg-color)] py-10'>
 				<div className='flex flex-col max-w-3xl mx-auto'>
@@ -41,6 +40,6 @@ const SearchModal = forwardRef<HTMLDivElement, null>((_, refModal) => {
 			</div>
 		</div>
 	)
-})
+)
 
 export default SearchModal

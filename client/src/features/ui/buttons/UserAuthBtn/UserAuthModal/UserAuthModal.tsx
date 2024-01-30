@@ -1,8 +1,7 @@
-import { Dispatch, SetStateAction, forwardRef } from 'react'
-
-import { X } from 'lucide-react'
+import { Dispatch, PropsWithRef, SetStateAction, forwardRef } from 'react'
 
 import SocialLinksComponent from '@/entities/ui/Socials/Socials'
+import { X } from 'lucide-react'
 
 import styles from './UserAuthModal.module.scss'
 
@@ -18,7 +17,7 @@ type TUserAuthModal = {
  * @param setModal function for setup state of modal window open or close
  * @param ref reference for component container type of HTMLDivElement
  */
-const UserAuthModel = forwardRef<HTMLDivElement, TUserAuthModal>(
+const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 	({ modal, setModal }, ref) => {
 		return (
 			<div className={styles.userAuthBlockOverflow}>

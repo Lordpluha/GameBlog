@@ -2,13 +2,13 @@ import { useState } from 'react'
 
 import { Menu, X } from 'lucide-react'
 
-import CommentsBtn from '@features/ui/buttons/CommentsBtn/CommentsBtn'
 import SearchFormBtn from '@features/ui/buttons/SearchBtn/SearchBtn'
-import ThemeModeBtn from '@/entities/ui/ThemeBtn/ThemeBtn'
 import UserAuthBtn from '@features/ui/buttons/UserAuthBtn/UserAuthBtn'
 
 import IComment from '@entities/model/interfaces/Comment.interface'
-import NavBar from '@entities/ui/Navbar/Navbar'
+import CommentsBtn from '@entities/ui/buttons/CommentsBtn/CommentsBtn'
+import ThemeModeBtn from '@entities/ui/buttons/ThemeBtn/ThemeBtn'
+import NavBar from '@entities/ui/lists/Navbar/Navbar'
 
 import Logo from '@shared/ui/Logo/Logo'
 

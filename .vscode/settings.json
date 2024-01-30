@@ -3,5 +3,8 @@
 	"docify.translateService.programmingLanguage": "javascript",
 	"docify.translateService.docstringFormat": "JsDoc",
 	"docify.commentService.sidePanelReviewMode": true,
-	"docify.commentService.programmingLanguage": "javascript"
+	"docify.commentService.programmingLanguage": "javascript",
+	"typescript.tsserver.watchOptions": {
+		"watchFile": "fixedChunkSizePolling"
+	}
 }

@@ -13,19 +13,17 @@ import styles from './CommentCard.module.scss'
  * @param login - user login
  * @param text - comment text
  */
-const CommentCard: FC<IComment> = ({ link, title, avatar, login, text }) => {
-	return (
-		<Link to={link}>
-			<div className={styles.commentItem}>
-				<h6 className={styles.commentTitle}>{title}</h6>
-				<div className='flex items-center text-[14px]'>
-					<img className='rounded-full' src={avatar} alt={login} />
-					<p className={styles.commentUserLogin}>{login}</p>
-				</div>
-				<p className={styles.commentText}>{text}</p>
+const CommentCard: FC<IComment> = ({ link, title, avatar, login, text }) => (
+	<Link to={link}>
+		<div className={styles.commentItem}>
+			<h6 className={styles.commentTitle}>{title}</h6>
+			<div className='flex items-center text-[14px]'>
+				<img className='rounded-full' src={avatar} alt={login} />
+				<p className={styles.commentUserLogin}>{login}</p>
 			</div>
-		</Link>
-	)
-}
+			<p className={styles.commentText}>{text}</p>
+		</div>
+	</Link>
+)
 
 export default CommentCard
