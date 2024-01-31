@@ -33,6 +33,9 @@ import {
 	DocSwaggerDeleteArticle,
 	DocSwaggerConfirmArticle
 } from './swagger/decorators'
+import { CacheInterceptor } from '@nestjs/cache-manager'
+
+@UseInterceptors(CacheInterceptor)
 @ApiTags('Article')
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('article')

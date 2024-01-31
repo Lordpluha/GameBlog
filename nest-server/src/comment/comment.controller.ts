@@ -11,7 +11,8 @@ import {
 	ParseIntPipe,
 	HttpCode,
 	HttpStatus,
-	Query
+	Query,
+	UseInterceptors
 } from '@nestjs/common'
 import { CommentService } from './comment.service'
 import { CreateCommentDto } from './dto/create-comment.dto'
@@ -28,7 +29,9 @@ import {
 	DocSwaggerUpdateComment
 } from './swagger/decorators'
 import { ApiTags } from '@nestjs/swagger'
+import { CacheInterceptor } from '@nestjs/cache-manager'
 
+@UseInterceptors(CacheInterceptor)
 @ApiTags('Comment')
 @UsePipes(new ValidationPipe({ whitelist: true }))
 @Controller('comment')
