@@ -13,23 +13,18 @@
 
 		"<THIRD_PARTY_MODULES>",
 
-		"^(@?)interfaces/(.*)$",
+		"^(@?)app/(.*)$",
 		"^(@?)type(s?)/(.*)$",
-		"^(@?)routes/(.*)$",
-		"^(@?)store/(.*)$",
-		"^(@?)services/(.*)$",
-		"^(@?)components/(.*)$",
-		"^(@?)context/(.*)$",
-		"^(@?)hooks/(.*)$",
-		"^(@?)tools/(.*)$",
+		"^(@?)process/(.*)$",
 		"^(@?)pages/(.*)$",
-		"^(@?)ui/(.*)$",
-		"^(@?)icons/(.*)$",
-		"^(@?)stories/(.*)$",
+		"^(@?)features/(.*)$",
+		"^(@?)entities/(.*)$",
+		"^(@?)shared/(.*)$",
 
-		"^[.\/](.*)$",
+		"^[./](.*)$",
 
-		"^((@?).*)(.module).(s?)css$"
+		"^((@?).*)(.module).(s?)css$",
+		"^(@?)stories/(.*)$"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true

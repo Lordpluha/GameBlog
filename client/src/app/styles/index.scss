@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'normalize.scss';
+@import 'vars.scss';
+
+:root {
+	@include vars;
+}
+
+html[data-theme='dark'] {
+	@include varsDark;
+}
+
+html[data-theme='light'] {
+	@include varsLight;
+}
+
+.active {
+	color: var(--hover-active-color);
+}
+
+.layoutComponent {
+	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
+}
