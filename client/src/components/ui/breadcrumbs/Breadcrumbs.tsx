@@ -28,7 +28,7 @@ const Breadcrumbs = () => {
       <ol className='flex flex-col lg2:flex-row gap-x-2'>
         {crumbs.map((crumb, idx) => 
           <>
-            {idx > 0 && <div> / </div>}
+            {idx >= 1 && <div> / </div>}
             <Crumb path={crumb.path} title={crumb.title} key={crumb.title} />
           </>
         )}
