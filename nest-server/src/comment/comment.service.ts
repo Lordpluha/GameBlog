@@ -5,7 +5,7 @@ import {
 	NotFoundException
 } from '@nestjs/common'
 import { CreateCommentDto, PaginationArticleQueryDto, UpdateCommentDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import { JwtGenerateDto } from 'src/auth/dto'
 import { BlogService } from 'src/blog/blog.service'
 import { ArticleService } from 'src/article/article.service'
@@ -17,6 +17,7 @@ import {
 import { Role } from 'src/role/role.enum'
 import { Prisma } from '@prisma/client'
 import { returnUserBaseObject } from 'src/user/dto'
+import { returnArticleBaseObject } from 'src/article/dto'
 
 @Injectable()
 export class CommentService {
@@ -72,8 +73,18 @@ export class CommentService {
 
 	async findAll({ count, page, articleId, blogId }: PaginationArticleQueryDto) {
 		const where: Prisma.CommentWhereInput = { level: null }
+		let includeContent: Prisma.CommentInclude
 		articleId ? (where['article'] = { id: articleId }) : {}
 		blogId ? (where['blog'] = { id: blogId }) : {}
+		if (!blogId && !articleId) {
+			delete where.level
+			includeContent = {
+				article: {
+					select: returnArticleBaseObject
+				},
+				blog: true
+			}
+		}
 		const [comments, commentsCount] = await this.prisma.$transaction([
 			this.prisma.comment.findMany({
 				skip: page * count - count,
@@ -86,9 +97,7 @@ export class CommentService {
 					author: {
 						select: returnUserBaseObject
 					},
-					children: {
-						include: { _count: { select: { children: true } } }
-					},
+					...includeContent,
 					_count: { select: { children: true } }
 				}
 			}),
@@ -102,11 +111,12 @@ export class CommentService {
 		}
 	}
 
-	async findOne(id: number, level = 2) {
+	async findOne(id: number, level = 1) {
 		const include = this.getTreeIncludesChildren(level)
 		const comment = await this.prisma.comment.findUnique({
 			where: { id },
 			include: {
+				_count: { select: { children: true } },
 				author: {
 					select: returnUserBaseObject
 				},
@@ -121,9 +131,9 @@ export class CommentService {
 		let include = undefined
 		for (let i = 0; i < level; i++) {
 			if (i === 0) {
-				include = { children: true }
+				include = { children: true, _count: { select: { children: true } } }
 			} else {
-				include = { children: { include: include } }
+				include = { children: { include: include }, _count: { select: { children: true } } }
 			}
 		}
 		return include

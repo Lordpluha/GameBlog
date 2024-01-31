@@ -1,6 +1,6 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateArticleDto, UpdateArticleDto, PaginationArticleQueryDto } from './dto'
-import { PrismaService } from 'src/common/prisma.service'
+import { PrismaService } from 'src/database/prisma.service'
 import { FileService } from 'src/file/file.service'
 import * as generateSlug from 'slug'
 import { ARTICLE_NOT_FOUND } from './constants/error.article.constants'
@@ -19,6 +19,18 @@ export class ArticleService {
 		private readonly fileService: FileService,
 		private readonly categoryService: CategoryService
 	) {}
+
+	private includesAll: Prisma.ArticleInclude = {
+		categories: {
+			select: returnCategoryBaseObject
+		},
+		author: {
+			select: returnUserBaseObject
+		},
+		tags: {
+			select: returnTagBaseObject
+		}
+	}
 
 	async create(dto: CreateArticleDto, userId: number, preview: Express.Multer.File) {
 		console.log(dto)
@@ -43,17 +55,7 @@ export class ArticleService {
 			data: {
 				slug: generateSlug(article.title + ' ' + article.id)
 			},
-			include: {
-				categories: {
-					select: returnCategoryBaseObject
-				},
-				author: {
-					select: returnUserBaseObject
-				},
-				tags: {
-					select: returnTagBaseObject
-				}
-			}
+			include: this.includesAll
 		})
 		return updatedArticle
 	}
@@ -64,30 +66,33 @@ export class ArticleService {
 		isVerif,
 		authorId,
 		categoryId,
-		tagId
+		tagId,
+		byPopularity,
+		byPopularityComment
 	}: PaginationArticleQueryDto) {
 		const isVerifToBoolean = isVerif === 'true'
 		const where: Prisma.ArticleWhereInput = { isVerif: isVerifToBoolean }
+		const orderBy: Prisma.ArticleOrderByWithRelationInput[] = []
+		if (byPopularity) {
+			orderBy.push({ views: 'desc' })
+		}
+		if (byPopularityComment) {
+			orderBy.push({ comments: { _count: 'desc' } })
+		}
+		orderBy.push({ createdAt: 'desc' })
 		authorId ? (where['author'] = { id: authorId }) : {}
 		categoryId ? (where['categories'] = { some: { id: categoryId } }) : {}
 		tagId ? (where['tags'] = { some: { id: tagId } }) : {}
-		console.log(where)
+
+		console.log(orderBy)
 		const [articles, articlesCount] = await this.prisma.$transaction([
 			this.prisma.article.findMany({
 				where,
-				orderBy: {},
+				orderBy,
 				skip: page * count - count,
 				take: count,
 				include: {
-					author: {
-						select: returnUserBaseObject
-					},
-					categories: {
-						select: returnCategoryBaseObject
-					},
-					tags: {
-						select: returnTagBaseObject
-					},
+					...this.includesAll,
 					_count: {
 						select: {
 							comments: true
@@ -108,19 +113,17 @@ export class ArticleService {
 	async findOne(id: number) {
 		const article = await this.prisma.article.findUnique({
 			where: { id },
-			include: {
-				categories: {
-					select: returnCategoryBaseObject
-				},
-				author: {
-					select: returnUserBaseObject
-				},
-				tags: {
-					select: returnTagBaseObject
+			include: this.includesAll
+		})
+		if (!article) throw new NotFoundException(ARTICLE_NOT_FOUND)
+		await this.prisma.article.update({
+			where: { id },
+			data: {
+				views: {
+					increment: 1
 				}
 			}
 		})
-		if (!article) throw new NotFoundException(ARTICLE_NOT_FOUND)
 		return article
 	}
 
@@ -181,19 +184,17 @@ export class ArticleService {
 	async findOneBySlug(slug: string) {
 		const article = await this.prisma.article.findUnique({
 			where: { slug },
-			include: {
-				categories: {
-					select: returnCategoryBaseObject
-				},
-				author: {
-					select: returnUserBaseObject
-				},
-				tags: {
-					select: returnTagBaseObject
+			include: this.includesAll
+		})
+		if (!article) throw new NotFoundException(ARTICLE_NOT_FOUND)
+		await this.prisma.article.update({
+			where: { slug },
+			data: {
+				views: {
+					increment: 1
 				}
 			}
 		})
-		if (!article) throw new NotFoundException(ARTICLE_NOT_FOUND)
 		return article
 	}
 
@@ -211,17 +212,7 @@ export class ArticleService {
 					}))
 				}
 			},
-			include: {
-				categories: {
-					select: returnCategoryBaseObject
-				},
-				author: {
-					select: returnUserBaseObject
-				},
-				tags: {
-					select: returnTagBaseObject
-				}
-			}
+			include: this.includesAll
 		})
 	}
 

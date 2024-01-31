@@ -7,5 +7,6 @@ export const returnArticleBaseObject: Prisma.ArticleSelect = {
 	title: true,
 	createdAt: true,
 	updatedAt: true,
-	slug: true
+	slug: true,
+	views: true
 }

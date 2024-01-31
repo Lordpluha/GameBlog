@@ -6,11 +6,10 @@ import { TokenService } from './token.service'
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 import { JwtAccessStrategy, JwtRefreshStrategy } from './strategies'
-import { PrismaService } from 'src/common/prisma.service'
 
 @Module({
 	imports: [UserModule, JwtModule.register({}), PassportModule],
 	controllers: [AuthController],
-	providers: [AuthService, TokenService, JwtAccessStrategy, JwtRefreshStrategy, PrismaService]
+	providers: [AuthService, TokenService, JwtAccessStrategy, JwtRefreshStrategy]
 })
 export class AuthModule {}
