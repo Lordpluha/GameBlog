@@ -1,4 +1,4 @@
-import { useLocation, useMatches } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import styles from './breadcrumbs.module.scss'
 import Crumb from './Crumb'
 /**
@@ -16,24 +16,20 @@ const Breadcrumbs = () => {
     title:''
   }]
 
-  const matches = location.pathname.split('/')
-
-  matches.map((crumb, idx) => {
-      crumbs[idx] = {
-        path: crumb === ''? '/' : crumbs[idx-1].path+'/'+crumb,
-        title: crumb === ''? 'Home' : crumb
-      }
+  location.pathname.split('/').map((crumb, idx) => {
+    if(idx === 0) crumbs[idx] = {path: '/', title: 'Home'}
+    if(idx === 1) crumbs[idx] = {path: crumb, title: crumb}
+    if(idx > 1) crumbs[idx] = {path: crumbs[idx-1].title+'/'+crumb, title:crumb}
   })
-console.log(crumbs);
 
   return (
     <div className={styles.breadcrumbs}>
-      <ol>
+      <ol className='flex flex-col lg2:flex-row gap-x-2'>
         {crumbs.map((crumb, idx) => 
-          <div>
-            {idx > 0 && <div className=''> / </div>}
-            <Crumb path={crumb.path} title={crumb.title} />
-          </div>
+          <>
+            {idx > 0 && <div> / </div>}
+            <Crumb path={crumb.path} title={crumb.title} key={crumb.title} />
+          </>
         )}
       </ol>
     </div>

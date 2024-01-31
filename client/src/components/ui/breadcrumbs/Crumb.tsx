@@ -5,7 +5,7 @@ const Crumb = ({path, title}:{path:string, title:string}) => {
   const titleUpp = title[0].toUpperCase() + title.slice(1)
 
   return (
-    <Link to={'/'+path}>{titleUpp}</Link>
+    <Link to={path}>{titleUpp}</Link>
   )
 }
 
