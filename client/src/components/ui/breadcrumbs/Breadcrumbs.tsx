@@ -1,14 +1,15 @@
 import { useLocation } from 'react-router-dom'
 import styles from './breadcrumbs.module.scss'
 import Crumb from './Crumb'
-/**
- * Reused component of breadcrambs
- */
+
 type TCrumbs = {
   path: string
   title: string
 }[]
 
+/* The code defines a functional component called `Breadcrumbs`.
+* TCrumbs - the type of array objects crumb {path: '', title: ''}
+*/
 const Breadcrumbs = () => {
   const location = useLocation()
   const crumbs:TCrumbs = [{
