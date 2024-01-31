@@ -9,7 +9,7 @@ module.exports = {
 		// 'plugin:@conarti/feature-sliced/recommended',
 		// '@feature-sliced',
 		// '@feature-sliced/eslint-config/rules/public-api/lite',
-		'@feature-sliced/eslint-config/rules/import-order',
+		// '@feature-sliced/eslint-config/rules/import-order',
 		'@feature-sliced/eslint-config/rules/layers-slices'
 	],
 	ignorePatterns: ['dist', '.eslintrc.cjs'],

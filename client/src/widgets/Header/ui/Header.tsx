@@ -1,12 +1,12 @@
-import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-import IComment from '@/model/interfaces/Comment.interface'
+import { NavBar } from '@/entities/_lists/Navbar'
 import { UserAuthBtn } from '@/features/AuthUser'
 import { CommentsBtn } from '@/features/ToggleComments'
 import { SearchBtn } from '@/features/ToggleSearch'
 import { ThemeBtn } from '@/features/ToggleTheme'
-import { NavBar } from '@/entities/_lists/Navbar'
+import IComment from '@/model/interfaces/Comment.interface'
+import { Menu, X } from 'lucide-react'
 
 import { Logo } from '@shared/illustration'
 

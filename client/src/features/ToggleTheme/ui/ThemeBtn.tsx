@@ -1,8 +1,8 @@
-import { Moon, Sun } from 'lucide-react'
 import { useRef } from 'react'
 
-import useModal from '@/hooks/useModal'
+import useModal from '@/entities/hooks/lib/useModal'
 import useTheme from '@/features/ToggleTheme/lib/hooks/useTheme'
+import { Moon, Sun } from 'lucide-react'
 
 import ThemeModeModal from './ThemeModal/ThemeModal'
 

@@ -24,7 +24,7 @@ type TdateConverter = (time: number) => string
  * @param time number
  * @return string
  */
-export const dateConverter: TdateConverter = (time = 0) => {
+const dateConverter: TdateConverter = (time = 0) => {
 	const currentDate = new Date()
 	const currentDay = currentDate.getDay()
 
@@ -55,3 +55,5 @@ export const dateConverter: TdateConverter = (time = 0) => {
 
 	return stringData
 }
+
+export default dateConverter

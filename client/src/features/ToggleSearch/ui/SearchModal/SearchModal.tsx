@@ -1,9 +1,6 @@
-import { Search } from 'lucide-react'
-import {
-	PropsWithRef,
-	forwardRef
-} from 'react'
+import { PropsWithRef, forwardRef } from 'react'
 
+import { Search } from 'lucide-react'
 
 import styles from './SearchModal.module.scss'
 import SearchTags from './SearchTags/SearchTags'

@@ -1,10 +1,10 @@
-import { CommentOutlined } from '@ant-design/icons'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import IArticle from '@/model/interfaces/Article.interface'
-import { dateConverter } from '@/tools/ArticleDateConverter'
 import { CategoryList } from '@/entities'
+import { dateConverter } from '@/entities/tools/lib/DateConverter'
+import IArticle from '@/model/interfaces/Article.interface'
+import { CommentOutlined } from '@ant-design/icons'
 
 import styles from './ArticleCard.module.scss'
 

@@ -1,6 +1,6 @@
-import { Bookmark } from 'lucide-react'
 import { ButtonHTMLAttributes, FC } from 'react'
 
+import { Bookmark } from 'lucide-react'
 
 /**
  * Button with a bookmark icon.

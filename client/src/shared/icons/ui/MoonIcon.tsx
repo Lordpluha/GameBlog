@@ -1,5 +1,5 @@
-import { Moon } from 'lucide-react'
 import { TTheme } from '@/model/types/Theme.type'
+import { Moon } from 'lucide-react'
 
 const MoonIcon = ({ theme }: { theme: TTheme }) => {
 	const isLight = theme === 'dark' ? true : false

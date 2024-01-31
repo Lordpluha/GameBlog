@@ -12,8 +12,14 @@ import NewTitle from './NewTitle/NewTitle'
  * @return {JSX.Element} - The rendered News component.
  */
 const New = (myNew: INew) => {
-	const { category: category, content, createdAt, preview, commentsCount, user } =
-		myNew
+	const {
+		category: category,
+		content,
+		createdAt,
+		preview,
+		commentsCount,
+		user
+	} = myNew
 
 	function addToBookmark() {}
 

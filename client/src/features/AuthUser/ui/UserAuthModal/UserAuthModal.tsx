@@ -1,7 +1,7 @@
-import { X } from 'lucide-react'
 import { Dispatch, PropsWithRef, SetStateAction, forwardRef } from 'react'
 
 import SocialLinksComponent from '@/entities/Socials/ui/Socials'
+import { X } from 'lucide-react'
 
 import styles from './UserAuthModal.module.scss'
 

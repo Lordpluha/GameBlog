@@ -1,7 +1,7 @@
-import { Link, Zap } from 'lucide-react'
 import { FC } from 'react'
 
 import INew from '@/model/interfaces/New.interface'
+import { Link, Zap } from 'lucide-react'
 
 type NewInfoProps = Pick<INew, 'category' | 'user'>
 

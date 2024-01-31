@@ -1,9 +1,4 @@
-import {
-	GoogleIcon,
-	OkIcon,
-	VKIcon,
-	YandexIcon
-} from '@shared/icons/'
+import { GoogleIcon, OkIcon, VKIcon, YandexIcon } from '@shared/icons/'
 
 const Socials = () => {
 	return (

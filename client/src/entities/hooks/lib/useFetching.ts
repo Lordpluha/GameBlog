@@ -7,7 +7,7 @@ import { useState } from 'react'
  * @param callback void function, which fetch data
  * @returns [async func, boolean, ErrorMessage]
  */
-export const useFetching = (callback: () => void) => {
+const useFetching = (callback: () => void) => {
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 	const [error, setError] = useState<string>('')
 
@@ -29,3 +29,5 @@ export const useFetching = (callback: () => void) => {
 
 	return [fetching, isLoading, error]
 }
+
+export default useFetching

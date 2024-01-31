@@ -1,8 +1,8 @@
-import { MonitorSmartphone } from 'lucide-react'
 import { Dispatch, PropsWithRef, SetStateAction, forwardRef } from 'react'
 
 import { TTheme } from '@/model/types/Theme.type'
 import { MoonIcon, SunIcon } from '@/shared/icons/'
+import { MonitorSmartphone } from 'lucide-react'
 
 import styles from './ThemeModal.module.scss'
 
