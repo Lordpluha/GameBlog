@@ -1,4 +1,4 @@
-import INew from '@/model/interfaces/New.interface'
+import { INew } from '@model/interfaces'
 
 import New from './New/New'
 

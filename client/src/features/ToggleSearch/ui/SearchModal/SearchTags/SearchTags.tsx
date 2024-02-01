@@ -1,4 +1,4 @@
-import ITag from '@/model/interfaces/Tag.interface'
+import { ITag } from '@model/interfaces'
 
 import styles from '../SearchModal.module.scss'
 

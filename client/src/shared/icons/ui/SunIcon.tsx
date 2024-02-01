@@ -1,5 +1,6 @@
-import { TTheme } from '@model/types'
 import { Sun } from 'lucide-react'
+
+import { TTheme } from '@model/types'
 
 const SunIcon = ({ theme }: { theme: TTheme }) => {
 	const isLight = theme === 'light' ? true : false

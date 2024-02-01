@@ -1,7 +1,8 @@
 import { Dispatch, PropsWithRef, SetStateAction, forwardRef } from 'react'
 
-import IComment from '@/model/interfaces/Comment.interface'
 import { X } from 'lucide-react'
+
+import { IComment } from '@model/interfaces'
 
 import CommentCard from './CommentCard/CommentCard'
 import styles from './CommentsModal.module.scss'

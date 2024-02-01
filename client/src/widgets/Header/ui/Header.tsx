@@ -1,18 +1,20 @@
 import { useState } from 'react'
 
-import { NavBar } from '@/entities/_lists/Navbar'
-import { UserAuthBtn } from '@/features/AuthUser'
-import { CommentsBtn } from '@/features/ToggleComments'
-import { SearchBtn } from '@/features/ToggleSearch'
-import { ThemeBtn } from '@/features/ToggleTheme'
-import IComment from '@/model/interfaces/Comment.interface'
 import { Menu, X } from 'lucide-react'
+
+import { IComment } from '@model/interfaces'
+
+import { UserAuthBtn } from '@features/AuthUser'
+import { CommentsBtn } from '@features/ToggleComments'
+import { SearchBtn } from '@features/ToggleSearch'
+import { ThemeBtn } from '@features/ToggleTheme'
 
 import { Logo } from '@shared/illustration'
 
 import styles from './Header.module.scss'
+import NavBar from './Navbar/Navbar'
 
-/**
+/**	
  * Header component
  * @author @kiberchainik
  */

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import IComment from '@/model/interfaces/Comment.interface'
+import { IComment } from '@model/interfaces'
 
 import styles from './CommentCard.module.scss'
 

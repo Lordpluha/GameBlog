@@ -6,7 +6,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
 	resolve: {
 		alias: {
-			'@': path.resolve(__dirname, './src'),
 			'@app': path.resolve(__dirname, './src/app'),
 			'@pages': path.resolve(__dirname, './src/pages'),
 			'@widgets': path.resolve(__dirname, './src/widgets'),
@@ -14,7 +13,8 @@ export default defineConfig({
 			'@entities': path.resolve(__dirname, './src/entities'),
 			'@shared': path.resolve(__dirname, './src/shared'),
 			'@store': path.resolve(__dirname, './src/store'),
-			'@model': path.resolve(__dirname, './src/model')
+			'@model': path.resolve(__dirname, './src/model'),
+			'@': path.resolve(__dirname, './src')
 		}
 	},
 	plugins: [react()]

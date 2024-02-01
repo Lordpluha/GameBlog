@@ -1,8 +1,10 @@
 import { useRef } from 'react'
 
-import useModal from '@/entities/hooks/lib/useModal'
-import IComment from '@/model/interfaces/Comment.interface'
 import { MessageCircleMore } from 'lucide-react'
+
+import { IComment } from '@model/interfaces'
+
+import { useModal } from '@entities/hooks'
 
 import CommentsModal from './Comments/CommentsModal'
 

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 import clsx from 'clsx'
 
-import styles from './navBar.module.scss'
+import styles from './NavBar.module.scss'
 
 /**
  * Navigation adaptive bar

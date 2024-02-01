@@ -1,7 +1,7 @@
 import { FC, MouseEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import IArticle from '@/model/interfaces/Article.interface'
+import { IArticle } from '@model/interfaces'
 
 type CategoryItemProps = {
 	linkTo: string

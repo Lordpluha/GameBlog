@@ -14,9 +14,13 @@
 		"<THIRD_PARTY_MODULES>",
 
 		"^(@?)app/(.*)$",
+		"^(@?)model/(.*)$",
 		"^(@?)type(s?)/(.*)$",
+		"^(@?)interface(s?)/(.*)$",
 		"^(@?)process/(.*)$",
+		"^(@?)store/(.*)$",
 		"^(@?)pages/(.*)$",
+		"^(@?)widgets/(.*)$",
 		"^(@?)features/(.*)$",
 		"^(@?)entities/(.*)$",
 		"^(@?)shared/(.*)$",

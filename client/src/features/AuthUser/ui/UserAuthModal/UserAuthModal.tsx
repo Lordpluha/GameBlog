@@ -1,7 +1,8 @@
 import { Dispatch, PropsWithRef, SetStateAction, forwardRef } from 'react'
 
-import SocialLinksComponent from '@/entities/Socials/ui/Socials'
 import { X } from 'lucide-react'
+
+import { Socials } from '@entities/Socials'
 
 import styles from './UserAuthModal.module.scss'
 
@@ -37,7 +38,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 								Войти через аккаунт
 							</h4>
 							<div className={styles.userAuthBtnSocialIcon}>
-								<SocialLinksComponent />
+								<Socials />
 							</div>
 							<button className={styles.userAuthBtnRegistration}>
 								Зарегистрироваться

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { TTheme } from '@/components/types/Theme.type'
+import { TTheme } from '@model/types'
 
 /**
  * Custom hook for switch theme mode.

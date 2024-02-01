@@ -9,7 +9,6 @@ module.exports = {
 		// 'plugin:@conarti/feature-sliced/recommended',
 		// '@feature-sliced',
 		// '@feature-sliced/eslint-config/rules/public-api/lite',
-		// '@feature-sliced/eslint-config/rules/import-order',
 		'@feature-sliced/eslint-config/rules/layers-slices'
 	],
 	ignorePatterns: ['dist', '.eslintrc.cjs'],
@@ -31,6 +30,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unused-vars': 'warn'
+		// 'import/no-internal-modules': 'warn'
 	},
 	processor: '@feature-sliced/messages/fs'
 }

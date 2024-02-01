@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 
-import useModal from '@/entities/hooks/lib/useModal'
 import { Search, X } from 'lucide-react'
+
+import { useModal } from '@entities/hooks'
 
 import SearchModal from './SearchModal/SearchModal'
 

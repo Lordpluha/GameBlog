@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { BookmarkBtn } from '@/shared'
+import { BookmarkBtn } from '@shared/buttons'
 import { MessageCircleMore } from 'lucide-react'
 
 type NewFooterProps = {

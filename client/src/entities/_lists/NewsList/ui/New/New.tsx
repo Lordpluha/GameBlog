@@ -1,5 +1,6 @@
-import INew from '@/model/interfaces/New.interface'
-import { Cover } from '@/shared'
+import { INew } from '@model/interfaces'
+
+import { Cover } from '@shared/illustration'
 
 import NewFooter from './NewFooter/NewFooter'
 import NewInfo from './NewInfo/NewInfo'

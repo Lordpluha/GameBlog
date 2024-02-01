@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 
-import useModal from '@/entities/hooks/lib/useModal'
 import { UserRound } from 'lucide-react'
+
+import { useModal } from '@entities/hooks'
 
 import UserAuthModal from './UserAuthModal/UserAuthModal'
 

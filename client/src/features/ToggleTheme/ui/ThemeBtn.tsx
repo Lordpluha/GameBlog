@@ -1,9 +1,10 @@
 import { useRef } from 'react'
 
-import useModal from '@/entities/hooks/lib/useModal'
-import useTheme from '@/features/ToggleTheme/lib/hooks/useTheme'
 import { Moon, Sun } from 'lucide-react'
 
+import { useModal } from '@entities/hooks'
+
+import useTheme from '../lib/hooks/useTheme'
 import ThemeModeModal from './ThemeModal/ThemeModal'
 
 /**

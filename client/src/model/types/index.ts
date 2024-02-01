@@ -1,3 +1,3 @@
 import type { TTheme } from './Theme.type'
 
-export { TTheme }
+export type { TTheme }
