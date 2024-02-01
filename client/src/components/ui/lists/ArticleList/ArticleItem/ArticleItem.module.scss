@@ -1,5 +1,5 @@
 .articleItemBlock {
-	@apply rounded-[8px] transition duration-500 ease-in-out bg-transparent hover:bg-gray-700/[.09] md:flex md:flex-row sm:flex sm:flex-col px-2 py-2;
+	@apply rounded-[8px] transition duration-500 ease-in-out bg-transparent hover:bg-gray-700/[.09] px-2 py-2 block md:flex md:flex-row
 }
 
 .articleItemImageBlock {
@@ -7,7 +7,7 @@
 }
 
 .articleItemImage {
-	@apply md:w-[196px] md:h-[110px] z-0 sm:w-full cursor-pointer transition duration-300 ease-in-out hover:scale-110;
+	@apply md:w-[196px] md:h-[110px] z-0 w-full cursor-pointer transition duration-300 ease-in-out hover:scale-110;
 }
 
 .articleItemDescription {
@@ -15,7 +15,7 @@
 }
 
 .articleItemTitle {
-	@apply cursor-pointer text-[18px] font-bold sm:mt-2 transition duration-500 ease-in-out hover:text-[var(--hover-active-colore)];
+	@apply cursor-pointer sm:mt-2 transition duration-500 ease-in-out hover:text-[--hover-active-colore];
 }
 
 .articleItemComments {

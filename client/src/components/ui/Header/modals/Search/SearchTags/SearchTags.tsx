@@ -8,7 +8,7 @@ import styles from '../SearchModal.module.scss'
  */
 const SearchTags = ({ tags }: { tags: TTag[] }) => {
 	return (
-		<ul className='flex gap-3 text-[16px] flex-wrap'>
+		<ul className='flex gap-3 text-[16px] flex-wrap px-4'>
 			{tags.map((tag, idx) => (
 				<li key={idx} className={styles.searchFormTags}>
 					<span>{tag.name}</span>
