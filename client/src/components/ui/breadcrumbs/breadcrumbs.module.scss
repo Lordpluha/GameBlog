@@ -1,3 +1,11 @@
 .breadcrumbs {
-    @apply container mt-[90px] text-[var(--default-dark-text-color)] py-2 px-4 text-[17px]
+    @apply container text-[var(--default-dark-text-color)] py-2 px-4 text-[17px]
+}
+
+.breadcrumbsList {
+    @apply flex flex-row gap-x-2 items-center
+}
+
+.crumbs {
+    @apply break-words w-full overflow-hidden md:w-auto
 }

@@ -3,9 +3,9 @@ import { useState } from 'react'
 
 import { INewComment } from '@interfaces/extras/NewComments.interface'
 
-import Logo from '@ui/Logo/Logo'
+import Logo from '@ui/logo/Logo'
 
-import NavBar from './Navbar/Navbar'
+import NavBar from './navbar/NavBar'
 import CommentsBtn from './buttons/Comments/CommentsBtn'
 import SearchFormBtn from './buttons/Search/SearchBtn'
 import ThemeModeBtn from './buttons/Theme/ThemeBtn'

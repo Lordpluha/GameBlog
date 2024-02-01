@@ -25,11 +25,11 @@ const Breadcrumbs = () => {
 
   return (
     <div className={styles.breadcrumbs}>
-      <ol className='flex flex-row gap-x-2 items-center'>
+      <ol className={styles.breadcrumbsList}>
         {crumbs.map((crumb, idx) => 
           <>
             {idx >= 1 && <div> / </div>}
-            <Crumb path={crumb.path} title={crumb.title} key={crumb.title} />
+            <Crumb path={crumb.path} title={crumb.title} style={styles.crumbs} key={crumb.title} />
           </>
         )}
       </ol>
