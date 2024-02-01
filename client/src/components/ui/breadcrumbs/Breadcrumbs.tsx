@@ -25,7 +25,7 @@ const Breadcrumbs = () => {
 
   return (
     <div className={styles.breadcrumbs}>
-      <ol className='flex flex-col lg2:flex-row gap-x-2'>
+      <ol className='flex flex-row gap-x-2 items-center'>
         {crumbs.map((crumb, idx) => 
           <>
             {idx >= 1 && <div> / </div>}
