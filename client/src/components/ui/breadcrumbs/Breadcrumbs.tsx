@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom'
 import styles from './breadcrumbs.module.scss'
 import Crumb from './Crumb'
+import { v4 } from 'uuid'
+import { Fragment } from 'react'
 
 type TCrumbs = {
   path: string
@@ -26,11 +28,11 @@ const Breadcrumbs = () => {
   return (
     <div className={styles.breadcrumbs}>
       <ol className={styles.breadcrumbsList}>
-        {crumbs.map((crumb, idx) => 
-          <>
+        {crumbs.map((crumb, idx) =>
+          <Fragment key={v4()}>
             {idx >= 1 && <div> / </div>}
-            <Crumb path={crumb.path} title={crumb.title} style={styles.crumbs} key={idx} />
-          </>
+            <Crumb path={crumb.path} title={crumb.title} style={styles.crumbs} />
+          </Fragment>
         )}
       </ol>
     </div>
