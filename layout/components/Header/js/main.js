@@ -30,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let closeWindow = document.querySelector(".header__close");
   openWindow.addEventListener("click", () => {
     person.classList.toggle("active");
+    // document.body.style.backgroundColor = 'darkgrey';
   });
   closeWindow.addEventListener("click", () => {
     person.classList.remove("active");
+    // document.body.style.backgroundColor = '';
   });
   document.addEventListener("click", (e) => {
     if (

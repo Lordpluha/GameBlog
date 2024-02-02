@@ -286,23 +286,6 @@ button {
 .header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up:hover {
   background-color: #2d3133;
 }
-.header__swipe .header__register .header__login button.header__close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: #747c81;
-  width: 32px;
-  height: 32px;
-  z-index: 1;
-}
-.header__swipe .header__register .header__login button.header__close:hover {
-  color: #EC2227;
-}
-.header__swipe .header__register .header__login button.header__close svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
 .header__swipe .header__register .header__fill-in {
   position: relative;
   padding: 68px 24px 66px;
@@ -327,13 +310,14 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: auto;
 }
 .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input {
   background-color: #262a2c;
   border: 2px solid #2f3437;
   border-radius: 8px;
   color: #ffffff;
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   height: 40px;
   line-height: 28px;
@@ -507,38 +491,6 @@ button {
     height: 100%;
   }
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 0 8px;
-}
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha img {
-  height: 24px;
-  margin: 0 13px;
-  width: 24px;
-}
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha p {
-  color: #9d9ba7;
-  font-weight: 700;
-  margin: 6.4px 0 3.2px 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 10px;
-}
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha span {
-  color: #9d9ba7;
-  font-size: 8px;
-}
 @-webkit-keyframes spin {
   10% {
     width: 0;
@@ -631,6 +583,38 @@ button {
   background-color: transparent;
   color: teal;
 }
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 8px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha img {
+  height: 24px;
+  margin: 0 13px;
+  width: 24px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha p {
+  color: #9d9ba7;
+  font-weight: 700;
+  margin: 6.4px 0 3.2px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha span {
+  color: #9d9ba7;
+  font-size: 8px;
+}
 .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field button.header__done {
   margin-top: 32px;
   -webkit-box-align: center;
@@ -690,7 +674,7 @@ button {
   width: 28x;
   height: 28px;
 }
-.header__swipe .header__register .header__fill-in button.header__close {
+.header__swipe .header__register button.header__close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -699,10 +683,10 @@ button {
   height: 32px;
   z-index: 1;
 }
-.header__swipe .header__register .header__fill-in button.header__close:hover {
+.header__swipe .header__register button.header__close:hover {
   color: #EC2227;
 }
-.header__swipe .header__register .header__fill-in button.header__close svg {
+.header__swipe .header__register button.header__close svg {
   display: block;
   width: 100%;
   height: 100%;
