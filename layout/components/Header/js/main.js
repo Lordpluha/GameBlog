@@ -1,13 +1,3 @@
-// const mob = document.querySelector('.mob')
-// const sideMob = document.querySelector('.side_mob')
-// const close = document.querySelector('.close')
-// mob.onclick = function(){
-//     side_mob.classList.add('open');
-// }
-// close.onclick = function(){
-//     side_mob.classList.remove('open');
-// }
-
 
 // icon burger
 const burger = document.querySelector('.header__burger');
@@ -31,34 +21,49 @@ function show_hide() {
     click.style.opacity = "0";
   }
 }
-// let element = document.getElementById("choose-theme");
-// element.classList.add('active');
-
-// let element = document.getElementById("choose-theme");
-// element.addEventListener("click", () => {
-//   element.classList.add("active");
-// });
 
 
 // login on click button.user
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   let person = document.getElementById("choose-icon");
-//   let openWindow = document.getElementById("header__user");
-//   openWindow.addEventListener("click", () => {
-//     person.classList.toggle("active");
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
   let person = document.getElementById("choose-icon");
   let openWindow = document.getElementById("header__user");
+  let closeWindow = document.querySelector(".header__close");
   openWindow.addEventListener("click", () => {
     person.classList.toggle("active");
   });
-  document.addEventListener("click", e => {
-    if (!e.target.closest('#choose-icon') && !e.target.closest('#header__user')) {
-      person.classList.remove('active');
+  closeWindow.addEventListener("click", () => {
+    person.classList.remove("active");
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      !e.target.closest("#choose-icon") &&
+      !e.target.closest("#header__user") &&
+      !e.target.closest(".header__close")
+    ) {
+      person.classList.remove("active");
     }
   });
 });
+
+
+// login window
+document.addEventListener("DOMContentLoaded", () => {
+  const login = document.getElementById("login");
+  const register = document.getElementById("fill-in");
+  const go = document.getElementById("sign-up");
+  const back = document.getElementById("back");
+  if (login && register && go && back) {
+    login.style.display = "block";
+    register.style.display = "none";
+    go.addEventListener("click", () => {
+      login.style.display = "none";
+      register.style.display = "block";
+    });
+    back.addEventListener("click", () => {
+      login.style.display = "block";
+      register.style.display = "none";
+    });
+  }
+});
+
+

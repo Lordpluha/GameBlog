@@ -162,7 +162,7 @@ button {
           transform: translateY(-100%);
 }
 
-.header__form {
+.header__swipe {
   position: fixed;
   bottom: -100%;
   left: 35%;
@@ -175,16 +175,20 @@ button {
   border-radius: 16px;
   min-height: 523px;
   width: 426px;
+  z-index: 9;
 }
-.header__form .header__login {
+.header__swipe .header__register {
+  overflow: hidden;
+  min-height: 523px;
+}
+.header__swipe .header__register .header__login {
   position: relative;
-  padding: 48px 24px;
+  padding: 68px 24px 48px;
 }
-.header__form .header__login .header__dialog {
+.header__swipe .header__register .header__login .header__dialog {
   position: relative;
-  display: contents;
 }
-.header__form .header__login .header__dialog .header__account {
+.header__swipe .header__register .header__login .header__dialog .header__account {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,25 +200,25 @@ button {
       -ms-flex-align: center;
           align-items: center;
 }
-.header__form .header__login .header__dialog .header__account .header__text {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__text {
   font-family: "Rubik", sans-serif;
   color: #dce6eb;
 }
-.header__form .header__login .header__dialog .header__account .header__text h1 {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__text h1 {
   margin-bottom: 44px;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   text-align: center;
 }
-.header__form .header__login .header__dialog .header__account .header__text p {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__text p {
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 16px;
   text-align: center;
   font-weight: 500;
 }
-.header__form .header__login .header__dialog .header__account .header__socials {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__socials {
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -228,7 +232,7 @@ button {
           justify-content: center;
   row-gap: 16px;
 }
-.header__form .header__login .header__dialog .header__account .header__socials button {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__socials button {
   height: 38px;
   width: 38px;
   background: 0 0;
@@ -237,7 +241,7 @@ button {
   cursor: pointer;
   outline: none;
 }
-.header__form .header__login .header__dialog .header__account .header__socials button svg {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__socials button svg {
   height: 100%;
   width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
@@ -245,11 +249,11 @@ button {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.header__form .header__login .header__dialog .header__account .header__socials button svg:hover {
+.header__swipe .header__register .header__login .header__dialog .header__account .header__socials button svg:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.header__form .header__login .header__dialog .header__account button.header__sign-up {
+.header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up {
   margin-top: 48px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -275,19 +279,440 @@ button {
   text-decoration: none;
   color: #b0b4b8;
 }
-.header__form .header__login .header__dialog .header__account button.header__sign-up svg {
+.header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up svg {
   width: 20px;
   height: 20px;
 }
-.header__form .header__login .header__dialog .header__account button.header__sign-up:hover {
+.header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up:hover {
   background-color: #2d3133;
 }
-.header__form .header__login .header__dialog .header__rules {
+.header__swipe .header__register .header__login button.header__close {
   position: absolute;
-  bottom: -50%;
+  top: 8px;
+  right: 8px;
+  color: #747c81;
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+}
+.header__swipe .header__register .header__login button.header__close:hover {
+  color: #EC2227;
+}
+.header__swipe .header__register .header__login button.header__close svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header__swipe .header__register .header__fill-in {
+  position: relative;
+  padding: 68px 24px 66px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete h1 {
+  margin-bottom: 28px;
+  color: #dce6eb;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input {
+  background-color: #262a2c;
+  border: 2px solid #2f3437;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  height: 40px;
+  line-height: 28px;
+  outline: none;
+  padding: 5px 16px;
+  -webkit-transition: -webkit-box-shadow 0.15s ease-in-out;
+  transition: -webkit-box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  width: 100%;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input:focus {
+  border-color: #262a2c;
+  border: solid #383D6E;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field p.header__no-error {
+  opacity: 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 4px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha {
+  background-color: #222222;
+  border: 2px solid #525252;
+  border-radius: 3px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__text {
+  font-family: "Roboto", "helvetica", "arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__spinner {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 12px 2px 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #fcfcfc;
+  border: 2.5px solid #c3c3c3;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark span {
+  content: "";
+  position: relative;
+  margin-top: -3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 12px;
+  height: 19px;
+  opacity: 0;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark > span:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #029f56;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark > span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 3px;
+  bottom: 0;
+  right: 0;
+  background-color: #029f56;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark {
+  -webkit-animation: 2s spin forwards;
+          animation: 2s spin forwards;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span {
+  -webkit-animation: 1s fadein 1.9s forwards;
+          animation: 1s fadein 1.9s forwards;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span:after {
+  -webkit-animation: 0.3s bottomslide 2s forwards;
+          animation: 0.3s bottomslide 2s forwards;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span:before {
+  -webkit-animation: 0.5s rightslide 2.2s forwards;
+          animation: 0.5s rightslide 2.2s forwards;
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes bottomslide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes bottomslide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes rightslide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes rightslide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 8px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha img {
+  height: 24px;
+  margin: 0 13px;
+  width: 24px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha p {
+  color: #9d9ba7;
+  font-weight: 700;
+  margin: 6.4px 0 3.2px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha span {
+  color: #9d9ba7;
+  font-size: 8px;
+}
+@-webkit-keyframes spin {
+  10% {
+    width: 0;
+    height: 0;
+    border-width: 6px;
+  }
+  30% {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border-width: 16px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-color: #c7daf5;
+  }
+  50% {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border-width: 4px;
+    border-color: #c7daf5;
+    border-right-color: #5998ef;
+  }
+  70% {
+    border-width: 4px;
+    border-color: #c7daf5;
+    border-right-color: #5998ef;
+  }
+  90% {
+    border-width: 4px;
+  }
+  100% {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    border-color: transparent;
+  }
+}
+@keyframes spin {
+  10% {
+    width: 0;
+    height: 0;
+    border-width: 6px;
+  }
+  30% {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border-width: 16px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-color: #c7daf5;
+  }
+  50% {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border-width: 4px;
+    border-color: #c7daf5;
+    border-right-color: #5998ef;
+  }
+  70% {
+    border-width: 4px;
+    border-color: #c7daf5;
+    border-right-color: #5998ef;
+  }
+  90% {
+    border-width: 4px;
+  }
+  100% {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    border-color: transparent;
+  }
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::-moz-selection {
+  background-color: transparent;
+  color: teal;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::selection {
+  background-color: transparent;
+  color: teal;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::-moz-selection {
+  background-color: transparent;
+  color: teal;
+}
+.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field button.header__done {
+  margin-top: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #008761;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  -webkit-transition: -webkit-box-shadow 0.15s ease-in-out;
+  transition: -webkit-box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+.header__swipe .header__register .header__fill-in button.header__back {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  color: #dce6eb;
+  -webkit-column-gap: 0;
+     -moz-column-gap: 0;
+          column-gap: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  left: 7px;
+  line-height: 28px;
+  padding: 0 8px 0 0;
+  position: absolute;
+  top: 10px;
+}
+.header__swipe .header__register .header__fill-in button.header__back:hover {
+  color: #EC2227;
+}
+.header__swipe .header__register .header__fill-in button.header__back svg {
+  display: block;
+  width: 28x;
+  height: 28px;
+}
+.header__swipe .header__register .header__fill-in button.header__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #747c81;
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+}
+.header__swipe .header__register .header__fill-in button.header__close:hover {
+  color: #EC2227;
+}
+.header__swipe .header__register .header__fill-in button.header__close svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header__swipe .header__register .header__rules {
+  position: absolute;
+  bottom: 0;
   left: 0;
 }
-.header__form .header__login .header__dialog .header__rules p {
+.header__swipe .header__register .header__rules p {
   color: #747c81;
   font-size: 14px;
   line-height: 20px;
@@ -296,15 +721,15 @@ button {
   font-weight: 500;
   font-family: "Rubik", sans-serif;
 }
-.header__form .header__login .header__dialog .header__rules p a {
+.header__swipe .header__register .header__rules p a {
   text-decoration: underline;
   color: #747c81;
 }
-.header__form .header__login .header__dialog .header__rules p a:hover {
+.header__swipe .header__register .header__rules p a:hover {
   color: #b0b4b8;
 }
 
-.header__form.active {
+.header__swipe.active {
   bottom: 72px;
 }
 
