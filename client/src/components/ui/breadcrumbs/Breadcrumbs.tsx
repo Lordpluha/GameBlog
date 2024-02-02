@@ -29,7 +29,7 @@ const Breadcrumbs = () => {
         {crumbs.map((crumb, idx) => 
           <>
             {idx >= 1 && <div> / </div>}
-            <Crumb path={crumb.path} title={crumb.title} style={styles.crumbs} key={crumb.title} />
+            <Crumb path={crumb.path} title={crumb.title} style={styles.crumbs} key={idx} />
           </>
         )}
       </ol>

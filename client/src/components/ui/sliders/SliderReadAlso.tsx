@@ -82,7 +82,7 @@ const SliderReadAlso = () => {
               }}
             }
         >
-            {sliderData?.map(post => <SwiperSlide key={post.seo}><ReadAldoItem {...post} /></SwiperSlide>)}
+            {sliderData?.map((post, idx) => <SwiperSlide key={idx}><ReadAldoItem {...post} /></SwiperSlide>)}
         </Swiper>            
     </section>
   )
