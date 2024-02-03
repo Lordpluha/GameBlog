@@ -401,11 +401,11 @@ button {
 	display: flex;
 	flex-direction: column;
 	max-width: 392px;
-	right: 4px;
+	right: -100%;
 	top: 76px;
-	transform: translate(calc(100% + 16px));
-	transition: opacity .3s, transform .3s;
 	z-index: 99;
+	position: fixed;
+	transition: right 1.5s;
 
 	.header__comments-head {
 		align-items: center;
@@ -464,7 +464,7 @@ button {
 				line-height: 20px;
 				margin-bottom: 16px;
 				max-width: 100%;
-				font-family: 'Roboto',sans-serif;
+				font-family: 'Roboto', sans-serif;
 			}
 
 			span.header__comments-person {
@@ -484,7 +484,7 @@ button {
 					font-size: 14px;
 					font-weight: 500;
 					line-height: 20px;
-					font-family: 'Roboto',sans-serif;
+					font-family: 'Roboto', sans-serif;
 				}
 			}
 
@@ -496,12 +496,16 @@ button {
 				margin-top: 12px;
 				max-height: 60px;
 				overflow: hidden;
+
 				p {
 					font-size: 14px;
 					line-height: 20px;
-					font-family: 'Roboto',sans-serif;
+					font-family: 'Roboto', sans-serif;
 				}
 			}
 		}
 	}
+}
+.header__comments-side.active {
+	right: 4px;
 }

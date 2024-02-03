@@ -143,7 +143,7 @@ header {
                 }
             }
 
-            button.header__comments {
+            button#header__comments {
                 @media (max-width: 375px) {
                     display: none;
                 }

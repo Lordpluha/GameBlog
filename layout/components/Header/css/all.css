@@ -731,15 +731,12 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 392px;
-  right: 4px;
+  right: -100%;
   top: 76px;
-  -webkit-transform: translate(calc(100% + 16px));
-          transform: translate(calc(100% + 16px));
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
   z-index: 99;
+  position: fixed;
+  -webkit-transition: right 1.5s;
+  transition: right 1.5s;
 }
 .header__comments-side .header__comments-head {
   -webkit-box-align: center;
@@ -835,6 +832,10 @@ button {
   font-size: 14px;
   line-height: 20px;
   font-family: "Roboto", sans-serif;
+}
+
+.header__comments-side.active {
+  right: 4px;
 }
 
 header {
@@ -1010,7 +1011,7 @@ header .header__content .header__content-icons .header__dropdown button.header__
   height: 20px;
 }
 @media (max-width: 375px) {
-  header .header__content .header__content-icons button.header__comments {
+  header .header__content .header__content-icons button#header__comments {
     display: none;
   }
 }

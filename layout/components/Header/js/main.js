@@ -69,3 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// comments window
+document.addEventListener("DOMContentLoaded", function () {
+  let comment = document.getElementById("choose-comment");
+  let show = document.getElementById("header__comments");
+  let hide = document.querySelector(".header__comments-close");
+  show.addEventListener("click", () => {
+    comment.classList.toggle("active");
+  });
+  hide.addEventListener("click", () => {
+    comment.classList.remove("active");
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      !e.target.closest("#choose-comment") &&
+      !e.target.closest("#header__comments") &&
+      !e.target.closest(".header__comments-close")
+    ) {
+      comment.classList.remove("active");
+    }
+  });
+});
