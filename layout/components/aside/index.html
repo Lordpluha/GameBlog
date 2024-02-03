@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <link rel="stylesheet" href="css/all.css" type="text/css" />
+    <link rel="stylesheet" href="sass/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/scss.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <title>GameBlog</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <main>
+            <div id="content">
+                <aside class="aside">
+                    <h2>Все обсуждают</h2>
+                    <div class="aside__insde">
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <a class="aside__image" href="#">
+                                <picture>
+                                    <img
+                                        src="https://images.stopgame.ru/news/2024/02/02/c384x214/ra39EqqdhXlAoRUxAqJbtg/VdM--ZdA.jpg">
+                                </picture>
+                            </a>
+                            <div class="aside__describe">
+                                <div class="aside__head">
+                                    <div class="aside__news">
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                            class="bi bi-lightning-charge">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <span>Новость</span>
+                                    </div>
+                                    <a class="aside__user" href="#">
+                                        <picture>
+                                            <img
+                                                src="https://images.stopgame.ru/avatars/2022/12/29/c38x38/T9m3JDyyuFKisSqI5OO8UA/Ynmrbcz.jpg">
+                                        </picture>
+                                        <span>Александр Кудрявцев</span>
+                                    </a>
+                                </div>
+                                <div class="aside__content">
+                                    <a class="aside__caption" href="#">Взгляните на поведение NPC в ролике «Смуты»</a>
+                                </div>
+                                <div class="aside__date">
+                                    <div class="aside__time">
+                                        <p>Вчера, 22:35</p>
+                                    </div>
+                                    <div class="aside__info">
+                                        <button class="aside__save">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-bookmark">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+                                            </svg>
+                                        </button>
+                                        <a class="aside__sms" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-message-circle-more">
+                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                                <path d="M8 12h.01" />
+                                                <path d="M12 12h.01" />
+                                                <path d="M16 12h.01" />
+                                            </svg>0
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
