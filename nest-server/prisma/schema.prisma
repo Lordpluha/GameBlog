@@ -73,7 +73,7 @@ model Article {
   authorId   Int
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
-  anyTags    String?
+  anyTags    String[]
   author     User       @relation(fields: [authorId], references: [id])
   comments   Comment[]
   categories Category[] @relation("ArticleToCategory")
