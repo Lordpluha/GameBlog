@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -12,14 +12,16 @@ model User {
   email     String    @unique
   name      String
   password  String
-  role      String    @default("User")
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   isEditor  Boolean   @default(false)
+  role      Role      @default(USER)
   articles  Article[]
   blogs     Blog[]
   comments  Comment[]
   token     Token?
+
+  @@map("users")
 }
 
 model Token {
@@ -29,6 +31,8 @@ model Token {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id])
+
+  @@map("tokens")
 }
 
 model Blog {
@@ -43,6 +47,8 @@ model Blog {
   updatedAt DateTime  @updatedAt
   author    User      @relation(fields: [authorId], references: [id])
   comments  Comment[]
+
+  @@map("blogs")
 }
 
 model Tag {
@@ -52,6 +58,8 @@ model Tag {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   articles  Article[] @relation("ArticleToTags")
+
+  @@map("tags")
 }
 
 model Article {
@@ -70,6 +78,8 @@ model Article {
   comments   Comment[]
   categories Category[] @relation("ArticleToCategory")
   tags       Tag[]      @relation("ArticleToTags")
+
+  @@map("articles")
 }
 
 model Category {
@@ -83,6 +93,8 @@ model Category {
   parent    Category?  @relation("SubCategory", fields: [parentId], references: [id])
   children  Category[] @relation("SubCategory")
   articles  Article[]  @relation("ArticleToCategory")
+
+  @@map("categories")
 }
 
 model Comment {
@@ -96,9 +108,18 @@ model Comment {
   authorId  Int
   parentId  Int?
   level     Int?
-  parent    Comment?  @relation("SubComment", fields: [parentId], references: [id])
-  children  Comment[] @relation("SubComment")
+  article   Article?  @relation(fields: [articleId], references: [id])
   author    User      @relation(fields: [authorId], references: [id])
   blog      Blog?     @relation(fields: [blogId], references: [id])
-  article   Article?  @relation(fields: [articleId], references: [id])
+  parent    Comment?  @relation("SubComment", fields: [parentId], references: [id])
+  children  Comment[] @relation("SubComment")
+
+  @@map("comments")
+}
+
+enum Role {
+  USER
+  AUTHOR
+  EDITOR
+  ADMIN
 }
