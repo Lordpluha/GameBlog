@@ -256,7 +256,9 @@ button {
 									align-items: center;
 									justify-content: center;
 								}
-							    @include captcha;
+
+								@include captcha;
+
 								.header__logo-captcha {
 									display: flex;
 									flex-direction: column;
@@ -389,4 +391,117 @@ button {
 
 .header__swipe.active {
 	bottom: 72px;
+}
+
+.header__comments-side {
+	background-color: #1e2224;
+	box-shadow: 1px 3px 24px rgba(0, 0, 0, 0.18);
+	border-radius: 16px;
+	bottom: 4px;
+	display: flex;
+	flex-direction: column;
+	max-width: 392px;
+	right: 4px;
+	top: 76px;
+	transform: translate(calc(100% + 16px));
+	transition: opacity .3s, transform .3s;
+	z-index: 99;
+
+	.header__comments-head {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding: 24px 16px 0;
+
+		span {
+			font-family: 'Rubik', sans-serif;
+			font-size: 24px;
+			font-weight: bold;
+			line-height: 34px;
+			color: #dce6eb;
+		}
+
+		button.header__comments-close {
+			color: #747c81;
+			width: 32px;
+			height: 32px;
+			z-index: 1;
+
+			&:hover {
+				color: #EC2227;
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+	}
+
+	.header__comments-scrollbar {
+		padding: 24px 16px 16px;
+
+		a.header__comments-part {
+			background-color: #2f3437;
+			border-radius: 16px;
+			box-shadow: 0 12px 48px #1e2224;
+			display: block;
+			margin-bottom: 16px;
+			padding: 12px 16px 16px;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #262a2c;
+			}
+
+			span.header__comments-cap {
+				color: #747c81;
+				display: block;
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 20px;
+				margin-bottom: 16px;
+				max-width: 100%;
+				font-family: 'Roboto',sans-serif;
+			}
+
+			span.header__comments-person {
+				align-items: center;
+				color: #fff;
+				display: flex;
+
+				img {
+					border-radius: 12px;
+					display: block;
+					height: 24px;
+					margin-right: 10px;
+					width: 24px;
+				}
+
+				span.header__comments-user {
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 20px;
+					font-family: 'Roboto',sans-serif;
+				}
+			}
+
+			.header__comments-text {
+				color: #fff;
+				font-size: 14px;
+				line-height: 20px;
+				margin-bottom: 12px;
+				margin-top: 12px;
+				max-height: 60px;
+				overflow: hidden;
+				p {
+					font-size: 14px;
+					line-height: 20px;
+					font-family: 'Roboto',sans-serif;
+				}
+			}
+		}
+	}
 }
