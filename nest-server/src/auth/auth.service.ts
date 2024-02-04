@@ -6,6 +6,7 @@ import { hash, genSalt, compare } from 'bcrypt'
 import { TokenService } from './token.service'
 import { INCORRECT_PASSWORD, USER_EMAIL_NOT_FOUND } from './constants/error.auth.constants'
 import { User } from '@prisma/client'
+import { Role } from 'src/role/role.enum'
 @Injectable()
 export class AuthService {
 	constructor(
@@ -39,7 +40,7 @@ export class AuthService {
 		const token = await this.tokenService.byToken(refreshToken)
 		const user = await this.userService.byId(userId, true)
 		if (!token || !user) throw new UnauthorizedException()
-		const userDto = { id: user.id, email: user.email, name: user.name, role: user.role }
+		const userDto = { id: user.id, email: user.email, name: user.name, role: Role[user.role] }
 		const tokens = await this.tokenService.generate(userDto)
 		await this.tokenService.save(tokens.refreshToken, user.id)
 		return {
@@ -55,7 +56,7 @@ export class AuthService {
 	}
 
 	private async genAndSaveTokens(user: User) {
-		const userDto = { email: user.email, id: user.id, name: user.name, role: user.role }
+		const userDto = { email: user.email, id: user.id, name: user.name, role: Role[user.role] }
 		const tokens = await this.tokenService.generate(userDto)
 		await this.tokenService.save(tokens.refreshToken, user.id)
 		return {

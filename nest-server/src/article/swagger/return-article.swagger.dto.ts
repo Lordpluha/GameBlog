@@ -21,7 +21,7 @@ export class SuccessArticleBaseDto {
 	@ApiProperty({ nullable: false })
 	authorId: number
 	@ApiProperty({ nullable: false })
-	anyTags: string
+	anyTags: string[]
 	@ApiProperty({ nullable: false })
 	createdAt: Date
 	@ApiProperty({ nullable: false })

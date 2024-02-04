@@ -39,7 +39,7 @@ export class ArticleService {
 		const article = await this.prisma.article.create({
 			data: {
 				...dto,
-				anyTags: dto.anyTags.join(),
+				anyTags: dto.anyTags,
 				preview: previewUrl,
 				categories: {
 					connect: existsCategories.map(category => ({ id: category.id }))
@@ -166,7 +166,7 @@ export class ArticleService {
 				isVerif: false,
 				...dto,
 				...dataUp,
-				anyTags: dto.anyTags.length ? dto.anyTags.join() : article.anyTags,
+				anyTags: dto.anyTags.length ? dto.anyTags : article.anyTags,
 				categories: connectAndDisconnect
 			},
 			include: {
@@ -206,7 +206,7 @@ export class ArticleService {
 				isVerif: true,
 				tags: {
 					disconnect: article.tags.map(tag => ({ id: tag.id })),
-					connectOrCreate: article.anyTags.split(',').map((tag: string) => ({
+					connectOrCreate: article.anyTags.map(tag => ({
 						create: { name: tag },
 						where: { name: tag }
 					}))
