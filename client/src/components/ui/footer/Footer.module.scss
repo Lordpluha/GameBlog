@@ -1,5 +1,158 @@
 .footer {
-	&_header {
-		
+	@apply bg-[#161B1D] text-white absolute bottom-0 w-full font-["Rubik"]
+	font-sans z-50;
+}
+
+.footer__information {
+	@apply mt-[24px] mx-auto relative px-[32px] pb-[58px] max-w-[1280px];
+	@media (max-width: 600px) {
+		@apply pt-[28px] px-[16px] py-[40px];
+	}
+}
+
+.footer__box {
+	@apply grid grid-cols-2 gap-y-[64px] gap-x-[7.73%];
+	@media (max-width: 1145px) {
+		@apply gap-y-[20px] grid-cols-2;
+	}
+	@media (max-width: 870px) {
+		@apply gap-y-[20px] grid-cols-1;
+	}
+}
+
+.footer__logo {
+	@apply flex flex-col;
+	a {
+		@apply h-[40px] w-[224px];
+	}
+	p {
+		@apply text-[16px] leading-6 mt-[16px];
+	}
+}
+
+ul.footer__icons {
+	@apply flex gap-x-[32px];
+	@media (max-width: 1145px) {
+		@apply hidden;
+	}
+	svg {
+		@apply fill-white w-[25px] h-[25px] hover:fill-[#6A7276];
+	}
+	.tooltip {
+		@apply visible opacity-10 translate-x-1/2 translate-y-[-150%] active:shadow-sm inset-1;
+	}
+}
+.tooltip {
+	@apply opacity-0 absolute bg-white z-10 after:opacity-100 bottom-[10px] left-[50%] p-[3px];
+}
+.dropdown {
+	@apply relative inline-block; //не знаю, как сделать, чтобы при hover на dropdown был активен content
+	@media (max-width: 1145px) {
+		@apply hidden;
+	}
+
+	.dropdown_content {
+		@apply bg-[#383838] absolute rounded-xl flex flex-col opacity-0 hover:opacity-100 top-[32px] z-10 left-[-350%] shadow-md 
+		transition-opacity duration-300 ease-out;
+		li {
+			@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81];
+		}
+	}
+}
+
+.footer__list_left {
+	@apply mb-[64px];
+	@media (max-width: 870px) {
+		@apply grid-cols-1 m-0;
+	}
+	@media (max-width: 600px) {
+		@apply flex flex-col gap-[20px] mt-[12px];
+	}
+}
+.footer__list_right {
+	@apply mb-[64px];
+	@media (max-width: 870px) {
+		@apply grid-cols-1 mb-[40px];
+	}
+	@media (max-width: 600px) {
+		@apply flex flex-col gap-5;
+	}
+}
+
+.list__part {
+	@apply mb-[32px];
+	@media (max-width: 870px) {
+		@apply h-auto;
+	}
+	@media (max-width: 870px) {
+		@apply mb-[20px] last:mb-0;
+	}
+	@media (max-width: 600px) {
+		@apply m-0;
+	}
+	h6 {
+		@apply font-bold mb-4 leading-5 text-[16px] hover:text-[#8B8D8E] cursor-pointer;
+		@media (max-width: 870px) {
+			@apply text-[14px] mb-3;
+		}
+	}
+}
+
+.list__fill {
+	@apply flex flex-wrap gap-y-2 gap-x-2;
+	@media (max-width: 600px) {
+		@apply hidden;
+	}
+	a,
+	li {
+		@apply text-[#747C81] cursor-pointer leading-5 font-semibold hover:text-white;
+	}
+	@media (max-width: 870px) {
+		@apply text-[12px] leading-4;
+	}
+}
+
+.footer__help {
+	@apply flex gap-5;
+}
+
+.footer__help_left {
+	@apply flex flex-wrap gap-[17px] w-[600px];
+	@media (max-width: 870px) {
+		@apply hidden;
+	}
+	a {
+		@apply text-[16px] font-bold;
+		&:hover {
+			@apply text-[#8B8D8E];
+		}
+		@media (max-width: 870px) {
+			@apply text-[12px] leading-4;
+		}
+	}
+}
+
+.footer__help_right {
+	@apply grid gap-[17px] grid-cols-[1fr,auto];
+	@media (max-width: 870px) {
+		@apply gap-y-2 gap-x-3;
+	}
+	img {
+		@apply row-span-2;
+		@media (max-width: 870px) {
+			@apply w-[32px] h-[32px];
+		}
+	}
+	span {
+		@apply text-[16px] text-[#71747B];
+		@media (max-width: 870px) {
+			@apply text-[12px] leading-6;
+		}
+	}
+}
+.stopGame {
+	@apply font-bold text-[16px];
+	@media (max-width: 870px) {
+		@apply text-[14px];
 	}
 }
