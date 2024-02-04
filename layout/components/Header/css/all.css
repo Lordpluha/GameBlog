@@ -103,14 +103,12 @@ button {
 }
 
 #choose-theme {
-  opacity: 0;
-  position: fixed;
   background-color: #383838;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   padding: 16px;
-  top: 72px;
+  top: -100%;
   right: 124.2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,13 +119,10 @@ button {
           flex-direction: column;
   gap: 20px;
   margin: 4px 0 0;
-  z-index: 99;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  -webkit-transition: all 0.3s, -webkit-transform 0.3s;
-  transition: all 0.3s, -webkit-transform 0.3s;
-  transition: all 0.3s, transform 0.3s;
-  transition: all 0.3s, transform 0.3s, -webkit-transform 0.3s;
+  z-index: 9;
+  position: fixed;
+  -webkit-transition: top 1s;
+  transition: top 1s;
 }
 #choose-theme a {
   color: #747c81;
@@ -138,7 +133,7 @@ button {
 }
 #choose-theme a p {
   font-size: 16px;
-  font-family: "Rubik", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 #choose-theme a svg {
   width: 16px;
@@ -156,10 +151,7 @@ button {
 }
 
 #choose-theme.active {
-  opacity: 1;
-  pointer-events: all;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  top: 72px;
 }
 
 .header__swipe {
@@ -168,8 +160,8 @@ button {
   left: 35%;
   width: 100%;
   height: 50%;
-  -webkit-transition: bottom 1.5s;
-  transition: bottom 1.5s;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
   background-color: #1e2224;
   border: 3px solid #41474a;
   border-radius: 16px;
@@ -735,8 +727,8 @@ button {
   top: 76px;
   z-index: 99;
   position: fixed;
-  -webkit-transition: right 1.5s;
-  transition: right 1.5s;
+  -webkit-transition: right 1s;
+  transition: right 1s;
 }
 .header__comments-side .header__comments-head {
   -webkit-box-align: center;
@@ -773,6 +765,7 @@ button {
 }
 .header__comments-side .header__comments-scrollbar {
   padding: 24px 16px 16px;
+  overflow: scroll;
 }
 .header__comments-side .header__comments-scrollbar a.header__comments-part {
   background-color: #2f3437;
@@ -836,6 +829,10 @@ button {
 
 .header__comments-side.active {
   right: 4px;
+}
+
+.header__comments-scrollbar::-webkit-scrollbar {
+  width: 4px;
 }
 
 header {

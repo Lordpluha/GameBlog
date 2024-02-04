@@ -52,19 +52,28 @@
                         </ul>
                     </nav>
                     <div class="header__content-icons">
-                        <button class="header__search">
+                        <button class="header__search" id="icon-search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-search">
                                 <circle cx="11" cy="11" r="8" />
-                                <path d="m21 21-4.3-4.3" />
+                                <path d="m21 21-4.3-4.3" class="search-icon" />
                             </svg>
                         </button>
-                        <div class="header__dropdown">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-x">
+                                <path d="M18 6 6 18" />
+                                <path d="m6 6 12 12" />
+                            </svg>
+                        </button>
+                        <div class="header__dropdown" id="icon-dropdown">
                             <button class="header__theme" onclick="show_hide()">
                                 <svg class="theme" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                    </g>
                                     <g id="SVGRepo_iconCarrier">
                                         <path
                                             d="M12.0557 3.59974C12.2752 3.2813 12.2913 2.86484 12.0972 2.53033C11.9031 2.19582 11.5335 2.00324 11.1481 2.03579C6.02351 2.46868 2 6.76392 2 12C2 17.5228 6.47715 22 12 22C17.236 22 21.5313 17.9764 21.9642 12.8518C21.9967 12.4664 21.8041 12.0968 21.4696 11.9027C21.1351 11.7086 20.7187 11.7248 20.4002 11.9443C19.4341 12.6102 18.2641 13 17 13C13.6863 13 11 10.3137 11 6.99996C11 5.73589 11.3898 4.56587 12.0557 3.59974Z"
@@ -430,6 +439,48 @@
                         </p>
                     </div>
                 </a>
+            </div>
+        </div>
+        <div class="header__find" id="choose-search">
+            <div class="header__panel">
+                <div class="header__search-find">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                    <input class="header__search-input" type="text" placeholder="ПОИСК">
+                </div>
+                <div class="header__search-category">
+                    <button class="header__category">
+                        <p>Игры</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Пользователи</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Новости</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Блоги</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Статьи</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Видео</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Читы</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Комментарии</p>
+                    </button>
+                    <button class="header__category">
+                        <p>Помощь</p>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

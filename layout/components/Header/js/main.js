@@ -11,17 +11,23 @@ checkWidth();
 
 
 // dropdown on click button.theme
-const click = document.getElementById("choose-theme");
-click.style.opacity = 0;
-function show_hide() {
-  let click = document.getElementById("choose-theme");
-  if (click.style.opacity === "0") {
-    click.style.opacity = "1";
-  } else {
-    click.style.opacity = "0";
-  }
-}
+document.addEventListener("DOMContentLoaded", function () {
+  let dropdown = document.getElementById("choose-theme");
+  let openWindow = document.getElementById("icon-dropdown");
+  openWindow.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      !e.target.closest("#choose-theme") &&
+      !e.target.closest("#icon-dropdown")) {
+      dropdown.classList.remove("active");
+    }
+  });
+});
 
+
+// switch icons for search
 
 // login on click button.user
 document.addEventListener("DOMContentLoaded", function () {
