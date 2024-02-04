@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom'
 import { Footer } from '../components/ui/footer/Footer'
 
+import { Header } from '@widgets/Header'
+
 const Layout = () => {
 	return (
-		<div>
-			<h2>GameBlog</h2>
-			<Outlet />
-			<Footer />
+		<div className='layoutComponent'>
+			<Header />
+			<div className='container mt-[90px]'>
+				<Outlet />
+			</div>
 		</div>
 	)
 }
