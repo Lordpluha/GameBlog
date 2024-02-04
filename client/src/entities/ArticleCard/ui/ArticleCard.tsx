@@ -1,13 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { MessageCircleMore } from 'lucide-react'
+
 import { type IArticle } from '@model/interfaces'
 
 import { dateConverter } from '@shared/lib'
 
 import CategoryList from './@CategoryList/CategoryList'
 import styles from './ArticleCard.module.scss'
-import { MessageCircleMore } from 'lucide-react'
 
 /**
  * Item of ArticleCard component represent article element
