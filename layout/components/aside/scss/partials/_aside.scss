@@ -124,16 +124,18 @@ aside {
                 .aside__content {
                     margin-bottom: 16px;
 
-                    a.aside__caption {
-                        color: #dce6eb;
-                        font-family: 'Rubik', sans-serif;
-                        font-size: 18px;
-                        font-weight: bold;
-                        line-height: 28px;
+                    h2 {
+                        a.aside__caption {
+                            color: #dce6eb;
+                            font-family: 'Rubik', sans-serif;
+                            font-size: 18px;
+                            font-weight: bold;
+                            line-height: 28px;
 
-                        &:hover {
-                            color: #ec2227;
-                            text-decoration: underline;
+                            &:hover {
+                                color: #ec2227;
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
