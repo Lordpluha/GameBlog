@@ -1,0 +1,203 @@
+aside {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1145px) {
+        display: none;
+    }
+
+    h1 {
+        font-family: 'Rubik', sans-serif;
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 32px;
+        color: #dce6eb;
+        font-weight: 500;
+    }
+
+    .aside__insde {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+
+        article {
+            background-color: #262a2c;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            width: 384px;
+
+            a.aside__image {
+                border-radius: 8px 8px 0;
+
+                picture {
+                    display: block;
+                    height: 216px;
+                    max-height: 216px;
+                    overflow: hidden;
+                    position: relative;
+                    width: 100%;
+                    z-index: 1;
+
+                    img {
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        transition: transform 0.5s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
+            }
+
+            .aside__describe {
+                display: flex;
+                flex-direction: column;
+                padding: 16px 16px 8px;
+
+                .aside__head {
+                    align-items: center;
+                    column-gap: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 16px;
+
+                    .aside__news {
+                        align-items: center;
+                        column-gap: 4px;
+                        display: flex;
+                        color: #fff;
+
+                        svg {
+                            display: block;
+                            height: 24px;
+                            width: 24px;
+                        }
+
+                        p {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 24px;
+                        }
+                    }
+
+                    a.aside__user {
+                        align-items: center;
+                        color: #dce6eb;
+                        column-gap: 8px;
+                        display: flex;
+
+                        picture {
+                            outline: 1px solid #ec2227;
+                            outline-offset: 1px;
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        p {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            line-height: 1.625;
+                        }
+
+                        &:hover {
+                            color: #ec2227;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .aside__content {
+                    margin-bottom: 16px;
+
+                    h2 {
+                        a.aside__caption {
+                            color: #dce6eb;
+                            font-family: 'Rubik', sans-serif;
+                            font-size: 18px;
+                            font-weight: bold;
+                            line-height: 28px;
+
+                            &:hover {
+                                color: #ec2227;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+
+                .aside__date {
+                    align-items: center;
+                    color: #747c81;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .aside__time {
+                        p {
+                            font-size: 16px;
+                            line-height: 28px;
+                            font-weight: 500;
+                            font-family: 'Rubik', sans-serif;
+                        }
+                    }
+
+                    .aside__info {
+                        align-items: center;
+                        display: flex;
+                        gap: 16px;
+
+                        button.aside__save {
+                            background: none;
+                            display: block;
+                            height: 24px;
+                            width: 24px;
+
+                            svg {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                color: #747c81;
+
+                                &:hover {
+                                    color: #ec2227;
+                                }
+                            }
+
+                        }
+
+                        a.aside__sms {
+                            align-items: center;
+                            display: flex;
+                            gap: 4px;
+                            color: #747c81;
+
+                            svg {
+                                display: block;
+                                height: 24px;
+                                width: 24px;
+                            }
+
+                            &:hover {
+                                color: #ec2227;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
