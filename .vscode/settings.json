@@ -1,9 +1,4 @@
 {
-	"docify.commentService.docstringFormat": "JsDoc",
-	"docify.translateService.programmingLanguage": "javascript",
-	"docify.translateService.docstringFormat": "JsDoc",
-	"docify.commentService.sidePanelReviewMode": true,
-	"docify.commentService.programmingLanguage": "javascript",
 	"typescript.tsserver.watchOptions": {
 		"watchFile": "fixedChunkSizePolling"
 	}
