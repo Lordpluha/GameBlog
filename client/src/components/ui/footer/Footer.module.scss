@@ -1,6 +1,6 @@
 .footer {
-	@apply bg-[#161B1D] text-white absolute bottom-0 w-full font-["Rubik"]
-	font-sans z-50;
+	@apply bg-[#161B1D] text-[--default-light-color] absolute bottom-0 w-full font-["Rubik"]
+	font-sans z-50; //если ставлю позицию релатив, то все летит
 }
 
 .footer__information {
@@ -13,10 +13,10 @@
 .footer__box {
 	@apply grid grid-cols-2 gap-y-[64px] gap-x-[7.73%];
 	@media (max-width: 1145px) {
-		@apply gap-y-[20px] grid-cols-2;
+		@apply gap-y-5 grid-cols-2;
 	}
 	@media (max-width: 870px) {
-		@apply gap-y-[20px] grid-cols-1;
+		@apply gap-y-5 grid-cols-1;
 	}
 }
 
@@ -26,12 +26,12 @@
 		@apply h-[40px] w-[224px];
 	}
 	p {
-		@apply text-[16px] leading-6 mt-[16px];
+		@apply text-base mt-[16px];
 	}
 }
 
 ul.footer__icons {
-	@apply flex gap-x-[32px];
+	@apply flex gap-x-8;
 	@media (max-width: 1145px) {
 		@apply hidden;
 	}
@@ -52,8 +52,8 @@ ul.footer__icons {
 	}
 
 	.dropdown_content {
-		@apply bg-[#383838] absolute rounded-xl flex flex-col opacity-0 hover:opacity-100 top-[32px] z-10 left-[-350%] shadow-md 
-		transition-opacity duration-300 ease-out;
+		@apply bg-[#383838] absolute rounded-xl flex flex-col opacity-0 hover:opacity-100 top-[32px] 
+		z-10 left-[-350%] shadow-md transition-opacity duration-300 ease-out;
 		li {
 			@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81];
 		}
@@ -66,7 +66,7 @@ ul.footer__icons {
 		@apply grid-cols-1 m-0;
 	}
 	@media (max-width: 600px) {
-		@apply flex flex-col gap-[20px] mt-[12px];
+		@apply flex flex-col gap-5 mt-[12px];
 	}
 }
 .footer__list_right {
@@ -91,7 +91,7 @@ ul.footer__icons {
 		@apply m-0;
 	}
 	h6 {
-		@apply font-bold mb-4 leading-5 text-[16px] hover:text-[#8B8D8E] cursor-pointer;
+		@apply font-bold mb-4 leading-5 text-base hover:text-[#8B8D8E] cursor-pointer; //когда ставлю text-base, то шрифт -14, а не 16
 		@media (max-width: 870px) {
 			@apply text-[14px] mb-3;
 		}
