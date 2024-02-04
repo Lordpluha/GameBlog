@@ -1,4 +1,4 @@
-import ICategory from './Category.interface'
+import type ICategory from './Category.interface'
 
 interface IArticle {
 	id: number

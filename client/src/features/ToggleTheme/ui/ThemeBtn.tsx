@@ -2,10 +2,10 @@ import { useRef } from 'react'
 
 import { Moon, Sun } from 'lucide-react'
 
-import { useModal } from '@entities/hooks'
+import { useModal } from '@shared/lib'
 
-import useTheme from '../lib/hooks/useTheme'
-import ThemeModeModal from './ThemeModal/ThemeModal'
+import { useTheme } from '../lib'
+import ThemeModeModal from './@ThemeModal/ThemeModal'
 
 /**
  * Rendering component button for switch to app theme dark or light
@@ -19,7 +19,9 @@ const ThemeBtn = () => {
 		<>
 			<button
 				className='bg-[var(--default-dark-btn-color)] rounded-[10px] p-2 text-[10px]'
-				onClick={() => setModal(!modal)}
+				onClick={() => {
+					setModal(!modal)
+				}}
 			>
 				{theme === 'light' ? (
 					<Sun className='text-[#e6d649]' />

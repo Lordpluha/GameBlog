@@ -13,6 +13,7 @@
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
+		"allowJs": false,
 		"noEmit": true,
 		"jsx": "react-jsx",
 
@@ -29,8 +30,7 @@
 			"@entities/*": ["./src/entities/*"],
 			"@shared/*": ["./src/shared/*"],
 			"@store/*": ["./src/store/*"],
-			"@model/*": ["./src/model/*"],
-			"@/*": ["./src/*"]
+			"@model/*": ["./src/model/*"]
 		}
 	},
 	"include": ["src"],

@@ -1,4 +1,4 @@
-import IUser from './User.interface'
+import type IUser from './User.interface'
 
 interface INew {
 	id: number

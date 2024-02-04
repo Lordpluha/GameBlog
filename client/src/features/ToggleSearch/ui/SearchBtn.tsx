@@ -2,9 +2,9 @@ import { useRef } from 'react'
 
 import { Search, X } from 'lucide-react'
 
-import { useModal } from '@entities/hooks'
+import { useModal } from '@shared/lib'
 
-import SearchModal from './SearchModal/SearchModal'
+import SearchModal from './@SearchModal/SearchModal'
 
 /** Header search component included input field and search tags */
 const SearchBtn = () => {
@@ -13,7 +13,11 @@ const SearchBtn = () => {
 
 	return (
 		<>
-			<button onClick={() => setModal(!modal)}>
+			<button
+				onClick={() => {
+					setModal(!modal)
+				}}
+			>
 				{!modal ? <Search /> : <X />}
 			</button>
 			{modal && <SearchModal ref={refModal} />}
