@@ -27,7 +27,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// switch icons for search
+// header search form
+document.addEventListener("DOMContentLoaded", function () {
+  let search = document.getElementById("choose-search");
+  let open = document.getElementById("icon-search");
+  open.addEventListener("click", () => {
+    search.classList.toggle("active");
+    let find = document.querySelector(".search-info");
+    let cancel = document.querySelector(".close-info");
+    if (find.style.display === "none") {
+      find.style.display = "block";
+      cancel.style.display = "none";
+    } else {
+      find.style.display = "none";
+      cancel.style.display = "block";
+    }
+  });
+  let close = document.querySelector(".header__find");
+  close.addEventListener("click", () => {
+    search.classList.remove("active");
+    let find = document.querySelector(".search-info");
+    let cancel = document.querySelector(".close-info");
+    if (cancel.style.display === "none") {
+      cancel.style.display = "block";
+      find.style.display = "none";
+    } else {
+      cancel.style.display = "none";
+      find.style.display = "block";
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      !e.target.closest("#choose-search") &&
+      !e.target.closest("#icon-search") &&
+      !e.target.closest(".header__panel")
+    ) {
+      search.classList.remove("active");
+    }
+  });
+});
+
 
 // login on click button.user
 document.addEventListener("DOMContentLoaded", function () {

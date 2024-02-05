@@ -110,11 +110,16 @@ header {
             }
 
             button.header__search {
+                position: relative;
+                svg.close-info {
+                    display: none;
+                    height: 36px;
+                    width: 36px;
+                }
                 &:hover {
                     color: #ef5962;
                     background: none;
                 }
-
                 @media (max-width: 420px) {
                     display: none;
                 }
