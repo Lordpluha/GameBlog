@@ -68,6 +68,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+// background transparent on click
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+window.onclick = function(event) {
+  let overlay = document.getElementById("overlay");
+  if (event.target === overlay) {
+    overlay.style.display = "none";
+  }
+};
+
+
 // login on click button.user
 document.addEventListener("DOMContentLoaded", function () {
   let person = document.getElementById("choose-icon");
@@ -75,11 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let closeWindow = document.querySelector(".header__close");
   openWindow.addEventListener("click", () => {
     person.classList.toggle("active");
-    // document.body.style.backgroundColor = 'darkgrey';
   });
   closeWindow.addEventListener("click", () => {
     person.classList.remove("active");
-    // document.body.style.backgroundColor = '';
   });
   document.addEventListener("click", (e) => {
     if (

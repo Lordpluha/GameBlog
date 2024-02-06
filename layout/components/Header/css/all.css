@@ -154,11 +154,27 @@ button {
   top: 72px;
 }
 
-.header__swipe {
+.header__overlay-dialog {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
+}
+.header__overlay-dialog:focus {
+  background-color: rgba(0, 0, 0, 0);
+}
+.header__overlay-dialog .header__swipe {
   position: fixed;
   bottom: -100%;
   left: 35%;
-  width: 100%;
   height: 50%;
   -webkit-transition: bottom 1s;
   transition: bottom 1s;
@@ -167,20 +183,31 @@ button {
   border-radius: 16px;
   min-height: 523px;
   width: 426px;
-  z-index: 9;
+  z-index: 99999;
+  margin-top: 72px;
 }
-.header__swipe .header__register {
+@media (max-width: 769px) {
+  .header__overlay-dialog .header__swipe {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    border: none;
+    border-radius: 0;
+  }
+}
+.header__overlay-dialog .header__swipe .header__register {
   overflow: hidden;
   min-height: 523px;
 }
-.header__swipe .header__register .header__login {
+.header__overlay-dialog .header__swipe .header__register .header__login {
   position: relative;
   padding: 68px 24px 48px;
 }
-.header__swipe .header__register .header__login .header__dialog {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog {
   position: relative;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,25 +219,25 @@ button {
       -ms-flex-align: center;
           align-items: center;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__text {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__text {
   font-family: "Rubik", sans-serif;
   color: #dce6eb;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__text h1 {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__text h1 {
   margin-bottom: 44px;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   text-align: center;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__text p {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__text p {
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 16px;
   text-align: center;
   font-weight: 500;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__socials {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__socials {
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -224,7 +251,7 @@ button {
           justify-content: center;
   row-gap: 16px;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__socials button {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__socials button {
   height: 38px;
   width: 38px;
   background: 0 0;
@@ -233,7 +260,7 @@ button {
   cursor: pointer;
   outline: none;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__socials button svg {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__socials button svg {
   height: 100%;
   width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
@@ -241,11 +268,11 @@ button {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account .header__socials button svg:hover {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account .header__socials button svg:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up {
   margin-top: 48px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -271,18 +298,18 @@ button {
   text-decoration: none;
   color: #b0b4b8;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up svg {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up svg {
   width: 20px;
   height: 20px;
 }
-.header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up:hover {
+.header__overlay-dialog .header__swipe .header__register .header__login .header__dialog .header__account button.header__sign-up:hover {
   background-color: #2d3133;
 }
-.header__swipe .header__register .header__fill-in {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in {
   position: relative;
   padding: 68px 24px 66px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete h1 {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete h1 {
   margin-bottom: 28px;
   color: #dce6eb;
   font-weight: bold;
@@ -291,7 +318,7 @@ button {
   line-height: 34px;
   text-align: center;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,7 +331,7 @@ button {
           align-items: center;
   cursor: auto;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input {
   background-color: #262a2c;
   border: 2px solid #2f3437;
   border-radius: 8px;
@@ -321,18 +348,18 @@ button {
   transition: box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   width: 100%;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input:focus {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field input:focus {
   border-color: #262a2c;
   border: solid #383D6E;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field p.header__no-error {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field p.header__no-error {
   opacity: 0;
   width: 100%;
   font-size: 14px;
   line-height: 20px;
   margin-top: 4px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha {
   background-color: #222222;
   border: 2px solid #525252;
   border-radius: 3px;
@@ -347,13 +374,13 @@ button {
       -ms-flex-align: center;
           align-items: center;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__text {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__text {
   font-family: "Roboto", "helvetica", "arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__spinner {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__spinner {
   position: relative;
   width: 32px;
   height: 32px;
@@ -368,12 +395,12 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] {
   position: absolute;
   opacity: 0;
   z-index: -1;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -391,7 +418,7 @@ button {
           align-items: center;
   cursor: pointer;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark span {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark span {
   content: "";
   position: relative;
   margin-top: -3px;
@@ -401,7 +428,7 @@ button {
   height: 19px;
   opacity: 0;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark > span:after {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark > span:after {
   content: "";
   position: absolute;
   display: block;
@@ -410,7 +437,7 @@ button {
   left: 0;
   background-color: #029f56;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark > span:before {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox] + .checkmark > span:before {
   content: "";
   position: absolute;
   display: block;
@@ -419,19 +446,19 @@ button {
   right: 0;
   background-color: #029f56;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark {
   -webkit-animation: 2s spin forwards;
           animation: 2s spin forwards;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span {
   -webkit-animation: 1s fadein 1.9s forwards;
           animation: 1s fadein 1.9s forwards;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span:after {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span:after {
   -webkit-animation: 0.3s bottomslide 2s forwards;
           animation: 0.3s bottomslide 2s forwards;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span:before {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha input[type=checkbox]:checked + .checkmark > span:before {
   -webkit-animation: 0.5s rightslide 2.2s forwards;
           animation: 0.5s rightslide 2.2s forwards;
 }
@@ -563,19 +590,19 @@ button {
     border-color: transparent;
   }
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::-moz-selection {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::-moz-selection {
   background-color: transparent;
   color: teal;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::selection {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::selection {
   background-color: transparent;
   color: teal;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::-moz-selection {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha ::-moz-selection {
   background-color: transparent;
   color: teal;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -591,23 +618,23 @@ button {
       align-self: flex-end;
   margin: 0 8px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha img {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha img {
   height: 24px;
   margin: 0 13px;
   width: 24px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha p {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha p {
   color: #9d9ba7;
   font-weight: 700;
   margin: 6.4px 0 3.2px 0;
   font-family: "Roboto", sans-serif;
   font-size: 10px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha span {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field .header__captcha .header__logo-captcha span {
   color: #9d9ba7;
   font-size: 8px;
 }
-.header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field button.header__done {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in .header__window .header__complete form.header__form .header__field button.header__done {
   margin-top: 32px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -637,7 +664,7 @@ button {
   transition: box-shadow 0.15s ease-in-out;
   transition: box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
-.header__swipe .header__register .header__fill-in button.header__back {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in button.header__back {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -658,15 +685,15 @@ button {
   position: absolute;
   top: 10px;
 }
-.header__swipe .header__register .header__fill-in button.header__back:hover {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in button.header__back:hover {
   color: #EC2227;
 }
-.header__swipe .header__register .header__fill-in button.header__back svg {
+.header__overlay-dialog .header__swipe .header__register .header__fill-in button.header__back svg {
   display: block;
   width: 28x;
   height: 28px;
 }
-.header__swipe .header__register button.header__close {
+.header__overlay-dialog .header__swipe .header__register button.header__close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -675,20 +702,20 @@ button {
   height: 32px;
   z-index: 1;
 }
-.header__swipe .header__register button.header__close:hover {
+.header__overlay-dialog .header__swipe .header__register button.header__close:hover {
   color: #EC2227;
 }
-.header__swipe .header__register button.header__close svg {
+.header__overlay-dialog .header__swipe .header__register button.header__close svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-.header__swipe .header__register .header__rules {
+.header__overlay-dialog .header__swipe .header__register .header__rules {
   position: absolute;
   bottom: 0;
   left: 0;
 }
-.header__swipe .header__register .header__rules p {
+.header__overlay-dialog .header__swipe .header__register .header__rules p {
   color: #747c81;
   font-size: 14px;
   line-height: 20px;
@@ -697,16 +724,24 @@ button {
   font-weight: 500;
   font-family: "Rubik", sans-serif;
 }
-.header__swipe .header__register .header__rules p a {
+.header__overlay-dialog .header__swipe .header__register .header__rules p a {
   text-decoration: underline;
   color: #747c81;
 }
-.header__swipe .header__register .header__rules p a:hover {
+.header__overlay-dialog .header__swipe .header__register .header__rules p a:hover {
   color: #b0b4b8;
 }
+.header__overlay-dialog .header__swipe.active {
+  top: 56px;
+}
+@media (max-width: 769px) {
+  .header__overlay-dialog .header__swipe.active {
+    top: 0;
+  }
+}
 
-.header__swipe.active {
-  bottom: 72px;
+.header__overlay-dialog.active {
+  bottom: 0;
 }
 
 .header__comments-side {
@@ -963,7 +998,13 @@ header {
   position: sticky;
   z-index: 99999;
   height: 72px;
-  padding: 0 16px;
+  padding: 0 30px;
+}
+@media (max-width: 768px) {
+  header {
+    height: 60px;
+    padding: 0 16px;
+  }
 }
 header .header__content {
   max-width: 100%;
@@ -984,6 +1025,12 @@ header .header__content .header__content-logo a.logo img {
   width: 201px;
   height: 36px;
 }
+@media (max-width: 768px) {
+  header .header__content .header__content-logo a.logo img {
+    height: 24px;
+    width: 134px;
+  }
+}
 header .header__content .header__content-logo a.logo:hover {
   color: #fff;
 }
@@ -992,6 +1039,34 @@ header .header__content .header__content-logo a.logo:hover .tooltip {
   opacity: 1;
   -webkit-transform: translate(-50%, 170%);
           transform: translate(-50%, 170%);
+}
+@media (max-width: 1305px) {
+  header .header__content .header__content-logo a.logo {
+    display: none;
+  }
+}
+@media (max-width: 1145px) {
+  header .header__content .header__content-logo a.logo {
+    display: block;
+  }
+}
+header .header__content .header__content-logo a.logo-change {
+  display: none;
+}
+header .header__content .header__content-logo a.logo-change svg {
+  display: block;
+  height: 36px;
+  height: 40px;
+}
+@media (max-width: 1305px) {
+  header .header__content .header__content-logo a.logo-change {
+    display: block;
+  }
+}
+@media (max-width: 1145px) {
+  header .header__content .header__content-logo a.logo-change {
+    display: none;
+  }
 }
 header .header__content .header__content-logo .tooltip {
   background-color: #fff;

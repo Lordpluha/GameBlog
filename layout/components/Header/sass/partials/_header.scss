@@ -6,7 +6,12 @@ header {
     position: sticky;
     z-index: 99999;
     height: 72px;
-    padding: 0 16px;
+    padding: 0 30px;
+
+    @media (max-width: 768px) {
+        height: 60px;
+        padding: 0 16px;
+    }
 
     .header__content {
         max-width: 100%;
@@ -21,6 +26,11 @@ header {
                 img {
                     width: 201px;
                     height: 36px;
+
+                    @media (max-width: 768px) {
+                        height: 24px;
+                        width: 134px;
+                    }
                 }
 
                 &:hover {
@@ -31,6 +41,32 @@ header {
                         opacity: 1;
                         transform: translate(-50%, 170%);
                     }
+                }
+
+                @media (max-width: 1305px) {
+                    display: none;
+                }
+
+                @media (max-width: 1145px) {
+                    display: block;
+                }
+            }
+
+            a.logo-change {
+                display: none;
+
+                svg {
+                    display: block;
+                    height: 36px;
+                    height: 40px;
+                }
+
+                @media (max-width: 1305px) {
+                    display: block;
+                }
+
+                @media (max-width: 1145px) {
+                    display: none;
                 }
             }
 
@@ -111,15 +147,18 @@ header {
 
             button.header__search {
                 position: relative;
+
                 svg.close-info {
                     display: none;
                     height: 36px;
                     width: 36px;
                 }
+
                 &:hover {
                     color: #ef5962;
                     background: none;
                 }
+
                 @media (max-width: 420px) {
                     display: none;
                 }
