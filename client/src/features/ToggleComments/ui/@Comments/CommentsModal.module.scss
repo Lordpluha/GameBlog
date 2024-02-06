@@ -1,0 +1,15 @@
+.commentsBlock {
+	@apply bg-[var(--modal-bg-color)] min-w-[280px] max-w-[350px] rounded-3xl fixed top-[79px] right-4 bottom-1 shadow-2xl flex flex-col;
+}
+
+.commentsBlockHeader {
+	@apply flex justify-between items-center text-[var(--text-color)] p-4 mb-5;
+}
+
+.commentsBlockBody {
+	@apply touch-auto scroll-auto p-4 overflow-auto flex-grow;
+}
+
+.blockWithoutComment {
+	@apply text-[var(--default-dark-text-color)] font-semibold text-2xl text-center;
+}
