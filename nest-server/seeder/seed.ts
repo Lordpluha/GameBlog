@@ -60,7 +60,7 @@ const createArticles = async (quantity: number) => {
 				title,
 				slug: sl,
 				preview: previewUrl,
-				anyTags: anyTags.join(),
+				anyTags: anyTags,
 				author: {
 					connect: {
 						id: 1
