@@ -1,0 +1,52 @@
+.footer__list_right {
+	@apply mb-[64px];
+	@media (max-width: 870px) {
+		@apply grid-cols-1 mb-[40px];
+	}
+	@media (max-width: 600px) {
+		@apply flex flex-col gap-5;
+	}
+}
+
+.footer__list_left {
+	@apply mb-[64px];
+	@media (max-width: 870px) {
+		@apply grid-cols-1 m-0;
+	}
+	@media (max-width: 600px) {
+		@apply flex flex-col gap-5 mt-[12px];
+	}
+}
+
+.list__part {
+	@apply mb-[32px];
+	@media (max-width: 870px) {
+		@apply h-auto;
+	}
+	@media (max-width: 870px) {
+		@apply mb-[20px] last:mb-0;
+	}
+	@media (max-width: 600px) {
+		@apply m-0;
+	}
+	h6 {
+		@apply font-bold mb-4 leading-5 text-base hover:text-[#8B8D8E] cursor-pointer; //когда ставлю text-base, то шрифт -14, а не 16
+		@media (max-width: 870px) {
+			@apply text-[14px] mb-3;
+		}
+	}
+}
+
+.list__fill {
+	@apply flex flex-wrap gap-y-2 gap-x-2;
+	@media (max-width: 600px) {
+		@apply hidden;
+	}
+	a,
+	li {
+		@apply text-[#747C81] cursor-pointer leading-5 font-semibold hover:text-white;
+	}
+	@media (max-width: 870px) {
+		@apply text-[12px] leading-4;
+	}
+}

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import { Footer } from '../components/ui/footer/Footer'
 
 import { Header } from '@widgets/Header'
+import { Footer } from '@widgets/footer'
 
 const Layout = () => {
 	return (
@@ -10,6 +10,7 @@ const Layout = () => {
 			<div className='container mt-[90px]'>
 				<Outlet />
 			</div>
+			<Footer />
 		</div>
 	)
 }

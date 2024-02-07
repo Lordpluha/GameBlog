@@ -1,0 +1,89 @@
+ul.footer__icons {
+	@apply flex gap-x-8;
+	@media (max-width: 1145px) {
+		@apply hidden;
+	}
+	li {
+		@apply relative;
+		&:hover {
+			.tooltip {
+				visibility: visible;
+				opacity: 1;
+				transform: translate(-50%, -150%);
+			}
+		}
+
+		svg {
+			@apply fill-white w-[25px] h-[25px] hover:fill-[#6A7276];
+
+			&:hover {
+				.dropdown_content {
+					display: block;
+					opacity: 1;
+				}
+				// .tooltip {
+				// 	@apply visible opacity-100 translate-x-1/2 translate-y-[-150%] active:shadow-sm inset-1;
+				// }
+				.tooltip {
+					visibility: visible;
+					opacity: 1;
+					transform: translate(-50%, -150%);
+				}
+			}
+		}
+	}
+	&:active {
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+	}
+
+	// .tooltip {
+	// 	@apply opacity-0 absolute bg-white z-10 after:opacity-100 bottom-[10px] left-[50%] p-[3px];
+
+	.tooltip {
+		background-color: #fff;
+		color: #000;
+		display: block;
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		font-size: 14px;
+		font-family: 'Rubik', sans-serif;
+		opacity: 0;
+		transform: translate(-50%, -100%);
+		transition: all 0.3s ease;
+		z-index: 2;
+		width: max-content;
+		height: max-content;
+		padding: 3px;
+
+		&:after {
+			content: ' ';
+			position: absolute;
+			right: 46%;
+			bottom: -7px;
+			border-top: 8px solid white;
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;
+			border-bottom: none;
+		}
+	}
+
+	.dropdown {
+		&:hover .dropdown_content {
+			display: block;
+			opacity: 1;
+		}
+		@apply relative inline-block;
+		@media (max-width: 1145px) {
+			@apply hidden;
+		}
+
+		.dropdown_content {
+			@apply bg-[#383838] absolute rounded-xl flex flex-col opacity-0 hover:opacity-100 top-[32px] 
+		z-10 left-[-350%] shadow-md transition-opacity duration-300 ease-out;
+			li {
+				@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81];
+			}
+		}
+	}
+}
