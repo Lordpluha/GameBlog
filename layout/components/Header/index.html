@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./js/swiper-bundle.min.js">
     <title>GameBlog</title>
 </head>
 
@@ -172,9 +173,9 @@
             </a>
         </div>
         <div class="header__overlay-dialog" id="overlay">
-            <div class="header__swipe" id="choose-icon">
+            <div class="header__slider" id="choose-icon">
                 <div class="header__register">
-                    <div class="header__login" id="login">
+                    <div class="header__login header__slide" id="login">
                         <div class="header__dialog">
                             <div class="header__account">
                                 <div class="header__text">
@@ -317,8 +318,14 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="header__rules">
+                            <p>Авторизуясь, ты соглашаешься с
+                                <a " href=" #">правилами сайта</a> и <a href="#">пользовательским
+                                    соглашением</a>.
+                            </p>
+                        </div>
                     </div>
-                    <div class="header__fill-in" id="fill-in">
+                    <div class="header__fill-in header__slide" id="fill-in">
                         <div class="header__window">
                             <div class="header__complete">
                                 <h1>Регистрация</h1>
@@ -360,21 +367,21 @@
                             </svg>
                             <span>Назад</span>
                         </button>
-                    </div>
-                    <button class="header__close" onclick="off()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-x">
-                            <path d="M18 6 6 18" />
-                            <path d="m6 6 12 12" />
-                        </svg>
-                    </button>
-                    <div class="header__rules">
-                        <p>Авторизуясь, ты соглашаешься с
-                            <a " href=" #">правилами сайта</a> и <a href="#">пользовательским соглашением</a>.
-                        </p>
+                        <div class="header__rules">
+                            <p>Авторизуясь, ты соглашаешься с
+                                <a " href=" #">правилами сайта</a> и <a href="#">пользовательским соглашением</a>.
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <button class="header__close" onclick="off()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-x">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
             </div>
         </div>
         <div class="header__comments-side" id="choose-comment">

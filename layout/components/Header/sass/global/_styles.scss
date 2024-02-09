@@ -21,15 +21,16 @@ button {
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	border-radius: 12px;
 	padding: 16px;
-	top: -100%;
+	top: -40%;
 	right: 124.2px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	margin: 4px 0 0;
-	z-index: 9;
+	z-index: 999;
 	position: fixed;
-	transition: top 1s;
+	opacity: 0;
+	transition: top 1s, opacity 0.5s ease;
 
 	a {
 		color: #747c81;
@@ -63,6 +64,9 @@ button {
 
 #choose-theme.active {
 	top: 72px;
+	z-index: 999;
+	opacity: 1;
+
 }
 
 .header__overlay-dialog {
@@ -77,11 +81,12 @@ button {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 99999;
 	transition: bottom 1s;
+
 	&:focus {
 		background-color: #00000000;
 	}
 
-	.header__swipe {
+	.header__slider {
 		position: fixed;
 		bottom: -100%;
 		left: 35%;
@@ -109,7 +114,6 @@ button {
 			min-height: 523px;
 
 			.header__login {
-				position: relative;
 				padding: 68px 24px 48px;
 
 				.header__dialog {
@@ -197,12 +201,37 @@ button {
 								background-color: #2d3133;
 							}
 						}
+
+					}
+				}
+
+				.header__rules {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+
+					p {
+						color: #747c81;
+						font-size: 14px;
+						line-height: 20px;
+						padding: 0 30px 16px;
+						text-align: center;
+						font-weight: 500;
+						font-family: 'Rubik', sans-serif;
+
+						a {
+							text-decoration: underline;
+							color: #747c81;
+
+							&:hover {
+								color: #b0b4b8;
+							}
+						}
 					}
 				}
 			}
 
 			.header__fill-in {
-				position: relative;
 				padding: 68px 24px 66px;
 
 				.header__window {
@@ -358,59 +387,64 @@ button {
 						height: 28px;
 					}
 				}
-			}
 
-			button.header__close {
-				position: absolute;
-				top: 8px;
-				right: 8px;
-				color: #747c81;
-				width: 32px;
-				height: 32px;
-				z-index: 1;
+				.header__rules {
+					position: absolute;
+					bottom: 0;
+					left: 0;
 
-				&:hover {
-					color: #EC2227;
-				}
-
-				svg {
-					display: block;
-					width: 100%;
-					height: 100%;
-				}
-
-			}
-
-			.header__rules {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-
-				p {
-					color: #747c81;
-					font-size: 14px;
-					line-height: 20px;
-					padding: 0 30px 16px;
-					text-align: center;
-					font-weight: 500;
-					font-family: 'Rubik', sans-serif;
-
-					a {
-						text-decoration: underline;
+					p {
 						color: #747c81;
+						font-size: 14px;
+						line-height: 20px;
+						padding: 0 30px 16px;
+						text-align: center;
+						font-weight: 500;
+						font-family: 'Rubik', sans-serif;
 
-						&:hover {
-							color: #b0b4b8;
+						a {
+							text-decoration: underline;
+							color: #747c81;
+
+							&:hover {
+								color: #b0b4b8;
+							}
 						}
 					}
 				}
 			}
+			// .header__slide {
+			//  transition: transform 0.5s ease;
+			// }
+			// .header__slide.active {
+			// 	transition: top 1s, opacity 0.5s ease;
+			// }
 
 		}
 
+		button.header__close {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			color: #747c81;
+			width: 32px;
+			height: 32px;
+			z-index: 1;
+
+			&:hover {
+				color: #EC2227;
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+		}
 	}
 
-	.header__swipe.active {
+	.header__slider.active {
 		top: 56px;
 
 		@media (max-width: 769px) {
@@ -433,9 +467,9 @@ button {
 	max-width: 392px;
 	right: -100%;
 	top: 76px;
-	z-index: 99;
+	z-index: 999;
 	position: fixed;
-	transition: right 1s;
+	transition: right 1s, opacity 0.5s ease;
 
 	.header__comments-head {
 		align-items: center;
@@ -540,6 +574,8 @@ button {
 
 .header__comments-side.active {
 	right: 4px;
+	opacity: 1;
+	z-index: 999;
 }
 
 .header__comments-scrollbar::-webkit-scrollbar {
@@ -550,12 +586,13 @@ button {
 .header__find {
 	background-color: #161b1d;
 	padding: 24px;
-	top: -100%;
+	top: -20%;
 	width: 100%;
 	right: 0;
-	z-index: 99;
+	z-index: 999;
 	position: fixed;
-	transition: top 1s;
+	opacity: 0;
+	transition: top 0.5s, opacity 0.5s ease;
 
 
 	.header__panel {
@@ -595,6 +632,7 @@ button {
 				line-height: 30px;
 				padding: 0 0 0 20px;
 				outline: none;
+				width: 100%;
 			}
 
 		}
@@ -647,4 +685,6 @@ button {
 
 .header__find.active {
 	top: 72px;
+	z-index: 999;
+	opacity: 1;
 }

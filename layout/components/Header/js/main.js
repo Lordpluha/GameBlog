@@ -43,30 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cancel.style.display = "block";
     }
   });
-  let close = document.querySelector(".header__find");
-  close.addEventListener("click", () => {
-    search.classList.remove("active");
-    let find = document.querySelector(".search-info");
-    let cancel = document.querySelector(".close-info");
-    if (cancel.style.display === "none") {
-      cancel.style.display = "block";
-      find.style.display = "none";
-    } else {
-      cancel.style.display = "none";
-      find.style.display = "block";
-    }
-  });
-  document.addEventListener("click", (e) => {
-    if (
-      !e.target.closest("#choose-search") &&
-      !e.target.closest("#icon-search") &&
-      !e.target.closest(".header__panel")
-    ) {
-      search.classList.remove("active");
-    }
-  });
 });
-
 
 
 // background transparent on click
@@ -77,7 +54,7 @@ function on() {
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
   let overlay = document.getElementById("overlay");
   if (event.target === overlay) {
     overlay.style.display = "none";
@@ -108,25 +85,58 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// login window
-document.addEventListener("DOMContentLoaded", () => {
-  const login = document.getElementById("login");
-  const register = document.getElementById("fill-in");
-  const go = document.getElementById("sign-up");
-  const back = document.getElementById("back");
-  if (login && register && go && back) {
-    login.style.display = "block";
-    register.style.display = "none";
-    go.addEventListener("click", () => {
-      login.style.display = "none";
-      register.style.display = "block";
-    });
-    back.addEventListener("click", () => {
-      login.style.display = "block";
-      register.style.display = "none";
-    });
+//slider
+const slider = document.querySelector('.header__slider');
+const slides = document.querySelectorAll('.header__slide');
+let current = 0;
+transitioning = false;
+const nextButton = document.querySelector('.header__sign-up');
+const prevButton = document.querySelector('.header__back');
+function updateCurrent(index) {
+  slides.forEach(header__slide => {
+    header__slide.classList.remove('active');
+  });
+
+  slides[index].classList.add('active');
+}
+function nextSlide() {
+  if (!transitioning) {
+    transitioning = true;
+    current++;
+
+    if (current === slides.length) {
+      current = 0;
+    }
+
+    updateCurrent(current);
   }
+}
+
+function prevSlide() {
+  if (!transitioning) {
+    transitioning = true;
+    current--;
+
+    if (current < 0) {
+      current = slides.length - 1;
+    }
+
+    updateCurrent(current);
+  }
+}
+
+function handleTransitionEnd() {
+  transitioning = false;
+}
+
+slides.forEach(header__slide => {
+  header__slide.addEventListener('transitionend', handleTransitionEnd);
 });
+
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
+
+updateCurrent(0);
 
 
 // comments window
