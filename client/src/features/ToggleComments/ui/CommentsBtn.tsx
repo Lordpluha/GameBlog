@@ -4,9 +4,10 @@ import { MessageCircleMore } from 'lucide-react'
 
 import { type IComment } from '@model/interfaces'
 
-import { useModal } from '@shared/lib'
+import { useModal } from '@entities/Modal'
 
 import CommentsModal from './@Comments/CommentsModal'
+import { CommentBtn } from '@entities/@buttons/CommentBtn';
 
 /**
  * Modal component with a list of new comments
@@ -19,14 +20,12 @@ const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 
 	return (
 		<>
-			<button
-				className='bg-[var(--default-dark-btn-color)] rounded-[10px] p-2'
+			<CommentBtn
 				onClick={() => {
 					setModal(!modal)
 				}}
-			>
-				<MessageCircleMore />
-			</button>
+				className='bg-[var(--default-dark-btn-color)]'
+			/>
 			{modal && (
 				<CommentsModal
 					commentsList={newComments}

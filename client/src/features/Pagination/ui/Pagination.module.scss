@@ -1,0 +1,21 @@
+.pagination {
+	@apply items-center flex flex-col justify-center max-w-full gap-y-1 my-5;
+}
+
+.buttons {
+	@apply items-center flex flex-row gap-x-2 justify-center max-w-full cursor-pointer;
+}
+
+.leftArrow,
+.rightArrow,
+.page {
+	@apply items-center hover:bg-[--hover-active-colore] bg-[--li-bg-color] rounded-lg text-[--text-color] flex text-base h-8 justify-center min-w-8 py-1 px-2 no-underline;
+}
+
+.activePage {
+	@apply bg-[--hover-active-colore] font-semibold;
+}
+
+.btnHiden {
+	@apply hidden;
+}

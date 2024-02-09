@@ -2,8 +2,8 @@ import { useRef } from 'react'
 
 import { UserRound } from 'lucide-react'
 
-import ModalComponent from '@/components/ui/modal/ModalComponent'
-import { useModal } from '@shared/lib'
+import { Modal, useModal } from '@entities/Modal'
+
 import UserAuthModal from './@UserAuthModal/UserAuthModal'
 
 /**
@@ -24,13 +24,9 @@ const UserAuthBtn = () => {
 				<UserRound />
 			</button>
 			{modal && (
-				<ModalComponent
-					modal={modal}
-					setModal={setModal}
-					ref={refModal}
-				>
+				<Modal modal={modal} setModal={setModal} ref={refModal}>
 					<UserAuthModal />
-				</ModalComponent>
+				</Modal>
 			)}
 		</>
 	)

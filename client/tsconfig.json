@@ -30,7 +30,8 @@
 			"@entities/*": ["./src/entities/*"],
 			"@shared/*": ["./src/shared/*"],
 			"@store/*": ["./src/store/*"],
-			"@model/*": ["./src/model/*"]
+			"@model/*": ["./src/model/*"],
+			"@/*": ["./src/*"],
 		}
 	},
 	"include": ["src"],

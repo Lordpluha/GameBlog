@@ -1,18 +1,20 @@
-import ArticleList from "@/components/ui/lists/ArticleList/ArticleList"
-import { useEffect, useState } from "react"
-import { IArticle } from "@/components/interfaces/Article.interface"
+import { useEffect, useState } from 'react'
 
-import dal from '../demoData/demoArticleList.json'
-import Pagination from "@/components/ui/pagination/Pagination"
-import usePagination from "@/components/hooks/usePagination"
+import dal from '@/data/demoData.json'
+
+import { PostsSmall } from '@widgets/Posts'
+
+import { Pagination, usePagination } from '@features/Pagination'
+
+import { INew } from '@model/interfaces'
 
 /**
  * The page news component for upload article list
  * artList - array article list from server
- * usePagination - custom hook for paginaton component. 
+ * usePagination - custom hook for paginaton component.
  */
 const NewsPage = () => {
-	const [artList, setArtList] = useState<IArticle[]>([])
+	const [newsList, setNewsList] = useState<INew[]>([])
 	const {
 		pageNum,
 		currentPage,
@@ -20,38 +22,38 @@ const NewsPage = () => {
 		handleNextPageClick,
 		handlePrevPageClick,
 		onChangePage
-	} = usePagination(
-		dal.newsData.length,
-		5
-	)
-	
+	} = usePagination(dal.newsData.length, 5)
+
 	useEffect(() => {
-		setArtList([])
+		setNewsList([])
 		dal.newsData
-		/* select data for current page */
-		.filter((data, idx) => idx >= (currentPage-1) && idx <= (currentPage+3))
-		.map(item => {
-			setArtList(prev => [...prev,
-				{
-					id: +item.id,
-					seo: item.seo,
-					title: item.title,
-					commentsNum: +item.commentsNum,
-					image: item.image,
-					tags: item.tags,
-					releaseDate: +item.releaseDate
-				}]
-				)
+			/* select data for current page */
+			.filter(
+				(data, idx) => idx >= currentPage - 1 && idx <= currentPage + 3
+			)
+			.map(item => {
+				setNewsList(prev => [
+					...prev,
+					{
+						id: +item.id,
+						slug: item.slug,
+						title: item.title,
+						commentsCount: +item.commentsCount,
+						preview: item.preview,
+						tags: item.tags,
+						createdAt: +item.createdAt
+					}
+				])
 			})
-		},[currentPage])
+	}, [currentPage])
 	return (
 		<div>
-			<ArticleList articleList={artList} />
+			<PostsSmall posts={newsList} to='news' />
 			<Pagination
 				onNextPageClick={handleNextPageClick}
 				onPrevPageClick={handlePrevPageClick}
 				disable={btnDisabled}
-				pageNum = {pageNum}
+				pageNum={pageNum}
 				currentPage={currentPage}
 				onChangePage={onChangePage}
 			/>

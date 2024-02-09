@@ -1,0 +1,15 @@
+.authorinfo {
+	@apply flex items-center flex-wrap justify-between gap-y-6;
+}
+
+.userShortData {
+	@apply gap-x-4 items-center flex hover:text-[var(--hover-active-colore)] hover:underline text-lg font-semibold;
+}
+
+.userShortData picture {
+	@apply flex-grow-0 flex-shrink-0 w-10 h-10 overflow-hidden rounded-full outline outline-2 outline-offset-2 outline-[var(--hover-active-colore)];
+}
+
+.userinfoname {
+	@apply text-lg;
+}

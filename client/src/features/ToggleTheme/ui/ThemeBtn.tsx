@@ -2,7 +2,7 @@ import { useRef } from 'react'
 
 import { Moon, Sun } from 'lucide-react'
 
-import { useModal } from '@shared/lib'
+import { useModal } from '@entities/Modal'
 
 import { useTheme } from '../lib'
 import ThemeModeModal from './@ThemeModal/ThemeModal'

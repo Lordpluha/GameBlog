@@ -1,0 +1,19 @@
+.userAuthBlockOverflow {
+	@apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-0 justify-center items-center w-full md:inset-0 h-full max-h-full;
+}
+
+.userAuthBlockPosition {
+	@apply flex text-center relative justify-center items-center p-4 w-full max-w-md max-h-full;
+}
+
+.userAuthBlockWrapper {
+	@apply relative bg-[var(--modal-bg-color)] rounded-3xl shadow-2xl;
+}
+
+.userAuthHeaderBtnClose {
+	@apply absolute cursor-pointer top-3 end-2.5 text-[var(--default-dark-text-color)] text-sm w-8 h-8 ms-auto inline-flex justify-center items-center;
+}
+
+.useAuthContent {
+	@apply p-4 md:p-5 text-center gap-3 text-[var(--text-color)];
+}

@@ -2,7 +2,7 @@ import { useRef } from 'react'
 
 import { Search, X } from 'lucide-react'
 
-import { useModal } from '@shared/lib'
+import { useModal } from '@entities/Modal'
 
 import SearchModal from './@SearchModal/SearchModal'
 

@@ -1,0 +1,31 @@
+.articleItemBlock {
+	@apply rounded-[8px] transition duration-500 ease-in-out bg-transparent hover:bg-gray-700/[.09] px-2 py-2 block md:flex md:flex-row;
+}
+
+.articleItemImageBlock {
+	@apply relative h-full overflow-hidden bg-cover bg-no-repeat rounded-[8px];
+}
+
+.articleItemImage {
+	@apply md:w-[196px] md:h-[110px] z-0 w-full cursor-pointer transition duration-300 ease-in-out hover:scale-110;
+}
+
+.articleItemDescription {
+	@apply flex flex-col justify-between ml-5 flex-grow;
+}
+
+.articleItemTitle {
+	@apply cursor-pointer text-[18px] font-bold sm:mt-2 transition duration-500 ease-in-out hover:text-[var(--hover-active-color)];
+}
+
+.articleItemComments {
+	@apply cursor-pointer flex flex-row text-[17px] text-[var(--text-color)] items-center transition duration-500 ease-in-out hover:text-[var(--hover-active-color)];
+}
+
+.articleItemCategory {
+	@apply flex flex-row pb-2 items-center;
+}
+
+.articleItemCategory div {
+	@apply flex;
+}

@@ -5,13 +5,12 @@ import { CheatsPage } from '@pages/Cheats'
 import { ErrorPage } from '@pages/Error'
 import { GamesPage } from '@pages/Games'
 import { HomePage } from '@pages/Home'
-import { NewsPage, AboutNewPage } from '@pages/News'
+import Layout from '@pages/Layout'
+import { AboutNewPage, NewsPage } from '@pages/News'
 import { ReadPage } from '@pages/Read'
 import { StreamsPage } from '@pages/Streams'
 import { SupportPage } from '@pages/Support'
 import { WatchPage } from '@pages/Watch'
-
-import Layout from '@pages/Layout'
 
 export const router = createBrowserRouter([
 	{
@@ -40,7 +39,7 @@ export const router = createBrowserRouter([
 				element: <NewsPage />
 			},
 			{
-				path: '/newsdata/:seo',
+				path: '/news/:slug',
 				element: <AboutNewPage />
 			},
 			{

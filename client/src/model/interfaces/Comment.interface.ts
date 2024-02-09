@@ -1,7 +1,7 @@
 interface IComment {
-	link: string
+	readonly link: string
+	readonly avatar: string
 	title: string
-	avatar: string
 	login: string
 	text: string
 }
