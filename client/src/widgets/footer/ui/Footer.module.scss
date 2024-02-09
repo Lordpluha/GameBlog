@@ -22,11 +22,15 @@ footer {
 
 .footer__logo {
 	@apply flex flex-col;
+	@media (min-width: 870px) and (max-width: 1165px) {
+		grid-column: 1 / span 2;
+		grid-row: 1/2;
+	}
 	a {
 		@apply h-[40px] w-[224px];
 	}
 	p {
-		@apply text-base mt-[16px];
+		@apply text-base mt-[16px] text-[#8B8D8E];
 	}
 }
 

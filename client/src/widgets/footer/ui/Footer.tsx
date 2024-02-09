@@ -14,9 +14,7 @@ const Footer = () => {
 				<div className={styles.footer__box}>
 					<div className={styles.footer__logo}>
 						<Logo />
-						<p className='text-[#8B8D8E]'>
-							Рассказываем вам о видеоиграх
-						</p>
+						<p>Рассказываем вам о видеоиграх</p>
 					</div>
 					<FooterIcons />
 

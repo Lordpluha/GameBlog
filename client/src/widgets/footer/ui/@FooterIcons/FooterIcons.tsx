@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import Steam from '@features/ToggleTheme/ui/@ThemeModal/@elements/socials/Steam'
-import Telegram from '@features/ToggleTheme/ui/@ThemeModal/@elements/socials/Telegram'
-import VK from '@features/ToggleTheme/ui/@ThemeModal/@elements/socials/VK'
-import Youtube from '@features/ToggleTheme/ui/@ThemeModal/@elements/socials/Youtube'
+import { Arrow, Steam, Telegram, VKIcon, Youtube } from '@shared/ui'
 
 import styles from './FooterIcons.module.scss'
 
@@ -12,9 +9,10 @@ const FooterIcons = () => {
 		<ul className={styles.footer__icons}>
 			<li>
 				<Youtube />
+				<div className={styles.tooltip}>Группа StopGame на Youtube</div>
 			</li>
 			<li>
-				<VK />
+				<VKIcon />
 				<div className={styles.tooltip}>Группа StopGame на VK</div>
 			</li>
 			<li>
@@ -23,9 +21,11 @@ const FooterIcons = () => {
 					<ul className={styles.dropdown_content}>
 						<li>
 							<Link to=''>StopGame.ru</Link>
+							<Arrow />
 						</li>
 						<li>
 							<Link to=''>StopGame.ru Новости</Link>
+							<Arrow />
 						</li>
 					</ul>
 				</div>

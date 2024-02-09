@@ -30,7 +30,7 @@
 		@apply m-0;
 	}
 	h6 {
-		@apply font-bold mb-4 leading-5 text-base hover:text-[#8B8D8E] cursor-pointer; //когда ставлю text-base, то шрифт -14, а не 16
+		@apply font-bold mb-4 leading-5 text-[16px] hover:text-[#8B8D8E] cursor-pointer; //когда ставлю text-base, то шрифт -14, а не 16, сделать еще одну переменную?
 		@media (max-width: 870px) {
 			@apply text-[14px] mb-3;
 		}

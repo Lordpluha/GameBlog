@@ -4,7 +4,7 @@ ul.footer__icons {
 		@apply hidden;
 	}
 	li {
-		@apply relative;
+		@apply relative w-[25px] h-[25px];
 		&:hover {
 			.tooltip {
 				visibility: visible;
@@ -14,16 +14,14 @@ ul.footer__icons {
 		}
 
 		svg {
-			@apply fill-white w-[25px] h-[25px] hover:fill-[#6A7276];
+			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
 
 			&:hover {
 				.dropdown_content {
 					display: block;
 					opacity: 1;
 				}
-				// .tooltip {
-				// 	@apply visible opacity-100 translate-x-1/2 translate-y-[-150%] active:shadow-sm inset-1;
-				// }
+
 				.tooltip {
 					visibility: visible;
 					opacity: 1;
@@ -32,29 +30,20 @@ ul.footer__icons {
 			}
 		}
 	}
-	&:active {
-		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
-	}
-
-	// .tooltip {
-	// 	@apply opacity-0 absolute bg-white z-10 after:opacity-100 bottom-[10px] left-[50%] p-[3px];
 
 	.tooltip {
-		background-color: #fff;
+		@apply bg-[--default-light-color] opacity-0 absolute;
+
 		color: #000;
-		display: block;
-		position: absolute;
-		bottom: 10px;
+		bottom: 0;
 		left: 50%;
-		font-size: 14px;
 		font-family: 'Rubik', sans-serif;
-		opacity: 0;
 		transform: translate(-50%, -100%);
 		transition: all 0.3s ease;
 		z-index: 2;
 		width: max-content;
 		height: max-content;
-		padding: 3px;
+		padding: 5px;
 
 		&:after {
 			content: ' ';
@@ -82,7 +71,7 @@ ul.footer__icons {
 			@apply bg-[#383838] absolute rounded-xl flex flex-col opacity-0 hover:opacity-100 top-[32px] 
 		z-10 left-[-350%] shadow-md transition-opacity duration-300 ease-out;
 			li {
-				@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81];
+				@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81] flex justify-between;
 			}
 		}
 	}
