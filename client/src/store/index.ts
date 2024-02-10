@@ -1,4 +1,4 @@
-import { newslistApi } from '@/api/newslist.api'
+import { newslistApi } from '@store/api/newslist.api'
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 

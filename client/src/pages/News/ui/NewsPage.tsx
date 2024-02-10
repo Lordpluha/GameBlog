@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react'
-
-import { useGetNewsListQuery } from '@/api/newslist.api'
-
 import { IPublication } from '@model/interfaces'
-
+import { useGetNewsListQuery } from '@store/api/newslist.api'
 import { PostsSmall } from '@widgets/Posts'
-
 import { Pagination, usePagination } from '@features/Pagination'
 
 /**
@@ -15,35 +11,32 @@ import { Pagination, usePagination } from '@features/Pagination'
  */
 const NewsPage = () => {
 	const [newsList, setNewsList] = useState<IPublication[]>([])
-	const [totalItems, setTotalItems] = useState<number>(0)
-	const [pageNum, setPageNum] = useState<number>(0)
-	const [isLoading, setIsLoading] = useState<boolean>(false)
-
-	if (!isLoading) return <p>Loading .... </p>
-
+	const [totalItems, setTotalItems] = useState<number>()
+	const [pageCount, setPageCount] = useState<number>()
+	
 	const {
 		currentPage,
 		btnDisabled,
 		handleNextPageClick,
 		handlePrevPageClick,
 		onChangePage
-	} = usePagination(totalItems)
-
+	} = usePagination(pageCount)
+	
+	const { isLoading, data } = useGetNewsListQuery(currentPage)
 	useEffect(() => {
-		const { isLoading, data } = useGetNewsListQuery(currentPage)
-		setIsLoading(isLoading)
-		setNewsList(data?.items)
 		setTotalItems(data?.count)
-		setPageNum(data?.pageCount)
-	}, [currentPage])
+		setNewsList(data?.items)
+		setPageCount(data?.pageCount)
+	}, [currentPage, data])
+
 	return (
 		<div>
-			<PostsSmall posts={newsList} to='news' />
+			{newsList && <PostsSmall posts={newsList} to='news' />}
 			<Pagination
 				onNextPageClick={handleNextPageClick}
 				onPrevPageClick={handlePrevPageClick}
 				disable={btnDisabled}
-				pageNum={pageNum}
+				pageNum={pageCount}
 				currentPage={currentPage}
 				onChangePage={onChangePage}
 			/>

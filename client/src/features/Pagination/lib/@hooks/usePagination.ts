@@ -5,28 +5,25 @@ import { useLocation, useNavigate } from 'react-router-dom'
  *
  * @param contentLength - the count of item recevied from server
  * @param ITEM_PER_PAGE - number of elements per page
- * pageNum - an array of pagination pages formed from the first to the total number of all pages
  * currentPage - current page
  * btnDisabled - active or passive state of the next and previous buttons
  * handleNextPageClick - action handler when the button is clicked next
  * handlePrevPageClick - action handler when the button is clicked previus
  * onChangePage - action handler when a page button is clicked
  *
- * @returns pageNum, currentPage, btnDisabled, handleNextPageClick, handlePrevPageClick, onChangePage
+ * @returns currentPage, btnDisabled, handleNextPageClick, handlePrevPageClick, onChangePage
  */
-const usePagination = (totalItems: number /*, ITEM_PER_PAGE: number*/) => {
-	/*const totalPageCount = Math.ceil(contentLength / ITEM_PER_PAGE)*/
-	/*const pageNum = [...Array(totalPageCount + 1).keys()].slice(1)*/
+const usePagination = (pageCount: number) => {
 	const location = useLocation()
 	const navigate = useNavigate()
-	const urlPage = +location.search.split('=')
+	const urlPage = !location.search.split('=')[1] ? 1 : +location.search.split('=')[1]
 	const [currentPage, setCurrentPage] = useState<number>(
-		urlPage !== 0 ? (urlPage <= totalItems ? +urlPage : totalItems) : 1
+		urlPage > pageCount ? pageCount : urlPage
 	)
 
 	const handleNextPageClick = useCallback(() => {
 		const next = currentPage + 1
-		const total = totalItems > 1 ? totalItems : currentPage
+		const total = pageCount > 1 ? pageCount : currentPage
 		navigate(`/news?page=${next}`)
 		setCurrentPage(next <= total ? next : currentPage)
 	}, [currentPage])
@@ -44,11 +41,10 @@ const usePagination = (totalItems: number /*, ITEM_PER_PAGE: number*/) => {
 
 	const btnDisabled = {
 		left: currentPage === 1,
-		right: currentPage === totalItems
+		right: currentPage === pageCount
 	}
 
 	return {
-		/*pageNum,*/
 		currentPage,
 		btnDisabled,
 		handleNextPageClick,

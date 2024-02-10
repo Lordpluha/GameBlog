@@ -11,7 +11,7 @@ export type TNewsListResponce<T> = {
 export const newslistApi = createApi({
 	reducerPath: 'newslist/api',
 	baseQuery: fetchBaseQuery({
-		baseUrl: process.env.SERVER_URL
+		baseUrl: 'http://localhost:3001/api/'
 	}),
 	endpoints: build => ({
 		getNewsList: build.query<TNewsListResponce<IPublication>, number>({
