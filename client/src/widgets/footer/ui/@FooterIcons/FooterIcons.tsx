@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { Arrow, Steam, Telegram, VKIcon, Youtube } from '@shared/ui'
+import { Arrow, Steam, Telegram, VK, Youtube } from '@shared/ui'
 
 import styles from './FooterIcons.module.scss'
 
@@ -12,7 +12,7 @@ const FooterIcons = () => {
 				<div className={styles.tooltip}>Группа StopGame на Youtube</div>
 			</li>
 			<li>
-				<VKIcon />
+				<VK />
 				<div className={styles.tooltip}>Группа StopGame на VK</div>
 			</li>
 			<li>
