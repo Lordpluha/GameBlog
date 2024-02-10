@@ -6,7 +6,7 @@ import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'
 import FullNews from './FullNews'
-import styles from './src/pages/News/ui/FullNewsPage/Fullnews.module.scss'
+import styles from './FullNews.module.scss'
 
 type TFullNewsProps = {
 	fullNewsData: any

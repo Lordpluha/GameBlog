@@ -4,7 +4,7 @@ import { IUser } from '@model/interfaces'
 
 import { Author } from '@entities/Author'
 
-import styles from '../Fullnews.module.scss'
+import styles from '../FullNews.module.scss'
 import TopInfo from './@TopInfo/TopInfo'
 
 type TContentTopProps = {
