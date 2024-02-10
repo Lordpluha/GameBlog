@@ -10,7 +10,7 @@ import { dateConverter } from '@shared/lib'
 import TagsList from './@TagsList/TagsList'
 import styles from './PostSmall.module.scss'
 
-type TPostSmallProps = { post: IPublication, to: string }
+type TPostSmallProps = { post: IPublication; to: string }
 
 /**
  * Item of PostsSmall component represent post element
@@ -64,7 +64,7 @@ const PostSmall: FC<TPostSmallProps> = ({ post, to }) => {
 							}}
 						>
 							<MessageCircleMore />
-							<p className='pl-1'>{post.commentsCount}</p>
+							<p className='pl-1'>{post._count.comments}</p>
 						</div>
 					</div>
 				</div>

@@ -5,7 +5,7 @@ import { Share2 } from 'lucide-react'
 import { Modal, useModal } from '@entities/Modal'
 import { Socials } from '@entities/Socials'
 
-import styles from './shareBtn.module.scss'
+import styles from './ShareBtn.module.scss'
 
 const ShareBtn = ({ style }: { style: string }) => {
 	const refModal = useRef<HTMLDivElement>(null!)

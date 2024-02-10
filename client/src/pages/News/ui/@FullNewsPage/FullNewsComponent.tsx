@@ -1,17 +1,16 @@
 import { FC } from 'react'
 
-import { IFullNews } from '@/components/interfaces/FullNews.interface'
-import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
-
+//import { INewsNavigation } from '@pages/News/model/@interfaces/NewsNavigation.interface'
+//import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'
 import FullNews from './FullNews'
-import styles from './fullnews.module.scss'
+import styles from './src/pages/News/ui/FullNewsPage/Fullnews.module.scss'
 
 type TFullNewsProps = {
-	fullNewsData: IFullNews
-	otherNews: IOtherNewsNavigation[]
+	fullNewsData: any
+	otherNews: any
 }
 
 /**

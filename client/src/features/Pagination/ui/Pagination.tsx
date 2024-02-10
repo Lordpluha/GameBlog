@@ -36,6 +36,22 @@ const Pagination = memo((props: TPagination) => {
 		onChangePage(page)
 	}
 
+	const pagination = []
+	for (let page = 1; page <= pageNum; page++) {
+		pagination.push(
+			<div
+				className={clsx(
+					styles.page,
+					currentPage === page ? styles.activePage : ''
+				)}
+				onClick={() => handleChangePage(page)}
+				key={page}
+			>
+				{page}
+			</div>
+		)
+	}
+
 	return (
 		<div className={styles.pagination}>
 			<div className={styles.buttons}>
@@ -46,18 +62,7 @@ const Pagination = memo((props: TPagination) => {
 				>
 					<ChevronLeft className={styles.leftArrow} />
 				</button>
-				{pageNum?.map((page, idx) => (
-					<div
-						className={clsx(
-							styles.page,
-							currentPage === page ? styles.activePage : ''
-						)}
-						onClick={() => handleChangePage(page)}
-						key={idx}
-					>
-						{page}
-					</div>
-				))}
+				{pagination}
 				<button
 					className={disable.right ? styles.btnHiden : ''}
 					type='button'

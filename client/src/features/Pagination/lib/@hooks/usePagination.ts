@@ -14,23 +14,19 @@ import { useLocation, useNavigate } from 'react-router-dom'
  *
  * @returns pageNum, currentPage, btnDisabled, handleNextPageClick, handlePrevPageClick, onChangePage
  */
-const usePagination = (contentLength: number, ITEM_PER_PAGE: number) => {
-	const totalPageCount = Math.ceil(contentLength / ITEM_PER_PAGE)
-	const pageNum = [...Array(totalPageCount + 1).keys()].slice(1)
+const usePagination = (totalItems: number /*, ITEM_PER_PAGE: number*/) => {
+	/*const totalPageCount = Math.ceil(contentLength / ITEM_PER_PAGE)*/
+	/*const pageNum = [...Array(totalPageCount + 1).keys()].slice(1)*/
 	const location = useLocation()
 	const navigate = useNavigate()
 	const urlPage = +location.search.split('=')
 	const [currentPage, setCurrentPage] = useState<number>(
-		urlPage !== 0
-			? urlPage <= totalPageCount
-				? +urlPage
-				: totalPageCount
-			: 1
+		urlPage !== 0 ? (urlPage <= totalItems ? +urlPage : totalItems) : 1
 	)
 
 	const handleNextPageClick = useCallback(() => {
 		const next = currentPage + 1
-		const total = totalPageCount > 1 ? totalPageCount : currentPage
+		const total = totalItems > 1 ? totalItems : currentPage
 		navigate(`/news?page=${next}`)
 		setCurrentPage(next <= total ? next : currentPage)
 	}, [currentPage])
@@ -48,11 +44,11 @@ const usePagination = (contentLength: number, ITEM_PER_PAGE: number) => {
 
 	const btnDisabled = {
 		left: currentPage === 1,
-		right: currentPage === totalPageCount
+		right: currentPage === totalItems
 	}
 
 	return {
-		pageNum,
+		/*pageNum,*/
 		currentPage,
 		btnDisabled,
 		handleNextPageClick,

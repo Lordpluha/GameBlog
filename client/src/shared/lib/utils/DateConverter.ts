@@ -1,3 +1,5 @@
+import { isNumber } from 'lodash'
+
 const monthTitle = [
 	'January',
 	'February',
@@ -13,31 +15,28 @@ const monthTitle = [
 	'December'
 ]
 
-type TdateConverter = (time: number) => string
+type TdateConverter = (time: number | string) => string
 
 /**
  * Tool func to convert date from number to formatted string
  * General usage is for Article component
  *
- * @author kiberchainik
+ * @author THE BIG MONSTER! -> kiberchainik
  * @param time number
  * @return string
  */
-const dateConverter: TdateConverter = (time = 0) => {
-	const currentDate = new Date()
-	const currentDay = currentDate.getDay()
 
-	const articleDate = new Date(time * 1000)
-	const articleDates = {
-		Month: articleDate.getMonth(),
-		MonthDay: articleDate.getDate(),
-		Day: articleDate.getDay(),
-		Hours: articleDate.getHours(),
-		Minutes: articleDate.getMinutes()
-	}
+type TarticleDate = {
+	Month: number
+	MonthDay: number
+	Day: number
+	Hours: number
+	Minutes: number
+}
 
+function Converter(currentDay: number, articleDates: TarticleDate): string {
 	const isToday = currentDay === articleDates.Day
-	const isYesterday = currentDay - 1 === articleDates.MonthDay
+	const isYesterday = currentDay - 1 === articleDates.Day
 
 	let stringData
 	if (isToday) {
@@ -47,12 +46,29 @@ const dateConverter: TdateConverter = (time = 0) => {
 		stringData =
 			'Yesterday, ' + articleDates.Hours + ' : ' + articleDates.Minutes
 	} else {
-		stringData = `${monthTitle[articleDates.Month]} ${
-			articleDates.MonthDay
-		}`
+		stringData = `${monthTitle[articleDates.Month]} ${articleDates.Day}`
+	}
+	return stringData
+}
+
+const dateConverter: TdateConverter = time => {
+	const currentDate = new Date()
+	const currentDay = currentDate.getDay()
+
+	const date = isNumber(time) ? time * 1000 : time
+	const articleDate = new Date(date)
+
+	const articleDates = {
+		Month: articleDate.getMonth(),
+		MonthDay: articleDate.getDate(),
+		Day: articleDate.getDay(),
+		Hours: articleDate.getHours(),
+		Minutes: articleDate.getMinutes()
 	}
 
-	return stringData
+	Converter(currentDay, articleDates)
+
+	return Converter(currentDay, articleDates)
 }
 
 export default dateConverter

@@ -7,5 +7,5 @@ export type TPagination = {
 		left: boolean
 		right: boolean
 	}
-	pageNum: number[]
+	pageNum: number
 }

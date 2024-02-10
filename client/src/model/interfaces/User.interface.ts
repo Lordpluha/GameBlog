@@ -1,16 +1,17 @@
 interface IUser {
-	firstName: string | null
-	lastName: string | null
+	id: number
+	name: string | null
+	lastName?: string | null
 
-	avatar: string | null
+	avatar?: string | null
 	// Background image for profile
-	cover: string | null
+	cover?: string | null
 
-	login: string
+	login?: string
 	// password: string
-	// email: string
+	email: string
 
-	status: 'user' | 'author'
+	role: 'user' | 'author'
 
 	// registrationDate: number
 	// subscribersCount: number

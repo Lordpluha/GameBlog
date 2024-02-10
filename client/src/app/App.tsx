@@ -6,14 +6,14 @@ import { setupStore } from '@store/index'
 import { router } from './routes/router'
 import './styles/index.scss'
 
-// const store = setupStore()
+const store = setupStore()
 
 function App() {
 	return (
 		<>
-			{/* <Provider store={store}> */}
-			<RouterProvider router={router} />
-			{/* </Provider> */}
+			<Provider store={store}>
+				<RouterProvider router={router} />
+			</Provider>
 		</>
 	)
 }

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import dal from '@/data/demoData.json'
+import { useGetNewsListQuery } from '@/api/newslist.api'
+
+import { IPublication } from '@model/interfaces'
 
 import { PostsSmall } from '@widgets/Posts'
 
 import { Pagination, usePagination } from '@features/Pagination'
-
-import { INew } from '@model/interfaces'
 
 /**
  * The page news component for upload article list
@@ -14,37 +14,27 @@ import { INew } from '@model/interfaces'
  * usePagination - custom hook for paginaton component.
  */
 const NewsPage = () => {
-	const [newsList, setNewsList] = useState<INew[]>([])
+	const [newsList, setNewsList] = useState<IPublication[]>([])
+	const [totalItems, setTotalItems] = useState<number>(0)
+	const [pageNum, setPageNum] = useState<number>(0)
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+
+	if (!isLoading) return <p>Loading .... </p>
+
 	const {
-		pageNum,
 		currentPage,
 		btnDisabled,
 		handleNextPageClick,
 		handlePrevPageClick,
 		onChangePage
-	} = usePagination(dal.newsData.length, 5)
+	} = usePagination(totalItems)
 
 	useEffect(() => {
-		setNewsList([])
-		dal.newsData
-			/* select data for current page */
-			.filter(
-				(data, idx) => idx >= currentPage - 1 && idx <= currentPage + 3
-			)
-			.map(item => {
-				setNewsList(prev => [
-					...prev,
-					{
-						id: +item.id,
-						slug: item.slug,
-						title: item.title,
-						commentsCount: +item.commentsCount,
-						preview: item.preview,
-						tags: item.tags,
-						createdAt: +item.createdAt
-					}
-				])
-			})
+		const { isLoading, data } = useGetNewsListQuery(currentPage)
+		setIsLoading(isLoading)
+		setNewsList(data?.items)
+		setTotalItems(data?.count)
+		setPageNum(data?.pageCount)
 	}, [currentPage])
 	return (
 		<div>
