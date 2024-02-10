@@ -5,23 +5,10 @@ ul.footer__icons {
 	}
 	li {
 		@apply relative w-[25px] h-[25px];
-		&:hover {
-			.tooltip {
-				visibility: visible;
-				opacity: 1;
-				transform: translate(-50%, -150%);
-			}
-		}
 
-		svg {
-			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
-
+		.social_icon {
+			@apply w-[25px] h-[25px] block;
 			&:hover {
-				.dropdown_content {
-					display: block;
-					opacity: 1;
-				}
-
 				.tooltip {
 					visibility: visible;
 					opacity: 1;
@@ -29,40 +16,22 @@ ul.footer__icons {
 				}
 			}
 		}
-	}
 
-	.tooltip {
-		@apply bg-[--default-light-color] opacity-0 absolute;
-
-		color: #000;
-		bottom: 0;
-		left: 50%;
-		font-family: 'Rubik', sans-serif;
-		transform: translate(-50%, -100%);
-		transition: all 0.3s ease;
-		z-index: 2;
-		width: max-content;
-		height: max-content;
-		padding: 5px;
-
-		&:after {
-			content: ' ';
-			position: absolute;
-			right: 46%;
-			bottom: -7px;
-			border-top: 8px solid white;
-			border-right: 8px solid transparent;
-			border-left: 8px solid transparent;
-			border-bottom: none;
+		svg {
+			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
 		}
 	}
 
 	.dropdown {
+		@apply relative inline-block;
+		svg {
+			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
+		}
 		&:hover .dropdown_content {
 			display: block;
 			opacity: 1;
 		}
-		@apply relative inline-block;
+
 		@media (max-width: 1145px) {
 			@apply hidden;
 		}
@@ -74,5 +43,31 @@ ul.footer__icons {
 				@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81] flex justify-between;
 			}
 		}
+	}
+}
+
+.tooltip {
+	@apply bg-[--default-light-color] opacity-0 absolute;
+
+	color: #000;
+	bottom: 0;
+	left: 50%;
+	font-family: 'Rubik', sans-serif;
+	transform: translate(-50%, -100%);
+	transition: all 0.3s ease;
+	z-index: 2;
+	width: max-content;
+	height: max-content;
+	padding: 5px;
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		right: 46%;
+		bottom: -7px;
+		border-top: 8px solid white;
+		border-right: 8px solid transparent;
+		border-left: 8px solid transparent;
+		border-bottom: none;
 	}
 }
