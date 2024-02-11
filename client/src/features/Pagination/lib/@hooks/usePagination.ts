@@ -16,7 +16,9 @@ import { useLocation, useNavigate } from 'react-router-dom'
 const usePagination = (pageCount: number) => {
 	const location = useLocation()
 	const navigate = useNavigate()
-	const urlPage = !location.search.split('=')[1] ? 1 : +location.search.split('=')[1]
+	const urlPage = !location.search.split('=')[1]
+		? 1
+		: +location.search.split('=')[1]
 	const [currentPage, setCurrentPage] = useState<number>(
 		urlPage > pageCount ? pageCount : urlPage
 	)

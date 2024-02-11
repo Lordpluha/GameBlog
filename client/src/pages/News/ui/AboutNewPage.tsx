@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom'
 
 import dfn from '@/data/demoData.json'
 
+import { INew } from '@model/interfaces'
+
 import { SliderReadAlso } from '@widgets/Sliders'
 
 import { INewsNavigation } from '../model/@interfaces'
 import FullNewsComponent from './@FullNewsPage/FullNewsComponent'
-import { INew } from '@model/interfaces'
 
 const AboutNewPage = () => {
 	const [NewData, setNewData] = useState<INew>()

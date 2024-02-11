@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
+
 import { IPublication } from '@model/interfaces'
-import { useGetNewsListQuery } from '@store/api/newslist.api'
+
+import { useGetNewsListQuery } from '@store/@api/NewsApi'
+
 import { PostsSmall } from '@widgets/Posts'
+
 import { Pagination, usePagination } from '@features/Pagination'
 
 /**
@@ -10,10 +14,10 @@ import { Pagination, usePagination } from '@features/Pagination'
  * usePagination - custom hook for paginaton component.
  */
 const NewsPage = () => {
-	const [newsList, setNewsList] = useState<IPublication[]>([])
+	const [newsList, setNewsList] = useState<IPublication[] | undefined>([])
 	const [totalItems, setTotalItems] = useState<number>()
-	const [pageCount, setPageCount] = useState<number>()
-	
+	const [pageCount, setPageCount] = useState<number>(1)
+
 	const {
 		currentPage,
 		btnDisabled,
@@ -21,13 +25,16 @@ const NewsPage = () => {
 		handlePrevPageClick,
 		onChangePage
 	} = usePagination(pageCount)
-	
+
 	const { isLoading, data } = useGetNewsListQuery(currentPage)
+
 	useEffect(() => {
 		setTotalItems(data?.count)
 		setNewsList(data?.items)
-		setPageCount(data?.pageCount)
+		setPageCount(prev => data?.pageCount || prev)
 	}, [currentPage, data])
+
+	if (isLoading) return <h1>Loading ...</h1>
 
 	return (
 		<div>

@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
+import ContentText from './@Content/ContentText'
 //import { INewsNavigation } from '@pages/News/model/@interfaces/NewsNavigation.interface'
 //import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'
-import FullNews from './FullNews'
 import styles from './FullNews.module.scss'
 
 type TFullNewsProps = {
@@ -46,7 +46,7 @@ const FullNewsComponent: FC<TFullNewsProps> = props => {
 					comments={comments}
 					authorData={authorData}
 				/>
-				<FullNews fullText={fullText} />
+				<ContentText fullText={fullText} />
 				<ContentWrapperBottom authorData={authorData} tags={tags} />
 			</div>
 			<NewsNavigation {...props.otherNews} />

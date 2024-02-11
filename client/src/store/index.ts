@@ -1,6 +1,7 @@
-import { newslistApi } from '@store/api/newslist.api'
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
+
+import { NewsApi } from '@store/@api/NewsApi'
 
 // import UserAPI from '@/api/UserAPI'
 
@@ -9,14 +10,14 @@ import { combineReducers } from 'redux'
 const rootReducer = combineReducers({
 	// UserReducer,
 	// [UserAPI.reducerPath]: UserAPI.reducer
-	[newslistApi.reducerPath]: newslistApi.reducer
+	[NewsApi.reducerPath]: NewsApi.reducer
 })
 
 export const setupStore = () => {
 	return configureStore({
 		reducer: rootReducer,
 		middleware: getDefaultMiddleware =>
-			getDefaultMiddleware().concat(newslistApi.middleware)
+			getDefaultMiddleware().concat(NewsApi.middleware)
 	})
 }
 

@@ -4,10 +4,10 @@ import { MessageCircleMore } from 'lucide-react'
 
 import { type IComment } from '@model/interfaces'
 
+import { CommentBtn } from '@entities/@buttons/CommentBtn'
 import { useModal } from '@entities/Modal'
 
 import CommentsModal from './@Comments/CommentsModal'
-import { CommentBtn } from '@entities/@buttons/CommentBtn';
 
 /**
  * Modal component with a list of new comments
