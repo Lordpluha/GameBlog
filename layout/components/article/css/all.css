@@ -66,6 +66,10 @@ body {
   background-color: #161B1D;
 }
 
+body.light {
+  background: #DEDFE1;
+}
+
 main {
   background-color: #1E2224;
 }
