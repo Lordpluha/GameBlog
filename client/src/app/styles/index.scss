@@ -2,18 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'normalize.scss';
-@import 'vars.scss';
+@import "normalize.scss";
+@import "vars.scss";
 
 :root {
 	@include vars;
 }
 
-html[data-theme='dark'] {
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	background-color: var(--modal-bg-color);
+}
+
+html {
+	scrollbar-color: #6969dd #e0e0e0;
+	scrollbar-width: thin;
+}
+
+html[data-theme="dark"] {
 	@include varsDark;
 }
 
-html[data-theme='light'] {
+html[data-theme="light"] {
 	@include varsLight;
 }
 
