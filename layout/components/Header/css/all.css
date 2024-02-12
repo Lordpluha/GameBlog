@@ -1106,10 +1106,23 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   row-gap: 24px;
+}
+.header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
 }
 .header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion .icon.ico_minus {
   display: none;
@@ -1117,11 +1130,29 @@ button {
 .header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion .icon.ico_plus {
   display: block;
 }
-.header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion .open .icon.ico_minus {
+.header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion .open.icon.ico_minus {
   display: block;
 }
-.header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion .open .icon.ico_plus {
+.header__burger-menu .header__burger-inside .header__burger-navigation button.header__accordion .open.icon.ico_plus {
   display: none;
+}
+.header__burger-menu .header__burger-inside .header__burger-navigation .header__burger-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0 0 36px;
+  overflow: hidden;
+}
+.header__burger-menu .header__burger-inside .header__burger-navigation .header__burger-content a.select {
+  color: #747281;
+  display: block;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
 }
 .header__burger-menu .header__burger-inside hr {
   border-top: 1px solid #41474a;
@@ -1137,6 +1168,13 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+}
+.header__burger-menu .header__burger-inside .header__burger-help a.header__help {
+  color: #747281;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.625;
 }
 .header__burger-menu .header__burger-inside ul.header__burger-soc {
   margin-top: 23px;

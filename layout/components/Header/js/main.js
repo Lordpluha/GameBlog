@@ -13,56 +13,63 @@ checkWidth();
 document.querySelectorAll('.header__burger-content').forEach(function (content) {
   content.style.display = 'none';
 });
-
-document.querySelectorAll('.header__accordion').forEach(function (accordion) {
-  accordion.addEventListener('click', function (e) {
+document.querySelectorAll('.header__accordion').forEach(function (title) {
+  title.addEventListener('click', function (e) {
     e.preventDefault();
-    let thisAccordion = this;
-    let nextContent = thisAccordion.nextElementSibling;
-    if (nextContent.classList.contains('show')) {
-      nextContent.classList.remove('show');
-      nextContent.style.display = 'none';
-      thisAccordion.parentElement.parentElement
-        .querySelectorAll('.header__accordion').forEach(function (acc) {
-          acc.classList.remove('open');
-        });
-    } else {
-      thisAccordion.parentElement.parentElement
-        .querySelectorAll('.header__burger-content').forEach(function (content) {
-          content.classList.remove('show');
-          content.style.display = 'none';
-        });
-      nextContent.classList.add('show');
-      nextContent.style.display = 'block';
-      thisAccordion.parentElement.parentElement
-        .querySelectorAll('.header__accordion').forEach(function (acc) {
-          acc.classList.remove('open');
-        });
-
-      thisAccordion.classList.add('open');
+    let title = this;
+    let content = title.nextElementSibling;
+    let plus = title.querySelector('.icon.ico_plus');
+    let minus = title.querySelector('.icon.ico_minus');
+    if (plus) {
+      plus.classList.toggle('open');
     }
+    if (minus) {
+      minus.classList.toggle('open');
+    }
+    if (content.classList.contains('show')) {
+      content.classList.remove('show');
+      content.style.display = 'none';
+      title.classList.remove('open');
+    } else {
+      document.querySelectorAll('.header__burger-content').forEach(function (content) {
+        content.classList.remove('show');
+        content.style.display = 'none';
+      });
+      content.classList.add('show');
+      content.style.display = 'block';
+      title.classList.add('open');
+
+    }
+
   });
+
 });
+
+
+
+
+
+
 
 //switch theme
 const light = document.getElementById('header__change-light');
 light.addEventListener('change', () => {
-	document.body.classList.toggle('light');
+  document.body.classList.toggle('light');
 });
 const dark = document.getElementById('header__change-dark');
 dark.addEventListener('change', () => {
-	document.body.classList.remove('light');
+  document.body.classList.remove('light');
 });
 const checkboxes = document.querySelectorAll('.checkbox');
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', (event) => {
-      checkboxes.forEach((otherCheckbox) => {
-        if (otherCheckbox !== checkbox) {
-          otherCheckbox.checked = false;
-        }
-      });
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', (event) => {
+    checkboxes.forEach((otherCheckbox) => {
+      if (otherCheckbox !== checkbox) {
+        otherCheckbox.checked = false;
+      }
     });
   });
+});
 
 // dropdown on click button.theme
 document.addEventListener("DOMContentLoaded", function () {

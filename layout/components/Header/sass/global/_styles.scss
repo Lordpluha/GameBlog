@@ -750,10 +750,21 @@ button {
 		.header__burger-navigation {
 			display: flex;
 			flex-direction: column;
-			align-items: flex-start;
 			row-gap: 24px;
 
 			button.header__accordion {
+				display: flex;
+				align-items: center;
+				font-family: 'Rubik', sans-serif;
+				font-size: 16px;
+				font-weight: bold;
+
+				svg {
+					width: 20px;
+					height: 20px;
+					margin-right: 16px;
+				}
+
 				.icon.ico_minus {
 					display: none;
 				}
@@ -762,17 +773,28 @@ button {
 					display: block;
 				}
 
-				.open .icon.ico_minus {
+				.open.icon.ico_minus {
 					display: block;
 				}
 
-				.open .icon.ico_plus {
+				.open.icon.ico_plus {
 					display: none;
 				}
 			}
 
 			.header__burger-content {
-				a.select {}
+				display: flex;
+				flex-direction: column;
+				padding: 0 0 0 36px;
+				overflow: hidden;
+
+				a.select {
+					color: #747281;
+					display: block;
+					font-family: 'Rubik', sans-serif;
+					font-size: 14px;
+					line-height: 24px;
+				}
 			}
 		}
 
@@ -786,15 +808,26 @@ button {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: flex-start;
+
+			a.header__help {
+				color: #747281;
+				font-family: 'Rubik', sans-serif;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 1.625;
+			}
 		}
-		ul.header__burger-soc{
+
+		ul.header__burger-soc {
 			margin-top: 23px;
 			display: flex;
 			column-gap: 13px;
-			li{
+
+			li {
 				width: 22px;
 				height: 22px;
-				svg{
+
+				svg {
 					display: block;
 					width: 100%;
 					height: 100%;
