@@ -5,22 +5,37 @@ import { CreateBlogDto, UpdateBlogDto, PaginationBlogQueryDto } from './dto'
 import { BLOG_NOT_FOUND } from './constants/error.blogs.constants'
 import * as generateSlug from 'slug'
 import { returnUserBaseObject } from 'src/user/dto'
+import { CategoryService } from 'src/category/category.service'
+import { returnCategoryBaseObject } from 'src/category/dto'
 
 @Injectable()
 export class BlogService {
 	constructor(
 		private readonly fileService: FileService,
+		private readonly categoryService: CategoryService,
 		private prisma: PrismaService
 	) {}
 
-	async create(createBlogDto: CreateBlogDto, userId: number, preview: Express.Multer.File) {
+	async create(dto: CreateBlogDto, userId: number, preview: Express.Multer.File) {
 		const previewUrl = await this.fileService.upload(preview)
+		const existsCategories = await this.categoryService.getByIds([...dto.categories])
 		const blog = await this.prisma.blog.create({
 			data: {
-				...createBlogDto,
+				...dto,
 				preview: previewUrl,
 				author: {
 					connect: { id: userId }
+				},
+				categories: {
+					connectOrCreate: {
+						create: {
+							name: 'Блоги'
+						},
+						where: {
+							name: 'Блоги'
+						}
+					},
+					connect: existsCategories.map(category => ({ id: category.id }))
 				}
 			}
 		})
@@ -68,6 +83,9 @@ export class BlogService {
 			include: {
 				author: {
 					select: returnUserBaseObject
+				},
+				categories: {
+					select: returnCategoryBaseObject
 				}
 			}
 		})
@@ -75,30 +93,34 @@ export class BlogService {
 		return blog
 	}
 
-	async update(
-		id: number,
-		userId: number,
-		updateBlogDto: UpdateBlogDto,
-		file?: Express.Multer.File
-	) {
-		const blog = await this.prisma.blog.findUnique({
-			where: { id }
-		})
+	async update(id: number, userId: number, dto: UpdateBlogDto, file?: Express.Multer.File) {
+		const blog = await this.findOne(id)
 		if (!blog) throw new NotFoundException(BLOG_NOT_FOUND)
 		if (blog.authorId !== userId) throw new ForbiddenException()
-		const dataUp = updateBlogDto.title
-			? { title: updateBlogDto.title, slug: generateSlug(updateBlogDto.title + blog.id) }
+		const dataUp = dto.title
+			? { title: dto.title, slug: generateSlug(dto.title + blog.id) }
 			: {}
 		if (file) {
 			const previewUrl = await this.fileService.upload(file)
 			dataUp['preview'] = previewUrl
 			this.fileService.delete(blog.preview)
 		}
+
+		let connectAndDisconnect = {}
+		if (dto.categories.length) {
+			const existsCategories = await this.categoryService.getByIds([...dto.categories])
+			connectAndDisconnect = {
+				disconnect: blog.categories.map(c => ({ id: c.id })),
+				connect: existsCategories.map(c => ({ id: c.id }))
+			}
+		}
+
 		const updatedBlog = await this.prisma.blog.update({
 			where: { id },
 			data: {
-				...updateBlogDto,
-				...dataUp
+				...dto,
+				...dataUp,
+				categories: connectAndDisconnect
 			},
 			include: {
 				author: {

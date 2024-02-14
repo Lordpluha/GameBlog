@@ -33,6 +33,16 @@ const createBlogs = async (quantity: number) => {
 					connect: {
 						id: 1
 					}
+				},
+				categories: {
+					connectOrCreate: {
+						create: {
+							name: 'Блоги'
+						},
+						where: {
+							name: 'Блоги'
+						}
+					}
 				}
 			}
 		})
