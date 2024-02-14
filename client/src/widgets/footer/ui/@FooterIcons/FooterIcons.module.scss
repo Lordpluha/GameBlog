@@ -12,7 +12,6 @@ ul.footer__icons {
 				.tooltip {
 					visibility: visible;
 					opacity: 1;
-					// transform: translate(-50%, -150%);
 				}
 			}
 		}
@@ -24,12 +23,25 @@ ul.footer__icons {
 
 	.dropdown {
 		@apply relative inline-block;
+
 		svg {
 			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
 		}
 		&:hover .dropdown_content {
-			display: block;
-			opacity: 1;
+			// display: block;
+			// opacity: 1;
+			animation: myAnimation 3s;
+		}
+		@keyframes myAnimation {
+			0% {
+				opacity: 0%;
+			}
+			90% {
+				opacity: 90%;
+			}
+			100% {
+				opacity: 100%;
+			}
 		}
 
 		@media (max-width: 1145px) {
@@ -50,7 +62,7 @@ ul.footer__icons {
 }
 
 .tooltip {
-	@apply bg-[--itemBlock-bg-color] opacity-0 absolute text-[12px];
+	@apply bg-[#282c2e] opacity-0 absolute text-[12px];
 	border-top: 1px solid white;
 	border-left: 1px solid white;
 	top: 30px;

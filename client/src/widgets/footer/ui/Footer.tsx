@@ -45,10 +45,7 @@ const Footer = () => {
 						</li>
 					</ul>
 					<div className={styles.footer__help_right}>
-						<img
-							src='/src/widgets/Footer/ui/assets/icon-age.png'
-							alt='GameBlog'
-						/>
+						<img src='/icon-age.png' alt='GameBlog' />
 						<div className={styles.stopGame}>
 							© 1999–2023 StopGame.ru
 						</div>

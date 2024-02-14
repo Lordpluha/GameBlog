@@ -16,7 +16,7 @@ const UserAuthBtn = () => {
 	return (
 		<>
 			<button
-				className='bg-[var(--default-dark-btn-color)] rounded-full p-2'
+				className='bg-[var(--default-dark-btn-color)] rounded-full p-2 '
 				onClick={() => {
 					setModal(!modal)
 				}}

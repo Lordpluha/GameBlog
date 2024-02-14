@@ -24,7 +24,7 @@ const SearchModal = forwardRef<HTMLDivElement, PropsWithRef<object>>(
 				<div className='flex flex-col max-w-3xl mx-auto'>
 					<div className={styles.searchInputBlock}>
 						<div className={styles.searchInputIcon}>
-							<Search />
+							<Search className={styles.search_icon} />
 						</div>
 						<input
 							type='text'
