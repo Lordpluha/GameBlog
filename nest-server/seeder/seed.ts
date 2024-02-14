@@ -41,7 +41,6 @@ const createBlogs = async (quantity: number) => {
 
 	return blogs.length
 }
-
 const createArticles = async (quantity: number) => {
 	const articles = []
 	const previewUrl = (await findByExtension()) ?? faker.image.urlPicsumPhotos()
@@ -64,6 +63,16 @@ const createArticles = async (quantity: number) => {
 				author: {
 					connect: {
 						id: 1
+					}
+				},
+				categories: {
+					connectOrCreate: {
+						create: {
+							name: 'Статьи'
+						},
+						where: {
+							name: 'Статьи'
+						}
 					}
 				}
 			}
