@@ -3,8 +3,8 @@
 >  - Sub Category 1 (optional)
 >    - Sub Category 2
 
-## Read(Читать) + монетизация:
-### Статьи - Articles:
+## Read(Читать):
+### Статьи - Articles + монетизация:
  - Статьи (default)
  - Превью
  - Ревью
