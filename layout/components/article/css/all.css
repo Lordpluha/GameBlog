@@ -38,6 +38,7 @@ form {
   color: #000;
   text-decoration: none;
   border: none;
+  outline: none;
 }
 a:hover,
 button:hover,
@@ -64,6 +65,8 @@ img {
 
 body {
   background-color: #161B1D;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
 }
 
 body.light {

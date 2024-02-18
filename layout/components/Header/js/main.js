@@ -3,11 +3,43 @@
 const burger = document.querySelector('.header__burger');
 
 const checkWidth = () => {
-  burger ? burger.style.display = (window.innerWidth <= 1145) ? 'block' : 'none' : null;
+  burger ? burger.style.display = (window.innerWidth <= 1145) ? 'flex' : 'none' : null;
 }
 
 window.addEventListener('resize', checkWidth);
 checkWidth();
+
+
+// icon burger - cross
+const burgerMenu = document.querySelector('.header__burger');
+let burgerShow = false;
+burgerMenu.addEventListener('click', () => {
+  if (!burgerShow) {
+    burgerMenu.classList.add('open');
+    burgerShow = true;
+  } else {
+    burgerMenu.classList.remove('open');
+    burgerShow = false;
+  }
+});
+
+
+// show burger window
+document.addEventListener("DOMContentLoaded", function () {
+  let dropdown = document.getElementById("choose-burger");
+  let openWindow = document.getElementById("icon-burger");
+  openWindow.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      !e.target.closest("#choose-burger") &&
+      !e.target.closest("#icon-burger")) {
+      dropdown.classList.remove("active");
+    }
+  });
+});
+
 
 //accordion burger icon
 document.querySelectorAll('.header__burger-content').forEach(function (content) {
@@ -46,11 +78,6 @@ document.querySelectorAll('.header__accordion').forEach(function (title) {
 });
 
 
-
-
-
-
-
 //switch theme
 const light = document.getElementById('header__change-light');
 light.addEventListener('change', () => {
@@ -71,18 +98,49 @@ checkboxes.forEach((checkbox) => {
   });
 });
 
+
 // dropdown on click button.theme
 document.addEventListener("DOMContentLoaded", function () {
   let dropdown = document.getElementById("choose-theme");
   let openWindow = document.getElementById("icon-dropdown");
+
   openWindow.addEventListener("click", () => {
     dropdown.classList.toggle("active");
   });
   document.addEventListener("click", (e) => {
     if (
       !e.target.closest("#choose-theme") &&
-      !e.target.closest("#icon-dropdown")) {
+      !e.target.closest("#icon-dropdown")
+    ) {
       dropdown.classList.remove("active");
+    }
+  });
+});
+
+
+// change theme dropdown
+document.addEventListener('DOMContentLoaded', () => {
+  const lightCheckbox = document.getElementById('header__light');
+  const darkCheckbox = document.getElementById('header__dark');
+
+  const lightIcon = document.getElementById('icon-light');
+  const darkIcon = document.getElementById('icon-dark');
+
+  lightCheckbox.addEventListener('change', () => {
+    if (lightCheckbox.checked) {
+      lightIcon.style.display = 'block';
+      darkIcon.style.display = 'none';
+      document.body.classList.add('light');
+    } else {
+      document.body.classList.remove('light');
+    }
+  });
+
+  darkCheckbox.addEventListener('change', () => {
+    if (darkCheckbox.checked) {
+      lightIcon.style.display = 'none';
+      darkIcon.style.display = 'block';
+      document.body.classList.remove('light');
     }
   });
 });
@@ -107,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// background transparent on click
+// background transparent on click login 
 function on() {
   document.getElementById("overlay").style.display = "flex";
 }
@@ -118,6 +176,23 @@ function off() {
 
 window.onclick = function (event) {
   let overlay = document.getElementById("overlay");
+  if (event.target === overlay) {
+    overlay.style.display = "none";
+  }
+};
+
+
+// background transparent on click search
+function look() {
+  document.getElementById("overlay-look").style.display = "flex";
+}
+
+function  stop() {
+  document.getElementById("overlay-look").style.display = "none";
+}
+
+window.onclick = function (event) {
+  let overlay = document.getElementById("overlay-look");
   if (event.target === overlay) {
     overlay.style.display = "none";
   }
@@ -169,57 +244,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //slider
-const slider = document.querySelector('.header__slider');
-const slides = document.querySelectorAll('.header__slide');
-let current = 0;
-transitioning = false;
-const nextButton = document.querySelector('.header__sign-up');
-const prevButton = document.querySelector('.header__back');
-function updateCurrent(index) {
-  slides.forEach(header__slide => {
-    header__slide.classList.remove('active');
-  });
+var position = -100;
+var slide = document.querySelector('.slider__wrapper');
 
-  slides[index].classList.add('active');
-}
-function nextSlide() {
-  if (!transitioning) {
-    transitioning = true;
-    current++;
-
-    if (current === slides.length) {
-      current = 0;
-    }
-
-    updateCurrent(current);
+function sliderRight() {
+  position -= 100;
+  if (position < -100) {
+    position = 0;
   }
+  slide.style.left = position + '%';
 }
 
-function prevSlide() {
-  if (!transitioning) {
-    transitioning = true;
-    current--;
-
-    if (current < 0) {
-      current = slides.length - 1;
-    }
-
-    updateCurrent(current);
+function sliderLeft() {
+  position += 100;
+  if (position > 0) {
+    position = -100;
   }
+  slide.style.left = position + '%';
 }
-
-function handleTransitionEnd() {
-  transitioning = false;
-}
-
-slides.forEach(header__slide => {
-  header__slide.addEventListener('transitionend', handleTransitionEnd);
-});
-
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
-
-updateCurrent(0);
 
 
 // comments window

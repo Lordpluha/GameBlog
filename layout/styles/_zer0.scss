@@ -40,7 +40,7 @@ form {
 	color: #000;
 	text-decoration: none;
 	border: none;
-
+	outline: none;
 	&:hover {
 		cursor: pointer;
 	}
@@ -61,6 +61,7 @@ img {
 
 body {
 	background-color: #161B1D;
+	transition: background-color 1s ease;
 }
 body.light {
 	background: #DEDFE1;
