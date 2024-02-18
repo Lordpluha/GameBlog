@@ -1,8 +1,6 @@
 import { FC } from 'react'
 
 import ContentText from './@Content/ContentText'
-//import { INewsNavigation } from '@pages/News/model/@interfaces/NewsNavigation.interface'
-//import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'

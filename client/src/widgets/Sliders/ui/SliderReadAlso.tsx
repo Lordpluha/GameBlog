@@ -26,9 +26,7 @@ const SliderReadAlso = () => {
 					[
 						...prev,
 						{
-							category: item.category,
-							title: item.title,
-							preview: item.preview,
+							image: item.preview,
 							slug: item.slug,
 							createdAt: item.createdAt,
 							author: item.author

@@ -6,9 +6,9 @@ import { Feather } from 'lucide-react'
 import { ISlider } from '../../model/@interfaces'
 import styles from './ReadAlso.module.scss'
 
-const ReadAlsoItem: FC<ISlider> = ({ category, description, image, seo }) => {
+const ReadAlsoItem: FC<ISlider> = ({ category, description, image, slug }) => {
 	return (
-		<Link className={styles.card} to={`/newsdata/${seo}`}>
+		<Link className={styles.card} to={`/newsdata/${slug}`}>
 			<img className={styles.cardImage} src={image} alt={description} />
 			<section className={styles.cardTop}>
 				<section className={styles.cardSection}>

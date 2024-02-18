@@ -9,7 +9,7 @@ import { useGetNewsBySlugQuery } from '@store/@api/NewsApi'
 
 const AboutNewPage = () => {
 	const [otherNews, setOtherNews] = useState<INewsNavigation[]>([])
-	const {slug} = useParams<string>()
+	const {slug} = useParams()
 	const {data} = useGetNewsBySlugQuery(slug)
 
 	if (!data || !otherNews) return <p>Loading...</p>

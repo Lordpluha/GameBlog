@@ -24,12 +24,12 @@ export const NewsApi = createApi({
 			})
 		}),
 		getNewsBySlug: build.query<IPublication, string>({
-			query: (slug: string) => ({
+			query: (slug: IPublication['slug']) => ({
 				url: `article/slug/${slug}`
 			})
 		}),
 		getNewsById: build.query<IPublication, number>({
-			query: (id: number) => ({
+			query: (id: IPublication['id']) => ({
 				url: `article/${id}`
 			})
 		}),
