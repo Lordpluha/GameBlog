@@ -7,9 +7,10 @@ import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'
 import styles from './FullNews.module.scss'
+import { IPublication } from '@model/interfaces'
 
 type TFullNewsProps = {
-	fullNewsData: any
+	fullNewsData: IPublication
 	otherNews: any
 }
 
@@ -17,22 +18,22 @@ type TFullNewsProps = {
  * Reused component for rendering full article, news or blog page
  * fullNewsData - full data when opening an article
  * @param title - title of news, then transmitted in component TopInfo
- * @param fullText - full text on article,
- * @param publishedDate - date of publication of the article on the website,
+ * @param content - full text on article,
+ * @param createdAt - date of publication of the article on the website,
  * @param views - visits of article then transmitted in component TopInfo,
  * @param comments - tottal count of comments then transmitted in component TopInfo,
- * @param authorData - short data of author article then transmitted in coponent UserShortData,
+ * @param author - short data of author article then transmitted in coponent UserShortData,
  * @param tags - tags data of article then transmitted in coponent Tags
  * otherNews - data for news navigation blocks (previous, next)
  */
 const FullNewsComponent: FC<TFullNewsProps> = props => {
 	const {
 		title,
-		fullText,
-		publishedDate,
+		content,
+		createdAt,
 		views,
-		comments,
-		authorData,
+		_count,
+		author,
 		tags
 	} = props.fullNewsData
 
@@ -41,13 +42,13 @@ const FullNewsComponent: FC<TFullNewsProps> = props => {
 			<div className={styles.contentWrapper}>
 				<ContentTop
 					title={title}
-					publishedDate={publishedDate}
+					createdAt={createdAt}
 					views={views}
-					comments={comments}
-					authorData={authorData}
+					comments={_count.comments}
+					authorData={author}
 				/>
-				<ContentText fullText={fullText} />
-				<ContentWrapperBottom authorData={authorData} tags={tags} />
+				<ContentText fullText={content} />
+				<ContentWrapperBottom authorData={author} tags={tags} />
 			</div>
 			<NewsNavigation {...props.otherNews} />
 		</section>

@@ -9,7 +9,7 @@ import TopInfo from './@TopInfo/TopInfo'
 
 type TContentTopProps = {
 	title: string
-	publishedDate: number
+	createdAt: string
 	views: number
 	comments: number
 	authorData: IUser
@@ -18,7 +18,7 @@ type TContentTopProps = {
 /**
  * Component for rendering top content of fullnews, blog page
  * @param title - title of news, then transmitted in component TopInfo
- * @param publishedDate - date of publication of the article on the website,
+ * @param createdAt - date of publication of the article on the website,
  * @param views - visits of article then transmitted in component TopInfo,
  * @param comments - tottal count of comments then transmitted in component TopInfo,
  * @param authorData - short data of author article then transmitted in coponent UserShortData
@@ -26,7 +26,7 @@ type TContentTopProps = {
 
 const ContentTop: FC<TContentTopProps> = ({
 	title,
-	publishedDate,
+	createdAt,
 	views,
 	comments,
 	authorData
@@ -34,7 +34,7 @@ const ContentTop: FC<TContentTopProps> = ({
 	return (
 		<div className={styles.contentBodyTop}>
 			<TopInfo
-				date={publishedDate}
+				date={createdAt}
 				totComments={comments}
 				totViews={views}
 				title={title}

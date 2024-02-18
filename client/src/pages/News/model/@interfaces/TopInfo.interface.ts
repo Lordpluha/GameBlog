@@ -1,5 +1,5 @@
 export interface ITopInfo {
-	date: number
+	date: string
 	totComments: number
 	totViews: number
 	title: string

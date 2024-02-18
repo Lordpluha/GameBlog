@@ -11,7 +11,7 @@ export type TNewsListResponse<T> = {
 export const NewsApi = createApi({
 	reducerPath: 'news/api',
 	baseQuery: fetchBaseQuery({
-		baseUrl: import.meta.env.VITE_SERVER_URL
+		baseUrl: 'http://localhost:3001/api/'
 	}),
 	endpoints: build => ({
 		getNewsList: build.query<TNewsListResponse<IPublication>, number>({
@@ -21,6 +21,16 @@ export const NewsApi = createApi({
 					page,
 					isVerif: 'false'
 				}
+			})
+		}),
+		getNewsBySlug: build.query<IPublication, string>({
+			query: (slug: string) => ({
+				url: `article/slug/${slug}`
+			})
+		}),
+		getNewsById: build.query<IPublication, number>({
+			query: (id: number) => ({
+				url: `article/${id}`
 			})
 		}),
 		getCategory: build.query<ICategory[], void>({
@@ -33,4 +43,4 @@ export const NewsApi = createApi({
 	})
 })
 
-export const { useGetNewsListQuery, useGetCategoryQuery } = NewsApi
+export const { useGetNewsListQuery, useGetCategoryQuery, useGetNewsBySlugQuery, useGetNewsByIdQuery } = NewsApi
