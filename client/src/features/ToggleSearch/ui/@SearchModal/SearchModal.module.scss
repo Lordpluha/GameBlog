@@ -6,14 +6,11 @@
 	@apply text-[var(--default-dark-text-color)] absolute ml-3;
 }
 
-.search_icon:hover {
-	color: var(--hover-active-color); // не работает
-}
-
 .searchInput {
 	@apply rounded-lg py-4 pl-12 leading-7 w-full  bg-[var(--itemBlock-bg-color)] text-[var(--text-color)];
 }
 
 .searchFormTags {
-	@apply px-4 py-3 bg-[var(--li-bg-color)] text-[var(--text-color)] rounded-xl cursor-pointer;
+	@apply px-4 py-3 bg-[var(--li-bg-color)] text-[var(--text-color)] rounded-xl cursor-pointer
+	hover:bg-[#414749] active:bg-[#5d5b5b];
 }

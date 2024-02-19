@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import { MessageCircleMore } from 'lucide-react'
 
@@ -16,11 +16,19 @@ import CommentsModal from './@Comments/CommentsModal'
 const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 	const refCommentModal = useRef<HTMLDivElement>(null!)
 	const { modal, setModal } = useModal(refCommentModal)
+	const [isHover, setIsHover] = useState<Boolean>(false)
 
 	return (
 		<>
 			<button
-				className='bg-[var(--default-dark-btn-color)] rounded-[10px] p-2'
+				style={{
+					background: isHover
+						? '#2F3437'
+						: 'var(--default-dark-btn-color)'
+				}}
+				onMouseEnter={() => setIsHover(true)}
+				onMouseLeave={() => setIsHover(false)}
+				className='rounded-[10px] p-2'
 				onClick={() => {
 					setModal(!modal)
 				}}

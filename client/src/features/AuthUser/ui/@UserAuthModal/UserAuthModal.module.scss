@@ -27,9 +27,13 @@
 }
 
 .userAuthBtnRegistration {
-	@apply rounded-lg px-4 text-lg bg-[var(--li-bg-color)] text-[var(--text-color)] py-4 my-4;
+	@apply rounded-lg px-4 text-lg bg-[var(--li-bg-color)] text-[var(--text-color)] py-4 my-4
+	 hover:bg-[#414749];
 }
 
 .userAuthBtnPrivacy {
 	@apply text-[var(--text-color)] text-sm w-full mt-5 py-2;
+}
+.icon:hover {
+	color: var(--hover-active-color);
 }

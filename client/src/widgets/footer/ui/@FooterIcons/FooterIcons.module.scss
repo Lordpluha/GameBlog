@@ -4,13 +4,13 @@ ul.footer__icons {
 		@apply hidden;
 	}
 	li {
-		@apply relative w-[25px] h-[25px];
+		@apply relative;
 
 		.social_icon {
-			@apply w-[25px] h-[25px] block;
+			@apply block;
 			&:hover {
 				.tooltip {
-					visibility: visible;
+					display: block;
 					opacity: 1;
 				}
 			}
@@ -22,26 +22,15 @@ ul.footer__icons {
 	}
 
 	.dropdown {
-		@apply relative inline-block;
+		@apply relative flex;
 
 		svg {
 			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
 		}
+
 		&:hover .dropdown_content {
-			// display: block;
-			// opacity: 1;
-			animation: myAnimation 3s;
-		}
-		@keyframes myAnimation {
-			0% {
-				opacity: 0%;
-			}
-			90% {
-				opacity: 90%;
-			}
-			100% {
-				opacity: 100%;
-			}
+			display: flex;
+			opacity: 1;
 		}
 
 		@media (max-width: 1145px) {
@@ -49,10 +38,10 @@ ul.footer__icons {
 		}
 
 		.dropdown_content {
-			@apply bg-[#383838] absolute rounded-xl flex flex-col opacity-0 hover:opacity-100 top-[32px] 
+			@apply bg-[#383838] absolute rounded-xl hidden flex-col opacity-0 hover:opacity-100 top-[32px] 
 		z-10 left-[-350%] shadow-md transition-opacity duration-300 ease-out;
 			li {
-				@apply p-4 block w-[200px] h-[52px] hover:text-[#747C81] flex justify-between;
+				@apply p-4 w-[200px] h-[52px] hover:text-[#747C81] flex justify-between;
 				&:hover svg {
 					fill: #747c81;
 				}
@@ -62,7 +51,7 @@ ul.footer__icons {
 }
 
 .tooltip {
-	@apply bg-[#282c2e] opacity-0 absolute text-[12px];
+	@apply bg-[#282c2e] opacity-0 hidden absolute text-[12px];
 	border-top: 1px solid white;
 	border-left: 1px solid white;
 	top: 30px;
