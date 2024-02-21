@@ -1438,11 +1438,11 @@ header .header__content .header__content-icons button {
 header .header__content .header__content-icons button:first-child {
   background: none;
 }
-header .header__content .header__content-icons button:last-child {
-  border-radius: 50%;
-}
 header .header__content .header__content-icons button:hover {
   background-color: #2f3437;
+}
+header .header__content .header__content-icons #header__user {
+  border-radius: 50%;
 }
 header .header__content .header__content-icons button.header__search {
   position: relative;

@@ -135,15 +135,14 @@ header {
                     background: none;
                 }
 
-                &:last-child {
-                    border-radius: 50%;
-                }
 
                 &:hover {
                     background-color: #2f3437;
                 }
             }
-
+            #header__user{
+                border-radius: 50%;
+            }
             button.header__search {
                 position: relative;
 
