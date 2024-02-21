@@ -337,7 +337,7 @@ button {
 .header__find {
   background-color: #161b1d;
   padding: 24px;
-  top: -100%;
+  top: 0;
   width: 100%;
   right: 0;
   opacity: 0;
