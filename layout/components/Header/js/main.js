@@ -182,23 +182,6 @@ window.onclick = function (event) {
 };
 
 
-// background transparent on click search
-function look() {
-  document.getElementById("overlay-look").style.display = "flex";
-}
-
-function  stop() {
-  document.getElementById("overlay-look").style.display = "none";
-}
-
-window.onclick = function (event) {
-  let overlay = document.getElementById("overlay-look");
-  if (event.target === overlay) {
-    overlay.style.display = "none";
-  }
-};
-
-
 // login on click button.user
 document.addEventListener("DOMContentLoaded", function () {
   let person = document.getElementById("choose-icon");

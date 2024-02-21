@@ -299,7 +299,6 @@ button {
 }
 
 #overlay-look {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -312,6 +311,10 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 999;
 }
 
 .header__find {
@@ -321,7 +324,7 @@ button {
   width: 100%;
   right: 0;
   z-index: 999;
-  position: fixed;
+  position: absolute;
   opacity: 0;
   -webkit-transition: top 0.5s, opacity 0.5s ease;
   transition: top 0.5s, opacity 0.5s ease;
