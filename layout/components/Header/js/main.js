@@ -182,6 +182,23 @@ window.onclick = function (event) {
 };
 
 
+// background transparent on click search
+function look() {
+  document.getElementById("overlay-look").style.display = "flex";
+}
+
+function  stop() {
+  document.getElementById("overlay-look").style.display = "none";
+}
+
+window.onclick = function (event) {
+  let overlay = document.getElementById("overlay-look");
+  if (event.target === overlay) {
+    overlay.style.display = "none";
+  }
+};
+
+
 // login on click button.user
 document.addEventListener("DOMContentLoaded", function () {
   let person = document.getElementById("choose-icon");
@@ -202,27 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
       person.classList.remove("active");
     }
   });
-});
-
-
-// login window
-document.addEventListener("DOMContentLoaded", () => {
-  const login = document.getElementById("login");
-  const register = document.getElementById("fill-in");
-  const go = document.getElementById("sign-up");
-  const back = document.getElementById("back");
-  if (login && register && go && back) {
-    login.style.display = "block";
-    register.style.display = "none";
-    go.addEventListener("click", () => {
-      login.style.display = "none";
-      register.style.display = "block";
-    });
-    back.addEventListener("click", () => {
-      login.style.display = "block";
-      register.style.display = "none";
-    });
-  }
 });
 
 

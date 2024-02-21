@@ -4,7 +4,7 @@ header {
     display: flex;
     justify-content: center;
     position: sticky;
-    z-index: 99999;
+    z-index: 9999;
     height: 72px;
     padding: 0 30px;
     background-color: #161B1D;
@@ -194,8 +194,8 @@ header {
             button.header__burger {
                 display: flex;
                 flex-direction: column;
-                width: 30px;
-                height: 30px;
+                width: 36px;
+                height: 36px;
                 background: none;
 
                 .btn-line {

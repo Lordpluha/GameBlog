@@ -299,6 +299,7 @@ button {
 }
 
 #overlay-look {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -311,23 +312,39 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   z-index: 999;
+  -webkit-animation: fadeIn 0.5s ease-in-out;
+          animation: fadeIn 0.5s ease-in-out;
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .header__find {
   background-color: #161b1d;
   padding: 24px;
-  top: -20%;
+  top: -100%;
   width: 100%;
   right: 0;
+  opacity: 0;
   z-index: 999;
   position: absolute;
-  opacity: 0;
-  -webkit-transition: top 0.5s, opacity 0.5s ease;
-  transition: top 0.5s, opacity 0.5s ease;
+  -webkit-transition: top 0.5s, opacity 0.5s ease-in-out, visibility 0.5s;
+  transition: top 0.5s, opacity 0.5s ease-in-out, visibility 0.5s;
   font-family: "Roboto", sans-serif;
 }
 .header__find .header__panel {
@@ -424,8 +441,27 @@ button {
   top: 72px;
   z-index: 999;
   opacity: 1;
+  -webkit-animation: slideIn 0.5s ease-in-out;
+          animation: slideIn 0.5s ease-in-out;
 }
 
+@-webkit-keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 72px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 72px;
+  }
+}
 .header__comments-side {
   background-color: #1e2224;
   -webkit-box-shadow: 1px 3px 24px rgba(0, 0, 0, 0.18);
@@ -1281,7 +1317,7 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   position: sticky;
-  z-index: 99999;
+  z-index: 9999;
   height: 72px;
   padding: 0 30px;
   background-color: #161B1D;
@@ -1497,8 +1533,8 @@ header .header__content .header__content-icons button.header__burger {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   background: none;
 }
 header .header__content .header__content-icons button.header__burger .btn-line {
