@@ -1,0 +1,38 @@
+name: Nest Server Action
+on:
+  push:
+    branches: [ dev/back/nest ]
+  pull_request:
+    branches: [ dev/back/nest ]
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-varsion: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install yarn
+        run: npm install yarn
+        working-directory: './nest-server'
+      - name: install modules
+        run: yarn install
+        working-directory: './nest-server'
+      - name: build 
+        working-directory: './nest-server'
+        run: yarn run build
+  
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+  
+    steps: 
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.SERVICE_ID }} # Can be found as part of the Deploy Hook
+          api-key: ${{ secrets.RENDER_API_KEY }} # Create your API key in Render Dashboard > Account Settings
