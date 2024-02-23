@@ -5,6 +5,10 @@ ul.footer__icons {
 	}
 	li {
 		@apply relative;
+		&:hover .dropdown_content {
+			display: flex;
+			opacity: 1;
+		}
 
 		.social_icon {
 			@apply block;
@@ -26,11 +30,6 @@ ul.footer__icons {
 
 		svg {
 			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
-		}
-
-		&:hover .dropdown_content {
-			display: flex;
-			opacity: 1;
 		}
 
 		@media (max-width: 1145px) {
