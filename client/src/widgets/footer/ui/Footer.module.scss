@@ -1,6 +1,6 @@
 footer {
 	@apply bg-[#161B1D] text-[--default-light-color] absolute bottom-0 w-full font-["Rubik"]
-	font-sans z-0; //если ставлю позицию релатив, то все летит
+	font-sans z-0;
 }
 
 .footer__information {
