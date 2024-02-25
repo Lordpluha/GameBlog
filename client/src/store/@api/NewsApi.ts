@@ -1,12 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { ICategory, IPublication } from '@model/interfaces'
+import { TServerResponse } from '@store/serverResponse.type'
 
-export type TNewsListResponse<T> = {
-	count: number
-	pageCount: number
-	items: T[]
-}
+
 
 export const NewsApi = createApi({
 	reducerPath: 'news/api',
@@ -14,7 +11,7 @@ export const NewsApi = createApi({
 		baseUrl: 'http://localhost:3001/api/'
 	}),
 	endpoints: build => ({
-		getNewsList: build.query<TNewsListResponse<IPublication>, number>({
+		getNewsList: build.query<TServerResponse<IPublication>, number>({
 			query: (page: number) => ({
 				url: `article`,
 				params: {
@@ -37,7 +34,7 @@ export const NewsApi = createApi({
 			query: () => ({
 				url: `category`
 			}),
-			transformResponse: (response: TNewsListResponse<ICategory>) =>
+			transformResponse: (response: TServerResponse<ICategory>) =>
 				response.items
 		})
 	})
