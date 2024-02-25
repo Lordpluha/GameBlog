@@ -1,4 +1,4 @@
-// Zer0
+// Zer0  
 * {
 	position: relative;
 	box-sizing: border-box;
@@ -19,9 +19,9 @@
 	overflow-wrap: normal;
 	word-break: normal;
 
-   	user-select: none;
+	user-select: none;
 
-   	list-style-type: none;
+	list-style-type: none;
 
 	font-weight: normal;
 	font-style: normal;
@@ -32,11 +32,15 @@ html {
 	scroll-behavior: smooth;
 }
 
-a, button, input, textarea, form {
+a,
+button,
+input,
+textarea,
+form {
 	color: #000;
 	text-decoration: none;
 	border: none;
-
+	outline: none;
 	&:hover {
 		cursor: pointer;
 	}
@@ -55,4 +59,22 @@ img {
 	overflow: clip;
 }
 
-[aria-hidden="true"] { visibility: hidden; }
+body {
+	background-color: #161B1D;
+	transition: background-color 1s ease;
+}
+body.light {
+	background: #DEDFE1;
+}
+main{
+	background-color: #1E2224;
+}
+li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+[aria-hidden="true"] {
+	visibility: hidden;
+}

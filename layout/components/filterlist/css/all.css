@@ -30,12 +30,21 @@ html {
   scroll-behavior: smooth;
 }
 
-a, button, input, textarea, form {
+a,
+button,
+input,
+textarea,
+form {
   color: #000;
   text-decoration: none;
   border: none;
+  outline: none;
 }
-a:hover, button:hover, input:hover, textarea:hover, form:hover {
+a:hover,
+button:hover,
+input:hover,
+textarea:hover,
+form:hover {
   cursor: pointer;
 }
 
@@ -54,13 +63,32 @@ img {
   overflow: clip;
 }
 
+body {
+  background-color: #161B1D;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+}
+
+body.light {
+  background: #DEDFE1;
+}
+
+main {
+  background-color: #1E2224;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 [aria-hidden=true] {
   visibility: hidden;
 }
 
-.filters {
-  background-color: #1E2224;
-}
 .filters .filters__tabs {
   display: -webkit-box;
   display: -ms-flexbox;

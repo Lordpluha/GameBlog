@@ -31,12 +31,21 @@ html {
   scroll-behavior: smooth;
 }
 
-a, button, input, textarea, form {
+a,
+button,
+input,
+textarea,
+form {
   color: #000;
   text-decoration: none;
   border: none;
+  outline: none;
 }
-a:hover, button:hover, input:hover, textarea:hover, form:hover {
+a:hover,
+button:hover,
+input:hover,
+textarea:hover,
+form:hover {
   cursor: pointer;
 }
 
@@ -55,6 +64,28 @@ img {
   overflow: clip;
 }
 
+body {
+  background-color: #161B1D;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+}
+
+body.light {
+  background: #DEDFE1;
+}
+
+main {
+  background-color: #1E2224;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 [aria-hidden=true] {
   visibility: hidden;
 }
@@ -67,23 +98,8 @@ main,
 aside,
 section {
   display: block;
-  position: relative;
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   height: auto;
-}
-
-body {
-  background-color: #161B1D;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 footer {
@@ -231,7 +247,7 @@ footer .footer__information .footer__box ul.footer__icons li .dropdown svg.in {
   display: block;
   width: 25px;
   height: 25px;
-  color: white;
+  color: #6A7276;
 }
 footer .footer__information .footer__box ul.footer__icons li .dropdown svg.in:hover {
   color: #6A7276;
@@ -261,14 +277,14 @@ footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown
   color: #747C81;
 }
 footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a {
-  color: #fff;
+  color: #6A7276;
   display: block;
   height: 52px;
   padding: 16px;
   font-family: "Rubik", sans-serif;
 }
 footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a:hover {
-  color: #747C81;
+  color: #fff;
 }
 footer .footer__information .footer__box ul.footer__icons li .dropdown .dropdown-content li a p {
   font-size: 14px;
@@ -295,10 +311,6 @@ footer .footer__information .footer__box .tooltip {
   font-size: 14px;
   font-family: "Rubik", sans-serif;
   opacity: 0;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
   z-index: 2;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -306,6 +318,10 @@ footer .footer__information .footer__box .tooltip {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   padding: 3px;
 }
 footer .footer__information .footer__box .tooltip:after {

@@ -124,11 +124,11 @@ footer {
                             display: block;
                             width: 25px;
                             height: 25px;
-                            color: white;
+                            color: #6A7276;
 
-                            &:hover {
-                                color: #6A7276;
-                            }
+                                &:hover {
+                                    color: #6A7276;
+                                }
 
                         }
 
@@ -157,14 +157,14 @@ footer {
                                 }
 
                                 a {
-                                    color: #fff;
+                                    color: #6A7276;
                                     display: block;
                                     height: 52px;
                                     padding: 16px;
                                     font-family: 'Rubik', sans-serif;
 
                                     &:hover {
-                                        color: #747C81;
+                                        color: #fff;
                                     }
 
                                     p {
@@ -193,20 +193,9 @@ footer {
 
 
             .tooltip {
-                background-color: #fff;
-                color: #000;
-                display: block;
-                position: absolute;
-                bottom: 10px;
-                left: 50%;
-                font-size: 14px;
-                font-family: 'Rubik', sans-serif;
-                opacity: 0;
+                @include tooltip;
                 transform: translate(-50%, -100%);
                 transition: all 0.3s ease;
-                z-index: 2;
-                width: max-content;
-                height: max-content;
                 padding: 3px;
 
                 &:after {
