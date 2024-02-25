@@ -72,7 +72,7 @@ const ThemeModeModal = forwardRef<
 				style={{
 					color: isActive ? 'white' : 'var(--default-dark-text-color)'
 				}}
-				onClick={deviceTheme}//?
+				onClick={deviceTheme} //?
 			>
 				<MonitorSmartphone />
 				<p>Системная</p>
