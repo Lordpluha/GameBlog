@@ -1,0 +1,18 @@
+.headerNavUl {
+	@apply flex flex-col md:flex-row md:items-center md:text-[var(--default-light-color)] gap-6 text-[18px];
+	li {
+		@apply hover:text-[--hover-active-color];
+	}
+}
+
+.headerNav {
+	@apply md:static absolute md:min-h-fit min-h-[60vh] left-0 md:w-auto w-full flex items-center px-5;
+}
+
+.toggleMenuOpen {
+	@apply top-[79px] bg-[var(--default-light-color)] text-[var(--default-dark-color)];
+}
+
+.toggleMenuClose {
+	@apply top-[-500%];
+}
