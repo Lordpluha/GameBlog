@@ -1,5 +1,5 @@
 import { IComment } from "@model/interfaces";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { TServerResponse } from "@store/serverResponse.type";
 
 export const CommentsApi = createApi({

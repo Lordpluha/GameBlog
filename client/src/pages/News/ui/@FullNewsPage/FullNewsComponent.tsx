@@ -6,6 +6,7 @@ import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'
 import styles from './FullNews.module.scss'
 import { IPublication } from '@model/interfaces'
+import { useGetArtCommentsQuery } from '@store/@api/CommentsApi'
 
 type TFullNewsProps = {
 	fullNewsData: IPublication
@@ -32,9 +33,13 @@ const FullNewsComponent: FC<TFullNewsProps> = props => {
 		views,
 		_count,
 		author,
-		tags
+		tags,
+		id
 	} = props.fullNewsData
 
+	const {data} = useGetArtCommentsQuery(id)
+	console.log(data?.items);
+	
 	return (
 		<section className={styles.contentBody}>
 			<div className={styles.contentWrapper}>

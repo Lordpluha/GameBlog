@@ -20,7 +20,6 @@ import styles from './Header.module.scss'
  */
 const Header = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-	const [newCommentsData, _] = useState<IComment[]>([])
 
 	return (
 		<header className={styles.header}>
@@ -32,7 +31,7 @@ const Header = () => {
 					<div className='hidden md:block'>
 						<ThemeBtn />
 					</div>
-					<CommentsBtn newComments={newCommentsData} />
+					<CommentsBtn />
 					<UserAuthBtn />
 					<button
 						className='lg2:hidden'

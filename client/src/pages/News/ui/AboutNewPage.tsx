@@ -8,7 +8,7 @@ import FullNewsComponent from './@FullNewsPage/FullNewsComponent'
 import { useGetNewsBySlugQuery } from '@store/@api/NewsApi'
 
 const AboutNewPage = () => {
-	const [otherNews, setOtherNews] = useState<INewsNavigation[]>([])
+	const [otherNews, _] = useState<INewsNavigation[]>([])
 	const {slug} = useParams()
 	const {data} = useGetNewsBySlugQuery(slug)
 

@@ -19,7 +19,10 @@ export const setupStore = () => {
 	return configureStore({
 		reducer: rootReducer,
 		middleware: getDefaultMiddleware =>
-			getDefaultMiddleware().concat(NewsApi.middleware)
+			getDefaultMiddleware().concat([
+				NewsApi.middleware,
+				CommentsApi.middleware
+			])
 	})
 }
 

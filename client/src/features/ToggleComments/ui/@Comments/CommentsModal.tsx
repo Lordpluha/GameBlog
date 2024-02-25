@@ -2,31 +2,30 @@ import {
 	type Dispatch,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef
-} from 'react'
+	forwardRef} from 'react'
 
 import { X } from 'lucide-react'
 
-import { type IComment } from '@model/interfaces'
-
 import CommentCard from './@CommentCard/CommentCard'
 import styles from './CommentsModal.module.scss'
+import { useGetCommentsQuery } from '@store/@api/CommentsApi'
 
 interface TCommentModalProps {
-	commentsList: IComment[]
 	setModal: Dispatch<SetStateAction<boolean>>
 }
 
 /**
  * Component popum modal with comments list.
  * Accepting props commentsList and boolean state setModal for close outside
- * @param commentList - array of INewComment elements
  * @param setModal - react set state action typeof boolean
  */
 const CommentsModal = forwardRef<
 	HTMLDivElement,
 	PropsWithRef<TCommentModalProps>
->(({ commentsList, setModal }, ref) => (
+>(({ setModal }, ref) => {
+	const {data} = useGetCommentsQuery()
+
+	return (
 	<div className={styles.commentsBlock} ref={ref}>
 		<div className={styles.commentsBlockHeader}>
 			<p className='text-3xl font-semibold'>Новые комментарии</p>
@@ -40,8 +39,8 @@ const CommentsModal = forwardRef<
 			</div>
 		</div>
 		<div className={styles.commentsBlockBody}>
-			{commentsList.length > 0 ? (
-				commentsList.map((item, idx) => (
+			{data?.items ? (
+				data?.items.map((item, idx) => (
 					<CommentCard key={idx} {...item} />
 				))
 			) : (
@@ -53,6 +52,6 @@ const CommentsModal = forwardRef<
 			)}
 		</div>
 	</div>
-))
+)})
 
 export default CommentsModal
