@@ -24,4 +24,4 @@ export const CommentsApi = createApi({
   })
 })
 
-export const {useGetCommentsQuery} = CommentsApi
+export const {useGetCommentsQuery, useGetArtCommentsQuery} = CommentsApi
