@@ -1,5 +1,5 @@
 .footer__list_right {
-	@apply mb-[64px];
+	@apply mb-[64px] overflow-hidden;
 	@media (max-width: 870px) {
 		@apply grid-cols-1 mb-[40px];
 	}
@@ -9,7 +9,7 @@
 }
 
 .footer__list_left {
-	@apply mb-[64px];
+	@apply mb-[64px] overflow-hidden;
 	@media (max-width: 870px) {
 		@apply grid-cols-1 m-0;
 	}
@@ -20,17 +20,21 @@
 
 .list__part {
 	@apply mb-[32px];
+
 	@media (max-width: 870px) {
 		@apply h-auto;
 	}
 	@media (max-width: 870px) {
-		@apply mb-[20px] last:mb-0;
+		@apply mb-[20px];
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	@media (max-width: 600px) {
 		@apply m-0;
 	}
 	h6 {
-		@apply font-bold mb-4 leading-5 text-[16px] hover:text-[#8B8D8E] cursor-pointer; //когда ставлю text-base, то шрифт -14, а не 16, сделать еще одну переменную?
+		@apply font-bold mb-4 leading-5 text-[16px] hover:text-[#8B8D8E] cursor-pointer;
 		@media (max-width: 870px) {
 			@apply text-[14px] mb-3;
 		}
@@ -39,12 +43,21 @@
 
 .list__fill {
 	@apply flex flex-wrap gap-y-2 gap-x-2;
+	margin: 0 0 0 -10px;
 	@media (max-width: 600px) {
 		@apply hidden;
 	}
 	a,
 	li {
 		@apply text-[#747C81] cursor-pointer leading-5 font-semibold hover:text-white;
+	}
+	a::before {
+		content: '•';
+		margin-right: 8px;
+		color: #747c81;
+	}
+	a:nth-child(1) {
+		margin-left: 0px;
 	}
 	@media (max-width: 870px) {
 		@apply text-[12px] leading-4;

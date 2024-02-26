@@ -1,7 +1,7 @@
 ul.footer__icons {
 	@apply flex gap-x-8 relative;
 	margin: 0 auto;
-	@media (max-width: 1145px) {
+	@media (max-width: 1165px) {
 		@apply hidden;
 	}
 	li {
