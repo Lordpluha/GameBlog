@@ -1,35 +1,35 @@
-// Zer0  
+// Zer0
 * {
-	position: relative;
-	box-sizing: border-box;
-	z-index: 0;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 0;
 
-	padding: 0;
-	margin: 0;
-	border: none;
-	outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
 
-	background-image: none;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-clip: padding-box;
+  background-image: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
 
-	overflow: visible;
-	overflow-wrap: normal;
-	word-break: normal;
+  overflow: visible;
+  overflow-wrap: normal;
+  word-break: normal;
 
-	user-select: none;
+  user-select: none;
 
-	list-style-type: none;
+  list-style-type: none;
 
-	font-weight: normal;
-	font-style: normal;
-	line-height: 1em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1em;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 a,
@@ -37,44 +37,46 @@ button,
 input,
 textarea,
 form {
-	color: #000;
-	text-decoration: none;
-	border: none;
-	outline: none;
-	&:hover {
-		cursor: pointer;
-	}
+  color: #000;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 span {
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
 }
 
 img {
-	max-width: 100%;
-	object-fit: cover;
-	object-position: center;
-	overflow: clip;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: clip;
 }
 
 body {
-	background-color: #161B1D;
-	transition: background-color 1s ease;
+  background-color: #161b1d;
+  transition: background-color 1s ease;
 }
 body.light {
-	background: #DEDFE1;
+  background: #dedfe1;
 }
-main{
-	background-color: #1E2224;
+main {
+  background-color: #1e2224;
+  max-width: 1280px;
+  margin: 16px auto;
 }
-li{
-	list-style-type: none;
+li {
+  list-style-type: none;
 }
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
 [aria-hidden="true"] {
-	visibility: hidden;
+  visibility: hidden;
 }
