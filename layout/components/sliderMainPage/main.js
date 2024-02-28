@@ -7,10 +7,10 @@ const swiperUp = new Swiper(swiperUpWrapper, {
   spaceBetween: 20,
   speed: swiperDelay,
   loop: true,
-  // autoplay: {
-  //   delay: swiperDuration,
-  //   disableOnInteraction: false
-  // },
+  autoplay: {
+    delay: swiperDuration,
+    disableOnInteraction: false
+  },
   pagination: {
     el: ".pagination-swiper-up",
     type: "bullets",
