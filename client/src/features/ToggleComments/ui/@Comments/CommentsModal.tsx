@@ -30,14 +30,14 @@ const CommentsModal = forwardRef<
 	<div className={styles.commentsBlock} ref={ref}>
 		<div className={styles.commentsBlockHeader}>
 			<p className='text-3xl font-semibold'>Новые комментарии</p>
-			<div
+			<button
 				className='cursor-pointer'
 				onClick={() => {
 					setModal(false)
 				}}
 			>
-				<X />
-			</div>
+				<X className={styles.icon} />
+			</button>
 		</div>
 		<div className={styles.commentsBlockBody}>
 			{commentsList.length > 0 ? (
