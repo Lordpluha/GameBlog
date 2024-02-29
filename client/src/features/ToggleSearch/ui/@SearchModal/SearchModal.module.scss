@@ -11,5 +11,6 @@
 }
 
 .searchFormTags {
-	@apply px-4 py-3 bg-[var(--li-bg-color)] text-[var(--text-color)] rounded-xl cursor-pointer;
+	@apply px-4 py-3 bg-[var(--li-bg-color)] text-[var(--text-color)] rounded-xl cursor-pointer
+	hover:bg-[#414749] active:bg-[#5d5b5b];
 }

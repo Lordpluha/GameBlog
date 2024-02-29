@@ -34,7 +34,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 								setModal(!modal)
 							}}
 						>
-							<X />
+							<X className={styles.icon} />
 						</div>
 						<div className={styles.userAuthContent}>
 							<h1 className={styles.userAuthTitle}>

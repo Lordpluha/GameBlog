@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import { Search, X } from 'lucide-react'
 
@@ -10,6 +10,7 @@ import SearchModal from './@SearchModal/SearchModal'
 const SearchBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
 	const { modal, setModal } = useModal(refModal)
+	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
@@ -18,7 +19,15 @@ const SearchBtn = () => {
 					setModal(!modal)
 				}}
 			>
-				{!modal ? <Search /> : <X />}
+				{!modal ? (
+					<Search
+						style={{ color: isHover ? 'red' : 'white' }}
+						onMouseEnter={() => setIsHover(true)}
+						onMouseLeave={() => setIsHover(false)}
+					/>
+				) : (
+					<X />
+				)}
 			</button>
 			{modal && <SearchModal ref={refModal} />}
 		</>
