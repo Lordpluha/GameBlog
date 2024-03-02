@@ -3,6 +3,10 @@
 	li {
 		@apply hover:text-[--hover-active-color];
 	}
+
+	@media (max-width: 1145px) {
+		display: none;
+	}
 }
 
 .headerNav {

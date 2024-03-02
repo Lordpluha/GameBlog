@@ -7,6 +7,7 @@ import { type IComment } from '@model/interfaces'
 import { useModal } from '@shared/lib'
 
 import CommentsModal from './@Comments/CommentsModal'
+import styles from './CommentsBtn.module.scss'
 
 /**
  * Modal component with a list of new comments
@@ -28,7 +29,7 @@ const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 				}}
 				onMouseEnter={() => setIsHover(true)}
 				onMouseLeave={() => setIsHover(false)}
-				className='rounded-[10px] p-2'
+				className={styles.commentBtn}
 				onClick={() => {
 					setModal(!modal)
 				}}

@@ -35,7 +35,7 @@ const Header = () => {
 					<CommentsBtn newComments={newCommentsData} />
 					<UserAuthBtn />
 					<button
-						className='md:hidden'
+						className={styles.headerBurger}
 						onClick={() => {
 							setToggleMenu(!toggleMenu)
 						}}
