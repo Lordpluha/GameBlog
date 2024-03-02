@@ -4,6 +4,7 @@ import {
 	type SetStateAction,
 	forwardRef
 } from 'react'
+import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
 
@@ -40,7 +41,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 							<h1 className={styles.userAuthTitle}>
 								Вход на GameBlog
 							</h1>
-							<h4 className='text-[var(--text-color)] pt-3 text-lg'>
+							<h4 className='text-[var(--text-color)] pt-3 text-[18px]'>
 								Войти через аккаунт
 							</h4>
 							<div className={styles.userAuthBtnSocialIcon}>
@@ -50,8 +51,10 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 								Зарегистрироваться
 							</button>
 							<p className={styles.userAuthBtnPrivacy}>
-								Авторизуясь, ты соглашаешься с правилами сайта и
-								пользовательским соглашением.
+								Авторизуясь, ты соглашаешься с
+								<Link to='#'>правилами сайта</Link> и
+								<Link to='#'>пользовательским соглашением</Link>
+								.
 							</p>
 						</div>
 					</div>

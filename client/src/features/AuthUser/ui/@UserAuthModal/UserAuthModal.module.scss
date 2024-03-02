@@ -1,5 +1,14 @@
 .userAuthBlockOverflow {
 	@apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-0 justify-center items-center w-full md:inset-0 h-full max-h-full;
+	animation: Animation 1.3s;
+}
+@keyframes Animation {
+	from {
+		top: 100%;
+	}
+	to {
+		top: 0;
+	}
 }
 
 .userAuthBlockPosition {
@@ -8,6 +17,8 @@
 
 .userAuthBlockWrapper {
 	@apply relative bg-[var(--modal-bg-color)] rounded-3xl shadow-2xl;
+	border: 3px solid #41474a;
+	padding: 68px 24px 48px;
 }
 
 .userAuthHeaderBtnClose {
@@ -19,7 +30,7 @@
 }
 
 .userAuthTitle {
-	@apply text-[var(--text-color)] items-center mt-20 text-2xl font-semibold;
+	@apply text-[var(--text-color)] items-center text-2xl font-bold mb-[44px];
 }
 
 .userAuthBtnSocialIcon ul {
@@ -27,12 +38,16 @@
 }
 
 .userAuthBtnRegistration {
-	@apply rounded-lg px-4 text-lg bg-[var(--li-bg-color)] text-[var(--text-color)] py-4 my-4
-	 hover:bg-[#414749];
+	@apply rounded-lg px-4 text-lg bg-[var(--li-bg-color)] text-[var(--text-color)] h-[48px] text-[#b0b4b8]
+	 hover:bg-[#2d3133] mt-[48px];
+	padding: 8px 16px;
 }
 
 .userAuthBtnPrivacy {
-	@apply text-[var(--text-color)] text-sm w-full mt-5 py-2;
+	@apply text-[var(--default-modal-text-color)] text-sm w-full mt-5 py-2;
+	a {
+		text-decoration: underline;
+	}
 }
 .icon:hover {
 	color: var(--hover-active-color);

@@ -1,27 +1,31 @@
+import { Link } from 'react-router-dom'
+
 import { GoogleIcon, OkIcon, VKIcon, YandexIcon } from '@shared/ui'
+
+import styles from './Social.module.scss'
 
 const Socials = () => {
 	return (
-		<ul>
-			<li className='hover:scale-125 transition duration-150 ease-in-out'>
-				<a href='#'>
+		<ul className={styles.list}>
+			<li>
+				<Link to='vk.com'>
 					<VKIcon />
-				</a>
+				</Link>
 			</li>
-			<li className='hover:scale-125 transition duration-150 ease-in-out'>
-				<a href='#'>
+			<li>
+				<Link to='google.com'>
 					<GoogleIcon />
-				</a>
+				</Link>
 			</li>
-			<li className='hover:scale-125 transition duration-150 ease-in-out'>
-				<a href='#'>
+			<li>
+				<Link to='#'>
 					<YandexIcon />
-				</a>
+				</Link>
 			</li>
-			<li className='hover:scale-125 transition duration-150 ease-in-out'>
-				<a href='#'>
+			<li>
+				<Link to='#'>
 					<OkIcon />
-				</a>
+				</Link>
 			</li>
 		</ul>
 	)

@@ -2,8 +2,7 @@ import {
 	type Dispatch,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef,
-	useState
+	forwardRef
 } from 'react'
 
 import { MonitorSmartphone } from 'lucide-react'
@@ -44,14 +43,10 @@ const ThemeModeModal = forwardRef<
 				: 'light'
 		)
 	}
-	const [isActive, setIsActive] = useState<Boolean>(false)
 
 	return (
 		<ul className={styles.headerToggleTheme} ref={ref}>
 			<li
-				style={{
-					color: isActive ? 'white' : 'var(--default-dark-text-color)'
-				}}
 				onClick={() => {
 					switchTheme('light')
 				}}
@@ -59,21 +54,13 @@ const ThemeModeModal = forwardRef<
 				<SunEl theme={theme} />
 			</li>
 			<li
-				style={{
-					color: isActive ? 'white' : 'var(--default-dark-text-color)'
-				}}
 				onClick={() => {
 					switchTheme('dark')
 				}}
 			>
 				<MoonEl theme={theme} />
 			</li>
-			<li
-				style={{
-					color: isActive ? 'white' : 'var(--default-dark-text-color)'
-				}}
-				onClick={deviceTheme} //?
-			>
+			<li onClick={deviceTheme}>
 				<MonitorSmartphone />
 				<p>Системная</p>
 			</li>

@@ -1,9 +1,19 @@
 .commentsBlock {
 	@apply bg-[var(--modal-bg-color)] w-[400px] rounded-3xl fixed top-[79px] right-4 bottom-1 shadow-2xl flex flex-col;
+	animation: Animation 1.3s;
+}
+@keyframes Animation {
+	from {
+		right: -100%;
+	}
+	to {
+		right: 0;
+	}
 }
 
 .commentsBlockHeader {
-	@apply flex justify-between items-center text-[var(--text-color)] p-4 mb-5;
+	@apply flex justify-between items-center text-[#dce6eb] p-4;
+	padding: 24px 16px 0;
 }
 .icon:hover {
 	color: var(--hover-active-color);
