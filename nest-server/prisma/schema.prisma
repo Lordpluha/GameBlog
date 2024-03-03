@@ -127,6 +127,6 @@ enum Role {
 }
 
 enum TypeContent {
-  BLOG
-  ARTICLE
+  blog
+  article
 }
