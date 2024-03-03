@@ -33,7 +33,6 @@ export class ArticleService {
 	}
 
 	async create(dto: CreateArticleDto, userId: number, preview: Express.Multer.File) {
-		console.log(dto)
 		const previewUrl = await this.fileService.upload(preview)
 		const existsCategories = await this.categoryService.getByIds([...dto.categories])
 		const article = await this.prisma.article.create({
@@ -42,6 +41,14 @@ export class ArticleService {
 				anyTags: dto.anyTags,
 				preview: previewUrl,
 				categories: {
+					connectOrCreate: {
+						create: {
+							name: 'Статьи'
+						},
+						where: {
+							name: 'Статьи'
+						}
+					},
 					connect: existsCategories.map(category => ({ id: category.id }))
 				},
 				author: {

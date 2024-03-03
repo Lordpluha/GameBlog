@@ -33,6 +33,16 @@ const createBlogs = async (quantity: number) => {
 					connect: {
 						id: 1
 					}
+				},
+				categories: {
+					connectOrCreate: {
+						create: {
+							name: 'Блоги'
+						},
+						where: {
+							name: 'Блоги'
+						}
+					}
 				}
 			}
 		})
@@ -41,7 +51,6 @@ const createBlogs = async (quantity: number) => {
 
 	return blogs.length
 }
-
 const createArticles = async (quantity: number) => {
 	const articles = []
 	const previewUrl = (await findByExtension()) ?? faker.image.urlPicsumPhotos()
@@ -60,10 +69,20 @@ const createArticles = async (quantity: number) => {
 				title,
 				slug: sl,
 				preview: previewUrl,
-				anyTags: anyTags.join(),
+				anyTags: anyTags,
 				author: {
 					connect: {
 						id: 1
+					}
+				},
+				categories: {
+					connectOrCreate: {
+						create: {
+							name: 'Статьи'
+						},
+						where: {
+							name: 'Статьи'
+						}
 					}
 				}
 			}
