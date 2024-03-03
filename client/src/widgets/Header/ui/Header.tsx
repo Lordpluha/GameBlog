@@ -40,7 +40,14 @@ const Header = () => {
 							setToggleMenu(!toggleMenu)
 						}}
 					>
-						{toggleMenu ? <X /> : <Menu />}
+						{toggleMenu ? (
+							<X />
+						) : (
+							<>
+								<Menu />
+								<NavBar toggleMenu={toggleMenu} />
+							</>
+						)}
 					</button>
 				</div>
 			</div>

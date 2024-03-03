@@ -14,7 +14,8 @@
 }
 
 .toggleMenuOpen {
-	@apply top-[79px] bg-[var(--default-light-color)] text-[var(--default-dark-color)];
+	@apply top-[79px] bg-[var(--modal-bg-color)] 
+	w-[340px] rounded-3xl fixed top-[79px] right-4 bottom-2 shadow-2xl flex flex-col;
 }
 
 .toggleMenuClose {
