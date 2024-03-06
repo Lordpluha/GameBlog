@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 
+import modal from 'antd/es/modal'
 import { MessageCircleMore } from 'lucide-react'
 
 import { type IComment } from '@model/interfaces'
@@ -17,7 +18,7 @@ import styles from './CommentsBtn.module.scss'
 const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 	const refCommentModal = useRef<HTMLDivElement>(null!)
 	const { modal, setModal } = useModal(refCommentModal)
-	const [isHover, setIsHover] = useState<Boolean>(false)
+	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>

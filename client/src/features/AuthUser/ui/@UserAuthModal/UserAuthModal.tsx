@@ -48,7 +48,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 								<Socials />
 							</div>
 							<button className={styles.userAuthBtnRegistration}>
-								Зарегистрироваться
+								<Link to=''> Зарегистрироваться </Link>
 							</button>
 							<p className={styles.userAuthBtnPrivacy}>
 								Авторизуясь, ты соглашаешься с

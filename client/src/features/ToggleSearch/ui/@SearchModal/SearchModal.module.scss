@@ -1,3 +1,15 @@
+.searchModal {
+	@apply fixed top-[79px] left-0 right-0;
+	animation: Animation 1s;
+}
+@keyframes Animation {
+	from {
+		top: -100%;
+	}
+	to {
+		top: 79px;
+	}
+}
 .searchInputBlock {
 	@apply items-center flex flex-row relative py-3 text-[18px] w-full;
 }

@@ -15,7 +15,19 @@
 
 .toggleMenuOpen {
 	@apply top-[79px] bg-[var(--modal-bg-color)] 
-	w-[340px] rounded-3xl fixed top-[79px] right-4 bottom-2 shadow-2xl flex flex-col;
+	w-[340px] rounded-3xl fixed top-[79px] right-4 bottom-2 shadow-2xl flex flex-col h-[500px];
+	.headerNavUl {
+		@apply flex flex-col gap-y-[24px] m-0 p-0;
+		li {
+			@apply font-semibold text-[16px] hover:text-white;
+			a::before {
+				content: '+';
+				cursor: pointer;
+				margin-right: 8px;
+				color: white;
+			}
+		}
+	}
 }
 
 .toggleMenuClose {
