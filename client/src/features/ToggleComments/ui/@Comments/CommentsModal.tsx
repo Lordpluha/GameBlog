@@ -2,7 +2,8 @@ import {
 	type Dispatch,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef
+	forwardRef,
+	MutableRefObject
 } from 'react'
 
 import { X } from 'lucide-react'
@@ -15,6 +16,7 @@ import styles from './CommentsModal.module.scss'
 interface TCommentModalProps {
 	commentsList: IComment[]
 	setModal: Dispatch<SetStateAction<boolean>>
+	closeButtonRef: MutableRefObject<HTMLButtonElement>
 }
 
 /**
@@ -26,7 +28,7 @@ interface TCommentModalProps {
 const CommentsModal = forwardRef<
 	HTMLDivElement,
 	PropsWithRef<TCommentModalProps>
->(({ commentsList, setModal }, ref) => (
+>(({ commentsList, setModal, closeButtonRef }, ref) => (
 	<div className={styles.commentsBlock} ref={ref}>
 		<div className={styles.commentsBlockHeader}>
 			<p className='text-3xl font-semibold'>Новые комментарии</p>
@@ -35,6 +37,7 @@ const CommentsModal = forwardRef<
 				onClick={() => {
 					setModal(false)
 				}}
+				ref={closeButtonRef}
 			>
 				<X className={styles.icon} />
 			</button>
