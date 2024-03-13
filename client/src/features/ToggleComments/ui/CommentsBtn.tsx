@@ -1,12 +1,11 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import modal from 'antd/es/modal'
 import { MessageCircleMore } from 'lucide-react'
 
 import { type IComment } from '@model/interfaces'
 
-import { useModal } from '@shared/lib'
-
+import useModal from '../lib/useModal'
 import CommentsModal from './@Comments/CommentsModal'
 import styles from './CommentsBtn.module.scss'
 
@@ -17,12 +16,15 @@ import styles from './CommentsBtn.module.scss'
  */
 const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 	const refCommentModal = useRef<HTMLDivElement>(null!)
-	const { modal, setModal } = useModal(refCommentModal)
+	const refButton = useRef<HTMLButtonElement>(null!)
+	console.log(refButton)
+	const { modal, setModal } = useModal(refCommentModal, refButton)
 	const [isHover, setIsHover] = useState<boolean>(false)
-
+	console.log(modal)
 	return (
 		<>
 			<button
+				ref={refButton}
 				style={{
 					background: isHover
 						? '#2F3437'
@@ -32,7 +34,7 @@ const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 				onMouseLeave={() => setIsHover(false)}
 				className={styles.commentBtn}
 				onClick={() => {
-					setModal(!modal)
+					setModal(prev => !prev)
 				}}
 			>
 				<MessageCircleMore />

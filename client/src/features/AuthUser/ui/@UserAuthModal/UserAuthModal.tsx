@@ -2,13 +2,15 @@ import {
 	type Dispatch,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef
+	forwardRef,
+	useState
 } from 'react'
 import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
 
 import Socials from './@Socials/Socials'
+import Registration from './Registration'
 import styles from './UserAuthModal.module.scss'
 
 interface TUserAuthModal {
@@ -25,6 +27,11 @@ interface TUserAuthModal {
  */
 const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 	({ modal, setModal }, ref) => {
+		const [modalOpened, setModalOpened] = useState(false)
+
+		const handleClick = () => {
+			setModalOpened(true)
+		}
 		return (
 			<div className={styles.userAuthBlockOverflow}>
 				<div className={styles.userAuthBlockPosition} ref={ref}>
@@ -47,9 +54,18 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 							<div className={styles.userAuthBtnSocialIcon}>
 								<Socials />
 							</div>
-							<button className={styles.userAuthBtnRegistration}>
-								<Link to=''> Зарегистрироваться </Link>
+							<button
+								className={styles.userAuthBtnRegistration}
+								onClick={handleClick}
+							>
+								Зарегистрироваться
 							</button>
+							{modalOpened && (
+								<Registration
+									modalOpened={modalOpened}
+									setModalOpened={setModalOpened}
+								/>
+							)}
 							<p className={styles.userAuthBtnPrivacy}>
 								Авторизуясь, ты соглашаешься с
 								<Link to='#'>правилами сайта</Link> и
