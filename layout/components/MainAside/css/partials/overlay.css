@@ -1,204 +1,4 @@
-/* SCSS Compiled */
-* {
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  z-index: 0;
-  padding: 0;
-  margin: 0;
-  border: none;
-  outline: none;
-  background-image: none;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-clip: padding-box;
-  overflow: visible;
-  overflow-wrap: normal;
-  word-break: normal;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  list-style-type: none;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1em;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-a,
-button,
-input,
-textarea,
-form {
-  color: #000;
-  text-decoration: none;
-  border: none;
-  outline: none;
-}
-a:hover,
-button:hover,
-input:hover,
-textarea:hover,
-form:hover {
-  cursor: pointer;
-}
-
-span {
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-}
-
-img {
-  max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  overflow: clip;
-}
-
-body {
-  background-color: #161B1D;
-  -webkit-transition: background-color 1s ease;
-  transition: background-color 1s ease;
-}
-
-body.light {
-  background: #DEDFE1;
-}
-
-main {
-  background-color: #1E2224;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-[aria-hidden=true] {
-  visibility: hidden;
-}
-
-main {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 314px 1fr;
-  grid-template-columns: 314px 1fr;
-  max-width: 1280px;
-  margin: 16px auto;
-  padding: 32px;
-  border-radius: 16px;
-}
-main .title__content {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/span 2;
-  margin-bottom: 32px;
-}
-main .title__content h1 {
-  font-size: 26px;
-  line-height: 32px;
-  font-weight: bold;
-  color: #dce6eb;
-}
-@media (max-width: 769px) {
-  main .title__content h1 {
-    font-size: 22px;
-    line-height: 28px;
-  }
-}
-main aside {
-  position: sticky;
-  padding: 0 32px 0 0;
-  scrollbar-width: none;
-}
-@media (max-width: 1025px) {
-  main aside {
-    display: none;
-  }
-}
-main aside .aside__content h5 {
-  margin: 10px 0;
-  padding: 16px 0 0 16px;
-  font-family: "Rubik", sans-serif;
-  color: #747c81;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
-}
-main aside .aside__content ul.sidebar__information {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 4px;
-}
-main aside .aside__content ul.sidebar__information li.aside__category a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 12px;
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  padding: 12px 16px;
-  width: 207px;
-  color: #fff;
-}
-main aside .aside__content ul.sidebar__information li.aside__category a:hover,
-main aside .aside__content ul.sidebar__information li.aside__category a :focus {
-  background-color: #2f3437;
-}
-main aside .aside__content hr {
-  margin: 24px 0;
-  border-bottom: 1px solid #252729;
-}
-main aside .aside__content button.aside__settings {
-  padding: 12px 16px;
-  background-color: #1e2224;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #fff;
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  width: 207px;
-  border-radius: 12px;
-}
-main aside .aside__content button.aside__settings:hover,
-main aside .aside__content button.aside__settings :focus {
-  background-color: #2f3437;
-}
-main aside .aside__content svg {
-  margin-right: 10px;
-  height: 20px;
-  width: 20px;
-}
-
-#settings {
+#overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -214,19 +14,6 @@ main aside .aside__content svg {
           align-items: center;
 }
 
-.overlay__settings {
-  position: fixed;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  top: 0;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
 .overlay__settings .aside__settings {
   background-color: #161b1d;
   color: #fff;
@@ -242,10 +29,6 @@ main aside .aside__content svg {
   padding: 16px;
   border-radius: 16px;
   font-family: "Rubik", sans-serif;
-  width: 100%;
-  scrollbar-width: auto;
-  overflow: scroll;
-  overflow-x: hidden;
 }
 .overlay__settings .aside__settings button.settings__close {
   width: 24px;
@@ -417,7 +200,7 @@ main aside .aside__content svg {
   background-color: #262a2c;
 }
 .overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel input:checked + label {
-  background-color: #80898C;
+  background-color: #b0b4b8;
 }
 .overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel input:checked + label span {
   color: #fff;
@@ -430,7 +213,6 @@ main aside .aside__content svg {
   border-color: #fff;
 }
 .overlay__settings .aside__settings form.settings__form .settings__complete {
-  background-color: #161b1d;
   border-radius: 8px 8px 0 0;
   bottom: -16px;
   justify-self: flex-end;
@@ -439,7 +221,6 @@ main aside .aside__content svg {
   padding-bottom: 16px;
   position: sticky;
   width: 100%;
-  z-index: 1;
 }
 .overlay__settings .aside__settings form.settings__form .settings__complete button.settings__submit {
   background-color: #fff;
@@ -454,17 +235,4 @@ main aside .aside__content svg {
 }
 .overlay__settings .aside__settings form.settings__form .settings__complete button.settings__submit:hover {
   background-color: #dee0e3;
-}
-.overlay__settings .aside__settings.active {
-  top: 0;
-}
-
-.overlay__settings.active {
-  bottom: 0;
-}
-
-#aside.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }

@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <title>GameBlog</title>
 </head>
 
@@ -82,7 +84,7 @@
                         </li>
                     </ul>
                     <hr>
-                    <button class="aside__settings">
+                    <button class="aside__settings" id="set-settings" onclick="on()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-settings">
@@ -97,9 +99,9 @@
             </aside>
             <div class="main__content"></div>
         </main>
-        <div class="overlay__settings">
-            <div class="aside__settings">
-                <button class="settings__close">
+        <div class="overlay__settings" id="settings">
+            <div class="aside__settings" id="aside">
+                <button class="settings__close" id="close" onclick="off()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-x">
@@ -115,7 +117,7 @@
                             <button class="settings__select" type="button">
                                 <span class="settings__news">Новости</span>
                                 <span class="settings__info">
-                                    <span class="settings__numbers">22</span>
+                                    <span class="settings__numbers" id="news">0</span>
                                     <span class=" icon settings__arrow-down"><svg xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -132,17 +134,79 @@
                                     </span>
                                 </span>
                             </button>
-                            <ul class="settings__panel panel">
-                                <li class="settings__choose">
-                                    <input type="checkbox" id="checkbox0" class="checkbox__input" checked>
-                                    <label for="checkbox0" class="checkbox__label">{{loud this}}</label>
-                                </li>
-                                {{#each category}}
-                                <li class="settings__choose">
-                                    <input type="checkbox" id="checkbox{{@index}}" class="checkbox__input" checked>
-                                    <label for="checkbox{{@index}}" class="checkbox__label">{{loud this}}</label>
-                                </li>
-                                {{/each}}
+                            <ul id="panel-news" class="settings__panel">
+                            </ul>
+                        </li>
+                        <li class="settings__list">
+                            <button class="settings__select" type="button">
+                                <span class="settings__news">Статьи</span>
+                                <span class="settings__info">
+                                    <span class="settings__numbers" id="articles">0</span>
+                                    <span class=" icon settings__arrow-down"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg></span>
+                                    <span class="icon settings__arrow-up">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-up">
+                                            <path d="m18 15-6-6-6 6" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                            <ul id="panel-articles" class="settings__panel">
+                            </ul>
+                        </li>
+                        <li class="settings__list">
+                            <button class="settings__select" type="button">
+                                <span class="settings__news">Блоги</span>
+                                <span class="settings__info">
+                                    <span class="settings__numbers" id="blogs">0</span>
+                                    <span class=" icon settings__arrow-down"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg></span>
+                                    <span class="icon settings__arrow-up">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-up">
+                                            <path d="m18 15-6-6-6 6" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                            <ul id="panel-blogs" class="settings__panel">
+                            </ul>
+                        </li>
+                        <li class="settings__list">
+                            <button class="settings__select" type="button">
+                                <span class="settings__news">Видео</span>
+                                <span class="settings__info">
+                                    <span class="settings__numbers" id="videos">0</span>
+                                    <span class=" icon settings__arrow-down"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg></span>
+                                    <span class="icon settings__arrow-up">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-up">
+                                            <path d="m18 15-6-6-6 6" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                            <ul id="panel-video" class="settings__panel">
                             </ul>
                         </li>
                     </ul>
@@ -153,7 +217,17 @@
             </div>
         </div>
     </div>
-    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+    <script src="./js/handlebars.js"></script>
+    <script src="./js/script.js"></script>
+    <script id="category-template" type="text/x-handlebars-template">
+        {{#each categories}}
+        <li class="settings__choose">
+            <input type="checkbox" class="{{class}}" id="{{id}}" checked>
+            <label for="{{id}}" class="checkbox__label"><span>{{name}}</span></label>
+        </li>
+        {{/each}}
+    </script>
 </body>
 
 </html>
