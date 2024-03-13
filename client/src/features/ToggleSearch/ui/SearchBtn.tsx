@@ -5,6 +5,7 @@ import { Search, X } from 'lucide-react'
 import { useModal } from '@shared/lib'
 
 import SearchModal from './@SearchModal/SearchModal'
+import styles from './SearchBtn.module.scss'
 
 /** Header search component included input field and search tags */
 const SearchBtn = () => {
@@ -15,6 +16,7 @@ const SearchBtn = () => {
 	return (
 		<>
 			<button
+				className={styles.searchBtn}
 				onClick={() => {
 					setModal(!modal)
 				}}

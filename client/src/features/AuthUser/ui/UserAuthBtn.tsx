@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 
+import modal from 'antd/es/modal'
 import { UserRound } from 'lucide-react'
 
 import { useModal } from '@shared/lib'
@@ -12,7 +13,7 @@ import UserAuthModal from './@UserAuthModal/UserAuthModal'
 const UserAuthBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
 	const { modal, setModal } = useModal(refModal)
-	const [isHover, setIsHover] = useState<Boolean>(false)
+	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>

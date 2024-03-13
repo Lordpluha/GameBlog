@@ -14,7 +14,7 @@ const ThemeBtn = () => {
 	const { theme, setTheme } = useTheme()
 	const refModal = useRef<HTMLUListElement>(null!)
 	const { modal, setModal } = useModal(refModal)
-	const [isHover, setIsHover] = useState<Boolean>(false)
+	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>

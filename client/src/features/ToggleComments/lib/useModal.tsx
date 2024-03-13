@@ -5,14 +5,18 @@ import { type MutableRefObject, useEffect, useState } from 'react'
  *
  * @param refModal - reference to the modal DOM
  */
-const useModal = (refModal: MutableRefObject<HTMLElement>) => {
+const useModal = (
+	refModal: MutableRefObject<HTMLElement>,
+	refButton: React.MutableRefObject<HTMLElement>
+) => {
 	const [modal, setModal] = useState<boolean>(false)
 
 	useEffect(() => {
 		const handleClick = (e: globalThis.MouseEvent) => {
 			if (
 				refModal.current &&
-				!refModal.current.contains(e.target as Node)
+				(!refModal.current.contains(e.target as Node) ||
+					refButton.current.contains(e.target as Node))
 			) {
 				setModal(prev => !prev)
 			}
@@ -23,7 +27,7 @@ const useModal = (refModal: MutableRefObject<HTMLElement>) => {
 		return () => {
 			document.removeEventListener('click', handleClick, true)
 		}
-	}, [refModal])
+	}, [refModal, refButton])
 
 	return { modal, setModal }
 }

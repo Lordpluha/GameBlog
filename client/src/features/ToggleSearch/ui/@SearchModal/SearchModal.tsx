@@ -19,7 +19,7 @@ const tags = [
 
 const SearchModal = forwardRef<HTMLDivElement, PropsWithRef<object>>(
 	(_, refModal) => (
-		<div className='fixed top-[79px] left-0 right-0' ref={refModal}>
+		<div className={styles.searchModal} ref={refModal}>
 			<div className='bg-[var(--modal-bg-color)] py-10'>
 				<div className='flex flex-col max-w-3xl mx-auto'>
 					<div className={styles.searchInputBlock}>

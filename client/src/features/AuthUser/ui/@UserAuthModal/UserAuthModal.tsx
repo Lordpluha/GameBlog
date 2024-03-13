@@ -2,12 +2,15 @@ import {
 	type Dispatch,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef
+	forwardRef,
+	useState
 } from 'react'
+import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
 
 import Socials from './@Socials/Socials'
+import Registration from './Registration'
 import styles from './UserAuthModal.module.scss'
 
 interface TUserAuthModal {
@@ -24,6 +27,11 @@ interface TUserAuthModal {
  */
 const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 	({ modal, setModal }, ref) => {
+		const [modalOpened, setModalOpened] = useState(false)
+
+		const handleClick = () => {
+			setModalOpened(true)
+		}
 		return (
 			<div className={styles.userAuthBlockOverflow}>
 				<div className={styles.userAuthBlockPosition} ref={ref}>
@@ -40,18 +48,29 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 							<h1 className={styles.userAuthTitle}>
 								Вход на GameBlog
 							</h1>
-							<h4 className='text-[var(--text-color)] pt-3 text-lg'>
+							<h4 className='text-[var(--text-color)] pt-3 text-[18px]'>
 								Войти через аккаунт
 							</h4>
 							<div className={styles.userAuthBtnSocialIcon}>
 								<Socials />
 							</div>
-							<button className={styles.userAuthBtnRegistration}>
+							<button
+								className={styles.userAuthBtnRegistration}
+								onClick={handleClick}
+							>
 								Зарегистрироваться
 							</button>
+							{modalOpened && (
+								<Registration
+									modalOpened={modalOpened}
+									setModalOpened={setModalOpened}
+								/>
+							)}
 							<p className={styles.userAuthBtnPrivacy}>
-								Авторизуясь, ты соглашаешься с правилами сайта и
-								пользовательским соглашением.
+								Авторизуясь, ты соглашаешься с
+								<Link to='#'>правилами сайта</Link> и
+								<Link to='#'>пользовательским соглашением</Link>
+								.
 							</p>
 						</div>
 					</div>

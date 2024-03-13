@@ -9,3 +9,8 @@
 .headerRightButtonsBlock {
 	@apply flex justify-between items-center gap-6 px-6 text-[var(--default-light-color)] text-[10px];
 }
+.headerBurger {
+	@media (min-width: 1146px) {
+		display: none;
+	}
+}
