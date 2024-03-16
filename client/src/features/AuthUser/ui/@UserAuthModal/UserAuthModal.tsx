@@ -1,5 +1,16 @@
-import { Socials } from '@entities/Socials'
+import {
+	type Dispatch,
+	type PropsWithRef,
+	type SetStateAction,
+	forwardRef,
+	useState
+} from 'react'
+import { Link } from 'react-router-dom'
 
+import { X } from 'lucide-react'
+
+import Socials from './@Socials/Socials'
+import Registration from './Registration'
 import styles from './UserAuthModal.module.scss'
 
 /**

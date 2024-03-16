@@ -61,8 +61,8 @@ const ThemeModeModal = forwardRef<
 				<MoonEl theme={theme} />
 			</li>
 			<li onClick={deviceTheme}>
-				<MonitorSmartphone className='text-white' />
-				<p className='text-white'>Системная</p>
+				<MonitorSmartphone />
+				<p>Системная</p>
 			</li>
 		</ul>
 	)

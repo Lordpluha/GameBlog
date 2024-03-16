@@ -1,9 +1,13 @@
-import { useRef } from 'react'
-import { CommentBtn } from '@entities/@buttons/CommentBtn'
-import { useModal } from '@entities/Modal'
+import { useEffect, useRef, useState } from 'react'
+
+import modal from 'antd/es/modal'
+import { MessageCircleMore } from 'lucide-react'
+
+import { type IComment } from '@model/interfaces'
 
 import CommentsModal from './@Comments/CommentsModal'
-import { useGetCommentsQuery } from '@store/@api/CommentsApi'
+import styles from './CommentsBtn.module.scss'
+import useModal from '../lib/useModal'
 
 /**
  * Modal component with a list of new comments
@@ -11,13 +15,26 @@ import { useGetCommentsQuery } from '@store/@api/CommentsApi'
  */
 const CommentsBtn = () => {
 	const refCommentModal = useRef<HTMLDivElement>(null!)
-	const { modal, setModal } = useModal(refCommentModal)
-
+	const refButton1 = useRef<HTMLButtonElement>(null!)
+	const refButton2 = useRef<HTMLButtonElement>(null!)
+	// console.log(refButton)
+	const { modal, setModal } = useModal(refCommentModal, [refButton1, refButton2])
+	const [isHover, setIsHover] = useState<boolean>(false)
+	// console.log(modal)
 	return (
 		<>
-			<CommentBtn
+			<button
+				ref={refButton1}
+				style={{
+					background: isHover
+						? '#2F3437'
+						: 'var(--default-dark-btn-color)'
+				}}
+				onMouseEnter={() => setIsHover(true)}
+				onMouseLeave={() => setIsHover(false)}
+				className={styles.commentBtn}
 				onClick={() => {
-					setModal(!modal)
+					setModal(prev => !prev)
 				}}
 				className='bg-[var(--default-dark-btn-color)]'
 			/>
@@ -25,6 +42,7 @@ const CommentsBtn = () => {
 				<CommentsModal
 					ref={refCommentModal}
 					setModal={setModal}
+					closeButtonRef={refButton2}
 				/>
 			)}
 		</>

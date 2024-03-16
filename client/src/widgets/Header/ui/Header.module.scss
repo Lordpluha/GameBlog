@@ -1,5 +1,5 @@
 .header {
-	@apply w-screen bg-[var(--default-dark-color)] z-50 items-center sticky flex h-[var(--header-height)] justify-center left-0 right-0 top-0;
+	@apply w-full bg-[var(--default-dark-color)] items-center sticky flex h-[var(--header-height)] justify-center left-0 right-0 top-0 z-50;
 }
 
 .headerLayout {
@@ -8,4 +8,9 @@
 
 .headerRightButtonsBlock {
 	@apply flex justify-between items-center gap-6 px-6 text-[var(--default-light-color)] text-[10px];
+}
+.headerBurger {
+	@media (min-width: 1146px) {
+		display: none;
+	}
 }

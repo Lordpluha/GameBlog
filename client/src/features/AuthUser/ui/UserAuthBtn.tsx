@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
+import modal from 'antd/es/modal'
 import { UserRound } from 'lucide-react'
 
 import { Modal, useModal } from '@entities/Modal'
@@ -12,11 +13,19 @@ import UserAuthModal from './@UserAuthModal/UserAuthModal'
 const UserAuthBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
 	const { modal, setModal } = useModal(refModal)
+	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
 			<button
-				className='bg-[var(--default-dark-btn-color)] rounded-full p-2'
+				style={{
+					background: isHover
+						? '#2F3437'
+						: 'var(--default-dark-btn-color)'
+				}}
+				onMouseEnter={() => setIsHover(true)}
+				onMouseLeave={() => setIsHover(false)}
+				className='rounded-full p-2'
 				onClick={() => {
 					setModal(!modal)
 				}}

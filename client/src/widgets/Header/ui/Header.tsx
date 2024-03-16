@@ -34,10 +34,19 @@ const Header = () => {
 					<CommentsBtn />
 					<UserAuthBtn />
 					<button
-						className='lg2:hidden'
-						onClick={() => setToggleMenu(!toggleMenu)}
+						className={styles.headerBurger}
+						onClick={() => {
+							setToggleMenu(!toggleMenu)
+						}}
 					>
-						{toggleMenu ? <X /> : <Menu />}
+						{toggleMenu ? (
+							<X />
+						) : (
+							<>
+								<Menu />
+								<NavBar toggleMenu={toggleMenu} />
+							</>
+						)}
 					</button>
 				</div>
 			</div>

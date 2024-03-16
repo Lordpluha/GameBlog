@@ -14,7 +14,7 @@ const useModal = (refModal: MutableRefObject<HTMLElement>) => {
 				refModal.current &&
 				!refModal.current.contains(e.target as Node)
 			) {
-				setModal(false)
+				setModal(prev => !prev)
 			}
 		}
 

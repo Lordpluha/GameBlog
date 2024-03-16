@@ -1,17 +1,21 @@
 import {
 	type Dispatch,
+	MutableRefObject,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef} from 'react'
+	forwardRef
+} from 'react'
 
 import { X } from 'lucide-react'
 
+import { useGetCommentsQuery } from '@store/@api/CommentsApi'
+
 import CommentCard from './@CommentCard/CommentCard'
 import styles from './CommentsModal.module.scss'
-import { useGetCommentsQuery } from '@store/@api/CommentsApi'
 
 interface TCommentModalProps {
 	setModal: Dispatch<SetStateAction<boolean>>
+	closeButtonRef: MutableRefObject<HTMLButtonElement>
 }
 
 /**
@@ -22,21 +26,19 @@ interface TCommentModalProps {
 const CommentsModal = forwardRef<
 	HTMLDivElement,
 	PropsWithRef<TCommentModalProps>
->(({ setModal }, ref) => {
-	const {data} = useGetCommentsQuery()
-
-	return (
+>(({ commentsList, setModal, closeButtonRef }, ref) => (
 	<div className={styles.commentsBlock} ref={ref}>
 		<div className={styles.commentsBlockHeader}>
 			<p className='text-3xl font-semibold'>Новые комментарии</p>
-			<div
+			<button
 				className='cursor-pointer'
 				onClick={() => {
 					setModal(false)
 				}}
+				ref={closeButtonRef}
 			>
-				<X />
-			</div>
+				<X className={styles.icon} />
+			</button>
 		</div>
 		<div className={styles.commentsBlockBody}>
 			{data?.items ? (
@@ -52,6 +54,6 @@ const CommentsModal = forwardRef<
 			)}
 		</div>
 	</div>
-)})
+))
 
 export default CommentsModal
