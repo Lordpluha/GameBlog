@@ -8,7 +8,7 @@ import { TServerResponse } from '@store/serverResponse.type'
 export const NewsApi = createApi({
 	reducerPath: 'news/api',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://localhost:3001/api/'
+		baseUrl: import.meta.env.VITE_SERVER_URL
 	}),
 	endpoints: build => ({
 		getNewsList: build.query<TServerResponse<IPublication>, number>({
@@ -20,17 +20,20 @@ export const NewsApi = createApi({
 				}
 			})
 		}),
+		// Получение 1 новости по slug
 		getNewsBySlug: build.query<IPublication, string>({
 			query: (slug: IPublication['slug']) => ({
 				url: `article/slug/${slug}`
 			})
 		}),
+		// Получение 1 новости по id
 		getNewsById: build.query<IPublication, number>({
 			query: (id: IPublication['id']) => ({
 				url: `article/${id}`
 			})
 		}),
-		getCategory: build.query<ICategory[], void>({
+		// Получение всех категорий
+		getCategories: build.query<ICategory[], void>({
 			query: () => ({
 				url: `category`
 			}),
@@ -40,4 +43,4 @@ export const NewsApi = createApi({
 	})
 })
 
-export const { useGetNewsListQuery, useGetCategoryQuery, useGetNewsBySlugQuery, useGetNewsByIdQuery } = NewsApi
+export const { useGetNewsListQuery, useGetCategoriesQuery, useGetNewsBySlugQuery, useGetNewsByIdQuery } = NewsApi
