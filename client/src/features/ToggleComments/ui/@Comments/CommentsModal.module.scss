@@ -1,0 +1,28 @@
+.commentsBlock {
+	@apply bg-[var(--modal-bg-color)] w-[400px] rounded-3xl fixed top-[79px] right-0 bottom-1 shadow-2xl flex flex-col;
+	// 	animation: Animation 1.3s;
+}
+@keyframes Animation {
+	from {
+		right: -100%;
+	}
+	to {
+		right: 0;
+	}
+}
+
+.commentsBlockHeader {
+	@apply flex justify-between items-center text-[#dce6eb] p-4;
+	padding: 24px 16px 0;
+}
+.icon:hover {
+	color: var(--hover-active-color);
+}
+
+.commentsBlockBody {
+	@apply touch-auto scroll-auto p-4 overflow-auto flex-grow;
+}
+
+.blockWithoutComment {
+	@apply text-[var(--default-dark-text-color)] font-semibold text-2xl text-center;
+}
