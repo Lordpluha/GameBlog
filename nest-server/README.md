@@ -1,3 +1,11 @@
+## Installation
+- Install deps by running `yarn`
+- Create .env file from .env.example
+- run `yarn db:setup` to init prisma db
+- registrate anyone user by postman https://galactic-capsule-748600.postman.co/workspace/Gameblog~75da4274-2a85-4edf-88ee-28593598c579/request/30813249-d9052c79-f06f-4575-a554-7d261906532d?ctx=documentation
+- run `yarn seeder` to create posts
+- run `yarn start:dev`
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
