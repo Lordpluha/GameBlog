@@ -1,13 +1,21 @@
+import { FC } from 'react'
+import { SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
+import { Dispatch } from 'redux'
 
 import BackArrow from '@shared/ui/icons/socials/BackArrow'
 import Google from '@shared/ui/illustrations/google.png'
 
 import styles from './UserAuthModal.module.scss'
 
-const Registration = ({ modalOpened, setModalOpened, modal, setModal }) => {
+// interface RegistrationProps {
+// 	setModalOpened: Dispatch<SetStateAction<boolean>>
+// 	setModal: Dispatch<SetStateAction<boolean>>
+// }
+
+const Registration = ({ setModalOpened, setModal }) => {
 	return (
 		<div className={styles.headerOverlay}>
 			<div className={styles.headerSlider}>
@@ -81,8 +89,9 @@ const Registration = ({ modalOpened, setModalOpened, modal, setModal }) => {
 						<div className={styles.rules}>
 							<p>
 								Авторизуясь, ты соглашаешься с
-								<Link to=''>правилами сайта</Link> и
-								<Link to=''>пользовательским соглашением</Link>.
+								<Link to='#'>правилами сайта</Link> и
+								<Link to='#'>пользовательским соглашением</Link>
+								.
 							</p>
 						</div>
 					</div>

@@ -27,11 +27,12 @@ interface TUserAuthModal {
  */
 const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 	({ modal, setModal }, ref) => {
-		const [modalOpened, setModalOpened] = useState(false)
+		const [modalOpened, setModalOpened] = useState<boolean>(false)
 
 		const handleClick = () => {
 			setModalOpened(true)
 		}
+
 		return (
 			<div className={styles.userAuthBlockOverflow}>
 				<div className={styles.userAuthBlockPosition} ref={ref}>
@@ -62,7 +63,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 							</button>
 							{modalOpened && (
 								<Registration
-									modalOpened={modalOpened}
+									setModal={setModal}
 									setModalOpened={setModalOpened}
 								/>
 							)}

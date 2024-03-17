@@ -10,12 +10,14 @@ import styles from './SearchBtn.module.scss'
 /** Header search component included input field and search tags */
 const SearchBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
-	const { modal, setModal } = useModal(refModal)
+	const refButton = useRef<HTMLButtonElement>(null!)
+	const { modal, setModal } = useModal(refModal, refButton)
 	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
 			<button
+				ref={refButton}
 				className={styles.searchBtn}
 				onClick={() => {
 					setModal(!modal)

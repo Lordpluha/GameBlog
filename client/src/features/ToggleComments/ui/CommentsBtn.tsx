@@ -5,9 +5,9 @@ import { MessageCircleMore } from 'lucide-react'
 
 import { type IComment } from '@model/interfaces'
 
+import useModal from '../lib/useModal'
 import CommentsModal from './@Comments/CommentsModal'
 import styles from './CommentsBtn.module.scss'
-import useModal from '../lib/useModal'
 
 /**
  * Modal component with a list of new comments
@@ -19,7 +19,10 @@ const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 	const refButton1 = useRef<HTMLButtonElement>(null!)
 	const refButton2 = useRef<HTMLButtonElement>(null!)
 	// console.log(refButton)
-	const { modal, setModal } = useModal(refCommentModal, [refButton1, refButton2])
+	const { modal, setModal } = useModal(refCommentModal, [
+		refButton1,
+		refButton2
+	])
 	const [isHover, setIsHover] = useState<boolean>(false)
 	// console.log(modal)
 	return (

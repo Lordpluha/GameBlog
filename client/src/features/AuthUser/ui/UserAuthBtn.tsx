@@ -12,12 +12,14 @@ import UserAuthModal from './@UserAuthModal/UserAuthModal'
  */
 const UserAuthBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
-	const { modal, setModal } = useModal(refModal)
+	const refButton = useRef<HTMLButtonElement>(!null)
+	const { modal, setModal } = useModal(refModal, refButton)
 	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
 			<button
+				ref={refButton}
 				style={{
 					background: isHover
 						? '#2F3437'

@@ -13,12 +13,14 @@ import ThemeModeModal from './@ThemeModal/ThemeModal'
 const ThemeBtn = () => {
 	const { theme, setTheme } = useTheme()
 	const refModal = useRef<HTMLUListElement>(null!)
-	const { modal, setModal } = useModal(refModal)
+	const refButton = useRef<HTMLButtonElement>(null!)
+	const { modal, setModal } = useModal(refModal, refButton)
 	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
 			<button
+				ref={refButton}
 				style={{
 					background: isHover
 						? '#2F3437'

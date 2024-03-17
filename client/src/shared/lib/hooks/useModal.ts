@@ -1,18 +1,25 @@
-import { type MutableRefObject, useEffect, useState } from 'react'
+//поменяла все на новый useModal
+import { MouseEvent, type MutableRefObject, useEffect, useState } from 'react'
 
 /**
  * Hook for close the window when clicked outside the component
  *
  * @param refModal - reference to the modal DOM
  */
-const useModal = (refModal: MutableRefObject<HTMLElement>) => {
+const useModal = (
+	refModal: MutableRefObject<HTMLElement>,
+	refButton: MutableRefObject<HTMLElement>
+) => {
 	const [modal, setModal] = useState<boolean>(false)
 
 	useEffect(() => {
 		const handleClick = (e: globalThis.MouseEvent) => {
+			e.stopPropagation()
+			const targetNode = e.target instanceof Node ? e.target : null
 			if (
-				refModal.current &&
-				!refModal.current.contains(e.target as Node)
+				(refModal.current && refButton.current.contains(targetNode)) ||
+				(!refModal.current && refButton.current.contains(targetNode)) ||
+				!refModal.current.contains(targetNode)
 			) {
 				setModal(prev => !prev)
 			}
@@ -23,7 +30,7 @@ const useModal = (refModal: MutableRefObject<HTMLElement>) => {
 		return () => {
 			document.removeEventListener('click', handleClick, true)
 		}
-	}, [refModal])
+	}, [refModal, refButton])
 
 	return { modal, setModal }
 }
