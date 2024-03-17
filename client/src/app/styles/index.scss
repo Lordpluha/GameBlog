@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'normalize.scss';
+@import 'vars.scss';
+
+:root {
+	@include vars;
+}
+
+html[data-theme='dark'] {
+	@include varsDark;
+}
+
+html[data-theme='light'] {
+	@include varsLight;
+}
+
+.active {
+	color: var(--hover-active-color);
+}
+
+.layoutComponent {
+	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}

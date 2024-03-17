@@ -1,0 +1,5 @@
+{
+	"typescript.tsserver.watchOptions": {
+		"watchFile": "fixedChunkSizePolling"
+	}
+}
