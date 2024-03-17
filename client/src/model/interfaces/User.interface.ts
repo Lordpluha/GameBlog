@@ -1,11 +1,11 @@
 interface IUser {
 	id: number
-	name: string | null
-	lastName?: string | null
+	name: string | undefined
+	lastName?: string | undefined
 
-	avatar?: string | null
+	avatar?: string | undefined
 	// Background image for profile
-	cover?: string | null
+	cover?: string | undefined
 
 	login?: string
 	// password: string

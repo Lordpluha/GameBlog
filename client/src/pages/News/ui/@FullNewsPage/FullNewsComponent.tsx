@@ -1,16 +1,18 @@
 import { FC } from 'react'
 
+import { INew, IPublication } from '@model/interfaces'
+
+import { useGetArtCommentsQuery } from '@store/@api/CommentsApi'
+
 import ContentText from './@Content/ContentText'
 import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
 import NewsNavigation from './@NewNavigation/NewsNavigation'
 import styles from './FullNews.module.scss'
-import { IPublication } from '@model/interfaces'
-import { useGetArtCommentsQuery } from '@store/@api/CommentsApi'
 
 type TFullNewsProps = {
 	fullNewsData: IPublication
-	otherNews: any
+	otherNews: INew[]
 }
 
 /**
@@ -26,20 +28,12 @@ type TFullNewsProps = {
  * otherNews - data for news navigation blocks (previous, next)
  */
 const FullNewsComponent: FC<TFullNewsProps> = props => {
-	const {
-		title,
-		content,
-		createdAt,
-		views,
-		_count,
-		author,
-		tags,
-		id
-	} = props.fullNewsData
+	const { title, content, createdAt, views, _count, author, tags, id } =
+		props.fullNewsData
 
-	const {data} = useGetArtCommentsQuery(id)
-	console.log(data?.items);
-	
+	const { data } = useGetArtCommentsQuery(id)
+	console.log(data?.items)
+
 	return (
 		<section className={styles.contentBody}>
 			<div className={styles.contentWrapper}>

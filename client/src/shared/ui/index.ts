@@ -1,4 +1,5 @@
 import Arrow from './icons/socials/Arrow'
+import BackArrow from './icons/socials/BackArrow'
 import GoogleIcon from './icons/socials/GoogleIcon'
 import OkIcon from './icons/socials/OkIcon'
 import Steam from './icons/socials/Steam'
@@ -18,6 +19,7 @@ export {
 	VKIcon,
 	YandexIcon,
 	Arrow,
+	BackArrow,
 	Steam,
 	Telegram,
 	VK,

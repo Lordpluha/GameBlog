@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-import sd from '@/data/demoData.json'
 import clsx from 'clsx'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { A11y, Navigation } from 'swiper/modules'

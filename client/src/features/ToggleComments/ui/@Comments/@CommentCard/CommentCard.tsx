@@ -16,7 +16,11 @@ const CommentCard: FC<IComment> = ({ text, article, author }) => (
 		<div className={styles.commentItem}>
 			<h6 className={styles.commentTitle}>{article.title}</h6>
 			<div className='flex items-center text-[14px]'>
-				<img className='rounded-full' src={author.avatar} alt={author.login} />
+				<img
+					className='rounded-full'
+					src={author.avatar}
+					alt={author.login}
+				/>
 				<p className={styles.commentUserLogin}>{author.login}</p>
 			</div>
 			<p className={styles.commentText}>{text}</p>

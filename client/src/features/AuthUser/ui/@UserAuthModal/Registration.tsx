@@ -1,20 +1,26 @@
+import { Dispatch, FC, SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
 
-import BackArrow from '@shared/ui/icons/socials/BackArrow'
-import Google from '@shared/ui/illustrations/google.png'
+import { BackArrow } from '@shared/ui'
 
 import styles from './UserAuthModal.module.scss'
+import captchaImg from '/google.png'
 
-const Registration = ({ modalOpened, setModalOpened, modal, setModal }) => {
+type TRegistrationProps = {
+	modal: boolean
+	setModal: Dispatch<SetStateAction<boolean>>
+}
+
+const Registration: FC<TRegistrationProps> = ({ modal, setModal }) => {
 	return (
 		<div className={styles.headerOverlay}>
 			<div className={styles.headerSlider}>
 				<div className={styles.slider}>
 					<div className={styles.fill}>
 						<button
-							onClick={() => setModalOpened(false)}
+							onClick={() => setModal(false)}
 							className={styles.back}
 						>
 							<BackArrow />
@@ -60,11 +66,11 @@ const Registration = ({ modalOpened, setModalOpened, modal, setModal }) => {
 													></span>
 												</label>
 											</div>
-											<div className={styles.headerText}>
-												I'm not a robot
-											</div>
+											<h1 className={styles.headerText}>
+												I&apos;m not a robot
+											</h1>
 											<div className={styles.logoCaptcha}>
-												<img src={Google} />
+												<img src={captchaImg} />
 												<span className='font-bold text-[10px] mt-1.5 mb-1'>
 													reCAPTCHA
 												</span>

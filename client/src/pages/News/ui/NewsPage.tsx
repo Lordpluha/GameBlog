@@ -37,16 +37,22 @@ const NewsPage = () => {
 	if (isLoading) return <h1>Loading ...</h1>
 
 	return (
-		<div>
-			{newsList && <PostsSmall posts={newsList} to='news' />}
-			<Pagination
-				onNextPageClick={handleNextPageClick}
-				onPrevPageClick={handlePrevPageClick}
-				disable={btnDisabled}
-				pageNum={pageCount}
-				currentPage={currentPage}
-				onChangePage={onChangePage}
-			/>
+		<div className='min-h-screen'>
+			{newsList ? (
+				<>
+					<PostsSmall posts={newsList} to='news' />
+					<Pagination
+						onNextPageClick={handleNextPageClick}
+						onPrevPageClick={handlePrevPageClick}
+						disable={btnDisabled}
+						pageNum={pageCount}
+						currentPage={currentPage}
+						onChangePage={onChangePage}
+					/>
+				</>
+			) : (
+				'Новостей нет'
+			)}
 		</div>
 	)
 }

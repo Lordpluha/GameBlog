@@ -1,5 +1,9 @@
 {
 	"typescript.tsserver.watchOptions": {
 		"watchFile": "fixedChunkSizePolling"
-	}
+	},
+	"cSpell.words": [
+		"kiberchainik",
+		"lucide"
+	]
 }

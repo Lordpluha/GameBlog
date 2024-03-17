@@ -1,9 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { ICategory, IPublication } from '@model/interfaces'
+
 import { TServerResponse } from '@store/serverResponse.type'
-
-
 
 export const NewsApi = createApi({
 	reducerPath: 'news/api',
@@ -43,4 +42,9 @@ export const NewsApi = createApi({
 	})
 })
 
-export const { useGetNewsListQuery, useGetCategoriesQuery, useGetNewsBySlugQuery, useGetNewsByIdQuery } = NewsApi
+export const {
+	useGetNewsListQuery,
+	useGetCategoriesQuery,
+	useGetNewsBySlugQuery,
+	useGetNewsByIdQuery
+} = NewsApi
