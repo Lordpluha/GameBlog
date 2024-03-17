@@ -26,6 +26,7 @@ interface TModalThemeProps {
  *
  * @param ref reference to ul list of switch buttons
  */
+
 const ThemeModeModal = forwardRef<
 	HTMLUListElement,
 	PropsWithRef<TModalThemeProps>

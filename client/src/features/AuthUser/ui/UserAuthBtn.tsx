@@ -3,8 +3,7 @@ import { useRef, useState } from 'react'
 import modal from 'antd/es/modal'
 import { UserRound } from 'lucide-react'
 
-import { useModal } from '@shared/lib'
-
+import useModal from '../lib/useModal'
 import UserAuthModal from './@UserAuthModal/UserAuthModal'
 
 /**
@@ -12,14 +11,15 @@ import UserAuthModal from './@UserAuthModal/UserAuthModal'
  */
 const UserAuthBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
-	const refButton = useRef<HTMLButtonElement>(!null)
-	const { modal, setModal } = useModal(refModal, refButton)
+	const refButton1 = useRef<HTMLButtonElement>(null!)
+	const refButton2 = useRef<HTMLButtonElement>(null!)
+	const { modal, setModal } = useModal(refModal, [refButton1, refButton2])
 	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
 			<button
-				ref={refButton}
+				ref={refButton1}
 				style={{
 					background: isHover
 						? '#2F3437'
@@ -38,6 +38,7 @@ const UserAuthBtn = () => {
 				<UserAuthModal
 					modal={modal}
 					setModal={setModal}
+					closeButtonRef={refButton2}
 					ref={refModal}
 				/>
 			)}

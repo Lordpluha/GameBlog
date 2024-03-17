@@ -1,5 +1,6 @@
 import {
 	type Dispatch,
+	MutableRefObject,
 	type PropsWithRef,
 	type SetStateAction,
 	forwardRef,
@@ -16,6 +17,7 @@ import styles from './UserAuthModal.module.scss'
 interface TUserAuthModal {
 	modal: boolean
 	setModal: Dispatch<SetStateAction<boolean>>
+	closeButtonRef: MutableRefObject<HTMLButtonElement>
 }
 
 /**
@@ -26,25 +28,22 @@ interface TUserAuthModal {
  * @param ref reference for component container type of HTMLDivElement
  */
 const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
-	({ modal, setModal }, ref) => {
+	({ modal, setModal, closeButtonRef }, ref) => {
 		const [modalOpened, setModalOpened] = useState<boolean>(false)
-
-		const handleClick = () => {
-			setModalOpened(true)
-		}
 
 		return (
 			<div className={styles.userAuthBlockOverflow}>
 				<div className={styles.userAuthBlockPosition} ref={ref}>
 					<div className={styles.userAuthBlockWrapper}>
-						<div
+						<button
+							ref={closeButtonRef}
 							className={styles.userAuthHeaderBtnClose}
 							onClick={() => {
-								setModal(!modal)
+								setModal(false)
 							}}
 						>
 							<X className={styles.icon} />
-						</div>
+						</button>
 						<div className={styles.userAuthContent}>
 							<h1 className={styles.userAuthTitle}>
 								Вход на GameBlog
@@ -57,7 +56,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 							</div>
 							<button
 								className={styles.userAuthBtnRegistration}
-								onClick={handleClick}
+								onClick={() => setModalOpened(true)}
 							>
 								Зарегистрироваться
 							</button>

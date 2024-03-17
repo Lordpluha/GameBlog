@@ -2,9 +2,8 @@ import { useRef, useState } from 'react'
 
 import { Moon, Sun } from 'lucide-react'
 
-import { useModal } from '@shared/lib'
-
 import { useTheme } from '../lib'
+import useModal from '../lib/@hooks/useModal'
 import ThemeModeModal from './@ThemeModal/ThemeModal'
 
 /**
@@ -13,14 +12,15 @@ import ThemeModeModal from './@ThemeModal/ThemeModal'
 const ThemeBtn = () => {
 	const { theme, setTheme } = useTheme()
 	const refModal = useRef<HTMLUListElement>(null!)
-	const refButton = useRef<HTMLButtonElement>(null!)
-	const { modal, setModal } = useModal(refModal, refButton)
+	const refButton1 = useRef<HTMLButtonElement>(null!)
+	const refButton2 = useRef<HTMLButtonElement>(null!)
+	const { modal, setModal } = useModal(refModal, [refButton1, refButton2])
 	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
 		<>
 			<button
-				ref={refButton}
+				ref={refButton1}
 				style={{
 					background: isHover
 						? '#2F3437'
@@ -29,9 +29,6 @@ const ThemeBtn = () => {
 				onMouseEnter={() => setIsHover(true)}
 				onMouseLeave={() => setIsHover(false)}
 				className='rounded-[10px] p-2 text-[10px]'
-				onClick={() => {
-					setModal(!modal)
-				}}
 			>
 				{theme === 'light' ? (
 					<Sun className='text-[#e6d649]' />
