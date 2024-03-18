@@ -1,3 +1,5 @@
+import Markdown from 'react-markdown'
+
 import styles from './../FullNews.module.scss'
 
 /**
@@ -9,7 +11,7 @@ import styles from './../FullNews.module.scss'
 const ContentText = ({ fullText }: { fullText: string }) => {
 	return (
 		<div className={styles.newsfulltext}>
-			<p>{fullText}</p>
+			<Markdown>{fullText}</Markdown>
 		</div>
 	)
 }

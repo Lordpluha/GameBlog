@@ -4,16 +4,22 @@ import { Link, LinkProps } from 'react-router-dom'
 import clsx from 'clsx'
 import { MessageCircleMore } from 'lucide-react'
 
-type TCommentBtnProps = LinkProps & {
-	commentsCount: number
+type TCommentBtnProps = Omit<LinkProps, 'className'> & {
+	commentsCount?: number
+	className?: string | string[]
 }
 
 const CommentBtn: FC<TCommentBtnProps> = ({
-	commentsCount,
+	commentsCount = 0,
 	className: ClassName,
+	to,
 	...props
 }) => (
-	<Link className={clsx('rounded-[10px] p-2', ClassName)} {...props}>
+	<Link
+		className={clsx('rounded-[10px] p-2', ClassName)}
+		{...props}
+		to={`/news/${to}#comments`}
+	>
 		<MessageCircleMore />
 		<p className='ml-1'>{commentsCount}</p>
 	</Link>

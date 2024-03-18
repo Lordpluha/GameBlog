@@ -16,7 +16,7 @@ const AboutNewPage = () => {
 
 	return (
 		<>
-			<FullNewsComponent curentNew={data} />
+			<FullNewsComponent currentNew={data} />
 			<SliderReadAlso currentPost={data} />
 		</>
 	)
