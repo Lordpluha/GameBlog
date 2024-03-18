@@ -1,5 +1,6 @@
 //import { IOtherNewsNavigation } from '@/components/interfaces/OtherNewsNavigation.interface'
 import { INew } from '@model/interfaces'
+
 import NextNews from './@NextNew/NextNews'
 import PreviewNews from './@PreviousNew/PreviousNew'
 import styles from './NewsNavigation.module.scss'

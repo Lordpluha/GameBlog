@@ -28,7 +28,7 @@ const ThemeBtn = () => {
 				onMouseLeave={() => setIsHover(false)}
 				className='rounded-[10px] p-2 text-[10px]'
 				onClick={() => {
-					setModal(!modal)
+					setModal(prev => !prev)
 				}}
 			>
 				{theme === 'light' ? (

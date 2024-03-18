@@ -6,6 +6,10 @@ import { A11y, Navigation } from 'swiper/modules'
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import 'swiper/scss'
 
+import { IPublication } from '@model/interfaces'
+
+import { useGetNewsByPopularityQuery } from '@store/@api/NewsApi'
+
 import { ISlider } from '../model/@interfaces'
 import ReadAlsoItem from './@ReadAlso/ReadAlsoItem'
 import styles from './SliderReadAlso.module.scss'
@@ -14,26 +18,32 @@ import styles from './SliderReadAlso.module.scss'
  * Reused component for rendering slider of latest news
  * This component can be used on the blog, news and other sections
  */
-const SliderReadAlso = () => {
-	const [sliderData, setSliderData] = useState<ISlider[]>([])
+const SliderReadAlso = ({ currentPost }: { currentPost: IPublication }) => {
 	const swiperContainer = useRef<SwiperRef>(null!)
 
-	useEffect(() => {
-		sd.newsData.map(item => {
-			setSliderData(
-				prev =>
-					[
-						...prev,
-						{
-							image: item.preview,
-							slug: item.slug,
-							createdAt: item.createdAt,
-							author: item.author
-						}
-					] as ISlider[]
+	const {
+		data: posts,
+		isLoading,
+		isError,
+		error
+	} = useGetNewsByPopularityQuery()
+
+	if (isLoading) return <h1>Loading ...</h1>
+	if (isError) {
+		if ('status' in error) {
+			const errMsg =
+				'error' in error ? error.error : JSON.stringify(error.data)
+
+			return (
+				<div>
+					<div>An error has occurred:</div>
+					<div>{errMsg}</div>
+				</div>
 			)
-		})
-	}, [])
+		} else {
+			return <div>{error.message}</div>
+		}
+	}
 
 	return (
 		<section className={clsx(styles.pageSection, styles.additionalReads)}>
@@ -42,7 +52,7 @@ const SliderReadAlso = () => {
 				<div className={styles.additionalReadsControls}>
 					<div
 						className={styles.additionalReadsControlsPrev}
-						onClick={() =>
+						onMouseDown={() =>
 							swiperContainer.current?.swiper.slidePrev()
 						}
 					>
@@ -50,7 +60,7 @@ const SliderReadAlso = () => {
 					</div>
 					<div
 						className={styles.additionalReadsControlsNext}
-						onClick={() =>
+						onMouseDown={() =>
 							swiperContainer.current?.swiper.slideNext()
 						}
 					>
@@ -90,7 +100,7 @@ const SliderReadAlso = () => {
 					}
 				}}
 			>
-				{sliderData?.map((post, idx) => (
+				{posts?.items.map((post, idx) => (
 					<SwiperSlide key={idx}>
 						<ReadAlsoItem {...post} />
 					</SwiperSlide>

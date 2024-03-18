@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react'
 
+import { MessageCircleMore } from 'lucide-react'
+
 import { useModal } from '../lib'
 import CommentsModal from './@Comments/CommentsModal'
 import styles from './CommentsBtn.module.scss'
@@ -12,13 +14,11 @@ const CommentsBtn = () => {
 	const refCommentModal = useRef<HTMLDivElement>(null!)
 	const refButton1 = useRef<HTMLButtonElement>(null!)
 	const refButton2 = useRef<HTMLButtonElement>(null!)
-	// console.log(refButton)
 	const { modal, setModal } = useModal(refCommentModal, [
 		refButton1,
 		refButton2
 	])
 	const [isHover, setIsHover] = useState<boolean>(false)
-	// console.log(modal)
 	return (
 		<>
 			<button
@@ -34,7 +34,9 @@ const CommentsBtn = () => {
 				onClick={() => {
 					setModal(prev => !prev)
 				}}
-			/>
+			>
+				<MessageCircleMore />
+			</button>
 			{modal && (
 				<CommentsModal
 					ref={refCommentModal}

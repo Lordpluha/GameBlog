@@ -34,7 +34,9 @@ const Header = () => {
 					{/* Burger btn */}
 					<button
 						className={styles.headerBurger}
-						onClick={() => setToggleMenu(prev => !prev)}
+						onClick={() => {
+							setToggleMenu(prev => !prev)
+						}}
 					>
 						{toggleMenu ? <X /> : <Menu />}
 					</button>

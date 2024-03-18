@@ -9,16 +9,15 @@ import { INewsNavigation } from '../model/@interfaces'
 import FullNewsComponent from './@FullNewsPage/FullNewsComponent'
 
 const AboutNewPage = () => {
-	const [otherNews, _] = useState<INewsNavigation[]>([])
 	const { slug } = useParams()
 	const { data } = useGetNewsBySlugQuery(slug!)
 
-	if (!data || !otherNews) return <p>Loading...</p>
+	if (!data) return <p>Loading...</p>
 
 	return (
 		<>
-			<FullNewsComponent fullNewsData={data} otherNews={otherNews} />
-			<SliderReadAlso />
+			<FullNewsComponent curentNew={data} />
+			<SliderReadAlso currentPost={data} />
 		</>
 	)
 }

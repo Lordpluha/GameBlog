@@ -7,7 +7,7 @@ import { TServerResponse } from '@store/serverResponse.type'
 export const CommentsApi = createApi({
 	reducerPath: 'comments/api',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://localhost:3001/api/'
+		baseUrl: import.meta.env.VITE_SERVER_URL
 	}),
 	endpoints: build => ({
 		getComments: build.query<TServerResponse<IComment>, void>({

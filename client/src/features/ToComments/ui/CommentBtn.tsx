@@ -1,14 +1,22 @@
-import { ButtonHTMLAttributes, FC } from 'react'
+import { FC } from 'react'
+import { Link, LinkProps } from 'react-router-dom'
 
 import clsx from 'clsx'
 import { MessageCircleMore } from 'lucide-react'
 
-type TCommentBtnProps = ButtonHTMLAttributes<HTMLButtonElement>
+type TCommentBtnProps = LinkProps & {
+	commentsCount: number
+}
 
-const CommentBtn: FC<TCommentBtnProps> = props => (
-	<button {...props} className={clsx('rounded-[10px] p-2', props.className)}>
+const CommentBtn: FC<TCommentBtnProps> = ({
+	commentsCount,
+	className: ClassName,
+	...props
+}) => (
+	<Link className={clsx('rounded-[10px] p-2', ClassName)} {...props}>
 		<MessageCircleMore />
-	</button>
+		<p className='ml-1'>{commentsCount}</p>
+	</Link>
 )
 
 export default CommentBtn

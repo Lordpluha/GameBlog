@@ -9,10 +9,10 @@ interface IArtisle {
 interface IComment {
 	text: string
 	createdAt: string
-	articleId?: number
-	blogId?: number
-	authorId: number
-	parentId: number
+	articleId: string
+	blogId: string
+	authorId: string
+	parentId: string
 	level: number
 	author: IUser
 	article?: IArtisle

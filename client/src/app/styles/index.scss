@@ -41,7 +41,7 @@ html[data-theme='light'] {
 }
 
 .layoutComponent {
-	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
+	@apply min-h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
 }
 .overlay {
 	position: absolute;

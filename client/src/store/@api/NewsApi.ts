@@ -9,6 +9,7 @@ export const NewsApi = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: import.meta.env.VITE_SERVER_URL
 	}),
+	tagTypes: ['News', 'Categories'],
 	endpoints: build => ({
 		getNewsList: build.query<TServerResponse<IPublication>, number>({
 			query: (page: number) => ({
@@ -38,6 +39,17 @@ export const NewsApi = createApi({
 			}),
 			transformResponse: (response: TServerResponse<ICategory>) =>
 				response.items
+		}),
+		getNewsByPopularity: build.query<TServerResponse<IPublication>, void>({
+			query: () => ({
+				url: 'article',
+				params: {
+					page: 1,
+					isVerif: 'false',
+					count: 15,
+					byPopularity: true
+				}
+			})
 		})
 	})
 })
@@ -46,5 +58,6 @@ export const {
 	useGetNewsListQuery,
 	useGetCategoriesQuery,
 	useGetNewsBySlugQuery,
-	useGetNewsByIdQuery
+	useGetNewsByIdQuery,
+	useGetNewsByPopularityQuery
 } = NewsApi

@@ -1,11 +1,13 @@
-import { IPost } from '@model/interfaces'
+import { FC } from 'react'
 
-const PostsLarge = ({ posts }: { posts: IPost[] }) => (
-	<>
-		{posts.map(el => (
-			<></>
-		))}
-	</>
+const PostsLarge: FC = () => (
+	<div>
+		<h1>PostsLarge widget</h1>
+	</div>
 )
+
+// 	{posts.map(el => (
+// 		<></>
+// 	))}
 
 export default PostsLarge

@@ -13,10 +13,10 @@ interface IUser {
 
 	role: 'user' | 'author'
 
-	// registrationDate: number
-	// subscribersCount: number
+	registrationDate: number
+	subscribersCount: number
 
-	// lastVisitDate: number
+	lastVisitDate: number
 }
 
 export default IUser

@@ -20,29 +20,23 @@ const PostSmall: FC<TPostSmallProps> = ({ post, to }) => {
 	const navigate = useNavigate()
 
 	const clickHandler = (e: MouseEvent<HTMLElement>) => {
-		e.stopPropagation()
+		// e.stopPropagation()
 		navigate(`/${to}/${post.slug}`)
 	}
 
 	return (
-		<article
-			onClick={e => {
-				clickHandler(e)
-			}}
-			className={styles.articleItemBlock}
-		>
+		<article className={styles.articleItemBlock}>
 			<div className={styles.articleItemImageBlock}>
 				<img
 					className={styles.articleItemImage}
 					src={post.preview}
 					alt={`${post.title} article cover`}
+					onMouseDown={clickHandler}
 				/>
 			</div>
 			<div className={styles.articleItemDescription}>
 				<h1
-					onClick={e => {
-						clickHandler(e)
-					}}
+					onMouseDown={clickHandler}
 					className={styles.articleItemTitle}
 				>
 					{post.title}
@@ -57,11 +51,11 @@ const PostSmall: FC<TPostSmallProps> = ({ post, to }) => {
 						<p className='text-gray-500 text-[17px]'>
 							{dateConverter(post.createdAt)}
 						</p>
+
+						{/* Change to ToComment feature */}
 						<div
 							className={styles.articleItemComments}
-							onClick={e => {
-								clickHandler(e)
-							}}
+							onMouseDown={clickHandler}
 						>
 							<MessageCircleMore />
 							<p className='pl-1'>{post._count.comments}</p>
