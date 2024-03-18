@@ -1,20 +1,19 @@
 import {
 	type Dispatch,
+	MutableRefObject,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef,
-	MutableRefObject
+	forwardRef
 } from 'react'
 
 import { X } from 'lucide-react'
 
-import { type IComment } from '@model/interfaces'
+import { useGetCommentsQuery } from '@store/@api/CommentsApi'
 
 import CommentCard from './@CommentCard/CommentCard'
 import styles from './CommentsModal.module.scss'
 
 interface TCommentModalProps {
-	commentsList: IComment[]
 	setModal: Dispatch<SetStateAction<boolean>>
 	closeButtonRef: MutableRefObject<HTMLButtonElement>
 }
@@ -22,40 +21,52 @@ interface TCommentModalProps {
 /**
  * Component popum modal with comments list.
  * Accepting props commentsList and boolean state setModal for close outside
- * @param commentList - array of INewComment elements
  * @param setModal - react set state action typeof boolean
  */
 const CommentsModal = forwardRef<
 	HTMLDivElement,
 	PropsWithRef<TCommentModalProps>
->(({ commentsList, setModal, closeButtonRef }, ref) => (
-	<div className={styles.commentsBlock} ref={ref}>
-		<div className={styles.commentsBlockHeader}>
-			<p className='text-3xl font-semibold'>Новые комментарии</p>
-			<button
-				className='cursor-pointer'
-				onClick={() => {
-					setModal(false)
-				}}
-				ref={closeButtonRef}
-			>
-				<X className={styles.icon} />
-			</button>
+>(({ setModal, closeButtonRef }, ref) => {
+	const { isError, error, data, isLoading } = useGetCommentsQuery()
+	console.log(data)
+	return (
+		<div className={styles.commentsBlock} ref={ref}>
+			<div className={styles.commentsBlockHeader}>
+				<p className='text-3xl font-semibold'>Новые комментарии</p>
+				<button
+					className='cursor-pointer'
+					onClick={() => {
+						setModal(false)
+					}}
+					ref={closeButtonRef}
+				>
+					<X className={styles.icon} />
+				</button>
+			</div>
+			<div className={styles.commentsBlockBody}>
+				{isLoading && (
+					<h1 className={styles.blockWithoutComment}>Loading...</h1>
+				)}
+				{isError && (
+					<h1 className={styles.blockWithoutComment}>
+						Error: {error?.status}.{error?.data}
+					</h1>
+				)}
+				{data?.items && data?.items.length != 0
+					? data.items.map((item, idx) => (
+							<CommentCard key={idx} {...item} />
+						))
+					: !isLoading &&
+						!isError && (
+							<p className={styles.blockWithoutComment}>
+								Комментариев еще нет!
+								<br />
+								Будь первым!
+							</p>
+						)}
+			</div>
 		</div>
-		<div className={styles.commentsBlockBody}>
-			{commentsList.length > 0 ? (
-				commentsList.map((item, idx) => (
-					<CommentCard key={idx} {...item} />
-				))
-			) : (
-				<p className={styles.blockWithoutComment}>
-					Комментариев еще нет!
-					<br />
-					Будь первым!
-				</p>
-			)}
-		</div>
-	</div>
-))
+	)
+})
 
 export default CommentsModal

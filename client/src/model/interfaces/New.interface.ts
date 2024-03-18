@@ -1,15 +1,8 @@
-import type IUser from './User.interface'
+import { INewsCategory } from './Category.interface'
+import IPublication from './Publication.interface'
 
-interface INew {
-	id: number
-	preview: string
-	content: string
-	slug: string
-	createdAt: number
-	updatedAt: number
-	category: string
-	commentsCount: number
-	user: IUser
-}
+type INew = {
+	category: INewsCategory
+} & IPublication
 
 export default INew

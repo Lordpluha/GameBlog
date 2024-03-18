@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 
 import { Moon, Sun } from 'lucide-react'
 
-import { useModal } from '@shared/lib'
+import { useModal } from '@entities/Modal'
 
 import { useTheme } from '../lib'
 import ThemeModeModal from './@ThemeModal/ThemeModal'
@@ -28,7 +28,7 @@ const ThemeBtn = () => {
 				onMouseLeave={() => setIsHover(false)}
 				className='rounded-[10px] p-2 text-[10px]'
 				onClick={() => {
-					setModal(!modal)
+					setModal(prev => !prev)
 				}}
 			>
 				{theme === 'light' ? (

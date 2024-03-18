@@ -1,5 +1,5 @@
-import BookmarkBtn from './buttons/BookmarkBtn/BookmarkBtn'
 import Arrow from './icons/socials/Arrow'
+import BackArrow from './icons/socials/BackArrow'
 import GoogleIcon from './icons/socials/GoogleIcon'
 import OkIcon from './icons/socials/OkIcon'
 import Steam from './icons/socials/Steam'
@@ -12,7 +12,6 @@ import Cover from './illustrations/Cover/Cover'
 import Logo from './illustrations/Logo/Logo'
 
 export {
-	BookmarkBtn,
 	Cover,
 	Logo,
 	GoogleIcon,
@@ -20,6 +19,7 @@ export {
 	VKIcon,
 	YandexIcon,
 	Arrow,
+	BackArrow,
 	Steam,
 	Telegram,
 	VK,

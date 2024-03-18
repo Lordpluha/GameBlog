@@ -6,7 +6,7 @@ import { ErrorPage } from '@pages/Error'
 import { GamesPage } from '@pages/Games'
 import { HomePage } from '@pages/Home'
 import Layout from '@pages/Layout'
-import { NewsPage } from '@pages/News'
+import { AboutNewPage, NewsPage } from '@pages/News'
 import { ReadPage } from '@pages/Read'
 import { StreamsPage } from '@pages/Streams'
 import { SupportPage } from '@pages/Support'
@@ -37,6 +37,10 @@ export const router = createBrowserRouter([
 			{
 				path: '/news',
 				element: <NewsPage />
+			},
+			{
+				path: '/news/:slug',
+				element: <AboutNewPage />
 			},
 			{
 				path: '/read',

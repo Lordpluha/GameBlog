@@ -2,8 +2,6 @@ import { useState } from 'react'
 
 import { Menu, X } from 'lucide-react'
 
-import { type IComment } from '@model/interfaces'
-
 import { UserAuthBtn } from '@features/AuthUser'
 import { CommentsBtn } from '@features/ToggleComments'
 import { SearchBtn } from '@features/ToggleSearch'
@@ -20,7 +18,6 @@ import styles from './Header.module.scss'
  */
 const Header = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-	const [newCommentsData, _] = useState<IComment[]>([])
 
 	return (
 		<header className={styles.header}>
@@ -32,22 +29,16 @@ const Header = () => {
 					<div className='hidden md:block'>
 						<ThemeBtn />
 					</div>
-					<CommentsBtn newComments={newCommentsData} />
+					<CommentsBtn />
 					<UserAuthBtn />
+					{/* Burger btn */}
 					<button
 						className={styles.headerBurger}
 						onClick={() => {
-							setToggleMenu(!toggleMenu)
+							setToggleMenu(prev => !prev)
 						}}
 					>
-						{toggleMenu ? (
-							<X />
-						) : (
-							<>
-								<Menu />
-								<NavBar toggleMenu={toggleMenu} />
-							</>
-						)}
+						{toggleMenu ? <X /> : <Menu />}
 					</button>
 				</div>
 			</div>
