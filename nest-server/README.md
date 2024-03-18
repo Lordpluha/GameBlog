@@ -6,6 +6,10 @@
 - run `yarn seeder` to create posts
 - run `yarn start:dev`
 
+## How to preview docs?
+- run `yarn start:dev`
+- go to `base_url/api/docs` in your browser
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
