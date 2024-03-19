@@ -1,0 +1,135 @@
+/* SCSS Compiled */
+* {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-image: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  overflow: visible;
+  overflow-wrap: normal;
+  word-break: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  list-style-type: none;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a,
+button,
+input,
+textarea,
+form {
+  color: #000;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+a:hover,
+button:hover,
+input:hover,
+textarea:hover,
+form:hover {
+  cursor: pointer;
+}
+
+span {
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: clip;
+}
+
+body {
+  background-color: #161B1D;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+}
+
+body.light {
+  background: #DEDFE1;
+}
+
+main {
+  background-color: #1E2224;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+[aria-hidden=true] {
+  visibility: hidden;
+}
+
+.filters .filters__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.filters .filters__tabs .filter__list {
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  row-gap: 8px;
+}
+.filters .filters__tabs .filter__list li {
+  height: 26px;
+}
+.filters .filters__tabs .filter__list li a.filter {
+  display: block;
+  border-radius: 13px;
+  padding: 6px 16px;
+  background-color: #161B1D;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  font-family: "Rubik", sans-serif;
+}
+.filters .filters__tabs .filter__list li a.filter:hover {
+  background-color: #262A2C;
+}
+.filters .filters__tabs .filter__list li a.filter:focus {
+  background-color: #41474A;
+}

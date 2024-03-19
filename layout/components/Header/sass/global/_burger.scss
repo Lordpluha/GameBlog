@@ -1,0 +1,163 @@
+.header__burger-menu {
+    border-radius: 12px;
+    bottom: auto;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.04);
+    right: 0;
+    top: -100%;
+    margin-top: 4px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 16px 36px;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    font-family: 'Rubik', sans-serif;
+    transition: top 1s, opacity 0.3s ease, visibility 0.3s ease;
+
+
+    .header__burger-inside {
+        .header__burger-top {
+            align-items: center;
+            display: flex;
+            justify-content: flex-end;
+            height: 40px;
+
+            p {
+                color: #747c81;
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 16px;
+            }
+
+            fieldset {
+                border-radius: 20px;
+                background: rgba(0, 0, 0, 0.3);
+                display: flex;
+                height: 40px;
+                justify-content: space-between;
+                align-items: center;
+
+                input {
+                    opacity: 0;
+                    position: absolute;
+                }
+
+
+                label {
+                    cursor: pointer;
+                    padding: 5px;
+                    border-radius: 20px;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                        display: block;
+                    }
+                }
+
+                input:checked+label {
+                    background-color: #1e2224;
+                }
+            }
+        }
+
+        .header__burger-navigation {
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+
+            button.header__accordion {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: bold;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 16px;
+                }
+
+                .icon.ico_minus {
+                    display: none;
+                }
+
+                .icon.ico_plus {
+                    display: block;
+                }
+
+                .open.icon.ico_minus {
+                    display: block;
+                }
+
+                .open.icon.ico_plus {
+                    display: none;
+                }
+            }
+
+            .header__burger-content {
+                display: flex;
+                flex-direction: column;
+                padding: 0 0 0 36px;
+                overflow: hidden;
+
+                a.select {
+                    color: #747281;
+                    display: block;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        hr {
+            border-top: 1px solid #41474a;
+            margin: 16px 0px 32px;
+        }
+
+        .header__burger-help {
+            gap: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            a.header__help {
+                color: #747281;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 1.625;
+            }
+        }
+
+        ul.header__burger-soc {
+            margin-top: 23px;
+            display: flex;
+            column-gap: 13px;
+
+            li {
+                width: 22px;
+                height: 22px;
+
+                svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+.header__burger-menu.active {
+    top: 72px;
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+}
