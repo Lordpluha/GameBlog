@@ -22,7 +22,17 @@ export type TRegistrateUserDto = Pick<IUser, 'email' | 'password' | 'name'>
 export type TLoginUserDto = Pick<IUser, 'email' | 'password'>
 
 const baseQuery = fetchBaseQuery({
-	baseUrl: `${import.meta.env.VITE_SERVER_URL}/auth`
+	baseUrl: `${import.meta.env.VITE_SERVER_URL}/auth`,
+	prepareHeaders: headers => {
+		const token = localStorage.getItem('token')
+
+		// If we have a token set in state, let's assume that we should be passing it.
+		if (token) {
+			headers.set('authorization', `Bearer ${token}`)
+		}
+
+		return headers
+	}
 })
 
 // Request interceptor
@@ -31,8 +41,6 @@ const baseQueryWithReauth: BaseQueryFn<
 	unknown,
 	FetchBaseQueryError
 > = async (args, api, extraOptions) => {
-	const authHeader = `Bearer ${localStorage.getItem('token')}`
-
 	let result = await baseQuery(args, api, extraOptions)
 
 	if (result.error && result.error.status === 401) {
