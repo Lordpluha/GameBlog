@@ -1,21 +1,18 @@
-import { FC } from 'react'
-import { SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
-import { Dispatch } from 'redux'
 
 import BackArrow from '@shared/ui/icons/socials/BackArrow'
 import Google from '@shared/ui/illustrations/google.png'
 
 import styles from './UserAuthModal.module.scss'
 
-// interface RegistrationProps {
-// 	setModalOpened: Dispatch<SetStateAction<boolean>>
-// 	setModal: Dispatch<SetStateAction<boolean>>
-// }
+interface RegistrationProps {
+	setModalOpened: React.Dispatch<React.SetStateAction<boolean>>
+	setModal: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-const Registration = ({ setModalOpened, setModal }) => {
+const Registration = ({ setModalOpened, setModal }: RegistrationProps) => {
 	return (
 		<div className={styles.headerOverlay}>
 			<div className={styles.headerSlider}>

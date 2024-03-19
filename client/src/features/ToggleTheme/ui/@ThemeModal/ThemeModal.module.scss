@@ -3,5 +3,6 @@
 }
 
 .headerToggleTheme li {
-	@apply flex flex-row gap-3 text-[var(--default-dark-text-color)] py-5 cursor-pointer text-[16px] hover:text-white;
+	@apply flex flex-row gap-3 text-[var(--default-dark-text-color)] py-5 cursor-pointer text-[16px]
+	 hover:text-white;
 }

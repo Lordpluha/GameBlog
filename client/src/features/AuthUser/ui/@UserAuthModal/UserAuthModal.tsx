@@ -18,6 +18,9 @@ interface TUserAuthModal {
 	modal: boolean
 	setModal: Dispatch<SetStateAction<boolean>>
 	closeButtonRef: MutableRefObject<HTMLButtonElement>
+	refReg: MutableRefObject<HTMLButtonElement>
+	setModalOpened: Dispatch<SetStateAction<boolean>>
+	modalOpened: boolean
 }
 
 /**
@@ -28,9 +31,10 @@ interface TUserAuthModal {
  * @param ref reference for component container type of HTMLDivElement
  */
 const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
-	({ modal, setModal, closeButtonRef }, ref) => {
-		const [modalOpened, setModalOpened] = useState<boolean>(false)
-
+	(
+		{ setModal, closeButtonRef, refReg, setModalOpened, modalOpened },
+		ref
+	) => {
 		return (
 			<div className={styles.userAuthBlockOverflow}>
 				<div className={styles.userAuthBlockPosition} ref={ref}>
@@ -55,6 +59,7 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 								<Socials />
 							</div>
 							<button
+								ref={refReg}
 								className={styles.userAuthBtnRegistration}
 								onClick={() => setModalOpened(true)}
 							>

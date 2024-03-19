@@ -1,4 +1,10 @@
-import { MouseEvent, type MutableRefObject, useEffect, useState } from 'react'
+import {
+	MouseEvent,
+	type MutableRefObject,
+	useEffect,
+	useRef,
+	useState
+} from 'react'
 
 /**
  * Hook for close the window when clicked outside the component
@@ -7,9 +13,11 @@ import { MouseEvent, type MutableRefObject, useEffect, useState } from 'react'
  */
 const useModal = (
 	refModal: MutableRefObject<HTMLElement>,
-	refButton: MutableRefObject<HTMLElement>[]
+	refButton: MutableRefObject<HTMLElement>[],
+	refReg: MutableRefObject<HTMLElement>
 ) => {
 	const [modal, setModal] = useState<boolean>(false)
+	const [modalOpened, setModalOpened] = useState<boolean>(false)
 
 	useEffect(() => {
 		const handleClick = (e: globalThis.MouseEvent) => {
@@ -28,6 +36,9 @@ const useModal = (
 					refButton?.some(cur => cur.current?.contains(targetNode)))
 			) {
 				setModal(prev => !prev)
+			} else if (refReg.current.contains(targetNode)) {
+				//при нажатии на кнопку зарегистрироваться
+				setModalOpened(true)
 			}
 		}
 
@@ -36,9 +47,9 @@ const useModal = (
 		return () => {
 			document.removeEventListener('click', handleClick, true)
 		}
-	}, [refModal, refButton])
+	}, [refModal, refButton, refReg])
 
-	return { modal, setModal }
+	return { modal, setModal, modalOpened, setModalOpened }
 }
 
 export default useModal

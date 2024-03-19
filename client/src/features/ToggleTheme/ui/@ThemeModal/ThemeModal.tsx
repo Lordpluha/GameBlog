@@ -1,5 +1,6 @@
 import {
 	type Dispatch,
+	MutableRefObject,
 	type PropsWithRef,
 	type SetStateAction,
 	forwardRef
@@ -16,6 +17,8 @@ interface TModalThemeProps {
 	theme: TTheme
 	setModal: Dispatch<SetStateAction<boolean>>
 	setTheme: Dispatch<SetStateAction<TTheme>>
+	refBtnThemeDark: MutableRefObject<HTMLLIElement>
+	refBtnThemeSystem: MutableRefObject<HTMLLIElement>
 }
 
 /**
@@ -30,38 +33,44 @@ interface TModalThemeProps {
 const ThemeModeModal = forwardRef<
 	HTMLUListElement,
 	PropsWithRef<TModalThemeProps>
->(({ theme, setTheme, setModal }, ref) => {
-	const switchTheme = (val: TTheme) => {
-		setTheme(val)
-		setModal(false)
-	}
+>(({ theme, setTheme, setModal, refBtnThemeSystem, refBtnThemeDark }, ref) => {
+	// const switchTheme = (val: TTheme) => {
+	// 	setTheme(val)
+	// 	setModal(false)
+	// }
 
-	const deviceTheme = () => {
-		setModal(false)
-		setTheme(
-			window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'dark'
-				: 'light'
-		)
-	}
+	// const deviceTheme = () => {
+	// 	setModal(false)
+	// 	setTheme(
+	// 		window.matchMedia('(prefers-color-scheme: dark)').matches
+	// 			? 'dark'
+	// 			: 'light'
+	// 	)
+	// }
 
 	return (
 		<ul className={styles.headerToggleTheme} ref={ref}>
 			<li
-				onClick={() => {
-					switchTheme('light')
-				}}
+			// onClick={() => handleButtonClick('light')}
+			// onClick={() => {
+			// 	switchTheme('light')
+			// }}
 			>
 				<SunEl theme={theme} />
 			</li>
 			<li
-				onClick={() => {
-					switchTheme('dark')
-				}}
+				ref={refBtnThemeDark}
+				// onClick={() => {
+				// 	handleButtonClick('dark')
+				// switchTheme('dark')
+				// }}
 			>
 				<MoonEl theme={theme} />
 			</li>
-			<li onClick={deviceTheme}>
+			<li
+				ref={refBtnThemeSystem}
+				// onClick={deviceTheme}
+			>
 				<MonitorSmartphone />
 				<p>Системная</p>
 			</li>

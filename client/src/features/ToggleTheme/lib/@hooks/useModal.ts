@@ -1,4 +1,14 @@
-import { MouseEvent, type MutableRefObject, useEffect, useState } from 'react'
+import {
+	MouseEvent,
+	type MutableRefObject,
+	useCallback,
+	useEffect,
+	useState
+} from 'react'
+
+import { TTheme } from '@features/ToggleTheme/model'
+
+import useTheme from './useTheme'
 
 /**
  * Hook for close the window when clicked outside the component
@@ -7,9 +17,16 @@ import { MouseEvent, type MutableRefObject, useEffect, useState } from 'react'
  */
 const useModal = (
 	refModal: MutableRefObject<HTMLElement>,
-	refButton: MutableRefObject<HTMLElement>[]
+	refButton: MutableRefObject<HTMLElement>[],
+	refBtnTheme: MutableRefObject<HTMLElement>[]
 ) => {
 	const [modal, setModal] = useState<boolean>(false)
+	const { theme, setTheme } = useTheme()
+
+	const switchTheme = (val: TTheme) => {
+		setTheme(val)
+		setModal(false)
+	}
 
 	useEffect(() => {
 		const handleClick = (e: globalThis.MouseEvent) => {
@@ -28,6 +45,12 @@ const useModal = (
 					refButton?.some(cur => cur.current?.contains(targetNode)))
 			) {
 				setModal(prev => !prev)
+			} else if (
+				refBtnTheme?.some(cur => cur.current?.contains(targetNode))
+			) {
+				switchTheme('dark')
+			} else {
+				switchTheme('light')
 			}
 		}
 
@@ -36,9 +59,9 @@ const useModal = (
 		return () => {
 			document.removeEventListener('click', handleClick, true)
 		}
-	}, [refModal, refButton])
+	}, [refModal, refButton, refBtnTheme])
 
-	return { modal, setModal }
+	return { modal, setModal, theme, setTheme }
 }
 
 export default useModal

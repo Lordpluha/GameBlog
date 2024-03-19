@@ -5,6 +5,10 @@
 @import 'normalize.scss';
 @import 'vars.scss';
 
+body {
+	transition: all 0.5s ease-in-out;
+}
+
 :root {
 	@include vars;
 }
@@ -23,6 +27,7 @@ html[data-theme='light'] {
 
 .layoutComponent {
 	@apply mx-auto h-screen bg-[var(--body-bg-color)] text-[var(--text-color)] flex flex-col;
+	transition: background-color 0.5s ease;
 }
 .overlay {
 	position: absolute;

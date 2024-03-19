@@ -13,7 +13,12 @@ const UserAuthBtn = () => {
 	const refModal = useRef<HTMLDivElement>(null!)
 	const refButton1 = useRef<HTMLButtonElement>(null!)
 	const refButton2 = useRef<HTMLButtonElement>(null!)
-	const { modal, setModal } = useModal(refModal, [refButton1, refButton2])
+	const refReg = useRef<HTMLButtonElement>(null!)
+	const { modal, setModal, modalOpened, setModalOpened } = useModal(
+		refModal,
+		[refButton1, refButton2],
+		refReg
+	)
 	const [isHover, setIsHover] = useState<boolean>(false)
 
 	return (
@@ -36,6 +41,9 @@ const UserAuthBtn = () => {
 			</button>
 			{modal && (
 				<UserAuthModal
+					modalOpened={modalOpened}
+					refReg={refReg}
+					setModalOpened={setModalOpened}
 					modal={modal}
 					setModal={setModal}
 					closeButtonRef={refButton2}
