@@ -6,13 +6,7 @@ const SunEl = ({ theme }: { theme: TTheme }) => {
 	const isLight = theme === 'light'
 	return (
 		<>
-			<Sun
-				className={
-					isLight
-						? 'text-[#e6d649]'
-						: 'text-[var(--default-dark-text-color)]'
-				}
-			/>
+			<Sun className={isLight ? 'text-[#e6d649]' : ''} />
 			<p className={isLight ? 'text-white' : ''}>Светлая тема</p>
 		</>
 	)

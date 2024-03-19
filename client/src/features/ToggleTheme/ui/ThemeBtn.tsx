@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react'
 
-import { theme } from 'antd'
 import { Moon, Sun } from 'lucide-react'
 
-import { useTheme } from '../lib'
+// import { useTheme } from '../lib'
 import useModal from '../lib/@hooks/useModal'
 import ThemeModeModal from './@ThemeModal/ThemeModal'
 
@@ -16,10 +15,12 @@ const ThemeBtn = () => {
 	const refButton1 = useRef<HTMLButtonElement>(null!)
 	const refBtnThemeSystem = useRef<HTMLLIElement>(null!)
 	const refBtnThemeDark = useRef<HTMLLIElement>(null!)
+	const refBtnThemeLight = useRef<HTMLLIElement>(null!)
 	const { modal, setModal, theme, setTheme } = useModal(
 		refModal,
 		[refButton1],
-		[refBtnThemeSystem, refBtnThemeDark]
+		[refBtnThemeSystem, refBtnThemeDark],
+		refBtnThemeLight
 	)
 	const [isHover, setIsHover] = useState<boolean>(false)
 
@@ -44,6 +45,7 @@ const ThemeBtn = () => {
 			</button>
 			{modal && (
 				<ThemeModeModal
+					refBtnThemeLight={refBtnThemeLight}
 					refBtnThemeSystem={refBtnThemeSystem}
 					refBtnThemeDark={refBtnThemeDark}
 					setModal={setModal}

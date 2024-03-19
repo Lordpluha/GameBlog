@@ -18,7 +18,8 @@ import useTheme from './useTheme'
 const useModal = (
 	refModal: MutableRefObject<HTMLElement>,
 	refButton: MutableRefObject<HTMLElement>[],
-	refBtnTheme: MutableRefObject<HTMLElement>[]
+	refBtnTheme: MutableRefObject<HTMLElement>[],
+	refBtnThemeLight: MutableRefObject<HTMLElement>
 ) => {
 	const [modal, setModal] = useState<boolean>(false)
 	const { theme, setTheme } = useTheme()
@@ -45,11 +46,11 @@ const useModal = (
 					refButton?.some(cur => cur.current?.contains(targetNode)))
 			) {
 				setModal(prev => !prev)
-			} else if (
-				refBtnTheme?.some(cur => cur.current?.contains(targetNode))
-			) {
+			}
+			if (refBtnTheme?.some(cur => cur.current?.contains(targetNode))) {
 				switchTheme('dark')
-			} else {
+			}
+			if (refBtnThemeLight.current.contains(targetNode)) {
 				switchTheme('light')
 			}
 		}

@@ -1,6 +1,6 @@
 .commentsBlock {
 	@apply bg-[var(--modal-bg-color)] w-[400px] rounded-3xl fixed top-[79px] right-0 bottom-1 shadow-2xl flex flex-col;
-	// 	animation: Animation 1.3s;
+	animation: Animation 1.3s;
 }
 @keyframes Animation {
 	from {
@@ -15,10 +15,9 @@
 	@apply flex justify-between items-center text-[#dce6eb] p-4;
 	padding: 24px 16px 0;
 }
-.icon:hover {
-	color: var(--hover-active-color);
+.icon {
+	@apply text-[var(--default-dark-text-color)] hover:text-[var(--hover-active-color)];
 }
-
 .commentsBlockBody {
 	@apply touch-auto scroll-auto p-4 overflow-auto flex-grow;
 }
