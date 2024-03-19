@@ -14,7 +14,8 @@ import {
 const useModal = (
 	refModal: MutableRefObject<HTMLElement>,
 	refButton: MutableRefObject<HTMLElement>[],
-	refReg: MutableRefObject<HTMLElement>
+	refBtnRegistration: MutableRefObject<HTMLElement>,
+	refBack: MutableRefObject<HTMLElement>
 ) => {
 	const [modal, setModal] = useState<boolean>(false)
 	const [modalOpened, setModalOpened] = useState<boolean>(false)
@@ -36,9 +37,12 @@ const useModal = (
 					refButton?.some(cur => cur.current?.contains(targetNode)))
 			) {
 				setModal(prev => !prev)
-			} else if (refReg.current.contains(targetNode)) {
+			}
+			if (refBtnRegistration.current.contains(targetNode)) {
 				//при нажатии на кнопку зарегистрироваться
 				setModalOpened(true)
+			} else if (refBack.current.contains(targetNode)) {
+				setModalOpened(false)
 			}
 		}
 
@@ -47,7 +51,7 @@ const useModal = (
 		return () => {
 			document.removeEventListener('click', handleClick, true)
 		}
-	}, [refModal, refButton, refReg])
+	}, [refModal, refButton, refBtnRegistration, refBack])
 
 	return { modal, setModal, modalOpened, setModalOpened }
 }

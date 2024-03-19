@@ -1,3 +1,4 @@
+import { MutableRefObject } from 'react'
 import { Link } from 'react-router-dom'
 
 import { X } from 'lucide-react'
@@ -10,26 +11,35 @@ import styles from './UserAuthModal.module.scss'
 interface RegistrationProps {
 	setModalOpened: React.Dispatch<React.SetStateAction<boolean>>
 	setModal: React.Dispatch<React.SetStateAction<boolean>>
+	closeButtonRef: MutableRefObject<HTMLButtonElement>
+	refBack: MutableRefObject<HTMLButtonElement>
 }
 
-const Registration = ({ setModalOpened, setModal }: RegistrationProps) => {
+const Registration = ({
+	setModalOpened,
+	setModal,
+	refBack,
+	closeButtonRef
+}: RegistrationProps) => {
 	return (
 		<div className={styles.headerOverlay}>
 			<div className={styles.headerSlider}>
 				<div className={styles.slider}>
 					<div className={styles.fill}>
 						<button
-							onClick={() => setModalOpened(false)}
+							ref={refBack}
+							// onClick={() => setModalOpened(false)}
 							className={styles.back}
 						>
 							<BackArrow />
 							<span>Назад</span>
 						</button>
 						<button
+							ref={closeButtonRef}
 							className={styles.userAuthHeaderBtnClose}
-							onClick={() => {
-								setModal(false)
-							}}
+							// onClick={() => {
+							// 	setModal(false)
+							// }}
 						>
 							<X className={styles.icon} />
 						</button>

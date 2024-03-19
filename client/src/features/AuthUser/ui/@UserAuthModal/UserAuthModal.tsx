@@ -18,9 +18,10 @@ interface TUserAuthModal {
 	modal: boolean
 	setModal: Dispatch<SetStateAction<boolean>>
 	closeButtonRef: MutableRefObject<HTMLButtonElement>
-	refReg: MutableRefObject<HTMLButtonElement>
+	refBtnRegistration: MutableRefObject<HTMLButtonElement>
 	setModalOpened: Dispatch<SetStateAction<boolean>>
 	modalOpened: boolean
+	refBack: MutableRefObject<HTMLButtonElement>
 }
 
 /**
@@ -32,7 +33,14 @@ interface TUserAuthModal {
  */
 const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 	(
-		{ setModal, closeButtonRef, refReg, setModalOpened, modalOpened },
+		{
+			setModal,
+			closeButtonRef,
+			refBtnRegistration,
+			setModalOpened,
+			modalOpened,
+			refBack
+		},
 		ref
 	) => {
 		return (
@@ -42,9 +50,9 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 						<button
 							ref={closeButtonRef}
 							className={styles.userAuthHeaderBtnClose}
-							onClick={() => {
-								setModal(false)
-							}}
+							// onClick={() => {
+							// 	setModal(false)
+							// }}
 						>
 							<X className={styles.icon} />
 						</button>
@@ -59,14 +67,16 @@ const UserAuthModel = forwardRef<HTMLDivElement, PropsWithRef<TUserAuthModal>>(
 								<Socials />
 							</div>
 							<button
-								ref={refReg}
+								ref={refBtnRegistration}
 								className={styles.userAuthBtnRegistration}
-								onClick={() => setModalOpened(true)}
+								// onClick={() => setModalOpened(true)}
 							>
 								Зарегистрироваться
 							</button>
 							{modalOpened && (
 								<Registration
+									refBack={refBack}
+									closeButtonRef={closeButtonRef}
 									setModal={setModal}
 									setModalOpened={setModalOpened}
 								/>
