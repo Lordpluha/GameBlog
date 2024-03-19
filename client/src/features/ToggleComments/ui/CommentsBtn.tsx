@@ -45,6 +45,7 @@ const CommentsBtn = ({ newComments }: { newComments: IComment[] }) => {
 			</button>
 			{modal && (
 				<CommentsModal
+					modal={modal}
 					commentsList={newComments}
 					ref={refCommentModal}
 					setModal={setModal}

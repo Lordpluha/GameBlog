@@ -1,6 +1,6 @@
 .commentsBlock {
 	@apply bg-[var(--modal-bg-color)] w-[400px] rounded-3xl fixed top-[79px] right-0 bottom-1 shadow-2xl flex flex-col;
-	animation: Animation 1.3s;
+	animation: Animation 0.5s;
 }
 @keyframes Animation {
 	from {
@@ -8,6 +8,18 @@
 	}
 	to {
 		right: 0;
+	}
+}
+
+.commentsBlockClose {
+	animation: OnClose 0.5s;
+}
+@keyframes OnClose {
+	from {
+		right: 0;
+	}
+	to {
+		right: -100%;
 	}
 }
 

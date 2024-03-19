@@ -1,6 +1,6 @@
 .userAuthBlockOverflow {
 	@apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-0 justify-center items-center w-full md:inset-0 h-full max-h-full;
-	animation: Animation 1.3s;
+	animation: Animation 0.5s;
 }
 .headerOverlay {
 	left: 0;

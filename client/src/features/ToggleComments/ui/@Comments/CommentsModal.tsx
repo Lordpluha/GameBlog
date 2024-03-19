@@ -1,11 +1,12 @@
 import {
 	type Dispatch,
+	MutableRefObject,
 	type PropsWithRef,
 	type SetStateAction,
-	forwardRef,
-	MutableRefObject
+	forwardRef
 } from 'react'
 
+import modal from 'antd/es/modal'
 import { X } from 'lucide-react'
 
 import { type IComment } from '@model/interfaces'
@@ -17,6 +18,7 @@ interface TCommentModalProps {
 	commentsList: IComment[]
 	setModal: Dispatch<SetStateAction<boolean>>
 	closeButtonRef: MutableRefObject<HTMLButtonElement>
+	modal: boolean
 }
 
 /**
@@ -28,8 +30,11 @@ interface TCommentModalProps {
 const CommentsModal = forwardRef<
 	HTMLDivElement,
 	PropsWithRef<TCommentModalProps>
->(({ commentsList, setModal, closeButtonRef }, ref) => (
-	<div className={styles.commentsBlock} ref={ref}>
+>(({ commentsList, setModal, closeButtonRef, modal }, ref) => (
+	<div
+		className={!modal ? styles.commentsBlockClose : styles.commentsBlock} //не работает
+		ref={ref}
+	>
 		<div className={styles.commentsBlockHeader}>
 			<p className='text-3xl font-semibold'>Новые комментарии</p>
 			<button
