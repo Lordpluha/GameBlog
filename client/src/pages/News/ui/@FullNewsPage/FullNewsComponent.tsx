@@ -2,8 +2,8 @@ import { FC, useEffect, useState } from 'react'
 
 import { IPublication } from '@model/interfaces'
 
-import { useGetArtCommentsQuery } from '@store/@api/CommentsApi'
-import { useGetNewsByIdQuery } from '@store/@api/NewsApi'
+import { useGetArtCommentsQuery } from '@store/api/CommentsApi'
+import { useGetNewsByIdQuery } from '@store/api/NewsApi'
 
 import { INewsNavigation } from '@pages/News/model/@interfaces'
 

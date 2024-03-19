@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { useGetNewsListQuery } from '@store/@api/NewsApi'
+import { useGetNewsListQuery } from '@store/api/NewsApi'
 
 import { Pagination } from '@features/Pagination'
 
@@ -15,12 +15,12 @@ const PostsSmall: FC = () => {
 		error
 	} = useGetNewsListQuery(currentPage)
 
-	// if (isError)
-	// 	return (
-	// 		<h1>
-	// 			{error?.status} - {error?.message}
-	// 		</h1>
-	// 	)
+	if (isError)
+		return (
+			<h1>
+				{error?.status} - {error?.message}
+			</h1>
+		)
 
 	if (isLoading) return <h1>Loading...</h1>
 

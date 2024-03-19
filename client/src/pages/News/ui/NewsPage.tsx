@@ -7,9 +7,9 @@ import { PostsLarge, PostsSmall } from '@widgets/Posts'
  */
 const NewsPage = () => {
 	return (
-		<div className='flex'>
+		<div className='flex flex-row gap-x-16 shrink-0 grow-1'>
 			<PostsSmall />
-			<aside className='md:block min-w-[10vw] hidden'>
+			<aside className='lg:block min-w-[10vw] hidden max-w-[30vw] shrink-1 grow-0'>
 				<PostsLarge />
 			</aside>
 		</div>

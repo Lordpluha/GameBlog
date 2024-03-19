@@ -8,7 +8,7 @@ import 'swiper/scss'
 
 import { IPublication } from '@model/interfaces'
 
-import { useGetNewsByPopularityQuery } from '@store/@api/NewsApi'
+import { useGetNewsByPopularityQuery } from '@store/api/NewsApi'
 
 import { ISlider } from '../model/@interfaces'
 import ReadAlsoItem from './@ReadAlso/ReadAlsoItem'
@@ -26,7 +26,7 @@ const SliderReadAlso = ({ currentPost }: { currentPost: IPublication }) => {
 		isLoading,
 		isError,
 		error
-	} = useGetNewsByPopularityQuery()
+	} = useGetNewsByPopularityQuery(15)
 
 	if (isLoading) return <h1>Loading ...</h1>
 	if (isError) {

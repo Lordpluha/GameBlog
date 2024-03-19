@@ -2,10 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { IComment } from '@model/interfaces'
 
-import { TServerResponse } from '@store/serverResponse.type'
+import { TServerResponse } from '@store/model/ServerResponse.type'
 
-export const CommentsApi = createApi({
-	reducerPath: 'comments/api',
+export const commentsApi = createApi({
+	reducerPath: 'api/comments',
 	baseQuery: fetchBaseQuery({
 		baseUrl: import.meta.env.VITE_SERVER_URL
 	}),
@@ -26,4 +26,4 @@ export const CommentsApi = createApi({
 	})
 })
 
-export const { useGetCommentsQuery, useGetArtCommentsQuery } = CommentsApi
+export const { useGetCommentsQuery, useGetArtCommentsQuery } = commentsApi

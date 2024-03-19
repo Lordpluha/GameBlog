@@ -2,17 +2,20 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { ICategory, IPublication } from '@model/interfaces'
 
-import { TServerResponse } from '@store/serverResponse.type'
+import { TServerResponse } from '@store/model/ServerResponse.type'
 
-export const NewsApi = createApi({
-	reducerPath: 'news/api',
+export const newsApi = createApi({
+	reducerPath: 'api/news',
 	baseQuery: fetchBaseQuery({
 		baseUrl: import.meta.env.VITE_SERVER_URL
 	}),
 	tagTypes: ['News', 'Categories'],
 	endpoints: build => ({
-		getNewsList: build.query<TServerResponse<IPublication>, number>({
-			query: (page: number) => ({
+		getNewsList: build.query<
+			TServerResponse<IPublication>,
+			number
+		>({
+			query: (page) => ({
 				url: `article`,
 				params: {
 					page,
@@ -40,17 +43,19 @@ export const NewsApi = createApi({
 			transformResponse: (response: TServerResponse<ICategory>) =>
 				response.items
 		}),
-		getNewsByPopularity: build.query<TServerResponse<IPublication>, void>({
-			query: () => ({
-				url: 'article',
-				params: {
-					page: 1,
-					isVerif: 'false',
-					count: 15,
-					byPopularity: true
-				}
-			})
-		})
+		getNewsByPopularity: build.query<TServerResponse<IPublication>, number>(
+			{
+				query: count => ({
+					url: 'article',
+					params: {
+						page: 1,
+						isVerif: 'false',
+						count,
+						byPopularity: true
+					}
+				})
+			}
+		)
 	})
 })
 
@@ -60,4 +65,4 @@ export const {
 	useGetNewsBySlugQuery,
 	useGetNewsByIdQuery,
 	useGetNewsByPopularityQuery
-} = NewsApi
+} = newsApi

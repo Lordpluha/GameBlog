@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { type IPost } from '@model/interfaces'
+import { IPublication } from '@model/interfaces'
 
 import { Cover } from '@shared/ui'
 
@@ -8,7 +8,7 @@ import PostFooter from './@PostFooter/PostFooter'
 import PostInfo from './@PostInfo/PostInfo'
 import PostTitle from './@PostTitle/PostTitle'
 
-type TPostLargeProps = { post: IPost }
+type TPostLargeProps = { post: IPublication }
 
 /**
  * Renders a News component with the provided news data.
@@ -18,20 +18,20 @@ type TPostLargeProps = { post: IPost }
  * @return {JSX.Element} - The rendered News component.
  */
 const PostLarge: FC<TPostLargeProps> = ({ post }) => {
-	const { category, content, createdAt, preview, commentsCount, user } = post
+	const { title, createdAt, preview, _count, author, categories } = post
 
 	function addToBookmark() {}
 
 	return (
-		<div className='flex flex-col gap-4 max-w-[350px] bg-neutral-800 rounded-2xl overflow-hidden'>
-			<Cover height='56em' width='100%' src={preview} />
+		<div className='flex flex-col gap-4 bg-neutral-800 rounded-2xl overflow-hidden h-[40vh]'>
+			<Cover height='50%' width='100%' src={preview} />
 			<div className='flex flex-col gap-4 p-3'>
-				<PostInfo category={category} user={user} />
-				<PostTitle content={content} />
+				{/* <PostInfo category={categories[0]} user={author} /> */}
+				<PostTitle content={title} />
 				<PostFooter
 					createdAt={createdAt}
 					addToBookmark={addToBookmark}
-					commentsCount={commentsCount}
+					commentsCount={_count.comments}
 				/>
 			</div>
 		</div>
