@@ -1,6 +1,4 @@
 import { useRef, useState } from 'react'
-
-import modal from 'antd/es/modal'
 import { UserRound } from 'lucide-react'
 
 import { Modal, useModal } from '@entities/Modal'

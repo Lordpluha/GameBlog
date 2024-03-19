@@ -4,11 +4,11 @@ interface IUser {
 	lastName?: string | undefined
 
 	avatar?: string | undefined
+
 	// Background image for profile
 	cover?: string | undefined
 
 	login?: string
-	// password: string
 	email: string
 
 	role: 'user' | 'author'
@@ -17,6 +17,7 @@ interface IUser {
 	subscribersCount: number
 
 	lastVisitDate: number
+	password: string
 }
 
 export default IUser
