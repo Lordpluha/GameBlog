@@ -1,0 +1,238 @@
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay__settings .aside__settings {
+  background-color: #161b1d;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 658px;
+  height: 90vh;
+  padding: 16px;
+  border-radius: 16px;
+  font-family: "Rubik", sans-serif;
+}
+.overlay__settings .aside__settings button.settings__close {
+  width: 24px;
+  height: 24px;
+  background-color: #161b1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #fff;
+}
+.overlay__settings .aside__settings button.settings__close svg {
+  height: 20px;
+  width: 20px;
+}
+.overlay__settings .aside__settings button.settings__close:hover {
+  opacity: 0.8;
+}
+.overlay__settings .aside__settings h2 {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+.overlay__settings .aside__settings p {
+  color: #696b65;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  margin: 0 0 32px;
+}
+.overlay__settings .aside__settings form.settings__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 24px;
+  width: 100%;
+  background-color: #161b1d;
+  color: #fff;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__news {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info span.settings__numbers {
+  display: block;
+  background-color: #41474a;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 16px;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info svg {
+  width: 16px;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info .icon.settings__arrow-up {
+  display: none;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info .icon.settings__arrow-down {
+  display: block;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info .open.icon.settings__arrow-up {
+  display: block;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select span.settings__info .open.icon.settings__arrow-down {
+  display: none;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list button.settings__select:hover span.settings__arrow {
+  opacity: 0.8;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+  padding-bottom: 40px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel li.settings__choose {
+  background-color: #2f3437;
+  color: #b0b4b8;
+  border-radius: 12px;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel li.settings__choose input {
+  display: none;
+  z-index: 0;
+  position: absolute;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel li.settings__choose label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.625;
+  padding: 12px 18px 12px 12px;
+  border-radius: 12px;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel li.settings__choose label:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 2px solid #b0b4b8;
+  border-radius: 5px;
+  z-index: 1;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel li.settings__choose label:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  width: 6px;
+  height: 12px;
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 2;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel li.settings__choose:hover {
+  background-color: #262a2c;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel input:checked + label {
+  background-color: #b0b4b8;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel input:checked + label span {
+  color: #fff;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel input:checked + label:before {
+  background-color: none;
+  border-color: #fff;
+}
+.overlay__settings .aside__settings form.settings__form ul.settings__group li.settings__list ul.settings__panel input:checked + label:after {
+  border-color: #fff;
+}
+.overlay__settings .aside__settings form.settings__form .settings__complete {
+  border-radius: 8px 8px 0 0;
+  bottom: -16px;
+  justify-self: flex-end;
+  margin-bottom: -16px;
+  margin-top: auto;
+  padding-bottom: 16px;
+  position: sticky;
+  width: 100%;
+}
+.overlay__settings .aside__settings form.settings__form .settings__complete button.settings__submit {
+  background-color: #fff;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 18px;
+  width: 100%;
+}
+.overlay__settings .aside__settings form.settings__form .settings__complete button.settings__submit:hover {
+  background-color: #dee0e3;
+}
