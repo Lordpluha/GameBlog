@@ -1,33 +1,103 @@
-.userAuthBlockOverflow {
-	@apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-0 justify-center items-center w-full md:inset-0 h-full max-h-full;
-	animation: Animation 0.5s;
-}
-.headerOverlay {
-	left: 0;
-	animation: left 1s;
-	display: flex;
+// .userAuthBlockOverflow {
+// 	@apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 justify-center items-center w-full
+// 	md:inset-0 h-full max-h-full;
+// 	animation: slide-up 0.5s;
+// 	z-index: 1000;
+// }
+.userAuthBlockOverlay {
 	position: fixed;
-	justify-content: center;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 99999;
-	transition: 1s;
-	align-items: center;
-	.headerSlider {
-		overflow: hidden;
-	}
-}
-@keyframes left {
-	from {
-		left: -1%;
-	}
-	to {
-		left: 0;
-	}
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
 }
 
-@keyframes Animation {
+.userAuthBlockOverflow {
+	position: relative;
+	height: 50%;
+	// background-color: #1e2224;
+	// border: 3px solid #41474a;
+	border-radius: 16px;
+	min-height: 523px;
+	// width: 426px;
+	z-index: 99999;
+	margin-top: 72px;
+	margin: 0 auto;
+	// overflow: hidden;
+	display: block;
+	animation: slide-up 0.5s;
+}
+
+// .headerSlider {
+// 	position: relative;
+// 	height: 50%;
+// 	// border: 3px solid #41474a;
+// 	border-radius: 16px;
+// 	min-height: 523px;
+// 	z-index: 99999;
+// 	margin-top: 72px;
+// 	margin: 0 auto;
+// 	// overflow: hidden;
+// 	display: block;
+// 	// left: 0;
+// 	width: 426px;
+// 	animation: rightToLeft 0.5s;
+// }
+// @keyframes rightToLeft {
+// 	from {
+// 		left: 24%;
+// 	}
+// 	to {
+// 		left: 0;
+// 	}
+// }
+
+// .sliderWrapper {
+// 	// opacity: 0;
+// 	// overflow: hidden;
+// 	display: flex;
+// 	width: max-content;
+// 	min-height: 523px;
+// 	margin: 0 auto;
+// 	-webkit-box-shadow: 0 3px 20px 1px #000000;
+// 	box-shadow: 0 3px 20px 1px #000000;
+// 	transition: transform 0.5s ease-in-out;
+// 	transition:
+// 		transform 0.5s ease-in-out,
+// 		-webkit-transform 0.5s ease-in-out;
+// 	// left: 0;
+// 	animation: rightToLeft2 0.5s;
+// }
+// @keyframes rightToLeft2 {
+// 	from {
+// 		left: 0%;
+// 	}
+// 	to {
+// 		left: -24%;
+// 	}
+// }
+
+.headerSlider {
+	@apply bg-[var(--modal-bg-color)] relative z-0;
+	height: 50%;
+	border: 3px solid #41474a;
+	border-radius: 16px;
+	height: 523px;
+	max-width: 28rem;
+	margin-top: 72px;
+	width: 430px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: block;
+	animation: myAnimation;
+	transition: transform 0.5s ease-in-out;
+}
+
+@keyframes slide-up {
 	from {
 		top: 100%;
 	}
@@ -80,21 +150,6 @@
 	color: var(--hover-active-color);
 }
 /////////////////////////////registration///////////////////
-.headerSlider {
-	@apply bg-[var(--modal-bg-color)] relative z-0;
-	height: 50%;
-	border: 3px solid #41474a;
-	border-radius: 16px;
-	height: 523px;
-	max-width: 28rem;
-	margin-top: 72px;
-	width: 430px;
-	margin: 0 auto;
-	overflow: hidden;
-	display: block;
-	animation: myAnimation;
-	transition: transform 0.5s ease-in-out;
-}
 
 .fill {
 	padding: 68px 24px 66px;

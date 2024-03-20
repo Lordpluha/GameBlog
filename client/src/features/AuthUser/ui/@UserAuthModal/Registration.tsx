@@ -22,7 +22,7 @@ const Registration = ({
 	closeButtonRef
 }: RegistrationProps) => {
 	return (
-		<div className={styles.headerOverlay}>
+		<div className={styles.userAuthBlockOverlay}>
 			<div className={styles.headerSlider}>
 				<div className={styles.slider}>
 					<div className={styles.fill}>
