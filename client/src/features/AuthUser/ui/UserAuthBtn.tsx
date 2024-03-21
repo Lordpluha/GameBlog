@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+
 import { UserRound } from 'lucide-react'
 
 import { Modal, useModal } from '@entities/Modal'

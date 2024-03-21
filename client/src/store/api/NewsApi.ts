@@ -11,11 +11,8 @@ export const newsApi = createApi({
 	}),
 	tagTypes: ['News', 'Categories'],
 	endpoints: build => ({
-		getNewsList: build.query<
-			TServerResponse<IPublication>,
-			number
-		>({
-			query: (page) => ({
+		getNewsList: build.query<TServerResponse<IPublication>, number>({
+			query: page => ({
 				url: `article`,
 				params: {
 					page,
