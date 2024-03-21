@@ -2,5 +2,18 @@
 	"name": "@gameblog/root",
 	"version": "1.0.0",
 	"private": true,
-	"workspaces": ["@gameblog/client", "@gameblog/server"]
+	"workspaces": {
+		"packages": [
+			"client",
+			"server"
+		]
+	},
+	"devDependencies": {
+		"husky": "^9.0.11"
+	},
+	"scripts": {
+		"dev:client": "yarn workspace @gameblog/client dev",
+		"dev:server": "yarn workspace @gameblog/server start:dev",
+		"prepare": "husky"
+	}
 }

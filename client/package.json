@@ -1,7 +1,10 @@
 {
 	"name": "@gameblog/client",
 	"private": true,
-	"version": "1.0.0",
+	"version": "0.1.0",
+	"author": "vtesliuk <109725756+Lordpluha@users.noreply.github.com>",
+	"license": "GPL-3.0-only",
+	"description": "",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -10,8 +13,7 @@
 		"preview": "vite preview",
 		"sb": "storybook dev -p 6006",
 		"build-sb": "storybook build",
-		"pretty": "prettier --write --cache --cache-location .cache/.prettiercache ./src/**/*.{js,jsx,mjs,ts,tsx,css,scss,sass,less} --fix",
-		"prepare": "husky"
+		"pretty": "prettier --write --cache --cache-location .cache/.prettiercache ./src/**/*.{js,jsx,mjs,ts,tsx,css,scss,sass,less} --fix"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.0.1",
