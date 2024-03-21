@@ -23,8 +23,13 @@ export const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
-		logout: () => initialState,
-		tokenReceived: (state, action) => {}
+		logout: () => {
+			localStorage.removeItem('token')
+			return initialState
+		},
+		tokenReceived: (state, action) => {
+			state.token = action.payload
+		}
 	},
 	extraReducers: builder => {
 		builder

@@ -47,11 +47,7 @@ const baseQueryWithReauth: BaseQueryFn<
 
 	if (result.error && result.error.status === 401) {
 		// try to get a new token
-		const refreshResult = await baseQuery(
-			'/refreshToken',
-			api,
-			extraOptions
-		)
+		const refreshResult = await baseQuery('/refresh', api, extraOptions)
 		if (refreshResult.data) {
 			// store the new token
 			api.dispatch(tokenReceived(refreshResult.data))
@@ -93,13 +89,14 @@ export const authApi = createApi({
 				method: 'post',
 				url: 'logout'
 			})
-		}),
-		refreshToken: build.query({
-			query: () => ({
-				url: 'refresh'
-			})
 		})
+		// refreshToken: build.query({
+		// 	query: () => ({
+		// 		url: 'refresh'
+		// 	})
+		// })
 	})
 })
 
-export const { useRegistrateUserQuery, useLoginUserQuery } = authApi
+export const { useRegistrateUserQuery, useLoginUserQuery, useLogoutUserQuery } =
+	authApi
