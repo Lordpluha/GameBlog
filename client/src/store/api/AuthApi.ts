@@ -23,12 +23,14 @@ export type TLoginUserDto = Pick<IUser, 'email' | 'password'>
 
 const baseQuery = fetchBaseQuery({
 	baseUrl: `${import.meta.env.VITE_SERVER_URL}/auth`,
+	credentials: 'same-origin',
 	prepareHeaders: headers => {
 		const token = localStorage.getItem('token')
 
 		// If we have a token set in state, let's assume that we should be passing it.
 		if (token) {
 			headers.set('authorization', `Bearer ${token}`)
+			headers.set('Content-Type', 'application/json')
 		}
 
 		return headers
@@ -70,6 +72,7 @@ export const authApi = createApi({
 	endpoints: build => ({
 		registrateUser: build.query<TSuccessUserResp, TRegistrateUserDto>({
 			query: user => ({
+				method: 'post',
 				url: `registration`,
 				body: {
 					...user
@@ -78,6 +81,7 @@ export const authApi = createApi({
 		}),
 		loginUser: build.query<TSuccessUserResp, TLoginUserDto>({
 			query: user => ({
+				method: 'post',
 				url: 'login',
 				body: {
 					...user
@@ -86,6 +90,7 @@ export const authApi = createApi({
 		}),
 		logoutUser: build.query({
 			query: () => ({
+				method: 'post',
 				url: 'logout'
 			})
 		}),
