@@ -1,14 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { IUser } from '@model/interfaces'
-import { IUserPublic } from '@model/interfaces/User.interface'
+import { IUser, IUserPublic } from '@model/interfaces'
 
-import { authApi } from '@store/api/AuthApi'
+import { authApi } from '@store/index'
 
 import { RootState } from '..'
 
 export type TAuthState = {
-	user: IUser | null
+	user: IUserPublic | null
 	token: string | null
 	isAuthenticated: boolean
 }
@@ -91,7 +90,7 @@ export const authSlice = createSlice({
 				(state, action) => {
 					console.log('fulfilled', action)
 					localStorage.removeItem('token')
-					state.user = {}
+					state.user = {} as IUserPublic
 					state.isAuthenticated = false
 				}
 			)

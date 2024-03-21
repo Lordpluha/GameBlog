@@ -8,7 +8,7 @@ import {
 
 import { IUser } from '@model/interfaces'
 
-import { logout, tokenReceived } from '@store/slices/AuthSlice'
+import { logout, tokenReceived } from '@store/index'
 
 export type TSuccessUserResp = {
 	email: string

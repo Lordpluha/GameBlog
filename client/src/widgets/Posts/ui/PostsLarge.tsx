@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { useGetNewsByPopularityQuery } from '@store/api/NewsApi'
+import { useGetNewsByPopularityQuery } from '@store/index'
 
 import PostLarge from './@PostLarge/PostLarge'
 

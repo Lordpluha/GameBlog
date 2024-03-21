@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { useGetNewsListQuery } from '@store/api/NewsApi'
+import { useGetNewsListQuery } from '@store/index'
 
 import { Pagination } from '@features/Pagination'
 

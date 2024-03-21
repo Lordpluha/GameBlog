@@ -2,10 +2,9 @@ import { FC, useEffect, useState } from 'react'
 
 import { IPublication } from '@model/interfaces'
 
-import { useGetArtCommentsQuery } from '@store/api/CommentsApi'
-import { useGetNewsByIdQuery } from '@store/api/NewsApi'
+import { useGetArtCommentsQuery, useGetNewsByIdQuery } from '@store/index'
 
-import { INewsNavigation } from '@pages/News/model/@interfaces'
+import { INewsNavigation } from '../../model/@interfaces'
 
 import ContentText from './@Content/ContentText'
 import ContentTop from './@Content/ContentTop'

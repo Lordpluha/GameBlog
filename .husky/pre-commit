@@ -1,1 +1,2 @@
 yarn workspace @gameblog/client pretty
+yarn workspace @gameblog/client lint

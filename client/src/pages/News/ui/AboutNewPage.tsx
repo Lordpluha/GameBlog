@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { useGetNewsBySlugQuery } from '@store/api/NewsApi'
+import { useGetNewsBySlugQuery } from '@store/index'
 
 import { SliderReadAlso } from '@widgets/Sliders'
 

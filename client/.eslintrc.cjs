@@ -6,7 +6,7 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react-hooks/recommended',
 		'plugin:react/recommended',
-		'plugin:prettier/recommended',
+		// 'plugin:prettier/recommended',
 		// 'plugin:@conarti/feature-sliced/recommended',
 		'@feature-sliced/eslint-config/rules/layers-slices',
 		'@feature-sliced/eslint-config/rules/public-api/lite',

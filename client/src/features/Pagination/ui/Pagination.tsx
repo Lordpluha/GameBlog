@@ -3,7 +3,7 @@ import { Dispatch, ReactNode, SetStateAction } from 'react'
 import clsx from 'clsx'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-import usePagination from '../lib/@hooks/usePagination'
+import { usePagination } from '../lib/@hooks'
 import styles from './Pagination.module.scss'
 
 /**

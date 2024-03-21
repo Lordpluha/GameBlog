@@ -8,7 +8,7 @@ import 'swiper/scss'
 
 import { IPublication } from '@model/interfaces'
 
-import { useGetNewsByPopularityQuery } from '@store/api/NewsApi'
+import { useGetNewsByPopularityQuery } from '@store/index'
 
 import { ISlider } from '../model/@interfaces'
 import ReadAlsoItem from './@ReadAlso/ReadAlsoItem'

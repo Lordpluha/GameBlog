@@ -8,7 +8,7 @@ import {
 
 import { X } from 'lucide-react'
 
-import { useGetCommentsQuery } from '@store/api/CommentsApi'
+import { useGetCommentsQuery } from '@store/index'
 
 import CommentCard from './@CommentCard/CommentCard'
 import styles from './CommentsModal.module.scss'

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { IComment } from '@model/interfaces'
 
-import { TServerResponse } from '@store/model/ServerResponse.type'
+import { TServerResponse } from '../model'
 
 export const commentsApi = createApi({
 	reducerPath: 'api/comments',
