@@ -3,12 +3,12 @@
   "display": "Default",
   "compilerOptions": {
     "composite": false,
-    "declaration": true,
-    "declarationMap": true,
+    "declaration": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
+    "allowJs": false,
     "inlineSources": false,
     "isolatedModules": true,
     "module": "ESNext",
@@ -18,7 +18,8 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
