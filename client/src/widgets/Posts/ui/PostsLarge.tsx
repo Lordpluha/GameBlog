@@ -2,8 +2,9 @@ import { FC } from 'react'
 
 import { useGetNewsByPopularityQuery } from '@store/index'
 
-import PostLarge from './@PostLarge/PostLarge'
 import { TagsLarge } from '@features/FilterByTag'
+
+import PostLarge from './@PostLarge/PostLarge'
 
 const PostsLarge: FC = () => {
 	const {

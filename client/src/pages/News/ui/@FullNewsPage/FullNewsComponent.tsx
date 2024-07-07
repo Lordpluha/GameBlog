@@ -5,7 +5,6 @@ import { IPublication } from '@model/interfaces'
 import { useGetArtCommentsQuery, useGetNewsByIdQuery } from '@store/index'
 
 import { INewsNavigation } from '../../model/@interfaces'
-
 import ContentText from './@Content/ContentText'
 import ContentTop from './@Content/ContentTop'
 import ContentWrapperBottom from './@Content/ContentWrapperBottom'
