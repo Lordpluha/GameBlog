@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { useGetNewsByPopularityQuery } from '@store/index'
 
 import PostLarge from './@PostLarge/PostLarge'
+import { TagsLarge } from '@features/FilterByTag'
 
 const PostsLarge: FC = () => {
 	const {
@@ -24,14 +25,17 @@ const PostsLarge: FC = () => {
 	const { items: posts } = resp!
 
 	return (
-		<div className='flex flex-col gap-y-8'>
-			{posts && (
-				<>
-					{posts.map(el => (
-						<PostLarge post={el} key={el.slug} />
-					))}
-				</>
-			)}
+		<div>
+			<TagsLarge tags={[]} />
+			<div className='flex flex-col gap-y-8'>
+				{posts && (
+					<>
+						{posts.map(el => (
+							<PostLarge post={el} key={el.slug} />
+						))}
+					</>
+				)}
+			</div>
 		</div>
 	)
 }
