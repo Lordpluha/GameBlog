@@ -2,8 +2,16 @@
   "name": "@gameblog/eslint-config",
   "version": "0.0.0",
   "private": true,
+	"scripts": {
+		"format": "prettier --write \"./**/*.{js,md}\" --cache"
+	},
+	"prettier": "@gameblog/prettier-config",
   "devDependencies": {
+		"@gameblog/prettier-config": "workspace:*",
+    "@tanstack/eslint-plugin-query": "^5.50.1",
     "@vercel/style-guide": "^5.2.0",
-    "eslint-config-turbo": "^2.0.0"
+    "eslint-config-next": "^14.2.4",
+    "eslint-config-turbo": "^2.0.0",
+    "prettier": "^3.2.5"
   }
 }

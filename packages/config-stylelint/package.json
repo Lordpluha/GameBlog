@@ -1,17 +1,19 @@
 {
-	"name": "@gameblog/typescript-config",
+	"name": "@gameblog/stylelint-config",
 	"version": "0.0.0",
 	"private": true,
-	"license": "MIT",
 	"scripts": {
 		"format": "prettier --write \"./**/*.{json,md}\" --cache"
 	},
 	"prettier": "@gameblog/prettier-config",
-	"publishConfig": {
-		"access": "public"
+	"exports": {
+		".": "./.stylelintrc.json"
 	},
 	"devDependencies": {
 		"@gameblog/prettier-config": "workspace:*",
+		"stylelint": "^16.6.1",
+		"stylelint-config-standard": "^36.0.1",
+		"stylelint-config-standard-scss": "^13.1.0",
 		"prettier": "^3.2.5"
 	}
 }

@@ -3,5 +3,13 @@
     {
       "mode": "auto"
     }
-  ]
+	],
+	"cSpell.words": [
+		"gameblog",
+		"nextui",
+		"stylelint",
+		"tailwindcss",
+		"tanstack",
+		"zustand"
+	]
 }

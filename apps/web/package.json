@@ -1,31 +1,39 @@
 {
   "name": "web",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && stylelint \"./src/**/*.scss\" --cache --config @gameblog/stylelint-config",
+    "format": "prettier --write \"./src/**/*.{ts,tsx,md}\" --cache && stylelint \"./src/**/*.scss\" --cache --fix --config @gameblog/stylelint-config"
   },
+  "prettier": "@gameblog/prettier-config/withTailwind",
   "dependencies": {
+    "@nextui-org/react": "^2.4.2",
+    "@tanstack/react-query": "^5.50.1",
+    "framer-motion": "^11.2.13",
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@gameblog/eslint-config": "workspace:*",
+    "@gameblog/prettier-config": "workspace:*",
+    "@gameblog/stylelint-config": "workspace:*",
+    "@gameblog/tailwind-config": "workspace:*",
+    "@gameblog/typescript-config": "workspace:*",
+    "@gameblog/ui": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-		"@gameblog/typescript-config": "workspace:*",
-		"@gameblog/prettier-config": "workspace:*",
-		"@gameblog/eslint-config": "workspace:*",
-		"@gameblog/tailwind-config": "workspace:*",
-		"@gameblog/ui": "workspace:*",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4",
     "postcss": "^8",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "stylelint": "^16.6.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

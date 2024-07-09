@@ -13,7 +13,11 @@
       "persistent": true
     },
     "clean": {
+			"dependsOn": ["^clean"],
       "cache": false
-    }
+    },
+		"format": {
+			"dependsOn": ["^format"]
+		}
   }
 }

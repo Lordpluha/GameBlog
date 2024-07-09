@@ -1,10 +1,19 @@
 import type { Config } from "tailwindcss";
 import sharedConfig from "@gameblog/tailwind-config";
+import { nextui } from "@nextui-org/react";
 
-const config: Pick<Config, "prefix" | "presets" | "content"> = {
-  content: ["./src/**/*.tsx"],
+const config: Config = {
+	presets: [sharedConfig],
+  content: [
+    "./src/**/*.tsx",
+    "./node_modules/@nextui-org/theme/dist/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
   prefix: "ui-",
-  presets: [sharedConfig],
+  darkMode: "class",
+  plugins: [nextui()],
 };
 
 export default config;
