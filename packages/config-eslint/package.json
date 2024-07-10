@@ -9,7 +9,8 @@
     "FSD": "./feature-sliced-design.js",
 		"Next": "./next.js",
 		"React": "./react.js",
-		"Library": "./library.js"
+		"Library": "./library.js",
+		"Storybook": "./storybook.js"
   },
 	"prettier": "@gameblog/prettier-config",
   "devDependencies": {
