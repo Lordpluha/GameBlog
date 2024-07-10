@@ -3,6 +3,14 @@
   "extends": "@gameblog/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
+		"paths": {
+			"@app/*": ["./src/app/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@widgets/*": ["./src/widgets/*"],
+			"@features/*": ["./src/features/*"],
+			"@entities/*": ["./src/entities/*"],
+			"@/*": ["./src/*"],
+		}
   },
   "include": ["src", "next-env.d.ts", ".next/types/**/*.ts"]
 }

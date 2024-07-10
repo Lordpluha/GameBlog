@@ -5,6 +5,12 @@
 	"scripts": {
 		"format": "prettier --write \"./**/*.{js,md}\" --cache"
 	},
+	"exports": {
+    "FSD": "./feature-sliced-design.js",
+		"Next": "./next.js",
+		"React": "./react.js",
+		"Library": "./library.js"
+  },
 	"prettier": "@gameblog/prettier-config",
   "devDependencies": {
 		"@gameblog/prettier-config": "workspace:*",

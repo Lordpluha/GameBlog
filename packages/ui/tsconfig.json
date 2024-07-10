@@ -1,5 +1,10 @@
 {
   "extends": "@gameblog/typescript-config/react-library.json",
   "include": ["."],
-  "exclude": ["build"]
+  "exclude": ["build"],
+	"compilerOptions": {
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
 }
