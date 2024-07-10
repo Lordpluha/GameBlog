@@ -10,7 +10,8 @@
 		"Next": "./next.js",
 		"React": "./react.js",
 		"Library": "./library.js",
-		"Storybook": "./storybook.js"
+		"Storybook": "./storybook.js",
+		"Nest": "./nest.js"
   },
 	"prettier": "@gameblog/prettier-config",
   "devDependencies": {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { NextUIProvider } from '@gameblog/ui'
-import './globals.scss'
+import './_styles/index.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +21,17 @@ export default function RootLayout({
 			className='dark'
 		>
 			<NextUIProvider>
-				<body className={inter.className}>{children}</body>
+				<body className={inter.className}>
+					<div className='layoutComponent'>
+						<Header />
+						<div className='w-full py-5 md:px-5 bg-transparent'>
+							<div className='p-5 w-full bg-[var(--body-bg-color)] rounded-xl shadow-md'>
+								{children}
+							</div>
+						</div>
+						<Footer />
+					</div>
+				</body>
 			</NextUIProvider>
 		</html>
 	)

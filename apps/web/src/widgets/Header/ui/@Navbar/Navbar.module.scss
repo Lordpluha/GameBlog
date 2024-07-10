@@ -1,0 +1,15 @@
+.headerNav {
+	@apply lg2:static fixed lg2:top-[-100%] lg2:min-h-fit min-h-[60vh] left-0 lg2:w-auto w-full flex items-center px-5 transition ease-in-out;
+}
+
+.headerNavUl {
+	@apply flex flex-col lg2:flex-row lg2:items-center lg2:text-[--default-light-color] gap-6 text-[18px];
+}
+
+.toggleMenuOpen {
+	@apply top-[79px] bg-[--default-light-color] text-[--default-dark-color];
+}
+
+.toggleMenuClose {
+	@apply top-[-100%];
+}

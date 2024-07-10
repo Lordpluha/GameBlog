@@ -3,7 +3,9 @@
 	"display": "Default",
 	"compilerOptions": {
 		"composite": false,
-		"declaration": false,
+		"declaration": true,
+		"declarationMap": true,
+		"removeComments": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"allowImportingTsExtensions": true,
