@@ -5,8 +5,8 @@ import { ArticleModule } from 'src/article/article.module'
 import { BlogModule } from 'src/blog/blog.module'
 
 @Module({
-	imports: [ArticleModule, BlogModule],
-	controllers: [CommentController],
-	providers: [CommentService]
+  imports: [ArticleModule, BlogModule],
+  controllers: [CommentController],
+  providers: [CommentService]
 })
 export class CommentModule {}

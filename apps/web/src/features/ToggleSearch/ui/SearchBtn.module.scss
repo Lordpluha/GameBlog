@@ -1,5 +1,5 @@
 .searchBtn {
-	@media (max-width: 420px) {
-		display: none;
-	}
+  @media (width <= 420px) {
+    display: none;
+  }
 }

@@ -1,16 +1,17 @@
 .header {
-	@apply w-full bg-[var(--default-dark-color)] items-center sticky flex h-[var(--header-height)] justify-center left-0 right-0 top-0 z-50;
+  @apply sticky left-0 right-0 top-0 z-50 flex h-[var(--header-height)] w-full items-center justify-center bg-[var(--default-dark-color)];
 }
 
 .headerLayout {
-	@apply flex justify-between items-center w-full py-[17px];
+  @apply flex w-full items-center justify-between py-[17px];
 }
 
 .headerRightButtonsBlock {
-	@apply flex justify-between items-center gap-6 px-6 text-[var(--default-light-color)] text-[10px];
+  @apply flex items-center justify-between gap-6 px-6 text-[10px] text-[var(--default-light-color)];
 }
+
 .headerBurger {
-	@media (min-width: 1146px) {
-		display: none;
-	}
+  @media (width >= 1146px) {
+    display: none;
+  }
 }

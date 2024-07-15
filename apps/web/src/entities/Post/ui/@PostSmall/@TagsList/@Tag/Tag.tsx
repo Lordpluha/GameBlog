@@ -1,7 +1,6 @@
 import { type FC, type MouseEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
-import { ITag } from '@model/interfaces'
+import type { ITag } from '@model/interfaces'
 
 /**
  * The CategoryItem component is a clickable link that navigates to a specified location when clicked.
@@ -10,22 +9,22 @@ import { ITag } from '@model/interfaces'
  * and event handlers. The content of the anchor element is the value of the "title" prop.
  */
 const Tag: FC<ITag> = ({ url, title }) => {
-	const navigate = useNavigate()
+  const navigate = useNavigate()
 
-	const clickHandler = (e: MouseEvent<HTMLElement>) => {
-		e.preventDefault()
-		e.stopPropagation()
-		navigate(url)
-	}
-	return (
-		<Link
-			to='#'
-			onClick={clickHandler}
-			className='cursor-pointer text-[14px] transition duration-500 ease-in-out hover:text-rose-600'
-		>
-			{title}
-		</Link>
-	)
+  const clickHandler = (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    navigate(url)
+  }
+  return (
+    <Link
+      className='cursor-pointer text-[14px] transition duration-500 ease-in-out hover:text-rose-600'
+      onClick={clickHandler}
+      to='#'
+    >
+      {title}
+    </Link>
+  )
 }
 
 export default Tag

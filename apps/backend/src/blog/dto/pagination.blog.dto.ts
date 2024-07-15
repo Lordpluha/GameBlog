@@ -3,8 +3,8 @@ import { Type } from 'class-transformer'
 import { PaginationQueryDto } from 'src/common/pagination.query.dto'
 
 export class PaginationBlogQueryDto extends PaginationQueryDto {
-	@IsOptional()
-	@IsNumber()
-	@Type(() => Number)
-	authorId?: number
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  authorId?: number
 }

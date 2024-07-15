@@ -1,63 +1,71 @@
 ul.footer__icons {
-	@apply flex gap-x-8 relative;
-	margin: 0 auto;
-	@media (max-width: 1165px) {
-		@apply hidden;
-	}
-	li {
-		@apply relative;
-		&:hover .dropdown_content {
-			display: flex;
-			opacity: 1;
-		}
+  @apply relative flex gap-x-8;
 
-		.social_icon {
-			@apply block;
-			&:hover {
-				.tooltip {
-					display: block;
-					opacity: 1;
-				}
-			}
-		}
+  margin: 0 auto;
 
-		svg {
-			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
-		}
-	}
+  @media (width <= 1165px) {
+    @apply hidden;
+  }
 
-	.dropdown {
-		@apply relative flex;
+  li {
+    @apply relative;
 
-		svg {
-			@apply fill-[--default-light-color] w-[25px] h-[25px] hover:fill-[#6A7276];
-		}
+    &:hover .dropdown_content {
+      display: flex;
+      opacity: 1;
+    }
 
-		@media (max-width: 1145px) {
-			@apply hidden;
-		}
+    .social_icon {
+      @apply block;
 
-		.dropdown_content {
-			@apply bg-[#383838] absolute rounded-xl hidden flex-col opacity-0 hover:opacity-100 top-[32px] 
-		z-10 left-[-350%] shadow-md transition-opacity duration-300 ease-out;
-			li {
-				@apply p-4 w-[200px] h-[52px] hover:text-[#747C81] flex justify-between;
-				&:hover svg {
-					fill: #747c81;
-				}
-			}
-		}
-	}
+      &:hover {
+        .tooltip {
+          display: block;
+          opacity: 1;
+        }
+      }
+    }
+
+    svg {
+      @apply h-[25px] w-[25px] fill-[--default-light-color] hover:fill-[#6A7276];
+    }
+  }
+
+  .dropdown {
+    @apply relative flex;
+
+    svg {
+      @apply h-[25px] w-[25px] fill-[--default-light-color] hover:fill-[#6A7276];
+    }
+
+    @media (width <= 1145px) {
+      @apply hidden;
+    }
+
+    .dropdown_content {
+      @apply absolute left-[-350%] top-[32px] z-10 hidden flex-col rounded-xl bg-[#383838] 
+		opacity-0 shadow-md transition-opacity duration-300 ease-out hover:opacity-100;
+
+      li {
+        @apply flex h-[52px] w-[200px] justify-between p-4 hover:text-[#747C81];
+
+        &:hover svg {
+          fill: #747c81;
+        }
+      }
+    }
+  }
 }
 
 .tooltip {
-	@apply bg-[#282c2e] opacity-0 hidden absolute text-[12px];
-	border-top: 1px solid white;
-	border-left: 1px solid white;
-	top: 30px;
-	left: 0%;
-	z-index: 2;
-	width: max-content;
-	height: max-content;
-	padding: 5px;
+  @apply absolute hidden bg-[#282c2e] text-[12px] opacity-0;
+
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  top: 30px;
+  left: 0%;
+  z-index: 2;
+  width: max-content;
+  height: max-content;
+  padding: 5px;
 }

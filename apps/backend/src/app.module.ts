@@ -16,21 +16,21 @@ import { CommentModule } from './comment/comment.module'
 import { PrismaModule } from './database/prisma.module'
 
 @Module({
-	imports: [
-		CacheModule.register(CacheManagerOptions),
-		ConfigModule.forRoot(EnvConfigOptions),
-		AuthModule,
-		UserModule,
-		FileModule,
-		BlogModule,
-		ServeStaticModule.forRoot({
-			rootPath: join(__dirname, '..', 'static')
-		}),
-		CategoryModule,
-		ArticleModule,
-		TagModule,
-		CommentModule,
-		PrismaModule
-	]
+  imports: [
+    CacheModule.register(CacheManagerOptions),
+    ConfigModule.forRoot(EnvConfigOptions),
+    AuthModule,
+    UserModule,
+    FileModule,
+    BlogModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'static')
+    }),
+    CategoryModule,
+    ArticleModule,
+    TagModule,
+    CommentModule,
+    PrismaModule
+  ]
 })
 export class AppModule {}

@@ -1,3 +1,3 @@
-import { IPublication } from '@model/interfaces'
+import type { IPublication } from '@model/interfaces'
 
-export interface INewsNavigation extends IPublication {}
+export type INewsNavigation = IPublication

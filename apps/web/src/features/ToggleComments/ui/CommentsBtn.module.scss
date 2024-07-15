@@ -1,6 +1,7 @@
 .commentBtn {
-	@apply rounded-[10px] p-2;
-	@media (max-width: 375px) {
-		display: none;
-	}
+  @apply rounded-[10px] p-2;
+
+  @media (width <= 375px) {
+    display: none;
+  }
 }

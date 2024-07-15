@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@gameblog/typescript-config/nextjs.json",
+  "extends": "@gameblog/typescript-config/Next",
   "compilerOptions": {
     "plugins": [
       {
@@ -8,30 +8,14 @@
       }
     ],
     "paths": {
-      "@app/*": [
-        "./src/app/*"
-      ],
-      "@pages/*": [
-        "./src/pages/*"
-      ],
-      "@widgets/*": [
-        "./src/widgets/*"
-      ],
-      "@features/*": [
-        "./src/features/*"
-      ],
-      "@entities/*": [
-        "./src/entities/*"
-      ],
-      "@/*": [
-        "./src/*"
-      ]
+      "@app/*": ["./src/app/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@widgets/*": ["./src/widgets/*"],
+      "@features/*": ["./src/features/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@/*": ["./src/*"]
     },
     "strictNullChecks": true
   },
-  "include": [
-    "src",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
-, "../../packages/ui/src/illustrations", "../../packages/ui/src/icons", "../../packages/ui/src/breadcrumbs"  ]
+  "include": ["src", "next-env.d.ts", ".next/types/**/*.ts", "@gameblog/ui"]
 }

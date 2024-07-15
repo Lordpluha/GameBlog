@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["@gameblog/eslint-config/React"],
-};
+  extends: ['@gameblog/eslint-config/React']
+}

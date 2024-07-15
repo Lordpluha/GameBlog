@@ -1,5 +1,5 @@
-const GamesPage = () => {
-	return <div>GamesPage</div>
+function GamesPage() {
+  return <div>GamesPage</div>
 }
 
 export default GamesPage

@@ -6,10 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && stylelint \"./src/**/*.scss\" --cache --config @gameblog/stylelint-config",
-    "format": "prettier --write \"./src/**/*.{ts,tsx,md}\" --cache && stylelint \"./src/**/*.scss\" --cache --fix --config @gameblog/stylelint-config"
+    "next-lint": "next lint",
+    "prettier": "prettier \"./**/*.{ts,tsx,json,js,mjs,md,scss,css}\" --cache --write",
+    "stylelint-fix": "stylelint \"./src/**/*.{scss,css}\" --cache --fix --config @gameblog/stylelint-config",
+    "lint": "pnpm run next-lint && pnpm run stylelint-fix",
+    "format": "pnpm run prettier && pnpm run stylelint-fix"
   },
   "prettier": "@gameblog/prettier-config/withTailwind",
+  "lint-staged": {
+    "./*.{ts,json,js,mjs,md}": "pnpm run prettier",
+    "./src/**/*.{ts,tsx,json,js,mjs,md}": [
+      "pnpm run prettier",
+      "pnpm run next-lint"
+    ],
+    "./public/**/*.{json,md}": "pnpm run prettier",
+    "./src/**/*.{scss,css}": [
+      "pnpm run prettier",
+      "pnpm run stylelint-fix"
+    ]
+  },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
     "@tanstack/react-query": "^5.50.1",
@@ -21,6 +36,7 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@feature-sliced/eslint-plugin-messages": "0.1.0-beta.2",
     "@gameblog/eslint-config": "workspace:*",
     "@gameblog/prettier-config": "workspace:*",
     "@gameblog/stylelint-config": "workspace:*",
@@ -31,7 +47,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "postcss": "^8",
+    "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "stylelint": "^16.6.1",

@@ -1,28 +1,32 @@
 .searchModal {
-	@apply fixed top-[79px] left-0 right-0;
-	animation: Animation 1s;
+  @apply fixed left-0 right-0 top-[79px];
+
+  animation: Animation 1s;
 }
+
 @keyframes Animation {
-	from {
-		top: -100%;
-	}
-	to {
-		top: 79px;
-	}
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 79px;
+  }
 }
+
 .searchInputBlock {
-	@apply items-center flex flex-row relative py-3 text-[18px] w-full px-4;
+  @apply relative flex w-full flex-row items-center px-4 py-3 text-[18px];
 }
 
 .searchInputIcon {
-	@apply text-[var(--default-dark-text-color)] absolute ml-4;
+  @apply absolute ml-4 text-[var(--default-dark-text-color)];
 }
 
 .searchInput {
-	@apply rounded-lg py-4 pl-12 leading-7 w-full bg-[var(--itemBlock-bg-color)] text-[var(--text-color)];
+  @apply w-full rounded-lg bg-[var(--item-block-bg-color)] py-4 pl-12 leading-7 text-[var(--text-color)];
 }
 
 .searchFormTags {
-	@apply px-4 py-3 bg-[var(--li-bg-color)] text-[var(--text-color)] rounded-xl cursor-pointer
+  @apply cursor-pointer rounded-xl bg-[var(--li-bg-color)] px-4 py-3 text-[var(--text-color)]
 	hover:bg-[#414749] active:bg-[#5d5b5b];
 }

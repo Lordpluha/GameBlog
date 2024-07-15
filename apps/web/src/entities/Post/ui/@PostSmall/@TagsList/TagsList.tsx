@@ -1,5 +1,4 @@
 import { type IPost } from '@model/interfaces'
-
 import Tag from './@Tag/Tag'
 
 /**
@@ -10,23 +9,26 @@ import Tag from './@Tag/Tag'
  * the div, it is mapping over the categories array and rendering a div element for each category. Each
  * category div includes a CategoryItem component with a linkTo prop and a title prop.
  */
-const TagsList = ({
-	tags,
-	className
+function TagsList({
+  tags,
+  className
 }: {
-	tags: IPost['tags']
-	className?: string
-}) => {
-	return (
-		<div className={className}>
-			{tags.map((tag, idx) => (
-				<div key={idx}>
-					{idx > 0 && <div className='mx-1'>|</div>}
-					<Tag url={`news/${tag.url}`} title={tag.title} />
-				</div>
-			))}
-		</div>
-	)
+  tags: IPost['tags']
+  className?: string
+}) {
+  return (
+    <div className={className}>
+      {tags.map((tag, idx) => (
+        <div key={idx}>
+          {idx > 0 && <div className='mx-1'>|</div>}
+          <Tag
+            title={tag.title}
+            url={`news/${tag.url}`}
+          />
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export default TagsList

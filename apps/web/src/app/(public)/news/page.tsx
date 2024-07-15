@@ -5,15 +5,15 @@ import { PostsLarge, PostsSmall } from '@entities/Post'
  * artList - array article list from server
  * usePagination - custom hook for paginaton component.
  */
-const NewsPage = () => {
-	return (
-		<div className='flex flex-row gap-x-16 shrink-0 grow-1'>
-			<PostsSmall />
-			<aside className='lg:block min-w-[10vw] hidden max-w-[30vw] shrink-1 grow-0'>
-				<PostsLarge />
-			</aside>
-		</div>
-	)
+function NewsPage() {
+  return (
+    <div className='grow-1 flex shrink-0 flex-row gap-x-16'>
+      <PostsSmall />
+      <aside className='shrink-1 hidden min-w-[10vw] max-w-[30vw] grow-0 lg:block'>
+        <PostsLarge />
+      </aside>
+    </div>
+  )
 }
 
 export default NewsPage

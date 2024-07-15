@@ -1,342 +1,388 @@
 .userAuthBlockOverflow {
-	@apply flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-0 justify-center items-center w-full md:inset-0 h-full max-h-full;
-	animation: Animation 1.3s;
+  @apply fixed right-0 top-0 z-0 flex h-full max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0;
+
+  animation: Animation 1.3s;
 }
+
 .headerOverlay {
-	left: 0;
-	animation: left 1s;
-	display: flex;
-	position: fixed;
-	justify-content: center;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 99999;
-	transition: 1s;
-	align-items: center;
-	.headerSlider {
-		overflow: hidden;
-	}
+  left: 0;
+  animation: left 1s;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  transition: 1s;
+  align-items: center;
+
+  .headerSlider {
+    overflow: hidden;
+  }
 }
+
 @keyframes left {
-	from {
-		left: -1%;
-	}
-	to {
-		left: 0;
-	}
+  from {
+    left: -1%;
+  }
+
+  to {
+    left: 0;
+  }
 }
 
 @keyframes Animation {
-	from {
-		top: 100%;
-	}
-	to {
-		top: 0;
-	}
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: 0;
+  }
 }
 
 .userAuthBlockPosition {
-	@apply flex text-center relative justify-center items-center max-w-md max-h-full;
-	width: 392px;
+  @apply relative flex max-h-full max-w-md items-center justify-center text-center;
+
+  width: 392px;
 }
 
 .userAuthBlockWrapper {
-	@apply relative bg-[var(--modal-bg-color)] rounded-3xl shadow-2xl;
-	height: 523px;
-	border: 3px solid #41474a;
-	padding: 68px 24px 48px;
+  @apply relative rounded-3xl bg-[var(--modal-bg-color)] shadow-2xl;
+
+  height: 523px;
+  border: 3px solid #41474a;
+  padding: 68px 24px 48px;
 }
 
 .userAuthHeaderBtnClose {
-	@apply absolute cursor-pointer top-3 end-2.5 text-[var(--default-dark-text-color)] text-sm w-8 h-8 ms-auto inline-flex justify-center items-center;
+  @apply absolute end-2.5 top-3 ms-auto inline-flex h-8 w-8 cursor-pointer items-center justify-center text-sm text-[var(--default-dark-text-color)];
 }
 
 .useAuthContent {
-	@apply p-4 md:p-5 text-center gap-3 text-[var(--text-color)];
+  @apply gap-3 p-4 text-center text-[var(--text-color)] md:p-5;
 }
 
 .userAuthTitle {
-	@apply text-[var(--text-color)] items-center text-2xl font-bold mb-[44px];
+  @apply mb-[44px] items-center text-2xl font-bold text-[var(--text-color)];
 }
 
 .userAuthBtnSocialIcon ul {
-	@apply flex flex-row justify-center items-center py-5 gap-7;
+  @apply flex flex-row items-center justify-center gap-7 py-5;
 }
 
 .userAuthBtnRegistration {
-	@apply rounded-lg px-4 text-lg bg-[var(--li-bg-color)] text-[var(--text-color)] h-[48px]
-	 hover:bg-[#2d3133] mt-[48px];
-	padding: 8px 16px;
+  @apply mt-[48px] h-[48px] rounded-lg bg-[var(--li-bg-color)] px-4 text-lg
+	 text-[var(--text-color)] hover:bg-[#2d3133];
+
+  padding: 8px 16px;
 }
 
 .userAuthBtnPrivacy {
-	@apply text-[var(--default-modal-text-color)] text-sm w-full mt-5 py-2;
-	a {
-		text-decoration: underline;
-	}
+  @apply mt-5 w-full py-2 text-sm text-[var(--default-modal-text-color)];
+
+  a {
+    text-decoration: underline;
+  }
 }
+
 .icon:hover {
-	color: var(--hover-active-color);
+  color: var(--hover-active-color);
 }
-/////////////////////////////registration///////////////////
+
 .headerSlider {
-	@apply bg-[var(--modal-bg-color)] relative z-0;
-	height: 50%;
-	border: 3px solid #41474a;
-	border-radius: 16px;
-	height: 523px;
-	max-width: 28rem;
-	margin-top: 72px;
-	width: 430px;
-	margin: 0 auto;
-	overflow: hidden;
-	display: block;
-	animation: myAnimation;
-	transition: transform 0.5s ease-in-out;
+  @apply relative z-0 bg-[var(--modal-bg-color)];
+
+  border: 3px solid #41474a;
+  border-radius: 16px;
+  height: 523px;
+  max-width: 28rem;
+  width: 430px;
+  margin: 72px auto 0;
+  overflow: hidden;
+  display: block;
+  animation: myAnimation;
+  transition: transform 0.5s ease-in-out;
 }
 
 .fill {
-	padding: 68px 24px 66px;
+  padding: 68px 24px 66px;
 }
+
 .back {
-	@apply text-[var(--text-color)] items-center flex absolute;
-	border-radius: 8px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	left: 7px;
-	line-height: 28px;
-	padding: 0 8px 0 0;
-	top: 10px;
-	svg {
-		@apply block w-[28px] h-[28px];
-	}
+  @apply absolute flex items-center text-[var(--text-color)];
+
+  border-radius: 8px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  left: 7px;
+  line-height: 28px;
+  padding: 0 8px 0 0;
+  top: 10px;
+
+  svg {
+    @apply block h-[28px] w-[28px];
+  }
 }
+
 .header__complete {
-	h1 {
-		@apply text-[var(--text-color)] font-bold;
-		margin-bottom: 28px;
-		font-family: 'Rubik', sans-serif;
-		font-size: 24px;
-		line-height: 34px;
-		text-align: center;
-	}
-	form {
-		@apply border-none;
-		color: #000;
-		text-decoration: none;
-		outline: none;
-	}
+  h1 {
+    @apply font-bold text-[var(--text-color)];
+
+    margin-bottom: 28px;
+    font-family: Rubik, sans-serif;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+  }
+
+  form {
+    @apply border-none;
+
+    color: #000;
+    text-decoration: none;
+    outline: none;
+  }
 }
 
 .field {
-	@apply flex flex-col items-center cursor-auto;
+  @apply flex cursor-auto flex-col items-center;
 
-	input {
-		@apply text-[var(--text-color)] bg-[var(--li-bg-color)];
-		// background-color: #262a2c;
-		border: 2px solid #2f3437;
-		border-radius: 8px;
-		font-family: 'Roboto', sans-serif;
-		font-size: 16px;
-		height: 40px;
-		line-height: 28px;
-		padding: 5px 16px;
-		transition: -webkit-box-shadow 0.15s ease-in-out;
-		transition: box-shadow 0.15s ease-in-out;
-		transition:
-			box-shadow 0.15s ease-in-out,
-			-webkit-box-shadow 0.15s ease-in-out;
-		width: 100%;
-	}
-	p {
-		opacity: 0;
-		width: 100%;
-		font-size: 14px;
-		line-height: 20px;
-		margin-top: 4px;
-	}
+  input {
+    @apply bg-[var(--li-bg-color)] text-[var(--text-color)];
+
+    // background-color: #262a2c;
+    border: 2px solid #2f3437;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    height: 40px;
+    line-height: 28px;
+    padding: 5px 16px;
+    transition: -webkit-box-shadow 0.15s ease-in-out;
+    transition: box-shadow 0.15s ease-in-out;
+    transition:
+      box-shadow 0.15s ease-in-out,
+      -webkit-box-shadow 0.15s ease-in-out;
+    width: 100%;
+  }
+
+  p {
+    opacity: 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 4px;
+  }
 }
-.captcha {
-	@apply text-[var(--text-color)] flex justify-center bg-[var(--li-bg-color)];
-	// background-color: #222222;
-	border: 2px solid #525252;
-	border-radius: 3px;
-	align-items: center;
-	input {
-		position: absolute;
-		opacity: 0;
-		z-index: -1;
-	}
-	input:checked + .checkmark {
-		animation: 2s spin forwards;
-	}
-	input + .checkmark {
-		width: 32px;
-		height: 32px;
-		background-color: #fcfcfc;
-		border: 2.5px solid #c3c3c3;
-		border-radius: 3px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-	}
-	input + .checkmark span {
-		content: '';
-		position: relative;
-		margin-top: -3px;
-		transform: rotate(45deg);
-		width: 12px;
-		height: 19px;
-		opacity: 0;
-	}
-	input + .checkmark > span:after {
-		content: '';
-		position: absolute;
-		display: block;
-		height: 3px;
-		bottom: 0;
-		left: 0;
-		background-color: #029f56;
-	}
-	input + .checkmark > span:before {
-		content: '';
-		position: absolute;
-		display: block;
-		width: 3px;
-		bottom: 0;
-		right: 0;
-		background-color: #029f56;
-	}
-	input[type='checkbox']:checked + .checkmark > span {
-		animation: 1s fadein 1.9s forwards;
-	}
-	input[type='checkbox']:checked + .checkmark > span:after {
-		animation: 0.3s bottomslide 2s forwards;
-	}
-	input[type='checkbox']:checked + .checkmark > span:before {
-		animation: 0.5s rightslide 2.2s forwards;
-	}
 
-	.spinner {
-		@apply relative w-[32px] h-[32px] flex items-center justify-center;
-		margin: 0 12px 2px 12px;
-	}
+.captcha {
+  @apply flex justify-center bg-[var(--li-bg-color)] text-[var(--text-color)];
+
+  // background-color: #222222;
+  border: 2px solid #525252;
+  border-radius: 3px;
+  align-items: center;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  input:checked + .checkmark {
+    animation: 2s spin forwards;
+  }
+
+  input + .checkmark {
+    width: 32px;
+    height: 32px;
+    background-color: #fcfcfc;
+    border: 2.5px solid #c3c3c3;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  input + .checkmark span {
+    content: '';
+    position: relative;
+    margin-top: -3px;
+    transform: rotate(45deg);
+    width: 12px;
+    height: 19px;
+    opacity: 0;
+  }
+
+  input + .checkmark > span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #029f56;
+  }
+
+  input + .checkmark > span::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 3px;
+    bottom: 0;
+    right: 0;
+    background-color: #029f56;
+  }
+
+  input[type='checkbox']:checked + .checkmark > span {
+    animation: 1s fadein 1.9s forwards;
+  }
+
+  input[type='checkbox']:checked + .checkmark > span::after {
+    animation: 0.3s bottomslide 2s forwards;
+  }
+
+  input[type='checkbox']:checked + .checkmark > span::before {
+    animation: 0.5s rightslide 2.2s forwards;
+  }
+
+  .spinner {
+    @apply relative flex h-[32px] w-[32px] items-center justify-center;
+
+    margin: 0 12px 2px;
+  }
 }
 
 @keyframes fadein {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes spin {
-	10% {
-		width: 0;
-		height: 0;
-		border-width: 6px;
-	}
-	30% {
-		width: 0;
-		height: 0;
-		border-radius: 50%;
-		border-width: 16px;
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-		border-color: #c7daf5;
-	}
-	50% {
-		width: 2em;
-		height: 2em;
-		border-radius: 50%;
-		border-width: 4px;
-		border-color: #c7daf5;
-		border-right-color: #5998ef;
-	}
-	70% {
-		border-width: 4px;
-		border-color: #c7daf5;
-		border-right-color: #5998ef;
-	}
-	90% {
-		border-width: 4px;
-	}
-	100% {
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-		-webkit-transform: rotate(720deg);
-		transform: rotate(720deg);
-		border-color: transparent;
-	}
+  10% {
+    width: 0;
+    height: 0;
+    border-width: 6px;
+  }
+
+  30% {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border-width: 16px;
+    transform: rotate(0deg);
+    border-color: #c7daf5;
+  }
+
+  50% {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border-width: 4px;
+    border-color: #c7daf5;
+    border-right-color: #5998ef;
+  }
+
+  70% {
+    border-width: 4px;
+    border-color: #c7daf5;
+    border-right-color: #5998ef;
+  }
+
+  90% {
+    border-width: 4px;
+  }
+
+  100% {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transform: rotate(720deg);
+    border-color: transparent;
+  }
 }
 
 @keyframes bottomslide {
-	0% {
-		width: 0;
-	}
-	100% {
-		width: 100%;
-	}
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
+
 @keyframes rightslide {
-	0% {
-		height: 0;
-	}
-	100% {
-		height: 100%;
-	}
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+  }
 }
+
 .headerText {
-	@apply text-[var(--text-color)];
+  @apply text-[var(--text-color)];
 }
 
 .logoCaptcha {
-	@apply flex flex-col items-center;
-	height: 100%;
-	align-self: flex-end;
-	margin: 0 8px;
+  @apply flex flex-col items-center;
 
-	img {
-		height: 24px;
-		margin: 0 13px;
-		width: 24px;
-	}
-	span {
-		color: #9d9ba7;
-		font-size: 8px;
-	}
+  height: 100%;
+  align-self: flex-end;
+  margin: 0 8px;
+
+  img {
+    height: 24px;
+    margin: 0 13px;
+    width: 24px;
+  }
+
+  span {
+    color: #9d9ba7;
+    font-size: 8px;
+  }
 }
+
 .done {
-	@apply border-none items-center mt-[32px] bg-[#008761] flex h-[40px] justify-center text-[16px];
-	border-radius: 8px;
-	color: #fff;
-	column-gap: 8px;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	padding: 8px 16px;
-	text-decoration: none;
-	transition: box-shadow 0.15s ease-in-out;
-	transition: box-shadow 0.15s ease-in-out;
+  @apply mt-[32px] flex h-[40px] items-center justify-center border-none bg-[#008761] text-[16px];
+
+  border-radius: 8px;
+  color: #fff;
+  column-gap: 8px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease-in-out;
 }
+
 .rules {
-	position: absolute;
-	bottom: -10%;
-	left: 0;
-	right: 0;
-	p {
-		color: #747c81;
-		font-size: 14px;
-		line-height: 20px;
-		padding: 0 30px 16px;
-		text-align: center;
-		font-weight: 500;
-		font-family: 'Rubik', sans-serif;
-	}
-	a {
-		text-decoration: underline;
-	}
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+
+  p {
+    color: #747c81;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 30px 16px;
+    text-align: center;
+    font-weight: 500;
+    font-family: Rubik, sans-serif;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 }

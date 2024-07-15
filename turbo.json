@@ -10,7 +10,8 @@
     "type-check": {},
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+			"env": [".env.local"]
     },
     "clean": {
 			"dependsOn": ["^clean"],

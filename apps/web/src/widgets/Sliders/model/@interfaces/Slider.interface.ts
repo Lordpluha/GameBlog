@@ -1,5 +1,5 @@
-import { IPublication } from '@model/interfaces'
+import type { IPublication } from '@model/interfaces'
 
-interface ISlider extends IPublication {}
+type ISlider = IPublication
 
 export { type ISlider }

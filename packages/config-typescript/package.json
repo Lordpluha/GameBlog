@@ -1,17 +1,25 @@
 {
-	"name": "@gameblog/typescript-config",
-	"version": "0.0.0",
-	"private": true,
-	"license": "MIT",
-	"scripts": {
-		"format": "prettier --write \"./**/*.{json,md}\" --cache"
-	},
-	"prettier": "@gameblog/prettier-config",
-	"publishConfig": {
-		"access": "public"
-	},
-	"devDependencies": {
-		"@gameblog/prettier-config": "workspace:*",
-		"prettier": "^3.2.5"
-	}
+  "name": "@gameblog/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier . --write --cache"
+  },
+  "prettier": "@gameblog/prettier-config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./Base": "./base.json",
+    "./Next": "./nextjs.json",
+    "./React": "./react-library.json"
+  },
+  "devDependencies": {
+    "@gameblog/prettier-config": "workspace:*",
+    "prettier": "^3.3.2"
+  },
+  "lint-staged": {
+    "./*.json": "pnpm run format"
+  }
 }

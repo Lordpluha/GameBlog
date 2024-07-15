@@ -1,4 +1,4 @@
-import { INewsNavigation } from './NewsNavigation.interface'
-import { ITopInfo } from './TopInfo.interface'
+import type { INewsNavigation } from './NewsNavigation.interface'
+import type { ITopInfo } from './TopInfo.interface'
 
 export type { ITopInfo, INewsNavigation }

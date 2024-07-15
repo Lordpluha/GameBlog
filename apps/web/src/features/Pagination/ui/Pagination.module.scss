@@ -1,21 +1,21 @@
 .pagination {
-	@apply items-center flex flex-col justify-center max-w-full gap-y-1 my-5;
+  @apply my-5 flex max-w-full flex-col items-center justify-center gap-y-1;
 }
 
 .buttons {
-	@apply items-center flex flex-row gap-x-2 justify-center max-w-full cursor-pointer;
+  @apply flex max-w-full cursor-pointer flex-row items-center justify-center gap-x-2;
 }
 
 .leftArrow,
 .rightArrow,
 .page {
-	@apply items-center hover:bg-[--hover-active-colore] bg-[--li-bg-color] rounded-lg text-[--text-color] flex text-base h-8 justify-center min-w-8 py-1 px-2 no-underline;
+  @apply flex h-8 min-w-8 items-center justify-center rounded-lg bg-[--li-bg-color] px-2 py-1 text-base text-[--text-color] no-underline hover:bg-[--hover-active-colore];
 }
 
 .activePage {
-	@apply bg-[--hover-active-colore] font-semibold;
+  @apply bg-[--hover-active-colore] font-semibold;
 }
 
 .btnHiden {
-	@apply hidden;
+  @apply hidden;
 }

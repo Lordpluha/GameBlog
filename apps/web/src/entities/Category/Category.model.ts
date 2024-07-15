@@ -1,34 +1,34 @@
 /* General type for all categories*/
-type TCategory = {
-	readonly title: string
-	readonly url: string
-	readonly subcategory: TCategory | null
+interface TCategory {
+  readonly title: string
+  readonly url: string
+  readonly subcategory: TCategory | null
 }
 
 // Читать
 interface IReadCategory extends TCategory {
-	title: 'read'
-	subcategory: IReadArticleSubCategory | IReadBlogSubCategory
+  title: 'read'
+  subcategory: IReadArticleSubCategory | IReadBlogSubCategory
 }
 
 // Статьи
 interface IReadArticleSubCategory extends TCategory {
-	title: 'article'
+  title: 'article'
 }
 
 // Блоги
 interface IReadBlogSubCategory extends TCategory {
-	title: 'blog'
+  title: 'blog'
 }
 
 // Смотреть
 interface IWatchCategory extends TCategory {
-	title: 'video'
+  title: 'video'
 }
 
 // Новости
 interface INewsCategory extends TCategory {
-	title: 'news'
+  title: 'news'
 }
 
 type ICategory = INewsCategory | IReadCategory | IWatchCategory

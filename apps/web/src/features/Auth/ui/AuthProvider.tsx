@@ -1,7 +1,7 @@
-import { FC, PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
-	return <div></div>
+  return <div />
 }
 
 export default AuthProvider

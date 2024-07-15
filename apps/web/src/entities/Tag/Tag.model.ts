@@ -1,6 +1,6 @@
 interface ITag {
-	title: string
-	url: string
+  title: string
+  url: string
 }
 
 export default ITag
