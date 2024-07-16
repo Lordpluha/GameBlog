@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Logo } from '@/shared/ui'
+import { Logo } from '@gameblog/ui'
 import FooterIcons from './@FooterIcons/FooterIcons'
 import NavigationLeft from './@Navigation/NavigationLeft'
 import NavigationRight from './@Navigation/NavigationRight'

@@ -5,13 +5,13 @@ import { nextui } from '@nextui-org/react'
 const config: Config = {
   presets: [sharedConfig],
   content: [
-    './src/**/*.tsx',
+    './src/**/*.{ts,tsx,scss,css}',
     './node_modules/@nextui-org/theme/dist/**/*.{ts,tsx}'
   ],
   theme: {
     extend: {}
   },
-  prefix: 'ui-',
+  // prefix: 'ui-',
   darkMode: 'class',
   plugins: [nextui()]
 }

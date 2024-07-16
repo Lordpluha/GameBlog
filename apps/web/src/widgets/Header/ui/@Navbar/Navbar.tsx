@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import Link from 'next/link'
 import clsx from 'clsx'
 import styles from './Navbar.module.scss'
 
@@ -16,28 +16,28 @@ function NavBar({ toggleMenu }: { toggleMenu: boolean }) {
     >
       <ul className={styles.headerNavUl}>
         <li>
-          <NavLink to='/news'>Новости</NavLink>
+          <Link href='/news'>Новости</Link>
         </li>
         <li>
-          <NavLink to='/read'>Читать</NavLink>
+          <Link href='/read'>Читать</Link>
         </li>
         <li>
-          <NavLink to='/watch'>Смотреть</NavLink>
+          <Link href='/watch'>Смотреть</Link>
         </li>
         <li>
-          <NavLink to='/blogs'>Блоги</NavLink>
+          <Link href='/blogs'>Блоги</Link>
         </li>
         <li>
-          <NavLink to='/streams'>Стримы</NavLink>
+          <Link href='/streams'>Стримы</Link>
         </li>
         <li>
-          <NavLink to='/games'>Игры</NavLink>
+          <Link href='/games'>Игры</Link>
         </li>
         <li>
-          <NavLink to='/cheats'>Читы</NavLink>
+          <Link href='/cheats'>Читы</Link>
         </li>
         <li>
-          <NavLink to='/support'>Помощь</NavLink>
+          <Link href='/support'>Помощь</Link>
         </li>
       </ul>
     </nav>

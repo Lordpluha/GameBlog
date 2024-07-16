@@ -1,6 +1,6 @@
 import { type PropsWithRef, forwardRef } from 'react'
 import { Search } from 'lucide-react'
-import SearchTags from '../../../../entities/Tag/@SearchTags/SearchTags'
+import SearchTags from '../../../../entities/Tag/ui/SearchTags'
 import styles from './SearchModal.module.scss'
 
 const tags = [

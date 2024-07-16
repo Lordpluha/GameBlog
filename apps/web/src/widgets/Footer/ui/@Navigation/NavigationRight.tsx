@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styles from './Navigation.module.scss'
 
 function NavigationRight() {
@@ -8,22 +8,22 @@ function NavigationRight() {
         <h6>Игры</h6>
         <ul className={styles.list__fill}>
           <li>
-            <Link to=''>Лучшие игры</Link>
+            <Link href=''>Лучшие игры</Link>
           </li>
           <li>
-            <Link to=''>Календарь</Link>
+            <Link href=''>Календарь</Link>
           </li>
           <li>
-            <Link to=''>Каталог</Link>
+            <Link href=''>Каталог</Link>
           </li>
           <li>
-            <Link to=''>Отзывы</Link>
+            <Link href=''>Отзывы</Link>
           </li>
           <li>
-            <Link to=''>Подборки игр</Link>
+            <Link href=''>Подборки игр</Link>
           </li>
           <li>
-            <Link to=''>Факты</Link>
+            <Link href=''>Факты</Link>
           </li>
         </ul>
       </div>
@@ -31,22 +31,22 @@ function NavigationRight() {
         <h6>Блоги</h6>
         <ul className={styles.list__fill}>
           <li>
-            <Link to=''>Все</Link>
+            <Link href=''>Все</Link>
           </li>
           <li>
-            <Link to=''>Лучшие за неделю</Link>
+            <Link href=''>Лучшие за неделю</Link>
           </li>
           <li>
-            <Link to=''>Победители косарей</Link>
+            <Link href=''>Победители косарей</Link>
           </li>
           <li>
-            <Link to=''>+5</Link>
+            <Link href=''>+5</Link>
           </li>
           <li>
-            <Link to=''>+100</Link>
+            <Link href=''>+100</Link>
           </li>
           <li>
-            <Link to=''>StopGame</Link>
+            <Link href=''>StopGame</Link>
           </li>
         </ul>
       </div>
@@ -54,13 +54,13 @@ function NavigationRight() {
         <h6>Стримы</h6>
         <ul className={styles.list__fill}>
           <li>
-            <Link to=''>Расписание</Link>
+            <Link href=''>Расписание</Link>
           </li>
           <li>
-            <Link to=''>Записи</Link>
+            <Link href=''>Записи</Link>
           </li>
           <li>
-            <Link to=''>Кек</Link>
+            <Link href=''>Кек</Link>
           </li>
         </ul>
       </div>

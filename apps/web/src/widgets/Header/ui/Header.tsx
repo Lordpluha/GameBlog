@@ -1,6 +1,8 @@
+'use client'
+
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { Logo } from '@shared/ui'
+import { Logo } from '@gameblog/ui'
 import { UserAuthBtn } from '@features/Auth'
 import { CommentsBtn } from '@features/ToggleComments'
 import { SearchBtn } from '@features/ToggleSearch'

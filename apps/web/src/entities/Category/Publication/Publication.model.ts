@@ -1,5 +1,5 @@
 import type ICategory from '../Category.model'
-import type ITag from '../../Tag/Tag.model'
+import type ITag from '../../Tag/models/Tag.model'
 import type IUser from '../../User/User.model'
 
 // General inner interface for all type of publications

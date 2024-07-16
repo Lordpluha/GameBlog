@@ -1,5 +1,5 @@
-import { type ITag } from '@model/interfaces'
-import styles from '../SearchModal.module.scss'
+import { Chip } from '@nextui-org/react'
+import ITag from '../models/Tag.model'
 
 /**
  * Component with tags for search form popup
@@ -9,12 +9,11 @@ function SearchTags({ tags }: { tags: ITag[] }) {
   return (
     <ul className='flex flex-wrap gap-3 px-4 text-[16px]'>
       {tags.map((tag, idx) => (
-        <li
-          className={styles.searchFormTags}
+        <Chip
           key={idx}
         >
           <span>{tag.name}</span>
-        </li>
+        </Chip>
       ))}
     </ul>
   )

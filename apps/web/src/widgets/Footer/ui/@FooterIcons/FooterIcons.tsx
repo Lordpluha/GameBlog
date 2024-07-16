@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { Arrow, Steam, Telegram, VK, Youtube } from '@shared/ui'
+import { RightArrowIcon, SteamIcon, TelegramIcon, VKIcon, YoutubeIcon } from '@gameblog/ui'
 import styles from './FooterIcons.module.scss'
+import Link from 'next/link'
 
 function FooterIcons() {
   return (
@@ -8,32 +8,32 @@ function FooterIcons() {
       <li>
         <Link
           className={styles.social_icon}
-          to='#'
+          href='#'
         >
-          <Youtube />
+          <YoutubeIcon />
           <div className={styles.tooltip}>Группа StopGame на Youtube</div>
         </Link>
       </li>
       <li>
         <Link
           className={styles.social_icon}
-          to='https://vk.com/'
+          href='https://vk.com/'
         >
-          <VK />
+          <VKIcon />
           <div className={styles.tooltip}>Группа StopGame на VK</div>
         </Link>
       </li>
       <li>
         <div className={styles.dropdown}>
-          <Telegram />
+          <TelegramIcon />
           <ul className={styles.dropdown_content}>
             <li>
-              <Link to='#'>StopGame.ru</Link>
-              <Arrow />
+              <Link href='#'>StopGame.ru</Link>
+              <RightArrowIcon />
             </li>
             <li>
-              <Link to='#'>StopGame.ru Новости</Link>
-              <Arrow />
+              <Link href='#'>StopGame.ru Новости</Link>
+              <RightArrowIcon />
             </li>
           </ul>
         </div>
@@ -41,9 +41,9 @@ function FooterIcons() {
       <li>
         <Link
           className={styles.social_icon}
-          to='#'
+          href='#'
         >
-          <Steam />
+          <SteamIcon />
           <div className={styles.tooltip}>Страница StopGame на Steam</div>
         </Link>
       </li>

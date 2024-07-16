@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styles from './Navigation.module.scss'
 
 function NavigationLeft() {
@@ -8,28 +8,28 @@ function NavigationLeft() {
         <h6>Новости</h6>
         <ul className={styles.list__fill}>
           <li>
-            <Link to=''>Все</Link>
+            <Link href=''>Все</Link>
           </li>
           <li>
-            <Link to=''>PC</Link>
+            <Link href=''>PC</Link>
           </li>
           <li>
-            <Link to=''>Xbox</Link>
+            <Link href=''>Xbox</Link>
           </li>
           <li>
-            <Link to=''>Xbox Series X|S</Link>
+            <Link href=''>Xbox Series X|S</Link>
           </li>
           <li>
-            <Link to=''>PlayStation 4</Link>
+            <Link href=''>PlayStation 4</Link>
           </li>
           <li>
-            <Link to=''>PlayStation 5</Link>
+            <Link href=''>PlayStation 5</Link>
           </li>
           <li>
-            <Link to=''>Stadia</Link>
+            <Link href=''>Stadia</Link>
           </li>
           <li>
-            <Link to=''>Xbox</Link>
+            <Link href=''>Xbox</Link>
           </li>
         </ul>
       </div>
@@ -38,25 +38,25 @@ function NavigationLeft() {
         <h6>Читать</h6>
         <ul className={styles.list__fill}>
           <li>
-            <Link to=''>Главная</Link>
+            <Link href=''>Главная</Link>
           </li>
           <li>
-            <Link to=''>Статьи</Link>
+            <Link href=''>Статьи</Link>
           </li>
           <li>
-            <Link to=''>Обзоры</Link>
+            <Link href=''>Обзоры</Link>
           </li>
           <li>
-            <Link to=''>Превью</Link>
+            <Link href=''>Превью</Link>
           </li>
           <li>
-            <Link to=''>Первая полоса</Link>
+            <Link href=''>Первая полоса</Link>
           </li>
           <li>
-            <Link to=''>Интервью</Link>
+            <Link href=''>Интервью</Link>
           </li>
           <li>
-            <Link to=''>Подборки</Link>
+            <Link href=''>Подборки</Link>
           </li>
         </ul>
       </div>
@@ -65,31 +65,31 @@ function NavigationLeft() {
         <h6>Cмотреть</h6>
         <ul className={styles.list__fill}>
           <li>
-            <Link to=''>Все</Link>
+            <Link href=''>Все</Link>
           </li>
           <li>
-            <Link to=''>Главная</Link>
+            <Link href=''>Главная</Link>
           </li>
           <li>
-            <Link to=''>Видеообзоры</Link>
+            <Link href=''>Видеообзоры</Link>
           </li>
           <li>
-            <Link to=''>История серии</Link>
+            <Link href=''>История серии</Link>
           </li>
           <li>
-            <Link to=''>Рубрикатор</Link>
+            <Link href=''>Рубрикатор</Link>
           </li>
           <li>
-            <Link to=''>Авторские видео</Link>
+            <Link href=''>Авторские видео</Link>
           </li>
           <li>
-            <Link to=''>Инфакт</Link>
+            <Link href=''>Инфакт</Link>
           </li>
           <li>
-            <Link to=''>Трейлеры</Link>
+            <Link href=''>Трейлеры</Link>
           </li>
           <li>
-            <Link to=''>Все видео</Link>
+            <Link href=''>Все видео</Link>
           </li>
         </ul>
       </div>
