@@ -17,9 +17,9 @@
     "type-check": "tsc --noEmit",
     "eslint": "eslint src/ --fix",
     "prettier": "prettier \"./**/*.{ts,tsx,json,js,scss,css}\" --write --cache",
-    "stylelint-fix": "stylelint \"./src/**/*.{scss,css}\" --config @gameblog/stylelint-config --fix --cache",
-    "lint": "pnpm run eslint && pnpm run stylelint-fix",
-    "format": "pnpm run prettier && pnpm run stylelint-fix"
+    "stylelint": "stylelint \"./src/**/*.{scss,css}\" --config @gameblog/stylelint-config --fix --cache",
+    "lint": "pnpm run eslint && pnpm run stylelint",
+    "format": "pnpm run prettier && pnpm run stylelint"
   },
   "prettier": "@gameblog/prettier-config/withTailwind",
   "peerDependencies": {
@@ -60,7 +60,7 @@
     ],
     "./src/**/*.{scss,css}": [
       "pnpm run prettier",
-      "pnpm run stylelint-fix"
+      "pnpm run stylelint"
     ]
   }
 }

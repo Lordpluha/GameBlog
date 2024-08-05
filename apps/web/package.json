@@ -8,9 +8,9 @@
     "start": "next start",
     "next-lint": "next lint",
     "prettier": "prettier \"./**/*.{ts,tsx,json,js,mjs,md,scss,css}\" --cache --write",
-    "stylelint-fix": "stylelint \"./src/**/*.{scss,css}\" --cache --fix --config @gameblog/stylelint-config",
-    "lint": "pnpm run next-lint && pnpm run stylelint-fix",
-    "format": "pnpm run prettier && pnpm run stylelint-fix"
+    "stylelint": "stylelint \"./src/**/*.{scss,css}\" --cache --fix --config @gameblog/stylelint-config",
+    "lint": "pnpm run next-lint && pnpm run stylelint",
+    "format": "pnpm run prettier && pnpm run stylelint"
   },
   "prettier": "@gameblog/prettier-config/withTailwind",
   "lint-staged": {
@@ -22,7 +22,7 @@
     "./public/**/*.{json,md}": "pnpm run prettier",
     "./src/**/*.{scss,css}": [
       "pnpm run prettier",
-      "pnpm run stylelint-fix"
+      "pnpm run stylelint"
     ]
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "lucide-react": "^0.408.0",
     "modern-normalize": "^2.0.0",
     "next": "14.2.4",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.77.6",
