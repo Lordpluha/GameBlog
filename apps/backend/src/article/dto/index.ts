@@ -1,5 +1,0 @@
-export * from './create-article.dto'
-export * from './pagination.article.dto'
-export * from './update-article.dto'
-export * from './return-article.dto'
-export * from '../swagger/return-article.swagger.dto'
