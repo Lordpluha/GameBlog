@@ -1,7 +1,5 @@
-import { Spinner } from "@nextui-org/react";
+import { Spinner } from '@nextui-org/react'
 
-const Preloader = () => (
-	<Spinner />
-)
+const Preloader = () => <Spinner />
 
 export default Preloader

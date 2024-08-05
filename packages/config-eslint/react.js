@@ -34,9 +34,16 @@ module.exports = {
     }
   },
   ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.js', '**/*.css'],
-  // add rules configurations here
   rules: {
-    'import/no-default-export': 'off'
+    'import/no-default-export': 'off',
+    'unicorn/filename-case': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    'react/function-component-definition': 'off',
+    '@typescript-eslint/naming-convention': 'warn',
+    'no-nested-ternary': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn'
   },
   overrides: [
     {

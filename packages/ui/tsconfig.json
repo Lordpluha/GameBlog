@@ -1,6 +1,6 @@
 {
   "extends": "@gameblog/typescript-config/React",
-  "include": [".", "src/Logo"],
+  "include": [".", "src/*"],
   "exclude": ["build"],
   "compilerOptions": {
     "paths": {

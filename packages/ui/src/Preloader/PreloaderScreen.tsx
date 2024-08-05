@@ -1,11 +1,11 @@
-import Preloader from './Preloader';
+import Preloader from './Preloader'
 
 const PreloaderScreen = () => {
-	return (
-		<div className="w-screen h-screen fixed">
-			<Preloader />
-		</div>
-	)
+  return (
+    <div className='fixed h-screen w-screen'>
+      <Preloader />
+    </div>
+  )
 }
 
 export default PreloaderScreen

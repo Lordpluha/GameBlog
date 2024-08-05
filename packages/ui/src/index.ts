@@ -1,6 +1,8 @@
-import NextUIProvider from './next-ui-provider'
 import Logo from './Logo/Logo'
-import Cover from './Cover/Cover'
+
+export * from './wrapper'
 
 export * from './icons'
-export { NextUIProvider, Logo, Cover }
+export * from './sliders'
+export { Logo }
+export * from './wrapper'
