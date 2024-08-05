@@ -1,27 +1,42 @@
-import { RightArrowIcon, SteamIcon, TelegramIcon, VKIcon, YoutubeIcon } from '@gameblog/ui'
+import {
+  RightArrowIcon,
+  SteamIcon,
+  TelegramIcon,
+  VKIcon,
+  YoutubeIcon
+} from '@gameblog/ui'
 import styles from './FooterIcons.module.scss'
 import Link from 'next/link'
+import { Tooltip } from '@nextui-org/react'
 
 function FooterIcons() {
   return (
     <ul className={styles.footer__icons}>
       <li>
-        <Link
-          className={styles.social_icon}
-          href='#'
+        <Tooltip
+          showArrow={true}
+          content='Группа StopGame на Youtube'
         >
-          <YoutubeIcon />
-          <div className={styles.tooltip}>Группа StopGame на Youtube</div>
-        </Link>
+          <Link
+            className={styles.social_icon}
+            href='#'
+          >
+            <YoutubeIcon />
+          </Link>
+        </Tooltip>
       </li>
       <li>
-        <Link
-          className={styles.social_icon}
-          href='https://vk.com/'
+        <Tooltip
+          showArrow={true}
+          content='Группа StopGame на VK'
         >
-          <VKIcon />
-          <div className={styles.tooltip}>Группа StopGame на VK</div>
-        </Link>
+          <Link
+            className={styles.social_icon}
+            href='https://vk.com/'
+          >
+            <VKIcon />
+          </Link>
+        </Tooltip>
       </li>
       <li>
         <div className={styles.dropdown}>
@@ -39,13 +54,17 @@ function FooterIcons() {
         </div>
       </li>
       <li>
-        <Link
-          className={styles.social_icon}
-          href='#'
+        <Tooltip
+          showArrow={true}
+          content='Страница StopGame на Steam'
         >
-          <SteamIcon />
-          <div className={styles.tooltip}>Страница StopGame на Steam</div>
-        </Link>
+          <Link
+            className={styles.social_icon}
+            href='#'
+          >
+            <SteamIcon />
+          </Link>
+        </Tooltip>
       </li>
     </ul>
   )

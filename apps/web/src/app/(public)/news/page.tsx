@@ -8,9 +8,9 @@ import { PostsLarge, PostsSmall } from '@entities/Post'
 function NewsPage() {
   return (
     <div className='grow-1 flex shrink-0 flex-row gap-x-16'>
-      <PostsSmall />
+      {/* <PostsSmall /> */}
       <aside className='shrink-1 hidden min-w-[10vw] max-w-[30vw] grow-0 lg:block'>
-        <PostsLarge />
+        {/* <PostsLarge /> */}
       </aside>
     </div>
   )

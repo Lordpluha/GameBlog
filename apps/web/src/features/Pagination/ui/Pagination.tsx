@@ -40,26 +40,26 @@ function Pagination({
 
   return (
     <div className={styles.pagination}>
-        <div className={styles.buttons}>
-          <button
-            className={clsx(btnDisabled.left && styles.btnHiden)}
-            onMouseDown={() => {
-              handlePrevPageClick()
-            }}
-          >
-            <ChevronLeft className={styles.leftArrow} />
-          </button>
-          {...pagination}
-          <button
-            className={clsx(btnDisabled.right && styles.btnHiden)}
-            onMouseDown={() => {
-              handleNextPageClick()
-            }}
-          >
-            <ChevronRight className={styles.rightArrow} />
-          </button>
-        </div>
+      <div className={styles.buttons}>
+        <button
+          className={clsx(btnDisabled.left && styles.btnHiden)}
+          onMouseDown={() => {
+            handlePrevPageClick()
+          }}
+        >
+          <ChevronLeft className={styles.leftArrow} />
+        </button>
+        {...pagination}
+        <button
+          className={clsx(btnDisabled.right && styles.btnHiden)}
+          onMouseDown={() => {
+            handleNextPageClick()
+          }}
+        >
+          <ChevronRight className={styles.rightArrow} />
+        </button>
       </div>
+    </div>
   )
 }
 

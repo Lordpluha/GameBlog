@@ -1,34 +1,40 @@
-import { useRef, useState } from 'react'
-import { Search, X } from 'lucide-react'
-import { useModal } from '@entities/Modal'
-import SearchModal from './@SearchModal/SearchModal'
-import styles from './SearchBtn.module.scss'
+import { ButtonHTMLAttributes, FC, useState } from 'react'
+import { LucideProps, Search, X } from 'lucide-react'
+import SearchModal, { TSearchModalProps } from './@SearchModal/SearchModal'
+import { useDisclosure } from '@nextui-org/react'
 
 /** Header search component included input field and search tags */
-function SearchBtn() {
-  const refModal = useRef<HTMLDivElement>(null!)
-  const { modal, setModal } = useModal(refModal)
+type TSearchBtnProps = {
+  modalProps: TSearchModalProps
+} & ButtonHTMLAttributes<HTMLButtonElement>
+
+const SearchBtn: FC<TSearchBtnProps> = ({ modalProps, ...buttonProps }) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [isHover, setIsHover] = useState<boolean>(false)
+
+  const iconProps: Omit<LucideProps, 'ref'> = {
+    onMouseEnter: () => {
+      setIsHover(true)
+    },
+    onMouseLeave: () => {
+      setIsHover(false)
+    },
+    style: { color: isHover ? 'red' : 'white' }
+  }
 
   return (
     <>
       <button
-        className={styles.searchBtn}
-        onClick={() => {
-          setModal(!modal)
-        }}
+        onClick={onOpen}
+        {...buttonProps}
       >
-        {!modal ? (
-          <Search
-            onMouseEnter={() => { setIsHover(true); }}
-            onMouseLeave={() => { setIsHover(false); }}
-            style={{ color: isHover ? 'red' : 'white' }}
-          />
-        ) : (
-          <X />
-        )}
+        {!isOpen ? <Search {...iconProps} /> : <X {...iconProps} />}
       </button>
-      {modal ? <SearchModal ref={refModal} /> : null}
+      <SearchModal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        {...modalProps}
+      />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import PostsLarge from './ui/PostsLarge'
-import PostsSmall from './ui/PostsSmall'
+import PostCard from './ui/PostCard'
+export * from './models'
 
-export { PostsSmall, PostsLarge }
+export { PostCard }

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "next-lint": "next lint",
+		"eslint": "eslint src/ --fix",
     "prettier": "prettier \"./**/*.{ts,tsx,json,js,mjs,md,scss,css}\" --cache --write",
     "stylelint": "stylelint \"./src/**/*.{scss,css}\" --cache --fix --config @gameblog/stylelint-config",
     "lint": "pnpm run next-lint && pnpm run stylelint",
@@ -17,7 +18,7 @@
     "./*.{ts,json,js,mjs,md}": "pnpm run prettier",
     "./src/**/*.{ts,tsx,json,js,mjs,md}": [
       "pnpm run prettier",
-      "pnpm run next-lint"
+      "pnpm run eslint"
     ],
     "./public/**/*.{json,md}": "pnpm run prettier",
     "./src/**/*.{scss,css}": [

@@ -11,8 +11,7 @@ function Footer() {
       <div className={styles.footer__information}>
         <div className={styles.footer__box}>
           <div className={styles.footer__logo}>
-            <Logo />
-            <p>Рассказываем вам о видеоиграх</p>
+            <Logo subtitle />
           </div>
           <FooterIcons />
 

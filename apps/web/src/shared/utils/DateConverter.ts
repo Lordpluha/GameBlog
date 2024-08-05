@@ -38,10 +38,9 @@ function Converter(currentDay: number, articleDates: TarticleDate): string {
 
   let stringData
   if (isToday) {
-    stringData = `Today, ${  articleDates.Hours  } : ${  articleDates.Minutes}`
+    stringData = `Today, ${articleDates.Hours} : ${articleDates.Minutes}`
   } else if (isYesterday) {
-    stringData =
-      `Yesterday, ${  articleDates.Hours  } : ${  articleDates.Minutes}`
+    stringData = `Yesterday, ${articleDates.Hours} : ${articleDates.Minutes}`
   } else {
     stringData = `${monthTitle[articleDates.Month]} ${articleDates.Day}`
   }

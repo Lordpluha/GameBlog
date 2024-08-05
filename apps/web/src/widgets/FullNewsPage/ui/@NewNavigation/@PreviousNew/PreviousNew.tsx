@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { ChevronLeft } from 'lucide-react'
 import { dateConverter } from '@shared/lib'
 import type { INewsNavigation } from '../../../model/@interfaces'
-import styles from "../NewsNavigation.module.scss"
+import styles from '../NewsNavigation.module.scss'
 
 const PreviewNews: FC<INewsNavigation> = previewNews => {
   return (

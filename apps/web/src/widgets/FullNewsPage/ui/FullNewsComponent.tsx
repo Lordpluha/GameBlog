@@ -1,4 +1,4 @@
-import type { FC} from 'react';
+import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 import type { IPublication } from '@model/interfaces'
 import { useGetArtCommentsQuery, useGetNewsByIdQuery } from '@store/index'

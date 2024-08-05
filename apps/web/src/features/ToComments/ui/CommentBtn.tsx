@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { LinkProps } from 'react-router-dom';
+import type { LinkProps } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { MessageCircleMore } from 'lucide-react'

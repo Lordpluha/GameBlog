@@ -23,17 +23,17 @@ const SliderXS: FC<Omit<TSliderProps, 'size'>> = ({
 
   return (
     <section className={clsx('', className)}>
-      <div className="">
+      <div className=''>
         <p>Читай также</p>
-        <div className="">
+        <div className=''>
           <div
-            className=""
+            className=''
             onMouseDown={() => swiperContainer.current?.swiper.slidePrev()}
           >
             <ChevronLeft />
           </div>
           <div
-            className=""
+            className=''
             onMouseDown={() => swiperContainer.current?.swiper.slideNext()}
           >
             <ChevronRight />

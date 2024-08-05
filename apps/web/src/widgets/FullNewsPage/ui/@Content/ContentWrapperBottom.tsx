@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import type { ITag, IUser } from '@model/interfaces'
 import { Author } from '@entities/Author'
 import { TagsSmall } from '@features/FilterByTag'
-import styles from "../FullNews.module.scss"
+import styles from '../FullNews.module.scss'
 
 interface TContentWrapperProps {
   authorData: IUser

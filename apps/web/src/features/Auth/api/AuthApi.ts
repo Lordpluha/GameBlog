@@ -1,11 +1,9 @@
 import type {
   BaseQueryFn,
   FetchArgs,
-  FetchBaseQueryError} from '@reduxjs/toolkit/query/react';
-import {
-  createApi,
-  fetchBaseQuery
+  FetchBaseQueryError
 } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { IUser } from '@model/interfaces'
 import { logout, tokenReceived } from '@store/index'
 

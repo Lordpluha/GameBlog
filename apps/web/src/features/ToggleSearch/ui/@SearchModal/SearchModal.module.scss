@@ -1,7 +1,7 @@
 .searchModal {
-  @apply fixed left-0 right-0 top-[79px];
+  @apply fixed left-0 top-[1px] w-screen;
 
-  animation: Animation 1s;
+  animation: Animation 0.8s;
 }
 
 @keyframes Animation {
@@ -10,20 +10,8 @@
   }
 
   to {
-    top: 79px;
+    top: 1px;
   }
-}
-
-.searchInputBlock {
-  @apply relative flex w-full flex-row items-center px-4 py-3 text-[18px];
-}
-
-.searchInputIcon {
-  @apply absolute ml-4 text-[var(--default-dark-text-color)];
-}
-
-.searchInput {
-  @apply w-full rounded-lg bg-[var(--item-block-bg-color)] py-4 pl-12 leading-7 text-[var(--text-color)];
 }
 
 .searchFormTags {

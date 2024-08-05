@@ -1,5 +1,5 @@
 import Markdown from 'react-markdown'
-import styles from "../FullNews.module.scss"
+import styles from '../FullNews.module.scss'
 
 /**
  * The FullNews component is a TypeScript React component that displays the full text of a news

@@ -16,7 +16,8 @@ function ShareBtn({ style }: { style: string }) {
       >
         <Share2 /> Поделиться
       </button>
-      {modal ? <Modal
+      {modal ? (
+        <Modal
           modal={modal}
           ref={refModal}
           setModal={setModal}
@@ -25,7 +26,8 @@ function ShareBtn({ style }: { style: string }) {
             <h2>Поделитесь с друзьями</h2>
             <Socials />
           </div>
-        </Modal> : null}
+        </Modal>
+      ) : null}
     </>
   )
 }
