@@ -1,3 +1,7 @@
 module.exports = {
-  extends: ["@gameblog/eslint-config/Next", "@gameblog/eslint-config/FSD"]
+  extends: [
+    'next/core-web-vitals',
+    '@gameblog/eslint-config/Next',
+    '@gameblog/eslint-config/FSD'
+  ]
 }

@@ -1,19 +1,25 @@
 {
-	"extends": "stylelint-config-standard-scss",
-	"rules": {
-		"scss/at-rule-no-unknown": [
-			true,
-			{
-				"ignoreAtRules": [
-					"tailwind",
-					"apply",
-					"variants",
-					"responsive",
-					"screen"
-				]
-			}
-		],
-		"declaration-block-trailing-semicolon": "never",
-		"no-descending-specificity": null
-	}
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ],
+    "no-descending-specificity": null,
+    "no-invalid-position-at-import-rule": null,
+
+    "selector-class-pattern": null,
+    "keyframes-name-pattern": null,
+    "scss/load-no-partial-leading-underscore": null,
+    "scss/at-mixin-pattern": null,
+    "scss/double-slash-comment-whitespace-inside": null
+  }
 }

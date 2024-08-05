@@ -1,14 +1,10 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Eye, MessageCircleMore } from 'lucide-react'
-
-import { BookmarkBtn } from '@features/AddBookmark'
-import { ShareBtn } from '@features/Share'
-
 import { dateConverter } from '@shared/lib'
-
-import { ITopInfo } from '../../../model/@interfaces'
+import { BookmarkBtn } from '@features/AddToBookmark'
+import { ShareBtn } from '@features/Share'
+import type { ITopInfo } from '../../../model/@interfaces'
 import styles from './Topinfo.module.scss'
 
 /**
@@ -21,24 +17,27 @@ import styles from './Topinfo.module.scss'
  * @param title - title of news
  */
 const TopInfo: FC<ITopInfo> = ({ date, totComments, totViews, title }) => {
-	const publicDate = dateConverter(date)
+  const publicDate = dateConverter(date)
 
-	return (
-		<>
-			<div className={styles.topinfo}>
-				<p className={styles.topinfo_span}>{publicDate}</p>
-				<Link to='#comments' className={styles.topinfo_a}>
-					<MessageCircleMore /> {totComments}
-				</Link>
-				<p className={styles.totalVews}>
-					<Eye /> {totViews}
-				</p>
-				<BookmarkBtn className={styles.topinfo_button} />
-				<ShareBtn style={styles.topinfo_button} />
-			</div>
-			<h1>{title}</h1>
-		</>
-	)
+  return (
+    <>
+      <div className={styles.topinfo}>
+        <p className={styles.topinfo_span}>{publicDate}</p>
+        <Link
+          className={styles.topinfo_a}
+          to='#comments'
+        >
+          <MessageCircleMore /> {totComments}
+        </Link>
+        <p className={styles.totalVews}>
+          <Eye /> {totViews}
+        </p>
+        <BookmarkBtn className={styles.topinfo_button} />
+        <ShareBtn style={styles.topinfo_button} />
+      </div>
+      <h1>{title}</h1>
+    </>
+  )
 }
 
 export default TopInfo

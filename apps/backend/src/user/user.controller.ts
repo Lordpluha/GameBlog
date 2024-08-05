@@ -1,11 +1,11 @@
 import {
-	Body,
-	Controller,
-	HttpCode,
-	HttpStatus,
-	Post,
-	UsePipes,
-	ValidationPipe
+  Body,
+  Controller,
+  HttpCode,
+  HttpStatus,
+  Post,
+  UsePipes,
+  ValidationPipe
 } from '@nestjs/common'
 import { UserService } from './user.service'
 import { SetRoleDto } from './dto'
@@ -15,12 +15,12 @@ import { Role } from 'src/role/role.enum'
 @UsePipes(new ValidationPipe({ whitelist: true }))
 @Controller('user')
 export class UserController {
-	constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) {}
 
-	@HttpCode(HttpStatus.NO_CONTENT)
-	@RolesAuth(Role.ADMIN)
-	@Post('setRole')
-	setRole(@Body() setRoleDto: SetRoleDto) {
-		return this.userService.setRole(setRoleDto)
-	}
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @RolesAuth(Role.ADMIN)
+  @Post('setRole')
+  setRole(@Body() setRoleDto: SetRoleDto) {
+    return this.userService.setRole(setRoleDto)
+  }
 }

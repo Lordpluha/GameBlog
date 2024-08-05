@@ -1,5 +1,5 @@
-const SupportPage = () => {
-	return <div>SupportPage</div>
+function SupportPage() {
+  return <div>SupportPage</div>
 }
 
 export default SupportPage

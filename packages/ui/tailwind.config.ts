@@ -1,19 +1,19 @@
-import type { Config } from "tailwindcss";
-import sharedConfig from "@gameblog/tailwind-config";
-import { nextui } from "@nextui-org/react";
+import type { Config } from 'tailwindcss'
+import sharedConfig from '@gameblog/tailwind-config'
+import theme from '@gameblog/tailwind-config/NextUITheme'
+import { nextui } from '@nextui-org/react'
 
 const config: Config = {
-	presets: [sharedConfig],
+  // presets: [sharedConfig],
   content: [
-    "./src/**/*.tsx",
-    "./node_modules/@nextui-org/theme/dist/**/*.{ts,tsx}",
+    './src/**/*.{ts,tsx,scss,css}',
+    '../../node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  prefix: "ui-",
-  darkMode: "class",
-  plugins: [nextui()],
-};
+  darkMode: 'class',
+  plugins: [nextui(theme)]
+}
 
-export default config;
+export default config

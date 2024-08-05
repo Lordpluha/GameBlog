@@ -1,3 +1,3 @@
 module.exports = {
-	extends: ["@gameblog/eslint-config/Storybook"]
+  extends: ['@gameblog/eslint-config/Storybook']
 }

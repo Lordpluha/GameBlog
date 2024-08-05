@@ -1,5 +1,5 @@
 {
-  "extends": "@gameblog/typescript-config/base.json",
+  "extends": "@gameblog/typescript-config/Base",
   "include": ["."],
   "exclude": ["build"]
 }

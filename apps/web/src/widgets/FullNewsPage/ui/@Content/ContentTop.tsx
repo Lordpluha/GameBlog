@@ -1,18 +1,15 @@
-import { FC } from 'react'
-
-import { IUser } from '@model/interfaces'
-
+import type { FC } from 'react'
+import type { IUser } from '@model/interfaces'
 import { Author } from '@entities/Author'
-
 import styles from '../FullNews.module.scss'
 import TopInfo from './@TopInfo/TopInfo'
 
-type TContentTopProps = {
-	title: string
-	createdAt: string
-	views: number
-	comments: number
-	authorData: IUser
+interface TContentTopProps {
+  title: string
+  createdAt: string
+  views: number
+  comments: number
+  authorData: IUser
 }
 
 /**
@@ -25,23 +22,23 @@ type TContentTopProps = {
  */
 
 const ContentTop: FC<TContentTopProps> = ({
-	title,
-	createdAt,
-	views,
-	comments,
-	authorData
+  title,
+  createdAt,
+  views,
+  comments,
+  authorData
 }) => {
-	return (
-		<div className={styles.contentBodyTop}>
-			<TopInfo
-				date={createdAt}
-				totComments={comments}
-				totViews={views}
-				title={title}
-			/>
-			<Author {...authorData} />
-		</div>
-	)
+  return (
+    <div className={styles.contentBodyTop}>
+      <TopInfo
+        date={createdAt}
+        title={title}
+        totComments={comments}
+        totViews={views}
+      />
+      <Author {...authorData} />
+    </div>
+  )
 }
 
 export default ContentTop

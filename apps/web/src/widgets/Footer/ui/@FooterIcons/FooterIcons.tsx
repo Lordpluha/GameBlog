@@ -1,51 +1,73 @@
-import { Link } from 'react-router-dom'
-
-import { Arrow, Steam, Telegram, VK, Youtube } from '@shared/ui'
-
+import {
+  RightArrowIcon,
+  SteamIcon,
+  TelegramIcon,
+  VKIcon,
+  YoutubeIcon
+} from '@gameblog/ui'
 import styles from './FooterIcons.module.scss'
+import Link from 'next/link'
+import { Tooltip } from '@nextui-org/react'
 
-const FooterIcons = () => {
-	return (
-		<ul className={styles.footer__icons}>
-			<li>
-				<Link className={styles.social_icon} to='#'>
-					<Youtube />
-					<div className={styles.tooltip}>
-						Группа StopGame на Youtube
-					</div>
-				</Link>
-			</li>
-			<li>
-				<Link className={styles.social_icon} to='https://vk.com/'>
-					<VK />
-					<div className={styles.tooltip}>Группа StopGame на VK</div>
-				</Link>
-			</li>
-			<li>
-				<div className={styles.dropdown}>
-					<Telegram />
-					<ul className={styles.dropdown_content}>
-						<li>
-							<Link to='#'>StopGame.ru</Link>
-							<Arrow />
-						</li>
-						<li>
-							<Link to='#'>StopGame.ru Новости</Link>
-							<Arrow />
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<Link className={styles.social_icon} to='#'>
-					<Steam />
-					<div className={styles.tooltip}>
-						Страница StopGame на Steam
-					</div>
-				</Link>
-			</li>
-		</ul>
-	)
+function FooterIcons() {
+  return (
+    <ul className={styles.footer__icons}>
+      <li>
+        <Tooltip
+          showArrow={true}
+          content='Группа StopGame на Youtube'
+        >
+          <Link
+            className={styles.social_icon}
+            href='#'
+          >
+            <YoutubeIcon />
+          </Link>
+        </Tooltip>
+      </li>
+      <li>
+        <Tooltip
+          showArrow={true}
+          content='Группа StopGame на VK'
+        >
+          <Link
+            className={styles.social_icon}
+            href='https://vk.com/'
+          >
+            <VKIcon />
+          </Link>
+        </Tooltip>
+      </li>
+      <li>
+        <div className={styles.dropdown}>
+          <TelegramIcon />
+          <ul className={styles.dropdown_content}>
+            <li>
+              <Link href='#'>StopGame.ru</Link>
+              <RightArrowIcon />
+            </li>
+            <li>
+              <Link href='#'>StopGame.ru Новости</Link>
+              <RightArrowIcon />
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <Tooltip
+          showArrow={true}
+          content='Страница StopGame на Steam'
+        >
+          <Link
+            className={styles.social_icon}
+            href='#'
+          >
+            <SteamIcon />
+          </Link>
+        </Tooltip>
+      </li>
+    </ul>
+  )
 }
 
 export default FooterIcons

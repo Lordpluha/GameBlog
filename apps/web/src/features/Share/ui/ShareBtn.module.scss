@@ -1,11 +1,11 @@
 .shareBtnContent {
-	@apply flex flex-col mt-10 p-5 gap-y-10 text-[--text-color];
+  @apply mt-10 flex flex-col gap-y-10 p-5 text-[--text-color];
 }
 
 .shareBtnContent h2 {
-	@apply text-2xl;
+  @apply text-2xl;
 }
 
 .shareBtnContent ul {
-	@apply flex flex-row gap-x-3 items-center justify-between;
+  @apply flex flex-row items-center justify-between gap-x-3;
 }

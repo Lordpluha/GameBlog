@@ -5,9 +5,9 @@ import { FileModule } from 'src/file/file.module'
 import { CategoryModule } from 'src/category/category.module'
 
 @Module({
-	imports: [FileModule, CategoryModule],
-	controllers: [BlogController],
-	providers: [BlogService],
-	exports: [BlogService]
+  imports: [FileModule, CategoryModule],
+  controllers: [BlogController],
+  providers: [BlogService],
+  exports: [BlogService]
 })
 export class BlogModule {}

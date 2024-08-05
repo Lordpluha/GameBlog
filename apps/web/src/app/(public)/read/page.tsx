@@ -1,5 +1,5 @@
-const ReadPage = () => {
-	return <div>ReadPage</div>
+function ReadPage() {
+  return <div>ReadPage</div>
 }
 
 export default ReadPage

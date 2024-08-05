@@ -5,40 +5,40 @@ import { join } from 'path'
 
 @Injectable()
 export class FileService {
-	async upload(file: Express.Multer.File) {
-		const [mimetype, typeFile] = file.mimetype.split('/')
+  async upload(file: Express.Multer.File) {
+    const [mimetype, typeFile] = file.mimetype.split('/')
 
-		const fileName = `${randomUUID()}.${typeFile}`
-		const uploadFolder = join(__dirname, '..', '../static')
-		const isDir = await this.exists(uploadFolder)
+    const fileName = `${randomUUID()}.${typeFile}`
+    const uploadFolder = join(__dirname, '..', '../static')
+    const isDir = await this.exists(uploadFolder)
 
-		if (!isDir) await mkdir(uploadFolder, { recursive: true })
+    if (!isDir) await mkdir(uploadFolder, { recursive: true })
 
-		const dirMimeTypePath = join(uploadFolder, '/' + mimetype)
-		const isDirMimeType = await this.exists(dirMimeTypePath)
+    const dirMimeTypePath = join(uploadFolder, '/' + mimetype)
+    const isDirMimeType = await this.exists(dirMimeTypePath)
 
-		if (!isDirMimeType) await mkdir(dirMimeTypePath, { recursive: true })
+    if (!isDirMimeType) await mkdir(dirMimeTypePath, { recursive: true })
 
-		await writeFile(join(dirMimeTypePath, fileName), file.buffer)
-		return mimetype + '/' + fileName
-	}
+    await writeFile(join(dirMimeTypePath, fileName), file.buffer)
+    return mimetype + '/' + fileName
+  }
 
-	async delete(fileName: string) {
-		try {
-			const [dir, file] = fileName.split('/')
-			const path = join(__dirname, '..', '../static', `/${dir}`, file)
-			await unlink(path)
-		} catch (e) {
-			console.error(e)
-		}
-	}
+  async delete(fileName: string) {
+    try {
+      const [dir, file] = fileName.split('/')
+      const path = join(__dirname, '..', '../static', `/${dir}`, file)
+      await unlink(path)
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
-	async exists(path: string) {
-		try {
-			await access(path)
-			return true
-		} catch (e) {
-			return false
-		}
-	}
+  async exists(path: string) {
+    try {
+      await access(path)
+      return true
+    } catch (e) {
+      return false
+    }
+  }
 }

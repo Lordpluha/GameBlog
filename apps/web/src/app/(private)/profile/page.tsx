@@ -1,3 +1,3 @@
 export default function Profile() {
-	return <div>Your profile page</div>
+  return <div>Your profile page</div>
 }

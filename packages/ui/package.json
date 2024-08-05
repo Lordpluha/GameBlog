@@ -13,10 +13,13 @@
   "license": "MIT",
   "scripts": {
     "build": "tailwindcss -i ./src/styles/index.scss -o ./dist/index.css",
-    "lint": "eslint src/ && stylelint \"./scr/**/*.scss\" --cache --config @gameblog/stylelint-config",
     "dev": "tailwindcss -i ./src/styles/index.scss -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit",
-    "format": "prettier --write \"./src/**/*.{ts,tsx,md}\" --cache && stylelint \"./src/**/*.scss\" --cache --fix --config @gameblog/stylelint-config"
+    "eslint": "eslint src/ --fix",
+    "prettier": "prettier \"./**/*.{ts,tsx,json,js,scss,css}\" --write --cache",
+    "stylelint": "stylelint \"./src/**/*.{scss,css}\" --config @gameblog/stylelint-config --fix --cache",
+    "lint": "pnpm run eslint && pnpm run stylelint",
+    "format": "pnpm run prettier && pnpm run stylelint"
   },
   "prettier": "@gameblog/prettier-config/withTailwind",
   "peerDependencies": {
@@ -30,7 +33,8 @@
     "@gameblog/typescript-config": "workspace:*",
     "@types/react": "^18.2.61",
     "autoprefixer": "^10.4.18",
-    "postcss": "^8.4.35",
+    "clsx": "^2.1.1",
+    "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "stylelint": "^16.6.1",
@@ -38,7 +42,25 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@nextui-org/react": "^2.4.2",
-    "framer-motion": "^11.2.13"
+    "@nextui-org/theme": "^2.2.9",
+    "framer-motion": "^11.3.2",
+    "gsap": "^3.12.5",
+    "lucide-react": "^0.408.0",
+    "modern-normalize": "^2.0.0",
+    "next-themes": "^0.3.0",
+    "swiper": "^11.1.5"
+  },
+  "lint-staged": {
+    "./*.{ts,tsx,json,js}": "pnpm run prettier",
+    "./src/**/*.{ts,tsx,json,js}": [
+      "pnpm run prettier",
+      "pnpm run eslint"
+    ],
+    "./src/**/*.{scss,css}": [
+      "pnpm run prettier",
+      "pnpm run stylelint"
+    ]
   }
 }

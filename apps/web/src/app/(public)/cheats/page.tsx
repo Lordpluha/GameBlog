@@ -1,5 +1,5 @@
-const CheatsPage = () => {
-	return <div>CheatsPage</div>
+function CheatsPage() {
+  return <div>CheatsPage</div>
 }
 
 export default CheatsPage

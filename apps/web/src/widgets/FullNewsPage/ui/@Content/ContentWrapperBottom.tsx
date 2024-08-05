@@ -1,16 +1,12 @@
-import { FC } from 'react'
-
-import { ITag, IUser } from '@model/interfaces'
-
-import { TagsSmall } from '@features/FilterByTag'
-
+import type { FC } from 'react'
+import type { ITag, IUser } from '@model/interfaces'
 import { Author } from '@entities/Author'
+import { TagsSmall } from '@features/FilterByTag'
+import styles from '../FullNews.module.scss'
 
-import styles from './../FullNews.module.scss'
-
-type TContentWrapperProps = {
-	authorData: IUser
-	tags: ITag[]
+interface TContentWrapperProps {
+  authorData: IUser
+  tags: ITag[]
 }
 
 /**
@@ -20,15 +16,15 @@ type TContentWrapperProps = {
  * otherNews - data for news navigation blocks (previous, next)
  */
 const ContentWrapperBottom: FC<TContentWrapperProps> = ({
-	authorData,
-	tags
+  authorData,
+  tags
 }) => {
-	return (
-		<div className={styles.contentWrapperBottom}>
-			<Author {...authorData} />
-			<TagsSmall tags={tags} />
-		</div>
-	)
+  return (
+    <div className={styles.contentWrapperBottom}>
+      <Author {...authorData} />
+      <TagsSmall tags={tags} />
+    </div>
+  )
 }
 
 export default ContentWrapperBottom

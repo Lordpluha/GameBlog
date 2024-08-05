@@ -1,4 +1,5 @@
 ## Installation
+
 - Install deps by running `yarn`
 - Create .env file from .env.example
 - run `yarn db:setup` to init prisma db
@@ -7,6 +8,7 @@
 - run `yarn start:dev`
 
 ## How to preview docs?
+
 - run `yarn start:dev`
 - go to `base_url/api/docs` in your browser
 

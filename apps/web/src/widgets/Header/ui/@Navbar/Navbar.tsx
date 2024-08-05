@@ -1,49 +1,48 @@
-import { NavLink } from 'react-router-dom'
-
-import clsx from 'clsx'
-
+import Link from 'next/link'
 import styles from './Navbar.module.scss'
+import { NavbarMenu, NavbarMenuItem } from '@nextui-org/react'
+import { UserAuthBtn } from '@features/Auth'
+import { CommentsBtn } from '@features/ToggleComments'
+import { ThemeBtn } from '@features/ToggleTheme'
 
 /**
  * Navigation adaptive bar
- * @param toggleMenu - boolean value for change icon menu/close for burger menu
  */
-const NavBar = ({ toggleMenu }: { toggleMenu: boolean }) => {
-	return (
-		<nav
-			className={clsx(
-				styles.headerNav,
-				toggleMenu ? styles.toggleMenuOpen : styles.toggleMenuClose
-			)}
-		>
-			<ul className={styles.headerNavUl}>
-				<li>
-					<NavLink to='/news'>Новости</NavLink>
-				</li>
-				<li>
-					<NavLink to='/read'>Читать</NavLink>
-				</li>
-				<li>
-					<NavLink to='/watch'>Смотреть</NavLink>
-				</li>
-				<li>
-					<NavLink to='/blogs'>Блоги</NavLink>
-				</li>
-				<li>
-					<NavLink to='/streams'>Стримы</NavLink>
-				</li>
-				<li>
-					<NavLink to='/games'>Игры</NavLink>
-				</li>
-				<li>
-					<NavLink to='/cheats'>Читы</NavLink>
-				</li>
-				<li>
-					<NavLink to='/support'>Помощь</NavLink>
-				</li>
-			</ul>
-		</nav>
-	)
+function NavBar() {
+  return (
+    <NavbarMenu>
+      <NavbarMenuItem>
+        <Link href='/news'>Новости</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/read'>Читать</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/watch'>Смотреть</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/blogs'>Блоги</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/streams'>Стримы</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/games'>Игры</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/cheats'>Читы</Link>
+      </NavbarMenuItem>
+      <NavbarMenuItem>
+        <Link href='/support'>Помощь</Link>
+      </NavbarMenuItem>
+
+      <NavbarMenuItem className='block flex flex-row md:hidden'>
+        <ThemeBtn isMobile={true} />
+        <CommentsBtn />
+        <UserAuthBtn />
+      </NavbarMenuItem>
+    </NavbarMenu>
+  )
 }
 
 export default NavBar

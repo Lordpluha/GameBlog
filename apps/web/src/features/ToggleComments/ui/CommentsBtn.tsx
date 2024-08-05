@@ -1,51 +1,39 @@
 import { useRef, useState } from 'react'
-
 import { MessageCircleMore } from 'lucide-react'
-
 import { useModal } from '../lib'
-import CommentsModal from './@Comments/CommentsModal'
+import CommentsSidebar from './@CommentsSidebar/CommentsSidebar'
 import styles from './CommentsBtn.module.scss'
 
 /**
  * Modal component with a list of new comments
  * useModal is a custom hook for closing a modal window by clicking an outside
  */
-const CommentsBtn = () => {
-	const refCommentModal = useRef<HTMLDivElement>(null!)
-	const refButton1 = useRef<HTMLButtonElement>(null!)
-	const refButton2 = useRef<HTMLButtonElement>(null!)
-	const { modal, setModal } = useModal(refCommentModal, [
-		refButton1,
-		refButton2
-	])
-	const [isHover, setIsHover] = useState<boolean>(false)
-	return (
-		<>
-			<button
-				ref={refButton1}
-				style={{
-					background: isHover
-						? '#2F3437'
-						: 'var(--default-dark-btn-color)'
-				}}
-				onMouseEnter={() => setIsHover(true)}
-				onMouseLeave={() => setIsHover(false)}
-				className={styles.commentBtn}
-				onClick={() => {
-					setModal(prev => !prev)
-				}}
-			>
-				<MessageCircleMore />
-			</button>
-			{modal && (
-				<CommentsModal
-					ref={refCommentModal}
-					setModal={setModal}
-					closeButtonRef={refButton2}
-				/>
-			)}
-		</>
-	)
+function CommentsBtn() {
+  const [isCommentsOpen, setIsCommentsOpen] = useState<boolean>(false)
+  const [isHover, setIsHover] = useState<boolean>(false)
+
+  return (
+    <>
+      <button
+        className={styles.commentBtn}
+        onClick={() => {
+          setIsCommentsOpen(prev => !prev)
+        }}
+        onMouseEnter={() => {
+          setIsHover(true)
+        }}
+        onMouseLeave={() => {
+          setIsHover(false)
+        }}
+        style={{
+          background: isHover ? '#2F3437' : 'var(--default-dark-btn-color)'
+        }}
+      >
+        <MessageCircleMore />
+      </button>
+      {isCommentsOpen && <CommentsSidebar onClose={setIsCommentsOpen(false)} />}
+    </>
+  )
 }
 
 export default CommentsBtn
