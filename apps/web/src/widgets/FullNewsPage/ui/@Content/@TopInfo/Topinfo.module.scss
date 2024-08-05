@@ -1,0 +1,14 @@
+.topinfo {
+  @apply flex flex-wrap gap-x-6 gap-y-2 text-lg uppercase text-[--default-dark-text500-color];
+}
+
+.topinfo_a,
+.totalVews,
+.topinfo_button {
+  @apply flex flex-wrap gap-x-1;
+}
+
+.topinfo a,
+.topinfo_button {
+  @apply hover:text-[--hover-active-colore];
+}

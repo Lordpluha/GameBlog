@@ -1,0 +1,16 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+	],
+	"cSpell.words": [
+		"gameblog",
+		"nextui",
+		"stylelint",
+		"Swiper",
+		"tailwindcss",
+		"tanstack",
+		"zustand"
+	]
+}

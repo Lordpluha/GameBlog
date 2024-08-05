@@ -1,0 +1,38 @@
+{
+	"name": "@gameblog/eslint-config",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"format": "prettier \"*.{js,md}\" --write --cache"
+	},
+	"exports": {
+		"./FSD": "./feature-sliced-design.js",
+		"./Next": "./next.js",
+		"./React": "./react.js",
+		"./Library": "./library.js",
+		"./Storybook": "./storybook.js",
+		"./Nest": "./nest.js"
+	},
+	"prettier": "@gameblog/prettier-config",
+	"devDependencies": {
+		"@conarti/eslint-plugin-feature-sliced": "^1.0.5",
+		"@feature-sliced/eslint-config": "^0.1.1",
+		"@feature-sliced/eslint-plugin-messages": "0.1.0-beta.2",
+		"@gameblog/prettier-config": "workspace:*",
+		"@tanstack/eslint-plugin-query": "^5.50.1",
+		"@typescript-eslint/eslint-plugin": "^7.16.0",
+		"@typescript-eslint/parser": "^7.16.0",
+		"@vercel/style-guide": "^5.2.0",
+		"eslint-config-next": "^14.2.4",
+		"eslint-config-turbo": "^2.0.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-boundaries": "^4.2.2",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-react-refresh": "^0.4.8",
+		"eslint-plugin-storybook": "^0.8.0",
+		"prettier": "^3.3.2"
+	},
+	"lint-staged": {
+		"./*.{js,md}": "pnpm run format"
+	}
+}

@@ -1,0 +1,5 @@
+{
+  "extends": "@gameblog/typescript-config/Base",
+  "include": ["."],
+  "exclude": ["build"]
+}

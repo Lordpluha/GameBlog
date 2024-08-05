@@ -1,0 +1,23 @@
+.contentBody {
+  @apply rounded-3xl bg-[--modal-bg-color] p-10;
+}
+
+.contentWrapper {
+  @apply mx-auto max-w-screen-md;
+}
+
+.contentBodyTop {
+  @apply flex flex-col gap-y-12;
+}
+
+.contentBody h1 {
+  @apply text-left text-5xl font-semibold;
+}
+
+.newsfulltext {
+  @apply mt-10 text-left text-2xl leading-10;
+}
+
+.contentWrapperBottom {
+  @apply mt-10 border-t border-solid border-[var(--default-dark-text-color)] pt-10;
+}

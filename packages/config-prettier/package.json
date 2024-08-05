@@ -1,0 +1,12 @@
+{
+  "name": "@gameblog/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./.prettierrc.js",
+    "./withTailwind": "./.prettierrc.tailwind.js"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  }
+}
