@@ -20,14 +20,14 @@ const PostCardXS: FC<Omit<TPostCardProps, 'size'>> = ({
     <Card
       isPressable={true}
       isHoverable={true}
-      className='grid grid-cols-2 grid-rows-[min-content_1fr] gap-x-3 gap-y-2 rounded-none bg-transparent p-4 shadow-none'
+      className='grid grid-cols-[max-content_1fr] grid-rows-[min-content_1fr] gap-x-3 gap-y-2 rounded-none bg-transparent p-4 shadow-none grow'
     >
       <Image
         src={preview}
-        isZoomed={true}
+        isZoomed
         classNames={{
-          wrapper: 'row-span-full col-span-1 ',
-          img: 'object-cover block h-[100px]'
+          wrapper: 'row-span-full col-span-1',
+          img: 'object-cover block h-[100px] w-[126px]'
         }}
       />
       <CardFooter className='flex flex-row justify-between p-0'>

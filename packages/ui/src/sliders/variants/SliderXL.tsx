@@ -1,34 +1,43 @@
 'use client'
 
 import type { FC } from 'react'
-import { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { A11y, Navigation } from 'swiper/modules'
-import type { SwiperRef } from 'swiper/react'
-import 'swiper/scss'
-
-import clsx from 'clsx'
+import { A11y, Pagination } from 'swiper/modules'
 import type { TSliderProps } from '../@types/SliderProps.type'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { PaginationOptions } from 'swiper/types'
 
 const SliderXL: FC<Omit<TSliderProps, 'size'>> = ({
-  posts,
+  slides,
   className,
   ...props
 }) => {
-  const swiperContainer = useRef<SwiperRef>(null!)
+  const pagination: PaginationOptions  = {
+    clickable: true,
+    renderBullet: function (index, classes) {
+      return '<span class="' + classes + '">' + (index + 1) + '</span>';
+    },
+  };
 
   return (
-    <Swiper
-      className={clsx('swiper-container swiper-pointer-events', className)}
-      modules={[Navigation, A11y]}
-      ref={swiperContainer}
-      {...props}
-    >
-      <SwiperSlide>SliderXL1</SwiperSlide>
-      <SwiperSlide>SliderXL2</SwiperSlide>
-      <SwiperSlide>SliderXL3</SwiperSlide>
-    </Swiper>
-  )
+    <>
+      <Swiper
+        pagination={pagination}
+        modules={[Pagination, A11y]}
+        className="mySwiper"
+				{...props}
+      >
+				{slides.length !== 0
+					? slides.map((el, idx) => <SwiperSlide key={idx}>{el}</SwiperSlide>)
+					: <>
+						<SwiperSlide>Slide 1</SwiperSlide>
+						<SwiperSlide>Slide 2</SwiperSlide>
+						<SwiperSlide>Slide 3</SwiperSlide>
+					</>}
+      </Swiper>
+    </>
+  );
 }
 
 export default SliderXL

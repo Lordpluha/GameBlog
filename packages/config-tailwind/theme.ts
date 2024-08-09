@@ -20,7 +20,7 @@ const theme: NextUIPluginConfig = {
     radius: {
       small: '5px', // радиус закругления для мелких элементов
       medium: '10px', // радиус закругления для средних элементов
-      large: '15px' // радиус закругления для крупных элементов
+      large: '16px' // радиус закругления для крупных элементов
     },
     borderWidth: {
       small: '1px', // border-small
@@ -38,7 +38,8 @@ const theme: NextUIPluginConfig = {
       colors: {
         background: '#DEDFE1',
         foreground: '#161B1D',
-        focus: '#E30613'
+        focus: '#E30613',
+				content1: '#ffffff'
       }
     },
     dark: {
@@ -46,7 +47,7 @@ const theme: NextUIPluginConfig = {
         background: '#161B1D',
         foreground: '#ffffff',
         focus: '#E30613',
-        content1: '#747c81'
+        content1: '#262A2C'
       }
     }
   }

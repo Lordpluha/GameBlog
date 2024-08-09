@@ -3,7 +3,6 @@ import PostCardS from './PostCardS'
 import PostCardM from './PostCardM'
 import PostCardMD from './PostCardMD'
 import PostCardXL from './PostCardXL'
-import PostCardXXL from './PostCardXXL'
 
 export default {
   PostCardXS,
@@ -11,5 +10,4 @@ export default {
   PostCardM,
   PostCardMD,
   PostCardXL,
-  PostCardXXL
 }

@@ -1,9 +1,9 @@
 import type { SwiperProps } from 'swiper/react'
-import type IPostModel from 'gameblog-web/src/entities/Post/models/Post.model'
 import type ESliderSizes from './SliderSizes.enum'
+import { ReactNode } from 'react'
 
 type TSliderProps = {
-  posts: IPostModel
+  slides: ReactNode[]
   size: keyof typeof ESliderSizes
 } & SwiperProps
 

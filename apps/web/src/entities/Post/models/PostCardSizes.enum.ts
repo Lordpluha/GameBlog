@@ -1,5 +1,5 @@
 enum EPostCardSizes {
-  'xxl' = 'XXL',
+  // 'xxl' = 'XXL',
   'xl' = 'XL',
   'md' = 'MD',
   'm' = 'M',
