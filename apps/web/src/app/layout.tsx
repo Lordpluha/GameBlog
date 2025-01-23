@@ -6,8 +6,8 @@ import { ThemeProvider } from '@features/ToggleTheme'
 import { NextUIProvider as NextUIProviderUI } from '@nextui-org/react'
 
 import './_styles/index.scss'
-import { Header } from '@widgets/Header'
-import { Footer } from '@widgets/Footer'
+import { Header } from '@/widgets/Header'
+import { Footer } from '@/widgets/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,7 +30,7 @@ export default function RootLayout({
           <body className={inter.className}>
             <Header />
             <main className='w-full mt-40'>{children}</main>
-            <Footer />
+            <Footer />2
           </body>
         </ThemeProvider>
       </NextUIProviderUI>

@@ -8,7 +8,7 @@ import clsx from 'clsx'
 
 function Footer() {
   return (
-    <footer className={clsx('container mx-auto', styles.footer)}>
+    <footer className={clsx('w-full p-[32px]', styles.footer)}>
       <div className={styles.footer__information}>
         <div className={styles.footer__box}>
           <div className={styles.footer__logo}>

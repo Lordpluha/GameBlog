@@ -1,9 +1,9 @@
 'use client'
 import { PostCard } from '@entities/Post'
 import { Wrapper } from '@gameblog/ui'
-import {MainPageSlider} from '@widgets/MainPageSlider'
-import {MainPageAside} from '@widgets/MainPageAside'
-import {LatestNews} from '@widgets/LatestNews'
+import {MainPageSlider} from '@/widgets/MainPageSlider'
+import {MainPageAside} from '@/widgets/MainPageAside'
+import {LatestNews} from '@/widgets/LatestNews'
 
 
 export default function Home() {

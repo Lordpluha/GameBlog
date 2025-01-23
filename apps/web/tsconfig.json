@@ -10,7 +10,7 @@
     "paths": {
       "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],
-      "@widgets/*": ["./src/widgets/*"],
+      "@widgets/*": ["src/widgets/*"],
       "@features/*": ["./src/features/*"],
       "@entities/*": ["./src/entities/*"],
       "@/*": ["./src/*"]

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SliderReadAlso } from '@widgets/Sliders'
-import { INewsNavigation } from '@widgets/FullNewsPage/model/@interfaces'
-import FullNewsComponent from '@widgets/FullNewsPage/ui/FullNewsComponent'
+import { INewsNavigation } from '@/widgets/FullNewsPage/model/@interfaces'
+import FullNewsComponent from '@/widgets/FullNewsPage/ui/FullNewsComponent'
 
 function AboutNewPage() {
   // const { data } = useGetNewsBySlugQuery(slug!)
