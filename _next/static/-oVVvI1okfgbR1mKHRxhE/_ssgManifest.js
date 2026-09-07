@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fnews\u002F[slug]","\u002Fposts\u002F[postId]\u002F[postSlug]","\u002Fprofiles\u002F[userId]\u002F[nickname]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
